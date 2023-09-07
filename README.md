@@ -3,3 +3,5 @@ When a struggling painter becomes trapped within his own masterpiece, he must na
 
 Play now the newest game of InnerCircle Studios!
 
+### Technical details
+- We are using the most recent Unity LTS, currently this is 2022.9.3f1
