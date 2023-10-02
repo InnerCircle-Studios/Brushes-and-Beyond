@@ -13,7 +13,7 @@ public class PlayerStateFactory
     public PlayerBaseState Run() {
         return new PlayerRunState(Context, this);
     }
-    public PlayerBaseState Jump() {
+    public PlayerBaseState Attack() {
         return new PlayerAttackState(Context, this);
     }
     public PlayerBaseState Idle() {

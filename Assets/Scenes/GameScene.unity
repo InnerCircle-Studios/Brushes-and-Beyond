@@ -470,28 +470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a5b41eab4fef647aaefde5842fa936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  collisionOffset: 0.05
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  lastDirection: 3
-  movementInput: {x: 0, y: 0}
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  canMove: 1
-  isAttacking: 0
 --- !u!212 &2137030347
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -541,7 +519,7 @@ SpriteRenderer:
   m_Size: {x: 1.0625, y: 1.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2137030348
@@ -616,6 +594,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ba19fba-8d61-4ac7-b910-60249a2a1f38
     m_ActionName: Movement/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2137030350}
+        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c90608c-332d-4c59-a847-aa9544fb7a9e
+    m_ActionName: Movement/Run[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -635,7 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _force: 10
   _speed: 5
-  _sprintSpeed: 15
+  _sprintSpeed: 20
   groundMask:
     serializedVersion: 2
     m_Bits: 0

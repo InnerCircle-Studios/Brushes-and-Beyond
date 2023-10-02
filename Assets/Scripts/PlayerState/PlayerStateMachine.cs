@@ -44,6 +44,7 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
     public Rigidbody2D Rb { get { return _rb; } set { _rb = value; } }
     public CharacterDirection CurrentDirection{get { return _currentDirection; }set { _currentDirection = value; }}
+    public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } set { _spriteRenderer = value; } }
     public Animator Animator { get { return _animator; } set { _animator = value; } }
     //public LayerMask GroundMask { get { return groundMask; } set { groundMask = value; } }
     public bool IsAttackPressed { get { return _isAttackPressed; } }
