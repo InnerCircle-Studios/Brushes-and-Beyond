@@ -11,6 +11,9 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _sprintSpeed = 15;
 
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float groundedRayLength = 0.55f;
+
      public TextMeshProUGUI stateTextMeshPro;
 
     //Reference variables
@@ -51,6 +54,8 @@ public class PlayerStateMachine : MonoBehaviour
     public float SprintSpeed { get { return _sprintSpeed; } set { _sprintSpeed = value; } }
     public Vector3 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
+    public float Force { get { return _force; } set { _force = value; } }
+    public float GroundedRayLength { get { return groundedRayLength; } set { groundedRayLength = value; } }
     void Awake()
     {
         //Initiate reference variables
