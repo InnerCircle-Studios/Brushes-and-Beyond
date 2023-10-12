@@ -18,6 +18,10 @@ public class PlayerWalkState : PlayerBaseState
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
+        if (Ctx.DialogueTrigger)
+        {
+            SwitchState(Factory.Dialogue());
+        } else
         if (Ctx.IsMovementPressed == false)
         {
             SwitchState(Factory.Idle());

@@ -2,31 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerBaseState
+public class PlayerDialogueState : PlayerBaseState
 {
-    public PlayerIdleState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+    public PlayerDialogueState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
     public override void EnterState()
     {
-        Debug.Log("PlayerIdleState");
+        HandleAnimations();
+        Debug.Log("PlayerDialogueState");
     }
     public override void UpdateState()
     {
-        HandleAnimations();
         CheckSwitchStates();
     }
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
-        if (Ctx.DialogueTrigger)
+        if (!Ctx.PlayerIsInDialogue)
         {
-            SwitchState(Factory.Dialogue());
-        } else if (Ctx.IsMovementPressed)
-        {
-            SwitchState(Factory.Walk());
-        }
-        else if (Ctx.IsAttackPressed)
-        {
-            SwitchState(Factory.Attack());
+            SwitchState(Factory.Idle());
         }
     }
     public override void InitializeSubStates() { }

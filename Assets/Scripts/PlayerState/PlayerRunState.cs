@@ -13,22 +13,35 @@ public class PlayerRunState : PlayerBaseState
     public override void UpdateState()
     {
         HandleRun();
+        HandleAnimations();
         CheckSwitchStates();
     }
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
-        if (Ctx.IsMovementPressed == false)
+        if (!Ctx.IsMovementPressed)
         {
             SwitchState(Factory.Idle());
+            return;
         }
-        else if (Ctx.IsRunningPressed == false)
+
+        if (!Ctx.IsRunningPressed)
         {
             SwitchState(Factory.Walk());
+            return;
         }
-        else if (Ctx.IsAttackPressed)
+
+        if (Ctx.IsDashPressed)
+        {
+            Debug.Log("Dash2");
+            SwitchState(Factory.Dash());
+            return;
+        }
+
+        if (Ctx.IsAttackPressed)
         {
             SwitchState(Factory.Attack());
+            return;
         }
     }
     public override void InitializeSubStates() { }

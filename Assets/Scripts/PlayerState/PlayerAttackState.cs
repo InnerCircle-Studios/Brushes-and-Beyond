@@ -6,7 +6,7 @@ public class PlayerAttackState : PlayerBaseState
 {
     public PlayerAttackState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
     private bool _waitOver = false;
-    
+
     public override void EnterState()
     {
         HandleAnimations();
@@ -15,17 +15,25 @@ public class PlayerAttackState : PlayerBaseState
     }
     public override void UpdateState()
     {
+        HandleWalk();
         CheckSwitchStates();
     }
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
-        if (_waitOver){
+        if (_waitOver)
+        {
             _waitOver = false;
             SwitchState(Factory.Idle());
         }
     }
     public override void InitializeSubStates() { }
+
+    void HandleWalk()
+    {
+        Vector2 desiredMovement = new Vector2(Ctx.CurrentMovementInput.x, Ctx.CurrentMovementInput.y).normalized * Ctx.Speed * Time.deltaTime;
+        Ctx.Rb.MovePosition(Ctx.Rb.position + desiredMovement); ;
+    }
 
     void HandleAnimations()
     {

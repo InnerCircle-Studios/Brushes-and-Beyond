@@ -19,5 +19,11 @@ public class PlayerStateFactory
     public PlayerBaseState Idle() {
         return new PlayerIdleState(Context, this);
     }
+    public PlayerBaseState Dash() {
+        return new PlayerDashState(Context, this);
+    }
+    public PlayerBaseState Dialogue() {
+        return new PlayerDialogueState(Context, this);
+    }
 
 }

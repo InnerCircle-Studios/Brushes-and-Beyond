@@ -1,4 +1,4 @@
-public abstract class PlayerBaseState
+public abstract class PlayerBaseState : Subject
 {
     protected PlayerStateMachine Ctx;
     protected PlayerStateFactory Factory;
