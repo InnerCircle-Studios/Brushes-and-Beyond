@@ -25,5 +25,8 @@ public class PlayerStateFactory
     public PlayerBaseState Dialogue() {
         return new PlayerDialogueState(Context, this);
     }
+    public PlayerBaseState Show() {
+        return new PlayerShowState(Context, this);
+    }
 
 }

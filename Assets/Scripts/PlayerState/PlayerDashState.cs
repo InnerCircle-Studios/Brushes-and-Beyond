@@ -56,8 +56,12 @@ public class PlayerDashState : PlayerBaseState
 
     public void HandleDash()
     {
-        _dashDirection = new Vector2(Ctx.CurrentMovementInput.x, Ctx.CurrentMovementInput.y).normalized;
-        Ctx.Rb.velocity = _dashDirection * (Ctx.DashDistance / Ctx.DashDuration);
+        if (Time.time - Ctx.LastDashTime >= Ctx.DashCooldown)
+        {
+            _dashDirection = new Vector2(Ctx.CurrentMovementInput.x, Ctx.CurrentMovementInput.y).normalized;
+            Ctx.Rb.velocity = _dashDirection * (Ctx.DashDistance / Ctx.DashDuration);
+            Ctx.LastDashTime = Time.time;
+        }
     }
     public void HandleAnimations() { }
 

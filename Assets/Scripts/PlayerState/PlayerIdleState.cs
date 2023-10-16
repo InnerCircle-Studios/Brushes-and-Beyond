@@ -28,6 +28,9 @@ public class PlayerIdleState : PlayerBaseState
         {
             SwitchState(Factory.Attack());
         }
+        else if (Ctx.IsShowPressed){
+            SwitchState(Factory.Show());
+        }
     }
     public override void InitializeSubStates() { }
 

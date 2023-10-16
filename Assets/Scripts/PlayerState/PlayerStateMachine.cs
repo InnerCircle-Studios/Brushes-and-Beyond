@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using System;
+using UnityEngine.UI;
 
 public class PlayerStateMachine : Subject
 {
@@ -29,6 +29,12 @@ public class PlayerStateMachine : Subject
     // Dash variables
     private float _dashDuration = 0.2f;
     private bool _isDashPressed = false;
+    private float _lastDashTime = -10.0f;
+    private const float _dashCooldown = 10.0f;
+    public Slider dashCooldownSlider;
+
+    //Show variables
+    private bool _isShowPressed = false;
 
     //Movement variables
     Vector2 _currentMovementInput;
@@ -60,7 +66,6 @@ public class PlayerStateMachine : Subject
     public CharacterDirection CurrentDirection { get { return _currentDirection; } set { _currentDirection = value; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } set { _spriteRenderer = value; } }
     public Animator Animator { get { return _animator; } set { _animator = value; } }
-    //public LayerMask GroundMask { get { return groundMask; } set { groundMask = value; } }
     public bool IsAttackPressed { get { return _isAttackPressed; } }
     public bool IsRunningPressed { get { return _isRunningPressed; } }
     public bool IsMovementPressed { get { return _isMovementPressed; } }
@@ -76,6 +81,9 @@ public class PlayerStateMachine : Subject
     public bool IsInteractPressed { get { return _isInteractPressed; } set { _isInteractPressed = value; } }
     public bool DialogueTrigger { get { return _dialogueTrigger; } set { _dialogueTrigger = value; } }
     public bool PlayerIsInDialogue { get { return _playerIsInDialogue; } set { _playerIsInDialogue = value; } }
+    public float LastDashTime { get { return _lastDashTime; } set { _lastDashTime = value; } }
+    public float DashCooldown { get { return _dashCooldown; } }
+    public bool IsShowPressed { get { return _isShowPressed; } set { _isShowPressed = value; } }
 
     void Awake()
     {
@@ -99,6 +107,7 @@ public class PlayerStateMachine : Subject
     void Update()
     {
         DialogueCheck();
+        HandleCooldownUI();
         _currentState.UpdateState();
         if (stateTextMeshPro != null)
         {
@@ -132,10 +141,19 @@ public class PlayerStateMachine : Subject
         _isRunningPressed = context.ReadValueAsButton();
     }
 
+    public void OnShow(InputAction.CallbackContext context)
+    {
+        Debug.Log("Show");
+        _isShowPressed = context.ReadValueAsButton();
+    }
+
     public void OnDash(InputAction.CallbackContext context)
     {
-        Debug.Log("Dash1");
-        _isDashPressed = context.ReadValueAsButton();
+        _isDashPressed = false;
+        if (Time.time - _lastDashTime >= _dashCooldown)
+        {
+            _isDashPressed = context.ReadValueAsButton();
+        }
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -172,14 +190,22 @@ public class PlayerStateMachine : Subject
         {
             _nearNPC = true;
         }
-        else
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("NPC"))
         {
             _nearNPC = false;
         }
-
     }
 
-
+    public void HandleCooldownUI()
+    {
+        float timeSinceLastDash = Time.time - _lastDashTime;
+        float cooldownProgress = Mathf.Clamp01(timeSinceLastDash / _dashCooldown);
+        dashCooldownSlider.value = cooldownProgress;
+    }
 
     public enum CharacterDirection
     {

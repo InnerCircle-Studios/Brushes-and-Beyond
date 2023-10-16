@@ -24,6 +24,10 @@ public class PlayerRunState : PlayerBaseState
             SwitchState(Factory.Idle());
             return;
         }
+        if (Ctx.DialogueTrigger)
+        {
+            SwitchState(Factory.Dialogue());
+        }
 
         if (!Ctx.IsRunningPressed)
         {
