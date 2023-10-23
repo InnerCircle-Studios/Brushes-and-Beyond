@@ -11,7 +11,6 @@ public class PlayerAttackState : PlayerBaseState
     {
         HandleAnimations();
         Ctx.StartCoroutine(WaitForAttack());
-        Debug.Log("PlayerAttackState"); ;
     }
     public override void UpdateState()
     {

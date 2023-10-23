@@ -81,7 +81,7 @@ public class PlayerStateMachine : Subject
     void Awake()
     {
         //Initiate reference variables
-        _playerInput = new PlayerInput();
+       // _playerInput = new PlayerInput();
         //State setup
         _states = new PlayerStateFactory(this);
         _currentState = _states.Idle();

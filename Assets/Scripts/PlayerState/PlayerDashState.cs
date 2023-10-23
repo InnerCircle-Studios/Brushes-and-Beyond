@@ -12,7 +12,6 @@ public class PlayerDashState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("PlayerDashState");
         _dashEndTime = Time.time + Ctx.DashDuration;
         HandleAnimations();
     }

@@ -7,7 +7,6 @@ public class PlayerWalkState : PlayerBaseState
     public PlayerWalkState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
     public override void EnterState()
     {
-        Debug.Log("PlayerWalkState");
     }
     public override void UpdateState()
     {

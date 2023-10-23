@@ -9,7 +9,6 @@ public class PlayerDialogueState : PlayerBaseState
     public override void EnterState()
     {
         HandleAnimations();
-        Debug.Log("PlayerDialogueState");
     }
     public override void UpdateState()
     {

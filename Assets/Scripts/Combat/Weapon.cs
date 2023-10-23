@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class Shootah : MonoBehaviour {
+public class Weapon : MonoBehaviour {
     public GameObject Bullet;
 
     // Update is called once per frame

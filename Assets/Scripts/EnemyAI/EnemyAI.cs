@@ -10,11 +10,11 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float detectionRadius = 3.0f;
     [SerializeField] private float attackRange = 1.5f;
-    [SerializeField] private float attackCooldown = 1.0f; // Time between attacks
+    [SerializeField] private float attackCooldown = 3.0f; // Time between attacks
     [SerializeField] private bool isMelee = false;
     //Movement and detectection
     private Rigidbody2D rb;
-    public Shootah Enemy;
+    public Weapon Enemy;
     private Vector2 startingPosition;
     private Vector2 roamPosition;
     private Transform player;
@@ -139,7 +139,6 @@ public class EnemyAI : MonoBehaviour
         if (canAttack)
         {
             Enemy.Shoot();
-            Debug.Log("Enemy Shoot");
             canAttack = false;
             StartCoroutine(AttackCooldown());
         }
@@ -151,9 +150,6 @@ public class EnemyAI : MonoBehaviour
         canAttack = true;
         currentState = State.Chasing; // After the attack, go back to chasing
     }
-
-
-
 
     private void Die()
     {

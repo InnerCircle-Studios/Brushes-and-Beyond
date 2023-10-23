@@ -8,7 +8,6 @@ public class PlayerRunState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("PlayerRunState");
     }
     public override void UpdateState()
     {

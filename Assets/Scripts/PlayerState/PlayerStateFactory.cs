@@ -28,5 +28,8 @@ public class PlayerStateFactory
     public PlayerBaseState Show() {
         return new PlayerShowState(Context, this);
     }
+    public PlayerDeathState Death() {
+        return new PlayerDeathState(Context, this);
+    }
 
 }
