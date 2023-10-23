@@ -31,21 +31,12 @@ public class Shootah : MonoBehaviour {
         return FindAnyObjectByType<PlayerStateMachine>().transform.gameObject;
     }
 
-    private void Shoot(){
-        var newBullet = Instantiate(Bullet, transform.GetChild(0).transform.position + transform.forward*500, transform.rotation, transform.parent);
+    public void Shoot(){
+        Debug.Log("Shoot");
+        var newBullet = Instantiate(Bullet, transform.GetChild(0).transform.position + transform.forward*2.0f, transform.rotation, transform.parent);
         Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
         bulletRb.velocity = transform.right * 10;
     }
-    // private void DrawLaser() {
-    //     float length = 15f;
-    //     Debug.DrawRay(transform.position, Vector3.forward * length, Color.green);
-
-    //     Ray ray = new(transform.position, Vector3.down);
-
-    //     if (Physics.Raycast(ray, out RaycastHit hit, length)) {
-    //         Debug.DrawRay(transform.position, Vector3.forward * length, Color.red);
-    //     }
-    // }
 
 
 }

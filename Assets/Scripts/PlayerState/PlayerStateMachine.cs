@@ -8,14 +8,9 @@ using UnityEngine.UI;
 public class PlayerStateMachine : Subject
 {
     //User variables
-    [SerializeField] private float _force = 10;
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _sprintSpeed = 15;
-
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float groundedRayLength = 0.55f;
-
-    [SerializeField] private float _dashDistance = 1000.0f;
+    [SerializeField] private float _dashDistance = 10.0f;
 
     public TextMeshProUGUI stateTextMeshPro;
 
@@ -73,8 +68,6 @@ public class PlayerStateMachine : Subject
     public float SprintSpeed { get { return _sprintSpeed; } set { _sprintSpeed = value; } }
     public Vector3 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
-    public float Force { get { return _force; } set { _force = value; } }
-    public float GroundedRayLength { get { return groundedRayLength; } set { groundedRayLength = value; } }
     public float DashDistance { get { return _dashDistance; } set { _dashDistance = value; } }
     public float DashDuration { get { return _dashDuration; } set { _dashDuration = value; } }
     public bool IsDashPressed { get { return _isDashPressed; } set { _isDashPressed = value; } }
