@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public AudioSource sfxSource, basemusic, battlemusic;
+    private Coroutine fadeCoroutine, fadeCoroutine2;
+    public AudioClip baseClip, BattleClip;
+
+    [SerializeField] public AudioMixer audiomixer;
 
     void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
@@ -24,18 +30,26 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(string name)
+    public void ToggleMusic(bool toggle)
     {
-        Sound s = Array.Find(musicSounds, sound => sound.name == name);
-        if (s == null)
+
+        if (toggle) {
+            if (fadeCoroutine != null)
+            {
+                StopCoroutine(fadeCoroutine);
+                StopCoroutine(fadeCoroutine2);
+            }
+            fadeCoroutine = StartCoroutine(StartFade( AudioManager.instance.audiomixer, "Battle Music", 3, 100));
+            fadeCoroutine2 = StartCoroutine(StartFade( AudioManager.instance.audiomixer, "Base Music", 3, 0));
+        } else
         {
-            Debug.LogWarning("MUSICSound: " + name + " not found!");
-            return;
-        }
-        else
-        {
-            musicSource.clip = s.clip;
-            musicSource.Play();
+            if (fadeCoroutine != null)
+            {
+                StopCoroutine(fadeCoroutine);
+                StopCoroutine(fadeCoroutine2);
+            }
+            fadeCoroutine = StartCoroutine(StartFade( AudioManager.instance.audiomixer, "Battle Music", 3, 0));
+            fadeCoroutine2 = StartCoroutine(StartFade( AudioManager.instance.audiomixer, "Base Music", 3, 100));
         }
     }
 
@@ -54,21 +68,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void StopMusic(string name)
-    {
-        Sound s = Array.Find(musicSounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning("MUSICSound: " + name + " not found!");
-            return;
-        }
-        else
-        {
-            musicSource.clip = s.clip;
-            musicSource.Stop();
-        }
-    }
-
     public void StopSfx(string name)
     {
         Sound s = Array.Find(sfxSounds, sound => sound.name != name);  // NOTE: Should this be "sound.name == name"?
@@ -84,64 +83,35 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void FadeInMusic(string trackName, float duration)
+    public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
     {
-        Sound s = Array.Find(musicSounds, sound => sound.name == trackName);
-        if (s == null)
+        float currentTime = 0;
+        float currentVol;
+        audioMixer.GetFloat(exposedParam, out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+        
+        while (currentTime < duration)
         {
-            Debug.LogWarning("MUSICSound: " + trackName + " not found!");
-            return;
-        }
-        else
-        {
-            musicSource.clip = s.clip;
-            StartCoroutine(FadeInCoroutine(duration));
-        }
-    }
-
-    public void FadeOutCurrentMusic(float duration)
-    {
-        StartCoroutine(FadeOutCoroutine(duration));
-    }
-
-    private IEnumerator FadeInCoroutine(float duration)
-    {
-        musicSource.volume = 0;
-        musicSource.Play();
-
-        float startVolume = 0;
-        float endVolume = 1.0f;
-        float elapsedTime = 0;
-
-        while (elapsedTime < duration)
-        {
-            musicSource.volume = Mathf.Lerp(startVolume, endVolume, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
+            currentTime += Time.deltaTime;
+            float t = currentTime / duration;
+            float newVol = Mathf.Lerp(currentVol, targetValue, Mathf.SmoothStep(0, 1, t));
+            audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
             yield return null;
         }
 
-        musicSource.volume = endVolume;
-    }
-
-    private IEnumerator FadeOutCoroutine(float duration)
-    {
-        float startVolume = musicSource.volume;
-        float endVolume = 0;
-        float elapsedTime = 0;
-
-        while (elapsedTime < duration)
-        {
-            musicSource.volume = Mathf.Lerp(startVolume, endVolume, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        musicSource.volume = endVolume;
-        musicSource.Stop();
+        // Ensure that the final volume is set to the exact target volume.
+        audioMixer.SetFloat(exposedParam, Mathf.Log10(targetValue) * 20);
     }
 
     void Start()
     {
-        PlayMusic("BaseMusic");
+        battlemusic.clip = BattleClip;
+        basemusic.clip = baseClip;
+        battlemusic.Play();
+        basemusic.Play();
+
+        audiomixer.SetFloat("Battle Music", -80);
+        audiomixer.SetFloat("Idle Music", 0);
     }
 }
