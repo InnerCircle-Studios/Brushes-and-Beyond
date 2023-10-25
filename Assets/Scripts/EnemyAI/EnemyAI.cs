@@ -44,7 +44,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (GetComponent<AttributeManager>().CurrentHealth <= 0)
+        if (GetComponent<AttributeManager2>().GetAttributes().CurrentHealth <= 0)
         {
             currentState = State.Dead;
         }

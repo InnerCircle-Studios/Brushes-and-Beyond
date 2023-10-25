@@ -225,9 +225,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4125457231236584865, guid: cd793c41ddad82d4ea025b40c870e0ce, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 720148974}
     - targetCorrespondingSourceObject: {fileID: 333910238548942892, guid: cd793c41ddad82d4ea025b40c870e0ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 984787304}
@@ -1074,9 +1071,9 @@ GameObject:
   - component: {fileID: 240178004}
   - component: {fileID: 240178003}
   - component: {fileID: 240178005}
-  - component: {fileID: 240178006}
   - component: {fileID: 240178007}
   - component: {fileID: 240178008}
+  - component: {fileID: 240178009}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -1171,21 +1168,6 @@ MonoBehaviour:
   attackCooldown: 1
   isMelee: 0
   Enemy: {fileID: 509443710}
---- !u!114 &240178006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240177998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e6e2645dba3e846a6866a27c49bfd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 100
-  _damage: 5
 --- !u!50 &240178007
 Rigidbody2D:
   serializedVersion: 4
@@ -1258,6 +1240,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0002255, y: 1.3206433}
   m_EdgeRadius: 0
+--- !u!114 &240178009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240177998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a2294032511b248bd0feae617409aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributes: {fileID: 11400000, guid: 2827e572bf44fd8c994853b64fdfc443, type: 2}
 --- !u!1 &261100405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,26 +2315,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664641761}
   m_CullTransparentMesh: 1
---- !u!1 &720148971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4125457231236584865, guid: cd793c41ddad82d4ea025b40c870e0ce, type: 3}
-  m_PrefabInstance: {fileID: 30125153}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &720148974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720148971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e6e2645dba3e846a6866a27c49bfd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 50
-  _currentHealth: 50
-  _damage: 5
 --- !u!1 &762402364
 GameObject:
   m_ObjectHideFlags: 0
