@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class AttributeManager2 : MonoBehaviour {
 
-    [SerializeField] private CharacterAttributes _attributes;
+    [SerializeField] private CharacterAttributes _templateAttributes;
     private CharacterAttributes _localAttributes;
 
     private void Start() {
         // Copy data from the template to a new object for local, non-shared use.
-        _localAttributes = _attributes.NewInstance();
+        _localAttributes = _templateAttributes.NewInstance();
 
     }
 
