@@ -9,12 +9,9 @@ public class AttributeManager2 : MonoBehaviour {
     private CharacterAttributes _localAttributes;
 
     private void Start() {
-        _localAttributes = ScriptableObject.CreateInstance<CharacterAttributes>();
-        _localAttributes.Type = _attributes.Type;
-        _localAttributes.CurrentHealth = _attributes.CurrentHealth;
-        _localAttributes.MaxHealth = _attributes.MaxHealth;
-        _localAttributes.Damage = _attributes.Damage;
-        _localAttributes.name = _attributes.name;   
+        // Copy data from the template to a new object for local, non-shared use.
+        _localAttributes = _attributes.NewInstance();
+
     }
 
     public void ApplyDamage(int hp) {
