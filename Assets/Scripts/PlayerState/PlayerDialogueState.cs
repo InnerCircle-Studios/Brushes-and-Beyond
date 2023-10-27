@@ -14,7 +14,10 @@ public class PlayerDialogueState : PlayerBaseState
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() { 
+
+        Ctx.DialogueTrigger = false;
+    }
     public override void CheckSwitchStates()
     {
         if (!Ctx.PlayerIsInDialogue)
