@@ -69,7 +69,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     
-    public void OnInteract(InputAction.CallbackContext context)
+   /* public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Going to next message");
             }
         }
-    }
+    }*/
 
 
 }
