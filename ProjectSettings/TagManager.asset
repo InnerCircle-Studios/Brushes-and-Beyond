@@ -45,9 +45,12 @@ TagManager:
   - name: Ground
     uniqueID: 2530271483
     locked: 0
+  - name: Player
+    uniqueID: 2006517101
+    locked: 0
+  - name: Props
+    uniqueID: 63995279
+    locked: 0
   - name: Nature
     uniqueID: 3490216095
-    locked: 0
-  - name: Player
-    uniqueID: 63995279
     locked: 0

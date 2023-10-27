@@ -16,9 +16,28 @@ public class DialogueManager : MonoBehaviour
     private Message[] currentMessages;
     private Actor[] currentActors;
     private int currentMessageIndex = 0;
-    private bool _isInteractPressed = false;
 
     public static bool isActive = false;
+
+
+    private static DialogueManager _instance;
+    public static DialogueManager Instance
+    {
+        get { return _instance; }
+    }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -56,31 +75,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         backgroundBox.transform.localScale = Vector3.zero;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
-    
-   /* public void OnInteract(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            _isInteractPressed = context.ReadValueAsButton();
-            if (_isInteractPressed && isActive)
-            {
-                NextMessage();
-                Debug.Log("Going to next message");
-            }
-        }
-    }*/
 
 
 }

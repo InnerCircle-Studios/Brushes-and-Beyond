@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
-public class PlayerStateMachine : Subject
+public class PlayerStateMachine : MonoBehaviour
 {
     //User variables
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _sprintSpeed = 15;
     [SerializeField] private float _dashDistance = 10.0f;
+    [SerializeField] private UnityEvent dialogueTrigger;
 
     public TextMeshProUGUI stateTextMeshPro;
 
@@ -93,7 +95,6 @@ public class PlayerStateMachine : Subject
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        NotifyObservers(PlayerActions.Idle);
     }
 
     // Update is called once per frame
@@ -156,7 +157,8 @@ public class PlayerStateMachine : Subject
             _dialogueTrigger = true;
             if (!_playerIsInDialogue)
             {
-                NotifyObservers(PlayerActions.Dialogue);
+                dialogueTrigger.Invoke();
+               // NotifyObservers(PlayerActions.Dialogue);
             }
         }
         else

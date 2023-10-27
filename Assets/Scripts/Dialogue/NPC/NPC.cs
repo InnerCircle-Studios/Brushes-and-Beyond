@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour, IObserver
+public class NPC : MonoBehaviour
 {
     public DialogueTrigger trigger;
-    [SerializeField] Subject _playerSubject;
     private bool Collided = false;
 
-    public void OnNotify(PlayerActions action)
+    public void TriggerDialogue()
     {
-        if (action == PlayerActions.Dialogue && Collided)
+        if (Collided)
         {
-            Debug.Log("Player has notified NPC");
             trigger.StartDialogue();
         }
     }
@@ -31,15 +29,5 @@ public class NPC : MonoBehaviour, IObserver
         {
             Collided = false;
         }
-    }
-
-    private void OnEnable()
-    {
-        _playerSubject.AddObserver(this);
-    }
-
-    private void OnDisable()
-    {
-        _playerSubject.RemoveObserver(this);
     }
 }
