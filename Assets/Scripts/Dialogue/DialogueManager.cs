@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         currentActors = actors;
         currentMessageIndex = 0;
         isActive = true;
-        Debug.Log("OpenDialoage for these messages:" + messages.Length);
+        Debug.Log("OpenDialogue for these messages:" + messages.Length);
         backgroundBox.transform.localScale = new Vector3(11f, 2.5f, 1f);
         DisplayMessage();
     }

@@ -6,13 +6,14 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class PlayerStateMachine : MonoBehaviour
-{
+public class PlayerStateMachine : MonoBehaviour {
     //User variables
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _sprintSpeed = 15;
     [SerializeField] private float _dashDistance = 10.0f;
     [SerializeField] private UnityEvent dialogueTrigger;
+    [SerializeField] private UnityEvent gameStartDialogueTrigger;
+    [SerializeField] private UnityEvent gameItem;
 
     public TextMeshProUGUI stateTextMeshPro;
 
@@ -49,6 +50,7 @@ public class PlayerStateMachine : MonoBehaviour
     private bool _dialogueTrigger = false;
     private bool _playerIsInDialogue = false;
     private bool _nearNPC = false;
+    private bool _nearItem = false;
 
     //Attack variables
     private bool _isAttackPressed = false;
@@ -80,38 +82,34 @@ public class PlayerStateMachine : MonoBehaviour
     public float DashCooldown { get { return _dashCooldown; } }
     public bool IsShowPressed { get { return _isShowPressed; } set { _isShowPressed = value; } }
 
-    void Awake()
-    {
+    void Awake() {
         //Initiate reference variables
-       // _playerInput = new PlayerInput();
+        // _playerInput = new PlayerInput();
         //State setup
         _states = new PlayerStateFactory(this);
         _currentState = _states.Idle();
         _currentState.EnterState();
-
     }
-    void Start()
-    {
+    void Start() {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _currentState = _states.Dialogue();
+        gameStartDialogueTrigger.Invoke();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         DialogueCheck();
         HandleCooldownUI();
         _currentState.UpdateState();
-        if (stateTextMeshPro != null)
-        {
+        if (stateTextMeshPro != null) {
             stateTextMeshPro.text = _currentState.GetType().Name;
         }
     }
 
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
+    public void OnMove(InputAction.CallbackContext context) {
         _currentMovementInput = context.ReadValue<Vector2>();
         _isMovementPressed = _currentMovementInput.x != _zero || _currentMovementInput.y != _zero;
         if (_currentMovementInput.x > 0)
@@ -125,88 +123,87 @@ public class PlayerStateMachine : MonoBehaviour
 
     }
 
-    public void OnJump(InputAction.CallbackContext context)
-    {
+    public void OnJump(InputAction.CallbackContext context) {
         _isAttackPressed = context.ReadValueAsButton();
     }
 
-    public void OnRun(InputAction.CallbackContext context)
-    {
+    public void OnRun(InputAction.CallbackContext context) {
         _isRunningPressed = context.ReadValueAsButton();
     }
 
-    public void OnShow(InputAction.CallbackContext context)
-    {
-        Debug.Log("Show");
+    public void OnShow(InputAction.CallbackContext context) {
         _isShowPressed = context.ReadValueAsButton();
     }
 
-    public void OnDash(InputAction.CallbackContext context)
-    {
+    public void OnDash(InputAction.CallbackContext context) {
         _isDashPressed = false;
-        if (Time.time - _lastDashTime >= _dashCooldown)
-        {
+        if (Time.time - _lastDashTime >= _dashCooldown) {
             _isDashPressed = context.ReadValueAsButton();
         }
     }
-    public void OnInteract(InputAction.CallbackContext context)
-    {
+    public void OnInteract(InputAction.CallbackContext context) {
         _isInteractPressed = context.ReadValueAsButton();
-        if (_isInteractPressed && _nearNPC)
-        {
+        if (_isInteractPressed && _nearNPC) {
             _dialogueTrigger = true;
-            if (!_playerIsInDialogue)
-            {
+            if (!_playerIsInDialogue) {
                 dialogueTrigger.Invoke();
-               // NotifyObservers(PlayerActions.Dialogue);
             }
         }
-        else
-        {
+        else {
             _dialogueTrigger = false;
+        }
+        if (_isInteractPressed && _nearItem) {
+            gameItem.Invoke();
+            DestroyItem();
         }
     }
 
-    public void DialogueCheck()
-    {
-        if (DialogueManager.isActive)
-        {
+    public void DialogueCheck() {
+        if (DialogueManager.isActive) {
             _playerIsInDialogue = true;
         }
-        else
-        {
+        else {
             _playerIsInDialogue = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("NPC"))
-        {
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("NPC")) {
             _nearNPC = true;
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("NPC"))
-        {
-            _nearNPC = false;
+        if (collision.gameObject.CompareTag("Item")) {
+            _nearItem = true;
         }
     }
 
-    public void HandleCooldownUI()
-    {
+    private void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("NPC")) {
+            _nearNPC = false;
+        }
+        if (collision.gameObject.CompareTag("Item")) {
+            _nearItem = false;
+        }
+    }
+
+    public void HandleCooldownUI() {
         float timeSinceLastDash = Time.time - _lastDashTime;
         float cooldownProgress = Mathf.Clamp01(timeSinceLastDash / _dashCooldown);
         dashCooldownSlider.value = cooldownProgress;
     }
 
-    public enum CharacterDirection
-    {
+    public enum CharacterDirection {
         Up,
         Down,
         Left,
         Right
     }
+    private void DestroyItem() 
+{
+    // Check if the player is near an item with the "Item" tag
+    Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Item"));
+    if (itemCollider) 
+    {
+        Destroy(itemCollider.gameObject);
+    }
+}
 }
