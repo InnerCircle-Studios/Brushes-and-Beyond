@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Collections.Generic;
+
 
 public class Paintbar : MonoBehaviour
 {
@@ -15,9 +18,17 @@ public class Paintbar : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
 
+      [SerializeField]
+    private Image paintImagePrefab; // The UI Image prefab for the paint
+
+    [SerializeField]
+    private Transform paintContainer; // The parent container for the paint images
+
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
 
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
+
+     private List<Image> displayedPaintImages = new List<Image>(); // List to hold the displayed paint images
 
     private void Awake()
     {
@@ -47,6 +58,11 @@ public class Paintbar : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        UsePaints();
+    }
+
     // Method to use the paints
     public void UsePaints()
     {
@@ -60,11 +76,30 @@ public class Paintbar : MonoBehaviour
     }
 
     // Helper method to update the UI text
-    private void UpdatePaintUI()
+   private void UpdatePaintUI()
+{
+    // Clear existing paint images
+    foreach (Image img in displayedPaintImages)
     {
-        if (paintCounterUI != null)
+        Destroy(img.gameObject);
+    }
+    displayedPaintImages.Clear();
+
+    Debug.Log($"Cleared existing paints. Current paint count: {currentPaintCount}");
+
+    // Display current paint count as images
+    for (int i = 0; i < currentPaintCount; i++)
+    {
+        Image newImage = Instantiate(paintImagePrefab, paintContainer);
+        if (newImage != null)
         {
-            paintCounterUI.text = $"{currentPaintCount} / {maxPaints} Paints";
+            Debug.Log($"Instantiated paint image {i + 1}");
+            displayedPaintImages.Add(newImage);
+        }
+        else
+        {
+            Debug.Log("Failed to instantiate paint image");
         }
     }
+}
 }
