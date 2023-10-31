@@ -4326,7 +4326,7 @@ GameObject:
   - component: {fileID: 1579753559}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Item
+  m_TagString: Blockade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6085,6 +6085,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameBlockade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2137030356}
+        m_TargetAssemblyTypeName: Paintbar, Assembly-CSharp
+        m_MethodName: InteractOnBlockade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   stateTextMeshPro: {fileID: 151911845}
   dashCooldownSlider: {fileID: 904965352}
 --- !u!114 &2137030352
@@ -6184,6 +6199,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1579753559}
         m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
         m_MethodName: onPaintsUsed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2137030350}
+        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
+        m_MethodName: UsingPaints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
