@@ -1,25 +1,30 @@
 using UnityEngine;
+using System.Collections;
 
-public class Blockade : MonoBehaviour
-{
-    private bool _hasEnoughPaints = false;
+public class Blockade : MonoBehaviour {
 
-
-    public void onMaxPaintsCollected()
-    {
-        _hasEnoughPaints = true;
-    }
-    public void onPaintsUsed()
-    {
-        _hasEnoughPaints = false;
+    private bool _waitOver = false;
+    private bool _usedPaints = false;
+    public void onPaintsUsed() {
+        _usedPaints = true;
     }
 
-    public void Update(){
-        if (_hasEnoughPaints){
-            Destroy(gameObject);
+    private IEnumerator WaitForPaints() //Delay for groundCheck
+    {
+        yield return new WaitForSeconds(2f);
+        _waitOver = true;
+    }
+
+    public void Update() {
+        if (_usedPaints) {
+            StartCoroutine(WaitForPaints());
+            if (_waitOver) {
+                Destroy(gameObject);
+                _waitOver = false;
+                _usedPaints = false;
+            }
         }
+
     }
-
-
 
 }

@@ -25,6 +25,7 @@ public class Paintbar : MonoBehaviour
     private Transform paintContainer; // The parent container for the paint images
 
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
+    private bool _isPaintPressed = false;
 
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
 
@@ -53,9 +54,13 @@ public class Paintbar : MonoBehaviour
             if (currentPaintCount == maxPaints)
             {
                 HasMaxPaints = true; // Set the variable to true
-                onMaxPaintsCollected.Invoke(); // Trigger the event
             }
         }
+    }
+
+    public void InteractOnBlockade(){
+        _isPaintPressed = true;
+        
     }
 
     public void Update()
@@ -66,12 +71,13 @@ public class Paintbar : MonoBehaviour
     // Method to use the paints
     public void UsePaints()
     {
-        if (HasMaxPaints)
+        if (HasMaxPaints && _isPaintPressed)
         {
             currentPaintCount = 0; // Reset paint count
             HasMaxPaints = false; // Reset the variable
             UpdatePaintUI(); // Update the UI
             onPaintsUsed.Invoke(); // Trigger the event
+            _isPaintPressed = false;
         }
     }
 

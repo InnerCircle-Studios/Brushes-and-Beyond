@@ -16,7 +16,9 @@ public class PlayerShowState : PlayerBaseState
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() { 
+        Ctx.IsShowPressed = false;
+    }
     public override void CheckSwitchStates()
     {
         if (_waitOver)

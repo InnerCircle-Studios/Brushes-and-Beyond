@@ -14,6 +14,7 @@ public class PlayerStateMachine : MonoBehaviour {
     [SerializeField] private UnityEvent dialogueTrigger;
     [SerializeField] private UnityEvent gameStartDialogueTrigger;
     [SerializeField] private UnityEvent gameItem;
+    [SerializeField] private UnityEvent gameBlockade;
 
     public TextMeshProUGUI stateTextMeshPro;
 
@@ -51,6 +52,7 @@ public class PlayerStateMachine : MonoBehaviour {
     private bool _playerIsInDialogue = false;
     private bool _nearNPC = false;
     private bool _nearItem = false;
+    private bool _nearBlockade = false;
 
     //Attack variables
     private bool _isAttackPressed = false;
@@ -156,6 +158,14 @@ public class PlayerStateMachine : MonoBehaviour {
             gameItem.Invoke();
             DestroyItem();
         }
+        if (_isInteractPressed && _nearBlockade) {
+            gameBlockade.Invoke();
+        }
+    }
+
+
+    public void UsingPaints() {
+        _isShowPressed = true;
     }
 
     public void DialogueCheck() {
@@ -173,6 +183,9 @@ public class PlayerStateMachine : MonoBehaviour {
         }
         if (collision.gameObject.CompareTag("Item")) {
             _nearItem = true;
+        }
+        if (collision.gameObject.CompareTag("Blockade")) {
+            _nearBlockade = true;
         }
     }
 
@@ -197,13 +210,11 @@ public class PlayerStateMachine : MonoBehaviour {
         Left,
         Right
     }
-    private void DestroyItem() 
-{
-    // Check if the player is near an item with the "Item" tag
-    Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Item"));
-    if (itemCollider) 
-    {
-        Destroy(itemCollider.gameObject);
+    private void DestroyItem() {
+        // Check if the player is near an item with the "Item" tag
+        Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Item"));
+        if (itemCollider) {
+            Destroy(itemCollider.gameObject);
+        }
     }
-}
 }
