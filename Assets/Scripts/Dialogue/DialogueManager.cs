@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Linq;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour {
 
     public Image actorImage;
     public TMP_Text actorName;
@@ -15,22 +15,21 @@ public class DialogueManager : MonoBehaviour
 
     private Message[] currentMessages;
     private Actor[] currentActors;
+    private DialogueAction[] currentActions;
     private int currentMessageIndex = 0;
 
     public static bool isActive = false;
+    private bool isEventExecuting = false;
 
 
     private static DialogueManager _instance;
-    public static DialogueManager Instance
-    {
+    public static DialogueManager Instance {
         get { return _instance; }
     }
 
 
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
+    private void Awake() {
+        if (_instance != null && _instance != this) {
             Destroy(gameObject);
             return;
         }
@@ -39,19 +38,19 @@ public class DialogueManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void OpenDialogue(Message[] messages, Actor[] actors)
-    {
+    public void OpenDialogue(Message[] messages, Actor[] actors, DialogueAction[] dialogueActions) {
         currentMessages = messages;
         currentActors = actors;
+        currentActions = dialogueActions;
         currentMessageIndex = 0;
         isActive = true;
         Debug.Log("OpenDialogue for these messages:" + messages.Length);
         backgroundBox.transform.localScale = new Vector3(11f, 2.5f, 1f);
+        PlayActions();
         DisplayMessage();
     }
 
-    void DisplayMessage()
-    {
+    void DisplayMessage() {
         Message messageToDisplay = currentMessages[currentMessageIndex];
         messageText.text = messageToDisplay.message;
 
@@ -60,30 +59,32 @@ public class DialogueManager : MonoBehaviour
         actorImage.sprite = actorToDisplay.sprite;
     }
 
-    public void NextMessage()
-    {
+    void PlayActions() {
+        // Amazing linq query to find the actions to play after the current message index. 
+        currentActions.ToList().Where(a => a.PlayAfterIndex == currentMessageIndex - 1).ToList().ForEach(e => e.Action.Invoke());
+        
+    }
+
+
+    public void NextMessage() {
         currentMessageIndex++;
-        if (currentMessageIndex < currentMessages.Length)
-        {
+        if (currentMessageIndex < currentMessages.Length) {
+            PlayActions();
             DisplayMessage();
+
         }
-        else
-        {
+        else {
             Debug.Log("No more messages");
             isActive = false;
             backgroundBox.transform.localScale = Vector3.zero;
         }
     }
 
-    void Start()
-    {
+    void Start() {
         backgroundBox.transform.localScale = Vector3.zero;
     }
 
-    void Update()
-    {
 
-    }
 
 
 
