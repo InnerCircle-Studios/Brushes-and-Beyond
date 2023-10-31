@@ -69,8 +69,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void NextMessage() {
         currentMessageIndex++;
+        PlayActions();
         if (currentMessageIndex < currentMessages.Length) {
-            PlayActions();
             DisplayMessage();
 
         }
