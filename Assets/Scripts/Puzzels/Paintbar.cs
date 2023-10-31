@@ -6,28 +6,17 @@ using System.Collections.Generic;
 
 
 public class Paintbar : MonoBehaviour {
-    [SerializeField]
-    private int maxPaints = 3; // Maximum number of paints player can hold
-
-    [SerializeField]
-    private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
-    [SerializeField]
-    private UnityEvent onPaintsUsed;
-
-    [SerializeField]
-    private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
-
-    [SerializeField]
-    private Image paintImagePrefab; // The UI Image prefab for the paint
-
-    [SerializeField]
-    private Transform paintContainer; // The parent container for the paint images
-
+    //User variables
+    [SerializeField] private int maxPaints = 3; // Maximum number of paints player can hold
+    [SerializeField] private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
+    [SerializeField] private UnityEvent onPaintsUsed;
+    [SerializeField] private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
+    [SerializeField] private Image paintImagePrefab; // The UI Image prefab for the paint
+    [SerializeField] private Transform paintContainer; // The parent container for the paint images
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
     private bool _isPaintPressed = false;
-
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
-
+    //UI variables
     private List<Image> displayedPaintImages = new List<Image>(); // List to hold the displayed paint images
 
     private void Awake() {

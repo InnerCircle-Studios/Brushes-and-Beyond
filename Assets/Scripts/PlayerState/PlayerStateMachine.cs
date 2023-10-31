@@ -145,7 +145,7 @@ public class PlayerStateMachine : MonoBehaviour {
     }
     public void OnInteract(InputAction.CallbackContext context) {
         _isInteractPressed = context.ReadValueAsButton();
-        if (_isInteractPressed && _nearNPC) {
+        if (_isInteractPressed && _nearNPC) { //Check if interacting with NPC
             _dialogueTrigger = true;
             if (!_playerIsInDialogue) {
                 dialogueTrigger.Invoke();
@@ -154,11 +154,11 @@ public class PlayerStateMachine : MonoBehaviour {
         else {
             _dialogueTrigger = false;
         }
-        if (_isInteractPressed && _nearItem) {
+        if (_isInteractPressed && _nearItem) { //Check if interacting with item
             gameItem.Invoke();
             DestroyItem();
         }
-        if (_isInteractPressed && _nearBlockade) {
+        if (_isInteractPressed && _nearBlockade) { //Check if interacting with blockade
             gameBlockade.Invoke();
         }
     }
@@ -195,6 +195,9 @@ public class PlayerStateMachine : MonoBehaviour {
         }
         if (collision.gameObject.CompareTag("Item")) {
             _nearItem = false;
+        }
+        if (collision.gameObject.CompareTag("Blockade")) {
+            _nearBlockade = false;
         }
     }
 

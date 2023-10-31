@@ -826,6 +826,7 @@
    <wangtile tileid="170" wangid="2,1,1,1,2,1,2,1"/>
    <wangtile tileid="171" wangid="1,1,2,1,2,1,2,1"/>
    <wangtile tileid="172" wangid="2,1,2,1,2,1,2,1"/>
+   <wangtile tileid="173" wangid="1,1,1,1,1,1,1,1"/>
    <wangtile tileid="192" wangid="2,2,2,2,2,2,2,2"/>
    <wangtile tileid="193" wangid="2,2,2,2,2,2,2,2"/>
    <wangtile tileid="194" wangid="2,2,2,2,2,2,2,2"/>
