@@ -3,24 +3,25 @@ using System.Collections;
 
 public class Blockade : MonoBehaviour {
 
-    private bool waitOver = false;
-    private bool usedPaints = false;
-    public void OnPaintsUsed() {
-        usedPaints = true;
+    private bool _waitOver = false;
+    private bool _usedPaints = false;
+    public void onPaintsUsed() {
+        _usedPaints = true;
     }
 
-    private IEnumerator WaitForPaints() { //Delay for groundCheck
+    private IEnumerator WaitForPaints() //Delay for groundCheck
+    {
         yield return new WaitForSeconds(2f);
-        waitOver = true;
+        _waitOver = true;
     }
 
     public void Update() {
-        if (usedPaints) {
+        if (_usedPaints) {
             StartCoroutine(WaitForPaints());
-            if (waitOver) {
+            if (_waitOver) {
                 Destroy(gameObject);
-                waitOver = false;
-                usedPaints = false;
+                _waitOver = false;
+                _usedPaints = false;
             }
         }
 
