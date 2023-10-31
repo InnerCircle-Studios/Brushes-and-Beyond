@@ -45,7 +45,6 @@ public class Paintbar : MonoBehaviour {
 
     public void InteractOnBlockade() {
         _isPaintPressed = true;
-
     }
 
     public void Update() {

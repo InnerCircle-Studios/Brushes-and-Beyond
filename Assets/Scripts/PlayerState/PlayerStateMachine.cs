@@ -18,6 +18,8 @@ public class PlayerStateMachine : MonoBehaviour {
 
     public TextMeshProUGUI stateTextMeshPro;
 
+    public TutorialMovement _tutorial;
+
     //Reference variables
     PlayerInput _playerInput;
     private Rigidbody2D _rb;
@@ -91,6 +93,7 @@ public class PlayerStateMachine : MonoBehaviour {
         _states = new PlayerStateFactory(this);
         _currentState = _states.Idle();
         _currentState.EnterState();
+        _tutorial = new TutorialMovement();
     }
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
@@ -115,13 +118,25 @@ public class PlayerStateMachine : MonoBehaviour {
         _currentMovementInput = context.ReadValue<Vector2>();
         _isMovementPressed = _currentMovementInput.x != _zero || _currentMovementInput.y != _zero;
         if (_currentMovementInput.x > 0)
+        {
             CurrentDirection = CharacterDirection.Right;
+            _tutorial.setBool("right");
+        }
         else if (_currentMovementInput.x < 0)
+        {
             CurrentDirection = CharacterDirection.Left;
+            _tutorial.setBool("left");
+        }
         else if (_currentMovementInput.y > 0)
+        {
             CurrentDirection = CharacterDirection.Up;
+            _tutorial.setBool("up");
+        }
         else if (_currentMovementInput.y < 0)
+        {
             CurrentDirection = CharacterDirection.Down;
+            _tutorial.setBool("down");
+        }
 
     }
 
