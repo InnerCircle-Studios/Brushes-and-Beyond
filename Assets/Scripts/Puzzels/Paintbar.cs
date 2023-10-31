@@ -24,11 +24,11 @@ public class Paintbar : MonoBehaviour {
     private Transform paintContainer; // The parent container for the paint images
 
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
-    private bool _isPaintPressed = false;
+    private bool isPaintPressed = false;
 
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
 
-    private List<Image> displayedPaintImages = new List<Image>(); // List to hold the displayed paint images
+    private List<Image> displayedPaintImages = new(); // List to hold the displayed paint images
 
     private void Awake() {
         // Initialize UI
@@ -53,7 +53,7 @@ public class Paintbar : MonoBehaviour {
     }
 
     public void InteractOnBlockade() {
-        _isPaintPressed = true;
+        isPaintPressed = true;
 
     }
 
@@ -63,12 +63,12 @@ public class Paintbar : MonoBehaviour {
 
     // Method to use the paints
     public void UsePaints() {
-        if (HasMaxPaints && _isPaintPressed) {
+        if (HasMaxPaints && isPaintPressed) {
             currentPaintCount = 0; // Reset paint count
             HasMaxPaints = false; // Reset the variable
             UpdatePaintUI(); // Update the UI
             onPaintsUsed.Invoke(); // Trigger the event
-            _isPaintPressed = false;
+            isPaintPressed = false;
         }
     }
 
