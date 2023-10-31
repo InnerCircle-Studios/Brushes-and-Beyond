@@ -3,16 +3,24 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections.Generic;
-
-
 public class Paintbar : MonoBehaviour {
-    //User variables
-    [SerializeField] private int maxPaints = 3; // Maximum number of paints player can hold
-    [SerializeField] private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
-    [SerializeField] private UnityEvent onPaintsUsed;
-    [SerializeField] private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
-    [SerializeField] private Image paintImagePrefab; // The UI Image prefab for the paint
-    [SerializeField] private Transform paintContainer; // The parent container for the paint images
+    [SerializeField]
+    private int maxPaints = 3; // Maximum number of paints player can hold
+
+    [SerializeField]
+    private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
+    [SerializeField]
+    private UnityEvent onPaintsUsed;
+
+    [SerializeField]
+    private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
+
+    [SerializeField]
+    private Image paintImagePrefab; // The UI Image prefab for the paint
+
+    [SerializeField]
+    private Transform paintContainer; // The parent container for the paint images
+
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
     private bool _isPaintPressed = false;
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
@@ -23,17 +31,14 @@ public class Paintbar : MonoBehaviour {
         // Initialize UI
         UpdatePaintUI();
     }
-
     // Method to be called when gameItem event is triggered
     public void OnGameItemTriggered() {
         CollectPaint();
     }
-
     private void CollectPaint() {
         if (currentPaintCount < maxPaints) {
             currentPaintCount++; // Increase paint count
             UpdatePaintUI(); // Update the UI
-
             // Check if player has collected 3 paints
             if (currentPaintCount == maxPaints) {
                 HasMaxPaints = true; // Set the variable to true
@@ -43,7 +48,6 @@ public class Paintbar : MonoBehaviour {
 
     public void InteractOnBlockade() {
         _isPaintPressed = true;
-
     }
 
     public void Update() {
@@ -68,9 +72,7 @@ public class Paintbar : MonoBehaviour {
             Destroy(img.gameObject);
         }
         displayedPaintImages.Clear();
-
         Debug.Log($"Cleared existing paints. Current paint count: {currentPaintCount}");
-
         // Display current paint count as images
         for (int i = 0; i < currentPaintCount; i++) {
             Image newImage = Instantiate(paintImagePrefab, paintContainer);
