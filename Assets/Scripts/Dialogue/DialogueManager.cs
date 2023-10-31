@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour {
 
     public static bool isActive = false;
     private bool isEventExecuting = false;
+    private bool _tutorial = true;
 
 
     private static DialogueManager _instance;
@@ -77,6 +78,12 @@ public class DialogueManager : MonoBehaviour {
             Debug.Log("No more messages");
             isActive = false;
             backgroundBox.transform.localScale = Vector3.zero;
+            if (_tutorial)
+            {
+                PlayerStateMachine ctx = FindAnyObjectByType<PlayerStateMachine>();
+                ctx._tutorial.tutorial = true;
+                _tutorial = false;
+            }
         }
     }
 
