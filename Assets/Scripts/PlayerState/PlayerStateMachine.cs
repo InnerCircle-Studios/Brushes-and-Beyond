@@ -15,6 +15,11 @@ public class PlayerStateMachine : MonoBehaviour {
     [SerializeField] private UnityEvent gameStartDialogueTrigger;
     [SerializeField] private UnityEvent gameItem;
     [SerializeField] private UnityEvent gameBlockade;
+    [SerializeField] private UnityEvent nextMessageTrigger;
+    [SerializeField] private UnityEvent tutorialMovement;
+    [SerializeField] private UnityEvent tutorialRun;
+    [SerializeField] private UnityEvent tutorialInteract;
+    [SerializeField] private UnityEvent tutorialAttack;
 
     public TextMeshProUGUI stateTextMeshPro;
 
@@ -26,6 +31,12 @@ public class PlayerStateMachine : MonoBehaviour {
 
     //Constant variables
     private int _zero = 0;
+
+    // Tutorial variables
+    private bool _tutorialMovement = false;
+    private bool _tutorialRun = false;
+    private bool _tutorialInteract = false;
+    private bool _tutorialAttack = false;
 
     // Dash variables
     private float _dashDuration = 0.2f;
@@ -116,36 +127,40 @@ public class PlayerStateMachine : MonoBehaviour {
 
     public void OnMove(InputAction.CallbackContext context) {
         _currentMovementInput = context.ReadValue<Vector2>();
+        if(_tutorialMovement == false && _currentMovementInput.x != _zero || _currentMovementInput.y != _zero) {
+            tutorialMovement.Invoke();
+            _tutorialMovement = true;
+        }
         _isMovementPressed = _currentMovementInput.x != _zero || _currentMovementInput.y != _zero;
-        if (_currentMovementInput.x > 0)
-        {
+        if (_currentMovementInput.x > 0) {
             CurrentDirection = CharacterDirection.Right;
-            _tutorial.setBool("right");
         }
-        else if (_currentMovementInput.x < 0)
-        {
+        else if (_currentMovementInput.x < 0) {
             CurrentDirection = CharacterDirection.Left;
-            _tutorial.setBool("left");
         }
-        else if (_currentMovementInput.y > 0)
-        {
+        else if (_currentMovementInput.y > 0) {
             CurrentDirection = CharacterDirection.Up;
-            _tutorial.setBool("up");
         }
-        else if (_currentMovementInput.y < 0)
-        {
+        else if (_currentMovementInput.y < 0) {
             CurrentDirection = CharacterDirection.Down;
-            _tutorial.setBool("down");
         }
 
     }
 
     public void OnJump(InputAction.CallbackContext context) {
         _isAttackPressed = context.ReadValueAsButton();
+        if (!_tutorialAttack && _isAttackPressed) {
+            tutorialAttack.Invoke();
+            _tutorialAttack = true;
+        }
     }
 
     public void OnRun(InputAction.CallbackContext context) {
         _isRunningPressed = context.ReadValueAsButton();
+        if (!_tutorialRun && _isRunningPressed && _isMovementPressed) {
+            tutorialRun.Invoke();
+            _tutorialRun = true;
+        }
     }
 
     public void OnShow(InputAction.CallbackContext context) {
@@ -160,11 +175,19 @@ public class PlayerStateMachine : MonoBehaviour {
     }
     public void OnInteract(InputAction.CallbackContext context) {
         _isInteractPressed = context.ReadValueAsButton();
+        if (!_tutorialInteract && _isInteractPressed) {
+            tutorialInteract.Invoke();
+            _tutorialInteract = true;
+        }
         if (_isInteractPressed && _nearNPC) { //Check if interacting with NPC
             _dialogueTrigger = true;
             if (!_playerIsInDialogue) {
                 dialogueTrigger.Invoke();
             }
+            if (_playerIsInDialogue) {
+                nextMessageTrigger.Invoke();
+            }
+
         }
         else {
             _dialogueTrigger = false;

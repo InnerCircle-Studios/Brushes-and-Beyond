@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Blockade : MonoBehaviour {
 
     private bool _waitOver = false;
     private bool _usedPaints = false;
+    public DialogueTrigger trigger;
     public void onPaintsUsed() {
         _usedPaints = true;
     }
@@ -13,6 +15,10 @@ public class Blockade : MonoBehaviour {
     {
         yield return new WaitForSeconds(2f);
         _waitOver = true;
+    }
+
+    public void StartBlockadeDialogue(){
+        trigger.StartDialogue();
     }
 
     public void Update() {

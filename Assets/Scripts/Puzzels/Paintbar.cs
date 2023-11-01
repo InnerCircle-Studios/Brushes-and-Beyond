@@ -11,6 +11,7 @@ public class Paintbar : MonoBehaviour {
     private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
     [SerializeField]
     private UnityEvent onPaintsUsed;
+    [SerializeField] private UnityEvent onBlockadeDialogue;
 
     [SerializeField]
     private TextMeshProUGUI paintCounterUI; // UI text to show number of paints collected
@@ -22,6 +23,7 @@ public class Paintbar : MonoBehaviour {
     private Transform paintContainer; // The parent container for the paint images
 
     [SerializeField] private int currentPaintCount = 0; // Current count of paints
+
     private bool _isPaintPressed = false;
     public bool HasMaxPaints { get; private set; } = false; // Variable that checks if player has 3 paints
     //UI variables
@@ -56,6 +58,11 @@ public class Paintbar : MonoBehaviour {
 
     // Method to use the paints
     public void UsePaints() {
+        if(!HasMaxPaints && _isPaintPressed) {
+            Debug.Log("You need more paints!");
+            onBlockadeDialogue.Invoke();
+            _isPaintPressed = false;
+        }
         if (HasMaxPaints && _isPaintPressed) {
             currentPaintCount = 0; // Reset paint count
             HasMaxPaints = false; // Reset the variable
