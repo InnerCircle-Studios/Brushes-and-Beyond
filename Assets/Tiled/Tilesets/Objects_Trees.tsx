@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.1" name="Objects_Trees" tilewidth="97" tileheight="124" tilecount="90" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_Trees" tilewidth="97" tileheight="124" tilecount="90" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="32">
   <image width="64" height="63" source="../../Art/Trees and Bushes/Tree_Emerald_1.png"/>
   <objectgroup draworder="index" id="3">
    <object id="6" x="34.625" y="63">
-    <polygon points="0,0 8.125,-1.875 26.75,-1.875 27,-4.875 20.5,-8.375 13.375,-8.375 5.375,-14.125 -11.25,-14.125 -19.375,-8.375 -25.375,-8.25 -32.375,-5.375 -32.375,-2 -14.5,-1.75 -4.625,-0.125"/>
+    <polygon points="0,0 8.125,-1.875 26.75,-1.875 27,-4.875 26.9545,-13.1932 26.375,-27.4659 23.0114,-44.5795 -5.71591,-55.8523 -26.0682,-44.6705 -29.0114,-41.4659 -34.2841,-12.6136 -32.375,-5.375 -32.375,-2 -14.5,-1.75 -4.625,-0.125"/>
    </object>
   </objectgroup>
  </tile>
