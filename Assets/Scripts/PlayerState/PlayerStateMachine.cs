@@ -20,10 +20,7 @@ public class PlayerStateMachine : MonoBehaviour {
     [SerializeField] private UnityEvent tutorialRun;
     [SerializeField] private UnityEvent tutorialInteract;
     [SerializeField] private UnityEvent tutorialAttack;
-
     public TextMeshProUGUI stateTextMeshPro;
-
-    public TutorialMovement _tutorial;
 
     //Reference variables
     PlayerInput _playerInput;
@@ -104,7 +101,6 @@ public class PlayerStateMachine : MonoBehaviour {
         _states = new PlayerStateFactory(this);
         _currentState = _states.Idle();
         _currentState.EnterState();
-        _tutorial = new TutorialMovement();
     }
     void Start() {
         _rb = GetComponent<Rigidbody2D>();

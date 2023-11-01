@@ -81,7 +81,6 @@ public class DialogueManager : MonoBehaviour {
             if (_tutorial)
             {
                 PlayerStateMachine ctx = FindAnyObjectByType<PlayerStateMachine>();
-                ctx._tutorial.tutorial = true;
                 _tutorial = false;
             }
         }
