@@ -28649,7 +28649,7 @@ MonoBehaviour:
   - name: Vin
     sprite: {fileID: 21300000, guid: a0c35a046b9a6b94aa02366962fde7ff, type: 3}
   DialogueActions:
-  - PlayAfterIndex: 1
+  - PlayAfterIndex: 3
     Action:
       m_PersistentCalls:
         m_Calls:

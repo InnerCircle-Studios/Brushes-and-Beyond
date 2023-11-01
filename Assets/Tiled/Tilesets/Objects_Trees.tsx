@@ -37,6 +37,9 @@
   </objectgroup>
  </tile>
  <tile id="82">
+  <properties>
+   <property name="unity:sortingLayer" value="Objects"/>
+  </properties>
   <image width="97" height="124" source="../../Art/Trees and Bushes/Tree_Emerald_5.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="26.75" y="113.875">
