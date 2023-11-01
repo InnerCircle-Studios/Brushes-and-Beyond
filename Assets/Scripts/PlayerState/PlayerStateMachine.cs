@@ -110,7 +110,7 @@ public class PlayerStateMachine : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _currentState = _states.Idle();
+        _currentState = _states.Dialogue();
         gameStartDialogueTrigger.Invoke();
     }
 

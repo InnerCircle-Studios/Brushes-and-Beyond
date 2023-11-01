@@ -32126,12 +32126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Mmm I dont seem to have enough paint...
+    message: If only I had some paint...
   - actorId: 0
-    message: Lets go see if I can find some more!
+    message: I bet we could find some if we work together!
   actors:
   - name: Vin
     sprite: {fileID: 21300000, guid: aff6d01758251a64184025e5454f3187, type: 3}
+  - name: Brushy
+    sprite: {fileID: 1503095284, guid: 508452e9aab52d747994aa44dd515193, type: 3}
   DialogueActions: []
 --- !u!1 &1654891066
 GameObject:
@@ -33050,7 +33052,7 @@ MonoBehaviour:
   - actorId: 0
     message: You probably want to get home don't you?
   - actorId: 1
-    message: Well I can stay here in ... Eary woods, was it?
+    message: Well I can't stay here in ... Eary woods, was it?
   - actorId: 0
     message: No I guess you cant...
   - actorId: 0
