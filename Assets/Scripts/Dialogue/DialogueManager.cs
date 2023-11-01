@@ -19,7 +19,6 @@ public class DialogueManager : MonoBehaviour {
     private int currentMessageIndex = 0;
 
     public static bool isActive = false;
-    private bool isEventExecuting = false;
     private bool _tutorial = true;
 
 
