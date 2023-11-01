@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.Events;
 
 public class TutorialManager : MonoBehaviour {
+    [SerializeField] private UnityEvent TutorialCompleted;
     public Image _moveImage;
     public Image _runImage;
     public Image _attackImage;
@@ -54,7 +56,9 @@ public class TutorialManager : MonoBehaviour {
 
     public void Update() {
         if (_tutorialStarted) {
-            CompletionCheck();
+            if(!_tutorialCompleted){
+                 CompletionCheck();
+            }
             PanelTransitions();
         }
     }
@@ -66,6 +70,8 @@ public class TutorialManager : MonoBehaviour {
     private void CompletionCheck() {
         if (_hasMoved && _hasRun && _hasAttacked && _hasInteracted && !_tutorialCompleted) {
             _tutorialCompleted = true;
+            TutorialCompleted.Invoke();
+
         }
     }
 

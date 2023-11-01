@@ -25,9 +25,18 @@ public class BrushyDialogue : MonoBehaviour
         if(_firstDialogue && _secondDialogue && !_thirdDialogue){
             ThirdDialogue.StartDialogue();
     }
+
     }
-    private void TutorialCompleted(){
+
+    public void DestroyBrushy(){
+        Destroy(gameObject);
+    }
+    public void TutorialCompleted(){
         _firstDialogue = true;
+    }
+
+    public void SecondDialogueCompleted(){
+        _secondDialogue = true;
     }
 
 }
