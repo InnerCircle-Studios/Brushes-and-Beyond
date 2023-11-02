@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem;
 using System.Linq;
 
 public class DialogueManager : MonoBehaviour {
@@ -17,6 +16,8 @@ public class DialogueManager : MonoBehaviour {
     private Actor[] currentActors;
     private DialogueAction[] currentActions;
     private int currentMessageIndex = 0;
+    private Coroutine typeTextCoroutine;
+     public Button nextButton;
 
     public static bool isActive = false;
     private bool _tutorial = true;
@@ -44,6 +45,7 @@ public class DialogueManager : MonoBehaviour {
         currentActions = dialogueActions;
         currentMessageIndex = 0;
         isActive = true;
+        nextButton.gameObject.SetActive(false);
         Debug.Log("OpenDialogue for these messages:" + messages.Length);
         backgroundBox.transform.localScale = new Vector3(11f, 2.5f, 1f);
         PlayActions();
@@ -52,11 +54,24 @@ public class DialogueManager : MonoBehaviour {
 
     void DisplayMessage() {
         Message messageToDisplay = currentMessages[currentMessageIndex];
-        messageText.text = messageToDisplay.message;
-
+        AudioManager.instance.PlaySfx("Dialogue");
+        if (typeTextCoroutine != null) {
+            StopCoroutine(typeTextCoroutine);
+        }
+        AudioManager.instance.StopSfx("Dialogue");
+        typeTextCoroutine = StartCoroutine(TypeText(messageToDisplay.message));
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+    }
+
+    IEnumerator TypeText(string text) {
+        messageText.text = ""; // Reset the text
+        foreach (char letter in text.ToCharArray()) {
+            messageText.text += letter;
+            yield return new WaitForSeconds(0.05f); // Delay between characters. Adjust as needed.
+        }
+        nextButton.gameObject.SetActive(true);
     }
 
     void PlayActions() {
@@ -70,6 +85,7 @@ public class DialogueManager : MonoBehaviour {
         currentMessageIndex++;
         PlayActions();
         if (currentMessageIndex < currentMessages.Length) {
+            nextButton.gameObject.SetActive(false);
             DisplayMessage();
 
         }
@@ -77,6 +93,7 @@ public class DialogueManager : MonoBehaviour {
             Debug.Log("No more messages");
             isActive = false;
             backgroundBox.transform.localScale = Vector3.zero;
+            nextButton.gameObject.SetActive(false);
             if (_tutorial)
             {
                 PlayerStateMachine ctx = FindAnyObjectByType<PlayerStateMachine>();
