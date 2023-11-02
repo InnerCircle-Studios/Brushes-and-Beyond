@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour
 
     public void StopSfx(string name)
     {
-        Sound s = Array.Find(sfxSounds, sound => sound.name != name);  // NOTE: Should this be "sound.name == name"?
+        Sound s = Array.Find(sfxSounds, sound => sound.name == name);  // NOTE: Should this be "sound.name == name"? // Yes, yes it should -W
         if (s == null)
         {
             Debug.LogWarning("SFXSound: " + name + " not found!");
