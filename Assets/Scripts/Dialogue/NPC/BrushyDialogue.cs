@@ -12,10 +12,6 @@ public class BrushyDialogue : MonoBehaviour {
     private bool _secondDialogue = false;
     private bool _thirdDialogue = false;
 
-
-
-
-
     public void DialogueBrushy() {
         if (!_firstDialogue) {
             FirstDialogue.StartDialogue();

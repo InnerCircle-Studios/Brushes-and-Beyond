@@ -6,9 +6,6 @@ using System.Collections.Generic;
 public class Paintbar : MonoBehaviour {
     [SerializeField]
     private int maxPaints = 3; // Maximum number of paints player can hold
-
-    [SerializeField]
-    private UnityEvent onMaxPaintsCollected; // Event to trigger when player collects 3 paints
     [SerializeField]
     private UnityEvent onPaintsUsed;
     [SerializeField] private UnityEvent onBlockadeDialogue;

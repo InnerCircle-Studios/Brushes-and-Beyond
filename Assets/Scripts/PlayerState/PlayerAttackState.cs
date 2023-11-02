@@ -14,7 +14,7 @@ public class PlayerAttackState : PlayerBaseState
     }
     public override void UpdateState()
     {
-        HandleWalk();
+        //HandleWalk();
         CheckSwitchStates();
     }
     public override void ExitState() { }

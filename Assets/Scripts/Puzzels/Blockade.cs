@@ -6,9 +6,12 @@ public class Blockade : MonoBehaviour {
 
     private bool _waitOver = false;
     private bool _usedPaints = false;
+    private bool _nearPlayer = false;
     public DialogueTrigger trigger;
     public void onPaintsUsed() {
-        _usedPaints = true;
+        if (_nearPlayer) {
+            _usedPaints = true;
+        }
     }
 
     private IEnumerator WaitForPaints() //Delay for groundCheck
@@ -31,5 +34,17 @@ public class Blockade : MonoBehaviour {
             }
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            _nearPlayer = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            _nearPlayer = false;
+        }
     }
 }
