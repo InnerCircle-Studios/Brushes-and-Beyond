@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 startingPosition;
     private Vector2 roamPosition;
     private Transform player;
+    private AttributeManager attributeManager;
     //Attack Variables
     private bool canAttack = true;
 
@@ -39,12 +40,13 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         PickNewRoamingDestination();
         currentState = State.Roaming;
+        attributeManager = GetComponent<AttributeManager>();
     }
 
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (GetComponent<AttributeManager2>().GetAttributes().CurrentHealth <= 0)
+        if (GetComponent<AttributeManager>().CurrentHealth <= 0)
         {
             currentState = State.Dead;
         }
@@ -73,7 +75,7 @@ public class EnemyAI : MonoBehaviour
             case State.Attacking:
                 if (isMelee)
                 {
-                    // MeleeAttack();
+                    MeleeAttack();
                 }
                 else
                 {
@@ -139,6 +141,16 @@ public class EnemyAI : MonoBehaviour
         if (canAttack)
         {
             Enemy.Shoot();
+            canAttack = false;
+            StartCoroutine(AttackCooldown());
+        }
+    }
+
+    void MeleeAttack()
+    {
+        if (canAttack)
+        {
+            Enemy.Melee(transform.position, attributeManager);
             canAttack = false;
             StartCoroutine(AttackCooldown());
         }

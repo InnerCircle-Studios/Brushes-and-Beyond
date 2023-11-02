@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: f81ab13b321ae1542b7355c3febdae9a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  missingFiles: []
+  errors:
+  - Could not generate asset path for '../../../../../Tiled/The Fan-tasy Tileset
+    (Free)/Tiled/Tilesets/Tilesets_Road.tsx'
+  - 'Missing tileset asset: ../../../../../Tiled/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tilesets_Road.tsx'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 26
+  pixelsPerUnit: 16
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  sortingMode: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []

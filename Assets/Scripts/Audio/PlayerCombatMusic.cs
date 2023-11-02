@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 
 
 public class PlayerCombatMusic : MonoBehaviour
@@ -12,7 +11,6 @@ public class PlayerCombatMusic : MonoBehaviour
 
     private bool isInCombat = false; // Current combat state
     private bool wasInCombat = false; // Previous combat state
-    public AudioMixer audiomixer;
 
     private void Update()
     {
@@ -27,17 +25,19 @@ public class PlayerCombatMusic : MonoBehaviour
         isInCombat = enemies.Length > 0;
 
         // Check if the state has changed
+
+        // If we entered combat
         if (isInCombat != wasInCombat)
         {
             // If we entered combat
             if (isInCombat)
             {
-                AudioManager.instance.ToggleMusic(true);
+                AudioManager.instance.TransitionMusic("BattleMusic", fadeDuration);
             }
             // If we exited combat
             else
             {
-                AudioManager.instance.ToggleMusic(false);
+                AudioManager.instance.TransitionMusic("BaseMusic", fadeDuration);
             }
         }
 

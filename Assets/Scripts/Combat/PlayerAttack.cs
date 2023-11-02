@@ -39,9 +39,9 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log(hit.collider.gameObject.name);
 
             // Check if the hit object has an AttributeManager component and apply damage
-            if (hit.collider.gameObject.TryGetComponent<AttributeManager2>(out var targetATM))
+            if (hit.collider.gameObject.TryGetComponent<AttributeManager>(out var targetATM))
             {
-                targetATM.ApplyDamage(gameObject.GetComponent<AttributeManager2>().GetAttributes().Damage);
+                targetATM.ApplyDamage(gameObject.GetComponent<AttributeManager>().Damage);
             }
 
             // Apply knockback

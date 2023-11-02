@@ -5,35 +5,32 @@ using UnityEngine;
 
 public class AttributeManager2 : MonoBehaviour {
 
-    [SerializeField] private CharacterAttributes _templateAttributes;
-    private CharacterAttributes _localAttributes;
+    [SerializeField] private CharacterAttributes _attributes;
 
     private void Start() {
-        // Copy data from the template to a new object for local, non-shared use.
-        _localAttributes = _templateAttributes.NewInstance();
+
+    }
+
+    private void Update() {
 
     }
 
     public void ApplyDamage(int hp) {
         // Force hp to be at least 0
-        if (_localAttributes.CurrentHealth - hp < 0) {
-            _localAttributes.CurrentHealth = 0;
+        if (_attributes.CurrentHealth - hp < 0) {
+            _attributes.CurrentHealth = 0;
         }
         else {
-            _localAttributes.CurrentHealth -= hp;
+            _attributes.CurrentHealth -= hp;
         }
     }
 
     public void ApplyHeal(int hp) {
-        if (_localAttributes.CurrentHealth + hp > _localAttributes.MaxHealth) {
-            _localAttributes.CurrentHealth = _localAttributes.MaxHealth;
+        if (_attributes.CurrentHealth + hp > _attributes.MaxHealth) {
+            _attributes.CurrentHealth = _attributes.MaxHealth;
         }
         else {
-            _localAttributes.CurrentHealth += hp;
+            _attributes.CurrentHealth += hp;
         }
-    }
-
-    public CharacterAttributes GetAttributes() {
-        return _localAttributes;
     }
 }
