@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using System.Linq;
 
 public class Weapon : MonoBehaviour {
     public GameObject Bullet;
@@ -38,5 +39,27 @@ public class Weapon : MonoBehaviour {
         bulletRb.velocity = transform.right * 10;
     }
 
+    public void Melee(Vector2 position, AttributeManager attributeManager)
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(position, 1.5f, transform.right, 0f, LayerMask.GetMask("Player")).Distinct().ToArray();
+        
+        foreach (RaycastHit2D hit in hits)
+        {
+            Debug.Log(hit.collider.gameObject.name);
 
+            // Check if the hit object has an AttributeManager component and apply damage
+            if (hit.collider.gameObject.TryGetComponent<AttributeManager>(out var targetATM))
+            {
+                targetATM.ApplyDamage(attributeManager.Damage);
+            }
+
+            // Apply knockback
+            Rigidbody2D enemyRb = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+            if (enemyRb != null)
+            {
+                Vector2 knockbackDirection = (hit.collider.transform.position - transform.position).normalized; 
+                enemyRb.velocity += knockbackDirection * 7.5f;
+            }
+        }
+    }
 }
