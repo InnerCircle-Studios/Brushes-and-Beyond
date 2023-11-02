@@ -26,8 +26,10 @@ public class Blockade : MonoBehaviour {
 
     public void Update() {
         if (_usedPaints) {
+            AudioManager.instance.PlaySfx("Lightning");
             StartCoroutine(WaitForPaints());
             if (_waitOver) {
+                AudioManager.instance.StopSfx("Lightning");
                 Destroy(gameObject);
                 _waitOver = false;
                 _usedPaints = false;

@@ -56,7 +56,6 @@ public class Paintbar : MonoBehaviour {
     // Method to use the paints
     public void UsePaints() {
         if(!HasMaxPaints && _isPaintPressed) {
-            Debug.Log("You need more paints!");
             onBlockadeDialogue.Invoke();
             _isPaintPressed = false;
         }
@@ -76,16 +75,11 @@ public class Paintbar : MonoBehaviour {
             Destroy(img.gameObject);
         }
         displayedPaintImages.Clear();
-        Debug.Log($"Cleared existing paints. Current paint count: {currentPaintCount}");
         // Display current paint count as images
         for (int i = 0; i < currentPaintCount; i++) {
             Image newImage = Instantiate(paintImagePrefab, paintContainer);
             if (newImage != null) {
-                Debug.Log($"Instantiated paint image {i + 1}");
                 displayedPaintImages.Add(newImage);
-            }
-            else {
-                Debug.Log("Failed to instantiate paint image");
             }
         }
     }
