@@ -69,7 +69,7 @@ public class DialogueManager : MonoBehaviour {
         messageText.text = ""; // Reset the text
         foreach (char letter in text.ToCharArray()) {
             messageText.text += letter;
-            yield return new WaitForSeconds(0.005f); // Delay between characters. Adjust as needed.
+            yield return new WaitForSeconds(0.05f); // Delay between characters. Adjust as needed.
         }
         nextButton.gameObject.SetActive(true);
     }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class Blockade : MonoBehaviour {
 
@@ -14,8 +13,10 @@ public class Blockade : MonoBehaviour {
         }
     }
 
-    private IEnumerator WaitForPaints() //Delay for groundCheck
+    private IEnumerator WaitForPaints() 
     {
+        AudioManager.instance.PlaySfx("Lightning");
+        Debug.Log("WaitForPaints");
         yield return new WaitForSeconds(2f);
         _waitOver = true;
     }
@@ -26,7 +27,6 @@ public class Blockade : MonoBehaviour {
 
     public void Update() {
         if (_usedPaints) {
-            AudioManager.instance.PlaySfx("Lightning");
             StartCoroutine(WaitForPaints());
             if (_waitOver) {
                 AudioManager.instance.StopSfx("Lightning");
