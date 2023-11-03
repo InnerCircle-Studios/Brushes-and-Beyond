@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour {
         bulletRb.velocity = transform.right * 10;
     }
 
-    public void Melee(Vector2 position, AttributeManager attributeManager)
+    public void Melee(Vector2 position, AttributeManager2 attributeManager)
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(position, 1.5f, transform.right, 0f, LayerMask.GetMask("Player")).Distinct().ToArray();
         
@@ -48,9 +48,9 @@ public class Weapon : MonoBehaviour {
             Debug.Log(hit.collider.gameObject.name);
 
             // Check if the hit object has an AttributeManager component and apply damage
-            if (hit.collider.gameObject.TryGetComponent<AttributeManager>(out var targetATM))
+            if (hit.collider.gameObject.TryGetComponent<AttributeManager2>(out var targetATM))
             {
-                targetATM.ApplyDamage(attributeManager.Damage);
+                targetATM.ApplyDamage(attributeManager.GetAttributes().Damage);
             }
 
             // Apply knockback

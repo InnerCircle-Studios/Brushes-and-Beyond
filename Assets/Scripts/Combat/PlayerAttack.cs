@@ -5,57 +5,46 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAttack : MonoBehaviour
-{
-    [SerializeField] private Transform _attackTransform;
-    [SerializeField] private float _attackRange = 1.5f;
-    [SerializeField] private LayerMask _enemyLayer;
+public class PlayerAttack : MonoBehaviour {
+    [SerializeField] private Transform attackTransform;
+    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float knockbackStrength = 7.5f;
-    PlayerStateMachine _playerStateMachine;
+    PlayerStateMachine playerStateMachine;
     bool _hasAttacked;
 
-    void Start()
-    {
-        _playerStateMachine = gameObject.GetComponent<PlayerStateMachine>();
+    void Start() {
+        playerStateMachine = gameObject.GetComponent<PlayerStateMachine>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (_playerStateMachine.IsAttackPressed && !_hasAttacked)
-        {
+    void Update() {
+        if (playerStateMachine.IsAttackPressed && !_hasAttacked) {
             Attack();
         }
-        _hasAttacked = _playerStateMachine.IsAttackPressed;
+        _hasAttacked = playerStateMachine.IsAttackPressed;
     }
 
-    private void Attack()
-    {
+    private void Attack() {
         // Find all targets in 
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(_attackTransform.position, _attackRange, transform.right, 0f, _enemyLayer).Distinct().ToArray();
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, enemyLayer).Distinct().ToArray();
 
-        foreach (RaycastHit2D hit in hits)
-        {
-            Debug.Log(hit.collider.gameObject.name);
+        foreach (RaycastHit2D hit in hits) {
 
             // Check if the hit object has an AttributeManager component and apply damage
-            if (hit.collider.gameObject.TryGetComponent<AttributeManager>(out var targetATM))
-            {
-                targetATM.ApplyDamage(gameObject.GetComponent<AttributeManager>().Damage);
+            if (hit.collider.gameObject.TryGetComponent<AttributeManager2>(out var targetATM)) {
+                targetATM.ApplyDamage(gameObject.GetComponent<AttributeManager2>().GetAttributes().Damage);
             }
 
             // Apply knockback
-            Rigidbody2D enemyRb = hit.collider.gameObject.GetComponent<Rigidbody2D>();
-            if (enemyRb != null)
-            {
-                Vector2 knockbackDirection = (hit.collider.transform.position - transform.position).normalized; 
+            if (hit.collider.gameObject.TryGetComponent<Rigidbody2D>(out var enemyRb)) {
+                Vector2 knockbackDirection = (hit.collider.transform.position - transform.position).normalized;
                 enemyRb.velocity += knockbackDirection * knockbackStrength;
             }
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(_attackTransform.position, _attackRange);
+    private void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(attackTransform.position, attackRange);
     }
 }
