@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class PlayerStateMachine : MonoBehaviour {
-    //User variables
+    //User variables t
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _sprintSpeed = 15;
     [SerializeField] private float _dashDistance = 10.0f;
