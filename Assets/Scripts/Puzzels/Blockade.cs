@@ -6,6 +6,7 @@ public class Blockade : MonoBehaviour {
     private bool _waitOver = false;
     private bool _usedPaints = false;
     private bool _nearPlayer = false;
+    private bool hasSoundPlayed = false;
     public DialogueTrigger trigger;
     public void onPaintsUsed() {
         if (_nearPlayer) {
@@ -13,26 +14,29 @@ public class Blockade : MonoBehaviour {
         }
     }
 
-    private IEnumerator WaitForPaints() 
-    {
-        AudioManager.instance.PlaySfx("Lightning");
+    private IEnumerator WaitForPaints() {
         Debug.Log("WaitForPaints");
         yield return new WaitForSeconds(2f);
         _waitOver = true;
     }
 
-    public void StartBlockadeDialogue(){
+    public void StartBlockadeDialogue() {
         trigger.StartDialogue();
     }
 
     public void Update() {
         if (_usedPaints) {
             StartCoroutine(WaitForPaints());
+            if (!hasSoundPlayed) {
+                AudioManager.instance.PlaySfx("Lightning");
+                hasSoundPlayed = true;
+            }
             if (_waitOver) {
                 AudioManager.instance.StopSfx("Lightning");
                 Destroy(gameObject);
                 _waitOver = false;
                 _usedPaints = false;
+                hasSoundPlayed = false;
             }
         }
 
