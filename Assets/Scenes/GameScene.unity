@@ -30418,7 +30418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -845, y: -43}
+  m_AnchoredPosition: {x: -845, y: -42.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726661464
@@ -34423,7 +34423,7 @@ MonoBehaviour:
   FirstDialogue: {fileID: 1959386091}
   SecondDialogue: {fileID: 1959386090}
   ThirdDialogue: {fileID: 1959386089}
-  objectPrefab: {fileID: 7396347380715169605, guid: 1027638e567863441a036eaff2e83db8, type: 3}
+  objectPrefab: {fileID: 2316908948544563850, guid: 1aa1dea91aee75c47a5ee07510ee2c07, type: 3}
 --- !u!61 &1959386093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35400,7 +35400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a2294032511b248bd0feae617409aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attributes: {fileID: 11400000, guid: ca546543b439597499a412ee85e2439c, type: 2}
+  attributes: {fileID: 11400000, guid: ca546543b439597499a412ee85e2439c, type: 2}
 --- !u!114 &2137030353
 MonoBehaviour:
   m_ObjectHideFlags: 0

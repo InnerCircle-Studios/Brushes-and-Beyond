@@ -5,32 +5,29 @@ using UnityEngine;
 
 public class AttributeManager2 : MonoBehaviour {
 
-    [SerializeField] private CharacterAttributes _attributes;
+    [SerializeField] private CharacterAttributes attributes;
+    private CharacterAttributes localAttributes;
 
-    private void Start() {
-
-    }
-
-    private void Update() {
-
+    private void Awake() {
+        localAttributes = attributes.Copy();
     }
 
     public void ApplyDamage(int hp) {
         // Force hp to be at least 0
-        if (_attributes.CurrentHealth - hp < 0) {
-            _attributes.CurrentHealth = 0;
+        if (localAttributes.CurrentHealth - hp < 0) {
+            localAttributes.CurrentHealth = 0;
         }
         else {
-            _attributes.CurrentHealth -= hp;
+            localAttributes.CurrentHealth -= hp;
         }
     }
 
     public void ApplyHeal(int hp) {
-        if (_attributes.CurrentHealth + hp > _attributes.MaxHealth) {
-            _attributes.CurrentHealth = _attributes.MaxHealth;
+        if (localAttributes.CurrentHealth + hp > localAttributes.MaxHealth) {
+            localAttributes.CurrentHealth = localAttributes.MaxHealth;
         }
         else {
-            _attributes.CurrentHealth += hp;
+            localAttributes.CurrentHealth += hp;
         }
     }
 }
