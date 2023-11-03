@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -18,15 +19,23 @@ public class CharacterAttributes : ScriptableObject {
     public int MaxHealth;
     public int CurrentHealth;
     public int Damage;
+    public GameObject Loot;
 
     public CharacterAttributes Copy() {
         CharacterAttributes newAts = CreateInstance<CharacterAttributes>();
 
         // Use reflection to dynamically get every property in the current class and copy it to a new object
-        foreach(PropertyInfo prop in GetType().GetProperties()){
-            object value = prop.GetValue(this);
-            prop.SetValue(newAts, value);
-        }
+        // foreach (PropertyInfo prop in GetType().GetProperties()) {
+        //     object value = prop.GetValue(this);
+        //     prop.SetValue(newAts, value);
+        // }
+
+        newAts.Type = Type;
+        newAts.Name = Name;
+        newAts.MaxHealth = MaxHealth;
+        newAts.CurrentHealth = CurrentHealth;
+        newAts.Damage = Damage;
+        newAts.Loot = Loot;
 
         return newAts;
 
@@ -38,4 +47,7 @@ public class CharacterAttributes : ScriptableObject {
         //     Damage = Damage
         // };
     }
+
+
+
 }

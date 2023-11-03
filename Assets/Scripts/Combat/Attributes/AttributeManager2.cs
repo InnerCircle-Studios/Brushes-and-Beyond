@@ -12,6 +12,10 @@ public class AttributeManager2 : MonoBehaviour {
         localAttributes = attributes.Copy();
     }
 
+    public CharacterAttributes GetAttributes(){
+        return localAttributes;
+    }
+
     public void ApplyDamage(int hp) {
         // Force hp to be at least 0
         if (localAttributes.CurrentHealth - hp < 0) {
