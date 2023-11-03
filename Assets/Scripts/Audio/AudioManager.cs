@@ -48,11 +48,28 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("SFXSound: " + name + " not found!");
             return;
         }
-        else
+
+        AudioSource availableSource = FindAvailableSfxSource();
+        if (availableSource == null)
         {
-            sfxSource.clip = s.clip;
-            sfxSource.Play();
+            availableSource = gameObject.AddComponent<AudioSource>(); // Creates a new AudioSource if all are in use
         }
+
+        availableSource.clip = s.clip;
+        availableSource.Play();
+    }
+
+    private AudioSource FindAvailableSfxSource()
+    {
+        // Check all audio sources to find one that's not currently playing
+        foreach (AudioSource source in GetComponents<AudioSource>())
+        {
+            if (!source.isPlaying)
+            {
+                return source;
+            }
+        }
+        return null;
     }
 
     public void StopMusic(string name)
@@ -73,6 +90,7 @@ public class AudioManager : MonoBehaviour
     public void StopSfx(string name)
     {
         Sound s = Array.Find(sfxSounds, sound => sound.name == name);  // NOTE: Should this be "sound.name == name"? // Yes, yes it should -W
+
         if (s == null)
         {
             Debug.LogWarning("SFXSound: " + name + " not found!");

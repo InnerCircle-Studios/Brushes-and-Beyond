@@ -7,9 +7,12 @@ public class InkyDialogue : MonoBehaviour {
     public GameObject panel1;
     public GameObject panel2;
     [SerializeField] private UnityEvent giveMaxPaints;
+    private bool Collided = false;
 
     public void DialogueInky() {
-        FirstDialogue.StartDialogue();
+        if (Collided) {
+            FirstDialogue.StartDialogue();
+        }
     }
 
     public void DestroyInky() {
@@ -17,7 +20,7 @@ public class InkyDialogue : MonoBehaviour {
     }
 
     public void GiveMaxPaints() {
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             giveMaxPaints.Invoke();
         }
     }
@@ -37,6 +40,16 @@ public class InkyDialogue : MonoBehaviour {
         if (panel2 != null) panel2.SetActive(false);
     }
 
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            Collided = true;
+        }
+    }
 
+    public void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            Collided = false;
+        }
+    }
 
 }
