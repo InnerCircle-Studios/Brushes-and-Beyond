@@ -21,7 +21,10 @@ public class Blockade : MonoBehaviour {
     }
 
     public void StartBlockadeDialogue() {
-        trigger.StartDialogue();
+        if (_nearPlayer) {
+            Debug.Log("StartBlockadeDialogue");
+            trigger.StartDialogue();
+        }
     }
 
     public void Update() {
