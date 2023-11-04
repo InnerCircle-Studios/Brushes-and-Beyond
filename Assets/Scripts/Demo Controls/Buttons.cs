@@ -11,6 +11,6 @@ public class Buttons : MonoBehaviour
     }
     public void EndGame()
     {
-        Application.Quit();
+         SceneManager.LoadScene("EndScene");
     }
 }
