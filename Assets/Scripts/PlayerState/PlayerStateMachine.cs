@@ -262,7 +262,7 @@ public class PlayerStateMachine : MonoBehaviour {
     }
 
     private void PlayerHPCheck(){
-        if(_attributeManager.GetAttributes().CurrentHealth < 0){
+        if(_attributeManager.GetAttributes().CurrentHealth < 1){
             _isAlive = false;
             playerDeath.Invoke();
         }
