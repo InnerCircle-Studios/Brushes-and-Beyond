@@ -10,14 +10,14 @@ public class PlayerCombatMusic : MonoBehaviour
     public float fadeDuration = 1.0f; // How long the music takes to fade in/out
 
     private bool isInCombat = false; // Current combat state
-    private bool wasInCombat = false; // Previous combat state
+    private bool wasInCombat = false;   // Previous combat state
 
     private void Update()
     {
         CheckForEnemies();
     }
 
-    private void CheckForEnemies()
+    private void CheckForEnemies() // Check enemies within a radius of the player for music changes
     {
         // Check if any enemies are within the checkRadius of the player
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, checkRadius, enemyLayer);

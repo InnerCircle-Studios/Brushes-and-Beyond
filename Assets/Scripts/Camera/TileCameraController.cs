@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+
+
 public class TileCameraController : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform

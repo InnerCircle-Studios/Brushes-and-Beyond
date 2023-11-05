@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class PanelController : MonoBehaviour
 {
-    public GameObject panel; // Assign your Panel here in the inspector
-
+    public GameObject panel;
+    
     void Start()
     {
         panel.SetActive(false);

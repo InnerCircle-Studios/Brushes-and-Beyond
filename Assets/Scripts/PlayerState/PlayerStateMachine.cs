@@ -20,6 +20,7 @@ public class PlayerStateMachine : MonoBehaviour {
     [SerializeField] private UnityEvent tutorialRun;
     [SerializeField] private UnityEvent tutorialInteract;
     [SerializeField] private UnityEvent tutorialAttack;
+    [SerializeField] private UnityEvent playerDeath;
     public TextMeshProUGUI stateTextMeshPro;
 
     //Reference variables
@@ -64,6 +65,10 @@ public class PlayerStateMachine : MonoBehaviour {
     private bool _nearItem = false;
     private bool _nearBlockade = false;
 
+    //Player variables
+    private AttributeManager _attributeManager;
+    private bool _isAlive = true;
+
     //Attack variables
     private bool _isAttackPressed = false;
 
@@ -93,10 +98,9 @@ public class PlayerStateMachine : MonoBehaviour {
     public float LastDashTime { get { return _lastDashTime; } set { _lastDashTime = value; } }
     public float DashCooldown { get { return _dashCooldown; } }
     public bool IsShowPressed { get { return _isShowPressed; } set { _isShowPressed = value; } }
+    public bool IsAlive { get { return _isAlive; } set { _isAlive = value; } }
 
     void Awake() {
-        //Initiate reference variables
-        // _playerInput = new PlayerInput();
         //State setup
         _states = new PlayerStateFactory(this);
         _currentState = _states.Idle();
@@ -108,11 +112,13 @@ public class PlayerStateMachine : MonoBehaviour {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _currentState = _states.Dialogue();
         gameStartDialogueTrigger.Invoke();
+        _attributeManager = gameObject.GetComponent<AttributeManager>();
     }
 
-    // Update is called once per frame
+
     void Update() {
         DialogueCheck();
+        PlayerHPCheck();
         HandleCooldownUI();
         _currentState.UpdateState();
         if (stateTextMeshPro != null) {
@@ -252,6 +258,13 @@ public class PlayerStateMachine : MonoBehaviour {
         Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Item"));
         if (itemCollider) {
             Destroy(itemCollider.gameObject);
+        }
+    }
+
+    private void PlayerHPCheck(){
+        if(!_attributeManager.IsAlive()){
+            _isAlive = false;
+            playerDeath.Invoke();
         }
     }
 }

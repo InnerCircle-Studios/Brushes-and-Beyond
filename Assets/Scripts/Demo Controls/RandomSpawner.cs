@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public GameObject[] prefabs; // Array to hold your prefabs
+    public GameObject[] prefabs; // Array of prefabs to spawn
     public float spawnInterval = 1f; // Time between each spawn
     public float minX = -7f; // Minimum x position
     public float maxX = 7f; // Maximum x position

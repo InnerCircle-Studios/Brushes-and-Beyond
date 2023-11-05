@@ -18,6 +18,10 @@ public class PlayerRunState : PlayerBaseState
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
+        if(Ctx.IsAlive == false)
+        {
+            SwitchState(Factory.Death());
+        }
         if (!Ctx.IsMovementPressed)
         {
             SwitchState(Factory.Idle());

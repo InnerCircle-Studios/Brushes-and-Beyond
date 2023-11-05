@@ -1,42 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class PlayerIdleState : PlayerBaseState
-{
+public class PlayerIdleState : PlayerBaseState {
     public PlayerIdleState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
-    public override void EnterState()
-    {
+    public override void EnterState() {
     }
-    public override void UpdateState()
-    {
+    public override void UpdateState() {
         HandleAnimations();
         CheckSwitchStates();
     }
     public override void ExitState() { }
-    public override void CheckSwitchStates()
-    {
-        if (Ctx.DialogueTrigger)
-        {
+    public override void CheckSwitchStates() {
+        if (Ctx.IsAlive == false) {
+            SwitchState(Factory.Death());
+        }
+        if (Ctx.DialogueTrigger) {
             SwitchState(Factory.Dialogue());
-        } else if (Ctx.IsMovementPressed)
-        {
+        }
+        else if (Ctx.IsMovementPressed) {
             SwitchState(Factory.Walk());
         }
-        else if (Ctx.IsAttackPressed)
-        {
+        else if (Ctx.IsAttackPressed) {
             SwitchState(Factory.Attack());
         }
-        else if (Ctx.IsShowPressed){
+        else if (Ctx.IsShowPressed) {
             SwitchState(Factory.Show());
         }
     }
     public override void InitializeSubStates() { }
 
-    void HandleAnimations()
-    {
-        switch (Ctx.CurrentDirection)
-        {
+    void HandleAnimations() {
+        switch (Ctx.CurrentDirection) {
             case PlayerStateMachine.CharacterDirection.Up:
                 Ctx.Animator.Play("BackIdle"); // Or "WalkUp", "AttackUp" etc.
                 break;

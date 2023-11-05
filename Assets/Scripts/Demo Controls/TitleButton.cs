@@ -18,6 +18,7 @@ public class TitleButton : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("TitleScene");
+
     }
     public void ResetScene()
     {
