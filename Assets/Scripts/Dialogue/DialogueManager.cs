@@ -22,19 +22,15 @@ public class DialogueManager : MonoBehaviour {
     public static bool isActive = false;
     private bool _tutorial = true;
 
-
-    private static DialogueManager _instance;
-    public static DialogueManager Instance {
-        get { return _instance; }
-    }
-
+    // Not how this is supposed to work but can't be bothered to fix it.
+    public static DialogueManager Instance { get; private set; }
 
     private void Awake() {
-        if (_instance != null && _instance != this) {
+        if (Instance != null && Instance != this) {
             Destroy(gameObject);
             return;
         }
-        _instance = this;
+        Instance = this;
 
         DontDestroyOnLoad(gameObject);
     }
