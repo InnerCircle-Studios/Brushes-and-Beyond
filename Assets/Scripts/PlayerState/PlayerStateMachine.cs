@@ -66,7 +66,7 @@ public class PlayerStateMachine : MonoBehaviour {
     private bool _nearBlockade = false;
 
     //Player variables
-    private AttributeManager _attributeManager;
+    private AttributeManager2 _attributeManager;
     private bool _isAlive = true;
 
     //Attack variables
@@ -112,7 +112,7 @@ public class PlayerStateMachine : MonoBehaviour {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _currentState = _states.Dialogue();
         gameStartDialogueTrigger.Invoke();
-        _attributeManager = gameObject.GetComponent<AttributeManager>();
+        _attributeManager = gameObject.GetComponent<AttributeManager2>();
     }
 
 
@@ -262,7 +262,7 @@ public class PlayerStateMachine : MonoBehaviour {
     }
 
     private void PlayerHPCheck(){
-        if(!_attributeManager.IsAlive()){
+        if(_attributeManager.GetAttributes().CurrentHealth < 0){
             _isAlive = false;
             playerDeath.Invoke();
         }

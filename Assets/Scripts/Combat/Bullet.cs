@@ -19,11 +19,12 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.transform.gameObject.TryGetComponent<AttributeManager2>(out var targetATM)) {
-            targetATM.ApplyDamage(transform.parent.GetComponent<AttributeManager2>().GetAttributes().Damage);
-            
+
             // Knockback logic for player
             if (other.transform.CompareTag("Player")) { // Assuming player has tag "Player"
+                targetATM.ApplyDamage(transform.parent.GetComponent<AttributeManager2>().GetAttributes().Damage);
                 if (other.gameObject.TryGetComponent<Rigidbody2D>(out var playerRb)) {
+
                     Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                     playerRb.velocity += knockbackDirection * KnockbackStrength;
                 }

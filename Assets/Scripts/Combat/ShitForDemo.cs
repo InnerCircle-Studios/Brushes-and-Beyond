@@ -6,17 +6,17 @@ using TMPro;
 using UnityEngine;
 
 public class ShitForDemo : MonoBehaviour {
-    AttributeManager amg;
+    CharacterAttributes attributes;
     public TextMeshProUGUI tmp;
     void Start() {
-        amg = gameObject.GetComponent<AttributeManager>();
+        attributes = gameObject.GetComponent<AttributeManager2>().GetAttributes();
         
     }
 
     // Update is called once per frame
     void Update() {
-        if(amg.IsAlive()){
-            tmp.SetText("Current HP: "+amg.CurrentHealth);
+        if(attributes.CurrentHealth > 0){
+            tmp.SetText("Current HP: "+attributes.CurrentHealth);
         }
         else{
             tmp.SetText("Dead");
