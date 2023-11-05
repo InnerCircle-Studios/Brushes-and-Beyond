@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 2
   Name: SpecialEnemy
-  MaxHealth: 40
-  CurrentHealth: 40
+  MaxHealth: 45
+  CurrentHealth: 45
   Damage: 10
   Loot: {fileID: 2316908948544563850, guid: 1aa1dea91aee75c47a5ee07510ee2c07, type: 3}

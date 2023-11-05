@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   Name: Enemy
-  MaxHealth: 20
-  CurrentHealth: 20
+  MaxHealth: 30
+  CurrentHealth: 30
   Damage: 5
   Loot: {fileID: 0}
