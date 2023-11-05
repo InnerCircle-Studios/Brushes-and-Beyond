@@ -17,15 +17,18 @@ public class TitleButton : MonoBehaviour
     }
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScene");
 
     }
     public void ResetScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void EndGame()
     {
+        Time.timeScale = 1f;
          SceneManager.LoadScene("EndScene");
     }
 }
