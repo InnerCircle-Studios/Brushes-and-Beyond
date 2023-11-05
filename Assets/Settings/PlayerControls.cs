@@ -194,6 +194,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Settings"",
+            ""id"": ""7775db65-6c20-454f-b659-9d8769b816dc"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""84a0bcc5-1be5-4596-9671-270e183b90d6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""20e3a5f2-1059-46ea-b114-42c3debcb70c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -223,6 +251,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
         m_Movement_Interact = m_Movement.FindAction("Interact", throwIfNotFound: true);
         m_Movement_Show = m_Movement.FindAction("Show", throwIfNotFound: true);
+        // Settings
+        m_Settings = asset.FindActionMap("Settings", throwIfNotFound: true);
+        m_Settings_Pause = m_Settings.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -366,6 +397,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
+
+    // Settings
+    private readonly InputActionMap m_Settings;
+    private List<ISettingsActions> m_SettingsActionsCallbackInterfaces = new List<ISettingsActions>();
+    private readonly InputAction m_Settings_Pause;
+    public struct SettingsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public SettingsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Settings_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Settings; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SettingsActions set) { return set.Get(); }
+        public void AddCallbacks(ISettingsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SettingsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SettingsActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        private void UnregisterCallbacks(ISettingsActions instance)
+        {
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        public void RemoveCallbacks(ISettingsActions instance)
+        {
+            if (m_Wrapper.m_SettingsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISettingsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SettingsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SettingsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SettingsActions @Settings => new SettingsActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -383,5 +460,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnShow(InputAction.CallbackContext context);
+    }
+    public interface ISettingsActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }
