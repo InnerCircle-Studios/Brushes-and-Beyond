@@ -53,7 +53,7 @@ public class PlayerStateMachine : MonoBehaviour {
     private bool _isRunningPressed = false;
 
     //Graphic Variables
-    CharacterDirection _currentDirection;
+    CharacterDirection _currentDirection = CharacterDirection.Down;
     Animator _animator;
     SpriteRenderer _spriteRenderer;
 

@@ -72,7 +72,6 @@ public class DialogueManager : MonoBehaviour {
     void PlayActions() {
         // Amazing linq query to find the actions to play after the current message index. 
         currentActions.ToList().Where(a => a.PlayAfterIndex == currentMessageIndex - 1).ToList().ForEach(e => e.Action.Invoke());
-        
     }
 
 
