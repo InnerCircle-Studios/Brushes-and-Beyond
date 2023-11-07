@@ -36918,8 +36918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ec2c8735f009d4b96cdd6f40e1fc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _sprintSpeed: 25
+  _speed: 10
+  _sprintSpeed: 15
   _dashDistance: 3
   dialogueTrigger:
     m_PersistentCalls:
