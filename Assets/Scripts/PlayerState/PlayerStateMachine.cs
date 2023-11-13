@@ -149,7 +149,7 @@ public class PlayerStateMachine : MonoBehaviour {
 
     }
 
-    public void OnJump(InputAction.CallbackContext context) {
+    public void OnAttack(InputAction.CallbackContext context) {
         _isAttackPressed = context.ReadValueAsButton();
         if (!_tutorialAttack && _isAttackPressed) {
             tutorialAttack.Invoke();
