@@ -62,6 +62,9 @@ TagManager:
   - name: Objects
     uniqueID: 3490216095
     locked: 0
+  - name: Nature
+    uniqueID: 4195496557
+    locked: 0
   - name: Blockades
     uniqueID: 1183391641
     locked: 0
