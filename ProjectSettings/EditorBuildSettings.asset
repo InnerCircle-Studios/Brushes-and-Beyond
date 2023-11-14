@@ -5,14 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Titlescene.unity
     guid: ca2994e979320754a8b65d0343d27953
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: f4d4e272609c6b94c910a904a1bc1c77
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndScene.unity
     guid: 612798c9d219f1f4aa2bd548aca8ddd2
+  - enabled: 1
+    path: Assets/Scenes/SceneForErwin.unity
+    guid: 5c9c112d02fa00644b546144ce6e030c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 056ffee419e07ba40b5e63ec7dda81a8, type: 2}

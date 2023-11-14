@@ -550,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 1222314598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.04, y: -30.6, z: 0}
+  m_LocalPosition: {x: 35.54, y: -28.77, z: 0}
   m_LocalScale: {x: 1, y: 1.0403, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _sprintSpeed: 15
+  _sprintSpeed: 30
   _dashDistance: 3
   dialogueTrigger:
     m_PersistentCalls:
@@ -2358,7 +2358,7 @@ Transform:
   m_GameObject: {fileID: 2130558727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.04, y: -30.6, z: -10}
+  m_LocalPosition: {x: 35.54, y: -28.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
