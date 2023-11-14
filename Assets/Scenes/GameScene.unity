@@ -29404,7 +29404,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1183391641
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e52d2a85b754949498be4866b2dcc830, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -33046,7 +33046,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1183391641
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e52d2a85b754949498be4866b2dcc830, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -34735,7 +34735,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1183391641
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e52d2a85b754949498be4866b2dcc830, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -36821,7 +36821,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2137030350}
         m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
