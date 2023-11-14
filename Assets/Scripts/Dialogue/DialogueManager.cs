@@ -20,21 +20,16 @@ public class DialogueManager : MonoBehaviour {
      public Button nextButton;
 
     public static bool isActive = false;
-    private bool _tutorial = true;
 
-
-    private static DialogueManager _instance;
-    public static DialogueManager Instance {
-        get { return _instance; }
-    }
-
+    // Not how this is supposed to work but can't be bothered to fix it.
+    public static DialogueManager Instance { get; private set; }
 
     private void Awake() {
-        if (_instance != null && _instance != this) {
+        if (Instance != null && Instance != this) {
             Destroy(gameObject);
             return;
         }
-        _instance = this;
+        Instance = this;
 
         DontDestroyOnLoad(gameObject);
     }
@@ -69,7 +64,7 @@ public class DialogueManager : MonoBehaviour {
         messageText.text = ""; // Reset the text
         foreach (char letter in text.ToCharArray()) {
             messageText.text += letter;
-            yield return new WaitForSeconds(0.005f); // Delay between characters. Adjust as needed.
+            yield return new WaitForSeconds(0.05f); // Delay between characters. Adjust as needed.
         }
         nextButton.gameObject.SetActive(true);
     }
@@ -77,7 +72,6 @@ public class DialogueManager : MonoBehaviour {
     void PlayActions() {
         // Amazing linq query to find the actions to play after the current message index. 
         currentActions.ToList().Where(a => a.PlayAfterIndex == currentMessageIndex - 1).ToList().ForEach(e => e.Action.Invoke());
-        
     }
 
 
@@ -85,20 +79,17 @@ public class DialogueManager : MonoBehaviour {
         currentMessageIndex++;
         PlayActions();
         if (currentMessageIndex < currentMessages.Length) {
+            AudioManager.instance.StopSfx("Dialogue");
             nextButton.gameObject.SetActive(false);
             DisplayMessage();
 
         }
         else {
+            AudioManager.instance.StopSfx("Dialogue");
             Debug.Log("No more messages");
             isActive = false;
             backgroundBox.transform.localScale = Vector3.zero;
             nextButton.gameObject.SetActive(false);
-            if (_tutorial)
-            {
-                PlayerStateMachine ctx = FindAnyObjectByType<PlayerStateMachine>();
-                _tutorial = false;
-            }
         }
     }
 

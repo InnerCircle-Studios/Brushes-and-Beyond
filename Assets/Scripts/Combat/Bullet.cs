@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public float knockbackStrength = 2.0f; // Set this to whatever strength you want for the bullet knockback
+    public float KnockbackStrength = 2.0f; // Set this to whatever strength you want for the bullet knockback
     float _spawnTime;
 
     void Start() {
@@ -18,15 +18,15 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.transform.gameObject.TryGetComponent<AttributeManager>(out var targetATM)) {
-            targetATM.ApplyDamage(transform.parent.GetComponent<AttributeManager>().Damage);
-            
+        if (other.transform.gameObject.TryGetComponent<AttributeManager2>(out var targetATM)) {
+
             // Knockback logic for player
             if (other.transform.CompareTag("Player")) { // Assuming player has tag "Player"
-                Rigidbody2D playerRb = other.gameObject.GetComponent<Rigidbody2D>();
-                if (playerRb != null) {
+                targetATM.ApplyDamage(transform.parent.GetComponent<AttributeManager2>().GetAttributes().Damage);
+                if (other.gameObject.TryGetComponent<Rigidbody2D>(out var playerRb)) {
+
                     Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                    playerRb.velocity += knockbackDirection * knockbackStrength;
+                    playerRb.velocity += knockbackDirection * KnockbackStrength;
                 }
             }
         }

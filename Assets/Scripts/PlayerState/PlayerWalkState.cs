@@ -17,6 +17,10 @@ public class PlayerWalkState : PlayerBaseState
     public override void ExitState() { }
     public override void CheckSwitchStates()
     {
+        if(Ctx.IsAlive == false)
+        {
+            SwitchState(Factory.Death());
+        }
         if (Ctx.DialogueTrigger)
         {
             SwitchState(Factory.Dialogue());

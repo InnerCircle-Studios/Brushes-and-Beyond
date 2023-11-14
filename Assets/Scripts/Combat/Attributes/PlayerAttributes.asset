@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Name: Vin
-  MaxHealth: 100
-  CurrentHealth: 100
-  Damage: 10
+  MaxHealth: 200
+  CurrentHealth: 200
+  Damage: 15
+  Loot: {fileID: 0}
