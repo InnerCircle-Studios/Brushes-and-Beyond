@@ -1,4 +1,4 @@
-public class NpcWalkState : State
+public class PlayerDashState : State
 {
     public override void EnterState()
     {
