@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Actor : MonoBehaviour
 {
-    public Actor()
+    public void Awake()
     {
         _AttributeManager = new AttributeManager();
 
