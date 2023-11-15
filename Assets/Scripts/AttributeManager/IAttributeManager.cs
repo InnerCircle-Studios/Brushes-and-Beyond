@@ -1,4 +1,4 @@
-interface IAttrubuteManager
+public interface IAttrubuteManager
 {
     public CharacterAttributes GetAttributes();
 
