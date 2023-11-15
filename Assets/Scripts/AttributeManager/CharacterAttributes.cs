@@ -1,9 +1,23 @@
+
 using UnityEngine;
 
-public class CharacterAttributes : ScriptableObject
-{
-    public enum Role
-    {
+public class CharacterAttributes : ScriptableObject {
+
+    public Role Type;
+
+    public string Name;
+
+    public int MaxHealth;
+
+    public int CurrentHealth;
+
+    public int Damage;
+
+    public float Speed;
+
+    public GameObject Loot;
+
+    public enum Role {
         Player,
         Enemy,
         PaintEnemy,
@@ -11,32 +25,17 @@ public class CharacterAttributes : ScriptableObject
         Static
     }
 
-    public CharacterAttributes Copy()
-    {
+    public CharacterAttributes Copy() {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
 
-        newCharacterAttributes._Type = _Type;
-        newCharacterAttributes._Name = _Name;
-        newCharacterAttributes._MaxHealth = _MaxHealth;
-        newCharacterAttributes._CurrentHealth = _CurrentHealth;
-        newCharacterAttributes._Damage = _Damage;
-        newCharacterAttributes._Speed = _Speed;
-        newCharacterAttributes._Loot = _Loot;
+        newCharacterAttributes.Type = Type;
+        newCharacterAttributes.Name = Name;
+        newCharacterAttributes.MaxHealth = MaxHealth;
+        newCharacterAttributes.CurrentHealth = CurrentHealth;
+        newCharacterAttributes.Damage = Damage;
+        newCharacterAttributes.Speed = Speed;
+        newCharacterAttributes.Loot = Loot;
 
         return newCharacterAttributes;
     }
-
-    public Role _Type;
-
-    public string _Name;
-
-    public int _MaxHealth;
-
-    public int _CurrentHealth;
-
-    public int _Damage;
-
-    public float _Speed;
-
-    public GameObject _Loot;
 }

@@ -4,7 +4,7 @@ public abstract class Actor : MonoBehaviour
 {
     public void Awake()
     {
-        _AttributeManager = new AttributeManager();
+        _AttributeManager = new AttributeManager(attributes);
 
         _Combat = new Combat();
     }
@@ -28,6 +28,7 @@ public abstract class Actor : MonoBehaviour
     }
 
     private IAttrubuteManager _AttributeManager;
+    [SerializeField] private CharacterAttributes attributes;
 
     private ICombat _Combat;
 }
