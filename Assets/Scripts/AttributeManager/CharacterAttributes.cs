@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "CharacterAttributes", menuName = "Brushes/Character/Attributes")]
 public class CharacterAttributes : ScriptableObject
 {
     public enum Role
