@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public abstract class StateMachine : MonoBehaviour
 {
-    void AddEvent()
+    public void AddEvent()
     {
         
     }
 
-    void Update()
-    {
-        
-    }
+    public abstract void Update();
 
     public State GetState(string name)
     {

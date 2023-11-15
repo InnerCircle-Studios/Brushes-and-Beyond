@@ -5,15 +5,9 @@ using UnityEngine;
 
 public abstract class State
 {
-    private void EnterState()
-    {
-        
-    }
-
-    private void UpdateState()
-    {
-        
-    }
+    public abstract void EnterState();
+    
+    public abstract void UpdateState();
 
     private void ExitState()
     {
@@ -22,7 +16,8 @@ public abstract class State
 
     private void SwitchState(State newstate)
     {
-
+        ExitState();
+        newstate.EnterState();
     }
 
     private string GetName()
