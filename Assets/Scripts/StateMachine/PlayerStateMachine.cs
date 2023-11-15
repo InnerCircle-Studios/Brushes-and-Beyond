@@ -10,7 +10,7 @@ public class PlayerStateMachine : StateMachine
     {
 
     }
-    void Update()
+    public override void Update()
     {
         
     }

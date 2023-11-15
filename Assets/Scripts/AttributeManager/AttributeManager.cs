@@ -1,26 +1,22 @@
 using UnityEngine;
 
-public class AttributeManager : IAttrubuteManager
-{
-    public AttributeManager()
-    {
-        _Attrubutes = new CharacterAttributes();
+public class AttributeManager : IAttrubuteManager {
+    private CharacterAttributes attributes;
+
+    public AttributeManager(CharacterAttributes attributes) {
+        this.attributes = attributes.Copy();
     }
 
-    public CharacterAttributes GetAttributes()
-    {
-        return _Attrubutes;
+    public CharacterAttributes GetAttributes() {
+        return attributes;
     }
 
-    public void ApplyDamage(int hp)
-    {
-        _Attrubutes._CurrentHealth -= hp;
+    public void ApplyDamage(int hp) {
+        attributes.CurrentHealth -= hp;
     }
 
-    public void ApplyHeal(int hp)
-    {
-        _Attrubutes._CurrentHealth += hp;
+    public void ApplyHeal(int hp) {
+        attributes.CurrentHealth += hp;
     }
 
-    private CharacterAttributes _Attrubutes;
 }

@@ -16,7 +16,7 @@ public class Player : Actor
     {
         foreach (Actor hits in GetCombat().MeleeAttack(new Vector2(0,0), 1.5f, "Player"))
         {
-            hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes()._Damage);
+            hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
         }
     }
 

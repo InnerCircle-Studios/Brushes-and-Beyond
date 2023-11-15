@@ -1,30 +1,13 @@
 public class HostileIdleState : State
 {
-    private void EnterState()
+    public override void EnterState()
     {
         
     }
 
-    private void UpdateState()
+    public override void UpdateState()
     {
         
     }
 
-    private void ExitState()
-    {
-        
-    }
-
-    private void SwitchState(State newstate)
-    {
-
-    }
-
-    private string GetName()
-    {
-        return _Name;
-    }
-
-    private string _Name;
-    private StateMachine _StateMachine;
 }
