@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NpcStateMachine : StateMachine
 {
-    public override void Start()
+    public NpcStateMachine()
     {
         AddState(new NpcDialogueState("NpcDialogueState", this));
         AddState(new NpcIdleState("NpcIdleState", this));
@@ -12,5 +12,4 @@ public class NpcStateMachine : StateMachine
 
         ChangeState(GetState("NpcIdleState"));
     }
-
 }

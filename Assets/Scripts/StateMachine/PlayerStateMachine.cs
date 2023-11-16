@@ -6,12 +6,7 @@ using UnityEngine.Events;
 public class PlayerStateMachine : StateMachine
 {
 
-    public void OnMoveEvent(Vector2 movement)
-    {
-
-    }
-
-    public override void Start()
+    public PlayerStateMachine()
     {
        AddState(new PlayerAttackState("PlayerAttackState", this));
        AddState(new PlayerDashState("PlayerDashState", this));
@@ -23,6 +18,11 @@ public class PlayerStateMachine : StateMachine
        AddState(new PlayerWalkState("PlayerWalkState", this));
 
        ChangeState(GetState("PlayerIdleState"));
+    }
+
+    public void OnMoveEvent(Vector2 movement)
+    {
+
     }
 
     public Vector2 _CurrentMovementInput;

@@ -1,18 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StateMachine : MonoBehaviour
+public abstract class StateMachine
 {
     public void AddState(State state)
     {
         _States.Add(state);
-    }
-
-    public abstract void Start();
-
-    public void Update()
-    {
-        _CurrentState.UpdateState();
     }
 
     public State GetState(string name)

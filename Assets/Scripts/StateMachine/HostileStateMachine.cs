@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HostileStateMachine : StateMachine
 {   
-    public override void Start()
+    public HostileStateMachine()
     {
         AddState(new HostileAttackState("HostileAttackState", this));
         AddState(new HostileDeathState("HostileDeathState", this));
