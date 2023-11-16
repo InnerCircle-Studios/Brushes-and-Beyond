@@ -13,7 +13,16 @@ public class PlayerStateMachine : StateMachine
 
     public override void Start()
     {
-       GetCurrentState().UpdateState(); 
+       AddState(new PlayerAttackState("PlayerAttackState", this));
+       AddState(new PlayerDashState("PlayerDashState", this));
+       AddState(new PlayerDeathState("PlayerDeathState", this));
+       AddState(new PlayerDialogueState("PlayerDialogueState", this));
+       AddState(new PlayerIdleState("PlayerIdleState", this));
+       AddState(new PlayerRunState("PlayerRunState", this));
+       AddState(new PlayerShowState("PlayerShowState", this));
+       AddState(new PlayerWalkState("PlayerWalkState", this));
+
+       ChangeState(GetState("PlayerIdleState"));
     }
 
     public Vector2 _CurrentMovementInput;
