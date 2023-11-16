@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR;
 
 public class PlayerWalkState : State
 {
@@ -21,8 +20,8 @@ public class PlayerWalkState : State
 
     private void HandleWalk()
     {
-        CharacterAttributes currentAttributes = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes();
-        Vector2 desiresMovement = new Vector2(_PlayerStateMachine._CurrentMovementInput.x, _PlayerStateMachine._CurrentMovementInput.y).normalized * currentAttributes.Speed * Time.deltaTime;
+        float currentSpeed = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().Speed;
+        Vector2 desiresMovement = new Vector2(_PlayerStateMachine._CurrentMovementInput.x, _PlayerStateMachine._CurrentMovementInput.y).normalized * currentSpeed * Time.deltaTime;
         _PlayerStateMachine.GetActor().HandleWalk(desiresMovement);
     }
 

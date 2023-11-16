@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class AttributeManager : IAttrubuteManager {
     private CharacterAttributes attributes;
 

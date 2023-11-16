@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class HostileStateMachine : StateMachine
 {   
     public HostileStateMachine(Actor actor) : base(actor)
