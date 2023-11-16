@@ -6,7 +6,7 @@ public class NpcStateMachine : StateMachine
 {
     public override void Update()
     {
-        
+        GetCurrentState().UpdateState();
     }
 
 }

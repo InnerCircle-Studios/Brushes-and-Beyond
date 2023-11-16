@@ -6,6 +6,6 @@ public class HostileStateMachine : StateMachine
 {   
     public override void Update()
     {
-        
+        GetCurrentState().UpdateState();
     }
 }

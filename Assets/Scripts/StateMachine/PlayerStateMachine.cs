@@ -8,13 +8,13 @@ public class PlayerStateMachine : StateMachine
 
     public void OnMoveEvent(Vector2 movement)
     {
-
-    }
-    public override void Update()
-    {
         
     }
 
-    public Vector2 _CurrentMovementInput;
+    public override void Update()
+    {
+       GetCurrentState().UpdateState(); 
+    }
 
+    public Vector2 _CurrentMovementInput;
 }
