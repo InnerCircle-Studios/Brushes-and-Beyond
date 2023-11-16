@@ -3,9 +3,9 @@ using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
-    public void AddEvent()
+    public void AddState(State state)
     {
-        
+        _States.Add(state);
     }
 
     public abstract void Update();
@@ -20,6 +20,16 @@ public abstract class StateMachine : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void ChangeState(State state)
+    {
+        _CurrentState = state;
+    }
+
+    public State GetCurrentState()
+    {
+        return _CurrentState;
     }
 
     public List<State> _States;
