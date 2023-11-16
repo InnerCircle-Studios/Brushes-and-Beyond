@@ -1,5 +1,10 @@
 public class HostileIdleState : State
 {
+    public HostileIdleState(string name, StateMachine stateMachine) : base(name, stateMachine)
+    {
+
+    }
+
     public override void EnterState()
     {
         
