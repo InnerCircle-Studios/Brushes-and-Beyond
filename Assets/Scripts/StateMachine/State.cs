@@ -31,6 +31,11 @@ public abstract class State
         return _Name;
     }
 
+    protected StateMachine GetStateMachine()
+    {
+        return _StateMachine;
+    }
+
     private string _Name;
     private StateMachine _StateMachine;
 
