@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,9 +12,16 @@ public abstract class StateMachine : MonoBehaviour
 
     public State GetState(string name)
     {
-        return _CurrentState;
+        foreach(State state in _States)
+        {
+            if (state.GetName() == name)
+            {
+                return state;
+            }
+        }
+        return null;
     }
 
-    public State[] _States;
+    public List<State> _States;
     public State _CurrentState;
 }
