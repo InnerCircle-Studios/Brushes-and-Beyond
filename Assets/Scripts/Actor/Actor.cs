@@ -7,6 +7,8 @@ public abstract class Actor : MonoBehaviour
         _AttributeManager = new AttributeManager(attributes);
 
         _Combat = new Combat();
+        
+        _RigidBody = GetComponent<Rigidbody2D>();
     }
 
     public abstract void Start();
@@ -27,8 +29,15 @@ public abstract class Actor : MonoBehaviour
         return _Combat;
     }
 
+    public void HandleWalk(Vector2 desiredMovement)
+    {
+        _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
+    }
+
     private IAttrubuteManager _AttributeManager;
     [SerializeField] private CharacterAttributes attributes;
+
+    private Rigidbody2D _RigidBody;
 
     private ICombat _Combat;
 }

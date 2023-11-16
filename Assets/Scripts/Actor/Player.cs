@@ -4,9 +4,7 @@ public class Player : Actor
 {
     public override void Start()
     {
-        _RigidBody = GetComponent<Rigidbody2D>();
-
-        _PlayerStateMachine = new PlayerStateMachine();
+        _PlayerStateMachine = new PlayerStateMachine(this);
     }
 
     public override void Update()
@@ -26,8 +24,6 @@ public class Player : Actor
     {
         
     }
-
-    private Rigidbody2D _RigidBody;
 
     private PlayerStateMachine _PlayerStateMachine;
 }
