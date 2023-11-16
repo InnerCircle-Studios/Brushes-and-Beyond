@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NpcStateMachine : StateMachine
 {
-    public override void Update()
+    public override void Start()
     {
-        GetCurrentState().UpdateState();
+        
     }
 
 }

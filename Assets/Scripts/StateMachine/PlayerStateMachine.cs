@@ -8,10 +8,10 @@ public class PlayerStateMachine : StateMachine
 
     public void OnMoveEvent(Vector2 movement)
     {
-        
+
     }
 
-    public override void Update()
+    public override void Start()
     {
        GetCurrentState().UpdateState(); 
     }

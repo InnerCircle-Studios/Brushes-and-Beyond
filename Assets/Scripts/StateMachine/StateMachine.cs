@@ -8,7 +8,12 @@ public abstract class StateMachine : MonoBehaviour
         _States.Add(state);
     }
 
-    public abstract void Update();
+    public abstract void Start();
+
+    public void Update()
+    {
+        _CurrentState.UpdateState();
+    }
 
     public State GetState(string name)
     {

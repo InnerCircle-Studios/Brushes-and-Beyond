@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HostileStateMachine : StateMachine
 {   
-    public override void Update()
+    public override void Start()
     {
-        GetCurrentState().UpdateState();
+        
     }
 }
