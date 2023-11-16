@@ -5,6 +5,12 @@ using UnityEngine;
 
 public abstract class State
 {
+    public State(string name, StateMachine stateMachine)
+    {
+        _Name = name;
+        _StateMachine = stateMachine;
+    }
+
     public abstract void EnterState();
     
     public abstract void UpdateState();
