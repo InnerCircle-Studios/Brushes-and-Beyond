@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NpcStateMachine : StateMachine
 {
-    public NpcStateMachine()
+    public NpcStateMachine(Actor actor) : base(actor)
     {
         AddState(new NpcDialogueState("NpcDialogueState", this));
         AddState(new NpcIdleState("NpcIdleState", this));

@@ -3,6 +3,11 @@ using UnityEngine;
 
 public abstract class StateMachine
 {
+    public StateMachine(Actor actor)
+    {
+        _Actor = actor;
+    }
+
     public void AddState(State state)
     {
         _States.Add(state);
@@ -30,6 +35,12 @@ public abstract class StateMachine
         return _CurrentState;
     }
 
-    public List<State> _States;
-    public State _CurrentState;
+    public Actor GetActor()
+    {
+        return _Actor;
+    }
+
+    private List<State> _States;
+    private State _CurrentState;
+    private Actor _Actor;
 }

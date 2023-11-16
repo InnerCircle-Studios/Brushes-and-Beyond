@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,7 @@ using UnityEngine.Events;
 
 public class PlayerStateMachine : StateMachine
 {
-
-    public PlayerStateMachine()
+    public PlayerStateMachine(Actor actor) : base(actor)
     {
        AddState(new PlayerAttackState("PlayerAttackState", this));
        AddState(new PlayerDashState("PlayerDashState", this));
