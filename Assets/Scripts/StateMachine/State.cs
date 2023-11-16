@@ -9,18 +9,18 @@ public abstract class State
     
     public abstract void UpdateState();
 
-    private void ExitState()
+    public void ExitState()
     {
         
     }
 
-    private void SwitchState(State newstate)
+    public void SwitchState(State newstate)
     {
         ExitState();
         newstate.EnterState();
     }
 
-    private string GetName()
+    public string GetName()
     {
         return _Name;
     }
