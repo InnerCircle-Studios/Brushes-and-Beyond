@@ -21,6 +21,14 @@ public class PlayerStateMachine : StateMachine
         ChangeState(GetState("PlayerIdleState"));
     }
 
+    ~PlayerStateMachine()
+    {
+        GetEventManager().OnMoveEvent -= OnMoveEvent;
+        GetEventManager().OnAttackEvent -= OnAttackEvent;
+        GetEventManager().OnDeathEvent -= OnDeathEvent;
+        GetEventManager().OnShowEvent -= OnShowEvent;
+    }
+
     public void OnMoveEvent(Vector2 movement)
     {
         _CurrentMovementInput = movement;
