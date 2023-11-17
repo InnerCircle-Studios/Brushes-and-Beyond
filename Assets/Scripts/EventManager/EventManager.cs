@@ -1,3 +1,5 @@
+using UnityEditor.Rendering.LookDev;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,27 +15,27 @@ public class EventManager : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        OnAttackEvent();
+        OnAttackEvent(context.ReadValueAsButton());
     }
 
-    public void OnRun(InputAction.CallbackContext contect)
+    public void OnRun(InputAction.CallbackContext context)
     {
         OnRunEvent();
     }
 
-    public void OnDash(InputAction.CallbackContext contect)
+    public void OnDash(InputAction.CallbackContext context)
     {
         OnDashEvent();
     }
 
-    public void OnInteract(InputAction.CallbackContext contect)
+    public void OnInteract(InputAction.CallbackContext context)
     {
         OnInteractEvent();
     }
 
-    public void OnShow(InputAction.CallbackContext contect)
+    public void OnShow(InputAction.CallbackContext context)
     {
-        OnShowEvent();
+        OnShowEvent(context.ReadValueAsButton());
     }
 
     public void OnDeath(bool isDeath)
@@ -52,10 +54,11 @@ public class EventManager : MonoBehaviour
     }
  
     public delegate void Action();
+    public delegate void Bool(bool isDeath);
     public delegate void MoveEvent(Vector2 move);
     public event MoveEvent OnMoveEvent;
 
-    public event Action OnAttackEvent;
+    public event Bool OnAttackEvent;
 
     public event Action OnRunEvent;
 
@@ -63,10 +66,9 @@ public class EventManager : MonoBehaviour
 
     public event Action OnInteractEvent;
 
-    public event Action OnShowEvent;
+    public event Bool OnShowEvent;
 
-    public delegate void DeathEvent(bool isDeath);
-    public event DeathEvent OnDeathEvent;
+    public event Bool OnDeathEvent;
 
     private static EventManager _eventManager;
 }

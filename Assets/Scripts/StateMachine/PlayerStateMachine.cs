@@ -5,7 +5,9 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateMachine(Actor actor) : base(actor)
     {
         GetEventManager().OnMoveEvent += OnMoveEvent;
+        GetEventManager().OnAttackEvent += OnAttackEvent;
         GetEventManager().OnDeathEvent += OnDeathEvent;
+        GetEventManager().OnShowEvent += OnShowEvent;
 
         AddState(new PlayerIdleState("PlayerIdleState", this));
         AddState(new PlayerAttackState("PlayerAttackState", this));
@@ -23,7 +25,12 @@ public class PlayerStateMachine : StateMachine
     {
         _CurrentMovementInput = movement;
 
-        _isMovementPressed = _CurrentMovementInput.x != 0 || _CurrentMovementInput.y != 0;
+        _IsMovementPressed = _CurrentMovementInput.x != 0 || _CurrentMovementInput.y != 0;
+    }
+
+    public void OnAttackEvent(bool isAttackPressed)
+    {
+        _IsAttackPressed = isAttackPressed;
     }
 
     public void OnDeathEvent(bool isDeath)
@@ -31,7 +38,14 @@ public class PlayerStateMachine : StateMachine
         _IsDeath = isDeath;
     }
 
-    public Vector2 _CurrentMovementInput;
-    public bool _isMovementPressed;
-    public bool _IsDeath;
+    public void OnShowEvent(bool isShowPressed)
+    {
+        _IsAttackPressed = isShowPressed;
+    }
+
+    public Vector2 _CurrentMovementInput = new Vector2();
+    public bool _IsMovementPressed = false;
+    public bool _IsDeath = false;
+    public bool _IsAttackPressed = false;
+    public bool _IsShowPressed = false;
 }
