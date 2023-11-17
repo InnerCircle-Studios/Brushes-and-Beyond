@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 
+
 public abstract class StateMachine
 {
     public StateMachine(Actor actor)
     {
         _Actor = actor;
+
+        _eventManager = EventManager.GetEventManager();
+
+        _States = new List<State>();
     }
 
     public void AddState(State state)
@@ -39,7 +44,13 @@ public abstract class StateMachine
         return _Actor;
     }
 
+    protected EventManager GetEventManager()
+    {
+        return _eventManager;
+    }
+
     private List<State> _States;
     private State _CurrentState;
     private Actor _Actor;
+    private EventManager _eventManager;
 }
