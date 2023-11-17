@@ -403,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163b93212767fde418e200b5b3d846ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 500654456}
 --- !u!114 &29426284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28903,7 +28902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419be6ea1e4fb644fa29309934943c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 164093514}
 --- !u!114 &164093514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28916,65 +28914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Where am I?!
-  - actorId: 0
-    message: What is this place...
-  - actorId: 0
-    message: Wait, I see someone over there, who is that?
-  actors:
-  - name: Vin
-    sprite: {fileID: 21300000, guid: a0c35a046b9a6b94aa02366962fde7ff, type: 3}
-  DialogueActions:
-  - PlayAfterIndex: -1
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2137030343}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: Play
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ForwardIdle
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 2
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 772584853}
-          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-          m_MethodName: TurtorialStart
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 99
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2137030343}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: Play
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ForwardIdle
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &180946715
 GameObject:
   m_ObjectHideFlags: 0
@@ -29039,7 +28978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9e214e8fc21841a901c1fede8be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 94334631}
 --- !u!114 &180946719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29316,18 +29254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a2da9a435c2fa4fa3158da85c2df1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds:
-  - name: BattleMusic
-    clip: {fileID: 8300000, guid: d7c3ec8634e116f4d9b80e4d4bbd8990, type: 3}
-  - name: BaseMusic
-    clip: {fileID: 8300000, guid: 65699c003c785a446acb448f857130c6, type: 3}
-  sfxSounds:
-  - name: Dialogue
-    clip: {fileID: 8300000, guid: e126dcbc0b253544e9ca5bae0bf289ed, type: 3}
-  - name: Lightning
-    clip: {fileID: 8300000, guid: 213ba47b9b8d0aa42a49a0de1151287e, type: 3}
-  musicSource: {fileID: 1029593568}
-  sfxSource: {fileID: 1753927772}
 --- !u!4 &261100407
 Transform:
   m_ObjectHideFlags: 0
@@ -29601,13 +29527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: I need paint!
-  actors:
-  - name: Vin
-    sprite: {fileID: 21300000, guid: 83710d76b0f81d2449b2888db5fe407f, type: 3}
-  DialogueActions: []
 --- !u!114 &414546945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29620,7 +29539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 414546944}
 --- !u!1 &471904145
 GameObject:
   m_ObjectHideFlags: 0
@@ -29766,6 +29684,8 @@ GameObject:
   - component: {fileID: 484618754}
   - component: {fileID: 484618753}
   - component: {fileID: 484618752}
+  - component: {fileID: 484618756}
+  - component: {fileID: 484618755}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -29823,6 +29743,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484618755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484618751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b00d51a3b86c3aa49a9b2252f227119c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 484618756}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f12903c0-d256-4591-8044-1ec02f04c0fd
+    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ba19fba-8d61-4ac7-b910-60249a2a1f38
+    m_ActionName: Movement/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c90608c-332d-4c59-a847-aa9544fb7a9e
+    m_ActionName: Movement/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6d2ed788-4434-449b-b9cf-51f368b03f98
+    m_ActionName: Movement/Dash[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70d5dfce-92e3-432d-8e8c-d6b9c08765db
+    m_ActionName: Movement/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e7f0a168-ab15-4f8a-87c0-3ef3a83053de
+    m_ActionName: Movement/Show[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84a0bcc5-1be5-4596-9671-270e183b90d6
+    m_ActionName: Settings/Pause[/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &484618756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484618751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f343d891f3a27c24ab9d257bb59de88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &500654456
 GameObject:
   m_ObjectHideFlags: 0
@@ -30102,8 +30104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a275b4029f1c044a0f58f68558144c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2137030348}
-  virtualCamera: {fileID: 1408969122}
 --- !u!1 &537539930
 GameObject:
   m_ObjectHideFlags: 0
@@ -30584,31 +30584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c18f32601820643a1624481649e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1959386092}
-        m_TargetAssemblyTypeName: BrushyDialogue, Assembly-CSharp
-        m_MethodName: TutorialCompleted
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _moveImage: {fileID: 827112890}
-  _runImage: {fileID: 246277709}
-  _attackImage: {fileID: 537539933}
-  _interactImage: {fileID: 814044036}
-  _moveGreen: {fileID: 21300000, guid: b540aafb357c28b4cb668c4113a62878, type: 3}
-  _runGreen: {fileID: 21300000, guid: eaa5deeb3588470408b6709179151f93, type: 3}
-  _attackGreen: {fileID: 21300000, guid: 4a5892f5c084dca4ca4e7122b0b7e778, type: 3}
-  _interactGreen: {fileID: 21300000, guid: 5004dba79d078784e8fdebef3cddf1ff, type: 3}
-  tutorialPanel: {fileID: 726661466}
-  transitionSpeed: 1
 --- !u!1 &772932321
 GameObject:
   m_ObjectHideFlags: 0
@@ -31411,7 +31386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9e214e8fc21841a901c1fede8be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 94334631}
 --- !u!114 &1028328017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32527,121 +32501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Hey Vin!
-  - actorId: 1
-    message: Who are you? You know my name?
-  - actorId: 0
-    message: I know much more than just your name...
-  - actorId: 0
-    message: Though right now I need your help.
-  - actorId: 0
-    message: I can't seem to get past this...
-  - actorId: 0
-    message: It's as if god forgot to create  a part of the world!
-  - actorId: 1
-    message: ........
-  - actorId: 0
-    message: Anyways take these paints.
-  - actorId: 0
-    message: After this hill there are some monsters.
-  - actorId: 0
-    message: This here is a normal enemy. Evil but useless.
-  - actorId: 0
-    message: On the otherhand. This is a paint enemy. Much stronger.
-  - actorId: 0
-    message: If you kill them you get extra paint!
-  - actorId: 0
-    message: Goodluck on your adventure!
-  - actorId: 1
-    message: Thanks... I guess...
-  actors:
-  - name: Inky
-    sprite: {fileID: 21300000, guid: 473b3cb42f478e54b943356a48145ae3, type: 3}
-  - name: Vin
-    sprite: {fileID: 21300000, guid: a0c35a046b9a6b94aa02366962fde7ff, type: 3}
-  DialogueActions:
-  - PlayAfterIndex: 6
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1425179976}
-          m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-          m_MethodName: GiveMaxPaints
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 8
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1425179976}
-          m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-          m_MethodName: ShowPanelOne
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 9
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1425179976}
-          m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-          m_MethodName: ShowPanelTwo
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 11
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1425179976}
-          m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-          m_MethodName: HidePanels
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - PlayAfterIndex: 12
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1425179976}
-          m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-          m_MethodName: DestroyInky
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1425179976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32654,25 +32513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcebddbcbde1ce64f95b24a6665c1a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstDialogue: {fileID: 1425179975}
-  objectPrefab: {fileID: 7396347380715169605, guid: 1027638e567863441a036eaff2e83db8, type: 3}
-  panel1: {fileID: 1686667685}
-  panel2: {fileID: 1506992832}
-  giveMaxPaints:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030356}
-        m_TargetAssemblyTypeName: Paintbar, Assembly-CSharp
-        m_MethodName: OnGameItemTriggered
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!61 &1425179977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33086,7 +32926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1579753562}
 --- !u!61 &1579753560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33144,17 +32983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: If only I had some paint...
-  - actorId: 0
-    message: I bet we could find some if we work together!
-  actors:
-  - name: Vin
-    sprite: {fileID: 21300000, guid: aff6d01758251a64184025e5454f3187, type: 3}
-  - name: Brushy
-    sprite: {fileID: 1503095284, guid: 508452e9aab52d747994aa44dd515193, type: 3}
-  DialogueActions: []
 --- !u!60 &1579753563
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -34775,13 +34603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: I bet I could fix this if I had some paint!
-  actors:
-  - name: Vin
-    sprite: {fileID: 21300000, guid: 0c6fd49759a8fd74eb2bb05939ab5769, type: 3}
-  DialogueActions: []
 --- !u!114 &1824873854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34794,7 +34615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1824873853}
 --- !u!60 &1824873855
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -35121,11 +34941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9496e9f9065fb348831822233fb3e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorImage: {fileID: 652401199}
-  actorName: {fileID: 1019767746}
-  messageText: {fileID: 795082168}
-  backgroundBox: {fileID: 1878364299}
-  nextButton: {fileID: 1792874648}
 --- !u!114 &1878364301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35533,8 +35348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57f4673b43818544a37e6a25914c0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceAmount: 0.09
-  bounceSpeed: 3
 --- !u!95 &1959386086
 Animator:
   serializedVersion: 5
@@ -35635,35 +35448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Don't worry Vin, I'll help you fix your painting!
-  - actorId: 0
-    message: Just find and interact with some paint for me.
-  - actorId: 0
-    message: Everytime we have 3 paints, I'll help you paint a masterpiece.
-  - actorId: 0
-    message: Take me with you!
-  actors:
-  - name: Burshy
-    sprite: {fileID: 1503095284, guid: 508452e9aab52d747994aa44dd515193, type: 3}
-  DialogueActions:
-  - PlayAfterIndex: 3
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1959386092}
-          m_TargetAssemblyTypeName: BrushyDialogue, Assembly-CSharp
-          m_MethodName: DestroyBrushy
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1959386090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35676,48 +35460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Welcome to eary woods.
-  - actorId: 1
-    message: Eary woods?
-  - actorId: 0
-    message: Dont tell me you've forgotten about this painting?!
-  - actorId: 0
-    message: We worked on it all week, but then you just walked away...
-  - actorId: 0
-    message: I was just laying there, next thing I knew I woke up here!
-  - actorId: 0
-    message: You probably want to get home don't you?
-  - actorId: 1
-    message: Well I can't stay here in ... Eary woods, was it?
-  - actorId: 0
-    message: No I guess you cant...
-  - actorId: 0
-    message: Lets go and explore, go check out that paint blotch over there and report
-      back to me.
-  actors:
-  - name: Brushy
-    sprite: {fileID: 1503095284, guid: 508452e9aab52d747994aa44dd515193, type: 3}
-  - name: Vin
-    sprite: {fileID: 21300000, guid: a0c35a046b9a6b94aa02366962fde7ff, type: 3}
-  DialogueActions:
-  - PlayAfterIndex: 8
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1959386092}
-          m_TargetAssemblyTypeName: BrushyDialogue, Assembly-CSharp
-          m_MethodName: SecondDialogueCompleted
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1959386091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35730,21 +35472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorId: 0
-    message: Welcome Vin! Im Brushy
-  - actorId: 0
-    message: You know... Your favorite brush!
-  - actorId: 0
-    message: Don't tell me you have a new favorite...
-  - actorId: 0
-    message: anyways...
-  - actorId: 0
-    message: You havent completed the tutorial yet... Talk to me after!
-  actors:
-  - name: Brushy
-    sprite: {fileID: 1503095284, guid: 508452e9aab52d747994aa44dd515193, type: 3}
-  DialogueActions: []
 --- !u!114 &1959386092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35757,10 +35484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3617b56b414e0ea4eabc734ce168a0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstDialogue: {fileID: 1959386091}
-  SecondDialogue: {fileID: 1959386090}
-  ThirdDialogue: {fileID: 1959386089}
-  objectPrefab: {fileID: 2316908948544563850, guid: 1aa1dea91aee75c47a5ee07510ee2c07, type: 3}
 --- !u!61 &1959386093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36602,12 +36325,6 @@ GameObject:
   - component: {fileID: 2137030344}
   - component: {fileID: 2137030343}
   - component: {fileID: 2137030349}
-  - component: {fileID: 2137030350}
-  - component: {fileID: 2137030354}
-  - component: {fileID: 2137030352}
-  - component: {fileID: 2137030355}
-  - component: {fileID: 2137030356}
-  - component: {fileID: 2137030358}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -36785,474 +36502,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137030342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: f5bfc88e6e40128fc987cd6e26f111f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b00d51a3b86c3aa49a9b2252f227119c, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-    m_ActionId: f12903c0-d256-4591-8044-1ec02f04c0fd
-    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8ba19fba-8d61-4ac7-b910-60249a2a1f38
-    m_ActionName: Movement/Attack[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnRun
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6c90608c-332d-4c59-a847-aa9544fb7a9e
-    m_ActionName: Movement/Run[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnDash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6d2ed788-4434-449b-b9cf-51f368b03f98
-    m_ActionName: Movement/Dash[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnInteract
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 70d5dfce-92e3-432d-8e8c-d6b9c08765db
-    m_ActionName: Movement/Interact[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: OnShow
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e7f0a168-ab15-4f8a-87c0-3ef3a83053de
-    m_ActionName: Movement/Show[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 84a0bcc5-1be5-4596-9671-270e183b90d6
-    m_ActionName: Settings/Pause[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Movement
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &2137030350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ec2c8735f009d4b96cdd6f40e1fc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
-  _sprintSpeed: 15
-  _dashDistance: 3
-  dialogueTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1959386092}
-        m_TargetAssemblyTypeName: BrushyDialogue, Assembly-CSharp
-        m_MethodName: DialogueBrushy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1425179976}
-        m_TargetAssemblyTypeName: InkyDialogue, Assembly-CSharp
-        m_MethodName: DialogueInky
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameStartDialogueTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 164093513}
-        m_TargetAssemblyTypeName: gameStartDialogue, Assembly-CSharp
-        m_MethodName: gameStartDialogueTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameItem:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030356}
-        m_TargetAssemblyTypeName: Paintbar, Assembly-CSharp
-        m_MethodName: OnGameItemTriggered
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameBlockade:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137030356}
-        m_TargetAssemblyTypeName: Paintbar, Assembly-CSharp
-        m_MethodName: InteractOnBlockade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  nextMessageTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1878364300}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: NextMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  tutorialMovement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 772584853}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: MovementCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  tutorialRun:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 772584853}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: RunCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  tutorialInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 772584853}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: InteractCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  tutorialAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 772584853}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: AttackCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  playerDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2137845329}
-        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
-        m_MethodName: ShowPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  stateTextMeshPro: {fileID: 151911845}
-  dashCooldownSlider: {fileID: 904965352}
---- !u!114 &2137030352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a2294032511b248bd0feae617409aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: ca546543b439597499a412ee85e2439c, type: 2}
---- !u!114 &2137030354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcfcc90e23611104ca2c6caacbbd86ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackTransform: {fileID: 1734526379}
-  attackRange: 1.5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  knockbackStrength: 7.5
---- !u!114 &2137030355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be6842609f39124cb7d9de6a923a32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkRadius: 6
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  fadeDuration: 1.5
---- !u!114 &2137030356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383a95a86ad3c03488836f3dd03882cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPaints: 3
-  onPaintsUsed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1579753559}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: onPaintsUsed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2137030350}
-        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
-        m_MethodName: UsingPaints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1824873854}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: onPaintsUsed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 414546945}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: onPaintsUsed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onBlockadeDialogue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1579753559}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: StartBlockadeDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1824873854}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: StartBlockadeDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 414546945}
-        m_TargetAssemblyTypeName: Blockade, Assembly-CSharp
-        m_MethodName: StartBlockadeDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  paintCounterUI: {fileID: 0}
-  paintImagePrefab: {fileID: 940268927243920928, guid: 84a7e31e85db1284886953bb30bba021, type: 3}
-  paintContainer: {fileID: 2133908634}
-  currentPaintCount: 0
---- !u!114 &2137030358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137030342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac564909c24a754e8cec642334241ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tmp: {fileID: 1654891068}
+  attributes: {fileID: 11400000, guid: 8ae31b5b7b313e67f9e05748f093b7a2, type: 2}
 --- !u!1 &2137048787
 GameObject:
   m_ObjectHideFlags: 0
@@ -37284,7 +36537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f11012f142f5014ea09e9b194194075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: EndScene
 --- !u!70 &2137048789
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -37454,7 +36706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9e214e8fc21841a901c1fede8be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 2137845326}
 --- !u!114 &2137845330
 MonoBehaviour:
   m_ObjectHideFlags: 0
