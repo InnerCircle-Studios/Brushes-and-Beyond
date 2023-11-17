@@ -36,9 +36,9 @@ public class EventManager : MonoBehaviour
         OnShowEvent();
     }
 
-    public void OnDeath()
+    public void OnDeath(bool isDeath)
     {
-        OnDeathEvent();
+        OnDeathEvent(isDeath);
     }
 
     static public EventManager GetEventManager()
@@ -65,7 +65,8 @@ public class EventManager : MonoBehaviour
 
     public event Action OnShowEvent;
 
-    public event Action OnDeathEvent;
+    public delegate void DeathEvent(bool isDeath);
+    public event DeathEvent OnDeathEvent;
 
     private static EventManager _eventManager;
 }
