@@ -3,7 +3,6 @@ public class PlayerIdleState : State
     public PlayerIdleState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
         _PlayerStateMachine = GetStateMachine() as PlayerStateMachine;
-        AddSwitchCases();
     }
 
     public override void AwakeState()

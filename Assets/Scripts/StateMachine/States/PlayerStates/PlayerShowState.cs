@@ -3,12 +3,11 @@ public class PlayerShowState : State
     public PlayerShowState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
         _PlayerStateMachine = GetStateMachine() as PlayerStateMachine;
-        AddSwitchCases();
     }
 
     public override void AwakeState()
     {
-
+        AddSwitchCases();
     }
 
     public override void EnterState()

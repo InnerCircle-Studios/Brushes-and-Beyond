@@ -29,6 +29,14 @@ public abstract class StateMachine
         return null;
     }
 
+    protected void InitStitchCases()
+    {
+        foreach (State state in _States)
+        {
+            state.AwakeState();
+        }
+    }
+
     public void ChangeState(State state)
     {
         _CurrentState = state;

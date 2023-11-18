@@ -5,6 +5,10 @@ public class PlayerWalkState : State
     public PlayerWalkState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
         _PlayerStateMachine = GetStateMachine() as PlayerStateMachine;
+    }
+
+    public override void AwakeState()
+    {
         AddSwitchCases();
     }
 

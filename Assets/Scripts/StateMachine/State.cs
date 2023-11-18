@@ -11,6 +11,8 @@ public abstract class State
         _SwitchStateCases = new Dictionary<bool , State>();
     }
 
+    public abstract void AwakeState();
+
     public abstract void EnterState();
     
     public abstract void UpdateState();
