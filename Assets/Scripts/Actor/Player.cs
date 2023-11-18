@@ -25,5 +25,10 @@ public class Player : Actor
         
     }
 
+    public void OnDeath()
+    {
+        GetEventManager().OnDeath(true);
+    }
+
     private PlayerStateMachine _PlayerStateMachine;
 }

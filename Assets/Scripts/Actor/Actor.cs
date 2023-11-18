@@ -9,6 +9,8 @@ public abstract class Actor : MonoBehaviour
         _Combat = new Combat();
         
         _RigidBody = GetComponent<Rigidbody2D>();
+
+        _EventManager = EventManager.GetEventManager();
     }
 
     public abstract void Start();
@@ -24,9 +26,14 @@ public abstract class Actor : MonoBehaviour
         return _AttributeManager;
     }
 
-    public  ICombat GetCombat()
+    public ICombat GetCombat()
     {
         return _Combat;
+    }
+
+    protected EventManager GetEventManager()
+    {
+        return _EventManager;
     }
 
     public void HandleWalk(Vector2 desiredMovement)
@@ -40,4 +47,6 @@ public abstract class Actor : MonoBehaviour
     private Rigidbody2D _RigidBody;
 
     private ICombat _Combat;
+
+    private EventManager _EventManager;
 }
