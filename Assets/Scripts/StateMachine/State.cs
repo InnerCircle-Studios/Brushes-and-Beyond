@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public abstract class State
 {
@@ -6,13 +7,13 @@ public abstract class State
     {
         _Name = name;
         _StateMachine = stateMachine;
+
+        _SwitchStateCases = new Dictionary<bool , State>();
     }
 
     public abstract void EnterState();
     
     public abstract void UpdateState();
-
-    public abstract void CheckSwitchStates();
 
     public void ExitState()
     {
@@ -24,6 +25,24 @@ public abstract class State
         ExitState();
         newstate.EnterState();
     }
+
+    protected void AddSwitchCase(bool boolSwitchCase, State newState)
+    {
+        _SwitchStateCases.Add(boolSwitchCase , newState);
+    }
+
+    protected void CheckSwitchStates()
+    {
+        foreach (var pair in _SwitchStateCases)
+        {
+            if (pair.Key)
+            {
+                SwitchState(pair.Value);
+            }
+        }
+    }
+
+    public abstract void AddSwitchCases();
 
     public string GetName()
     {
@@ -37,4 +56,5 @@ public abstract class State
 
     private string _Name;
     private StateMachine _StateMachine;
+    private Dictionary<bool , State> _SwitchStateCases;
 }
