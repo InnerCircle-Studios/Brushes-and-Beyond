@@ -6,6 +6,11 @@ public class PlayerRunState : State
         AddSwitchCases();
     }
 
+    public override void AwakeState()
+    {
+
+    }
+
     public override void EnterState()
     {
         

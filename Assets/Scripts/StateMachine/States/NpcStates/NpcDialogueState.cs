@@ -5,6 +5,11 @@ public class NpcDialogueState : State
 
     }
 
+    public override void AwakeState()
+    {
+        AddSwitchCases();
+    }
+
     public override void EnterState()
     {
         

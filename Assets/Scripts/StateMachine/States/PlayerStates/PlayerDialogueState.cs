@@ -6,6 +6,11 @@ public class PlayerDialogueState : State
         AddSwitchCases();
     }
 
+    public override void AwakeState()
+    {
+        AddSwitchCases();
+    }
+
     public override void EnterState()
     {
         

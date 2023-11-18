@@ -5,6 +5,11 @@ public class HostileAttackState : State
 
     }
 
+    public override void AwakeState()
+    {
+        AddSwitchCases();
+    }
+
     public override void EnterState()
     {
         

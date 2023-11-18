@@ -5,6 +5,11 @@ public class PlayerDeathState : State
         AddSwitchCases();
     }
 
+    public override void AwakeState()
+    {
+        AddSwitchCases();
+    }
+
     public override void EnterState()
     {
         

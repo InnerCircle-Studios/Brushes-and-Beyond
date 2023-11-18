@@ -6,6 +6,11 @@ public class PlayerShowState : State
         AddSwitchCases();
     }
 
+    public override void AwakeState()
+    {
+
+    }
+
     public override void EnterState()
     {
         
