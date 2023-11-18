@@ -15,9 +15,8 @@ public class PlayerRunState : State
         
     }
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
         
     }
-
 }

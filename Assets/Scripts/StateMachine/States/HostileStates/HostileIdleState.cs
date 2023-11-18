@@ -15,9 +15,8 @@ public class HostileIdleState : State
         
     }
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
         
     }
-
 }

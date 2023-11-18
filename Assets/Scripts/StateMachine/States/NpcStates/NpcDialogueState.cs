@@ -15,9 +15,8 @@ public class NpcDialogueState : State
         
     }
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
         
     }
-
 }

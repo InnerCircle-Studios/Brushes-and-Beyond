@@ -15,11 +15,14 @@ public class PlayerWalkState : State
     public override void UpdateState()
     {
         HandleWalk();
+        CheckSwitchStates();
     }
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
-        
+        AddSwitchCase(_PlayerStateMachine._IsDeath, _PlayerStateMachine.GetState("PlayerDeathState"));
+        AddSwitchCase(!_PlayerStateMachine._IsMovementPressed, _PlayerStateMachine.GetState("PlayerIdleState"));
+        AddSwitchCase(_PlayerStateMachine._IsAttackPressed, _PlayerStateMachine.GetState("PlayerAttackState"));
     }
 
     private void HandleWalk()

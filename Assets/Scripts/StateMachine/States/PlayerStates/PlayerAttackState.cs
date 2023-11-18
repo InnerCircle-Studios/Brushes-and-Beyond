@@ -15,9 +15,8 @@ public class PlayerAttackState : State
         
     }
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
         
     }
-
 }

@@ -13,11 +13,10 @@ public class HostileAttackState : State
     public override void UpdateState()
     {
         
-    }
+    } 
 
-    public override void CheckSwitchStates() 
+    public override void AddSwitchCases() 
     {
         
     }
-    
 }

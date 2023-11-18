@@ -8,6 +8,7 @@ public class PlayerStateMachine : StateMachine
         GetEventManager().OnAttackEvent += OnAttackEvent;
         GetEventManager().OnDeathEvent += OnDeathEvent;
         GetEventManager().OnShowEvent += OnShowEvent;
+        GetEventManager().OnDialogueEvent += OnDialogueEvent;
 
         AddState(new PlayerIdleState("PlayerIdleState", this));
         AddState(new PlayerAttackState("PlayerAttackState", this));
@@ -27,6 +28,7 @@ public class PlayerStateMachine : StateMachine
         GetEventManager().OnAttackEvent -= OnAttackEvent;
         GetEventManager().OnDeathEvent -= OnDeathEvent;
         GetEventManager().OnShowEvent -= OnShowEvent;
+        GetEventManager().OnDialogueEvent -= OnDialogueEvent;
     }
 
     public void OnMoveEvent(Vector2 movement)
@@ -51,9 +53,15 @@ public class PlayerStateMachine : StateMachine
         _IsAttackPressed = isShowPressed;
     }
 
+    public void OnDialogueEvent(bool isDialogueActive)
+    {
+        _IsDialogueActive = isDialogueActive;
+    }
+
     public Vector2 _CurrentMovementInput = new Vector2();
     public bool _IsMovementPressed = false;
     public bool _IsDeath = false;
     public bool _IsAttackPressed = false;
     public bool _IsShowPressed = false;
+    public bool _IsDialogueActive = false;
 }
