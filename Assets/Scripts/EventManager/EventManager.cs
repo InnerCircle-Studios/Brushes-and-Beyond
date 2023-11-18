@@ -1,5 +1,3 @@
-using UnityEditor.Rendering.LookDev;
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +18,7 @@ public class EventManager : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        OnRunEvent();
+        OnRunEvent(context.ReadValueAsButton());
     }
 
     public void OnDash(InputAction.CallbackContext context)
@@ -30,7 +28,7 @@ public class EventManager : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        OnInteractEvent();
+        OnInteractEvent(context.ReadValueAsButton());
     }
 
     public void OnShow(InputAction.CallbackContext context)
@@ -60,11 +58,11 @@ public class EventManager : MonoBehaviour
 
     public event Bool OnAttackEvent;
 
-    public event Action OnRunEvent;
+    public event Bool OnRunEvent;
 
     public event Action OnDashEvent;
 
-    public event Action OnInteractEvent;
+    public event Bool OnInteractEvent;
 
     public event Bool OnShowEvent;
 
