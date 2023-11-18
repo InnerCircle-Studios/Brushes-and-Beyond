@@ -2,7 +2,7 @@ public class PlayerDeathState : State
 {
     public PlayerDeathState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        AddSwitchCases();
     }
 
     public override void EnterState()

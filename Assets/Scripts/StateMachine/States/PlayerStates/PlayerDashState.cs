@@ -2,7 +2,7 @@ public class PlayerDashState : State
 {
     public PlayerDashState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        AddSwitchCases();
     }
 
     public override void EnterState()

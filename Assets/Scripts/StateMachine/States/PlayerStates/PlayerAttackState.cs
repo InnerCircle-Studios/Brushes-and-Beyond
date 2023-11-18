@@ -2,7 +2,7 @@ public class PlayerAttackState : State
 {
     public PlayerAttackState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        AddSwitchCases();
     }
 
     public override void EnterState()
