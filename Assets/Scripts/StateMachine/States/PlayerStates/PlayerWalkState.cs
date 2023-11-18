@@ -22,6 +22,7 @@ public class PlayerWalkState : State
     {
         AddSwitchCase(_PlayerStateMachine._IsDeath, _PlayerStateMachine.GetState("PlayerDeathState"));
         AddSwitchCase(!_PlayerStateMachine._IsMovementPressed, _PlayerStateMachine.GetState("PlayerIdleState"));
+        AddSwitchCase(_PlayerStateMachine._IsDialogueActive, _PlayerStateMachine.GetState("PlayerDialogueState"));
         AddSwitchCase(_PlayerStateMachine._IsAttackPressed, _PlayerStateMachine.GetState("PlayerAttackState"));
     }
 

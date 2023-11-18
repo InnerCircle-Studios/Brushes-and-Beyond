@@ -12,7 +12,7 @@ public class PlayerDeathState : State
 
     public override void UpdateState()
     {
-        
+        CheckSwitchStates();
     }
 
     public override void AddSwitchCases() 
