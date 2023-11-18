@@ -17,6 +17,10 @@ public class PlayerWalkState : State
         HandleWalk();
     }
 
+    public override void CheckSwitchStates() 
+    {
+        
+    }
 
     private void HandleWalk()
     {

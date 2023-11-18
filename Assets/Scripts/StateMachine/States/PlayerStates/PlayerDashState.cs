@@ -15,4 +15,9 @@ public class PlayerDashState : State
         
     }
 
+    public override void CheckSwitchStates() 
+    {
+        
+    }
+
 }

@@ -15,4 +15,9 @@ public class PlayerIdleState : State
         
     }
 
+    public override void CheckSwitchStates() 
+    {
+        
+    }
+
 }

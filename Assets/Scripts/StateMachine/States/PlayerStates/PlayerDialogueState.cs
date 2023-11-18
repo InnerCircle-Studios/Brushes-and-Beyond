@@ -15,4 +15,9 @@ public class PlayerDialogueState : State
         
     }
 
+    public override void CheckSwitchStates() 
+    {
+        
+    }
+
 }

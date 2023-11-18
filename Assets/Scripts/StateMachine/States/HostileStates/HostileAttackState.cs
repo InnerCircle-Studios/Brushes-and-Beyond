@@ -14,5 +14,10 @@ public class HostileAttackState : State
     {
         
     }
+
+    public override void CheckSwitchStates() 
+    {
+        
+    }
     
 }

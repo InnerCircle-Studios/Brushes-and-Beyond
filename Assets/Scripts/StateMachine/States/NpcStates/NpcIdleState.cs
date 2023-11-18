@@ -15,4 +15,9 @@ public class NpcIdleState : State
         
     }
 
+    public override void CheckSwitchStates() 
+    {
+        
+    }
+
 }

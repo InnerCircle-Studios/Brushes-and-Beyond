@@ -12,6 +12,8 @@ public abstract class State
     
     public abstract void UpdateState();
 
+    public abstract void CheckSwitchStates();
+
     public void ExitState()
     {
         Debug.Log("Exited state: " + _Name);
@@ -35,5 +37,4 @@ public abstract class State
 
     private string _Name;
     private StateMachine _StateMachine;
-
 }
