@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public abstract class State
 {
     public State(string name, StateMachine stateMachine)
@@ -12,7 +14,7 @@ public abstract class State
 
     public void ExitState()
     {
-        
+        Debug.Log("Exited state: " + _Name);
     }
 
     public void SwitchState(State newstate)

@@ -54,6 +54,4 @@ public class QuestManager
     }
 
     public event Action<Quest> QuestCompletedEvent;
-
-
 }
