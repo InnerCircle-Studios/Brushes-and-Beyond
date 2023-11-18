@@ -41,6 +41,11 @@ public class EventManager : MonoBehaviour
         OnDeathEvent(isDeath);
     }
 
+    public void OnDialogue(bool isDialogueTrue)
+    {
+        OnDialogueEvent(isDialogueTrue);
+    }
+
     static public EventManager GetEventManager()
     {
         if (_eventManager == null)
@@ -67,6 +72,8 @@ public class EventManager : MonoBehaviour
     public event Bool OnShowEvent;
 
     public event Bool OnDeathEvent;
+
+    public event Bool OnDialogueEvent;
 
     private static EventManager _eventManager;
 }
