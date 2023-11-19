@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Xml.Serialization;
-
 using UnityEngine;
 
 public class PlayerAttackState : State
