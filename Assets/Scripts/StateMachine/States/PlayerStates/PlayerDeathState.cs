@@ -15,6 +15,11 @@ public class PlayerDeathState : State
         
     }
 
+    public override void ExitState()
+    {
+
+    }
+
     public override void UpdateState()
     {
         CheckSwitchStates();

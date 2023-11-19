@@ -23,6 +23,11 @@ public class PlayerWalkState : State
         CheckSwitchStates();
     }
 
+    public override void ExitState()
+    {
+
+    }
+
     public override void AddSwitchCases() 
     {
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDeath, true ), _PlayerStateMachine.GetState("PlayerDeathState"));

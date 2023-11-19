@@ -40,7 +40,6 @@ public class PlayerStateMachine : StateMachine
         _CurrentMovementInput = movement;
 
         _IsMovementPressed.Value = _CurrentMovementInput.x != 0 || _CurrentMovementInput.y != 0;
-        Debug.Log(_CurrentMovementInput.x);
     }
 
     public void OnAttackEvent(bool isAttackPressed)
@@ -78,4 +77,5 @@ public class PlayerStateMachine : StateMachine
     public BoolWrapper _IsDialogueActive { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsShowDone { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsRunningPressed { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _AttackTimer {get; set;} = new BoolWrapper(false);
 }

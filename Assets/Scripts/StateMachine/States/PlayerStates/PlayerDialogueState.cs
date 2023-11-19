@@ -15,6 +15,11 @@ public class PlayerDialogueState : State
         
     }
 
+    public override void ExitState()
+    {
+
+    }
+
     public override void UpdateState()
     {
         

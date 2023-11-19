@@ -19,16 +19,14 @@ public abstract class State
 
     public abstract void AddSwitchCases();
 
-    public void ExitState()
-    {
-        Debug.Log("Exited state: " + _Name);
-    }
+    public abstract void ExitState();
 
     public void SwitchState(State newState)
     {
         ExitState();
         _StateMachine.ChangeState(newState);
         newState.EnterState();
+        Debug.Log("Entering state: " + newState._Name);
     }
 
     protected void AddSwitchCase(SwitchCaseWrapper boolSwitchCase, State newState)

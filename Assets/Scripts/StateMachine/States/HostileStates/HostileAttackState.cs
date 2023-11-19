@@ -20,6 +20,11 @@ public class HostileAttackState : State
         
     } 
 
+    public override void ExitState()
+    {
+
+    }
+
     public override void AddSwitchCases() 
     {
         

@@ -20,6 +20,11 @@ public class HostileWalkState : State
         
     }
 
+    public override void ExitState()
+    {
+
+    }
+
     public override void AddSwitchCases() 
     {
         
