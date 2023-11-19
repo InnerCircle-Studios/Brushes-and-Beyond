@@ -8,7 +8,7 @@ public abstract class State
         _Name = name;
         _StateMachine = stateMachine;
 
-        _SwitchStateCases = new Dictionary<bool , State>();
+        _SwitchStateCases = new Dictionary<SwitchCaseWrapper , State>();
     }
 
     public abstract void AwakeState();
@@ -17,18 +17,21 @@ public abstract class State
     
     public abstract void UpdateState();
 
+    public abstract void AddSwitchCases();
+
     public void ExitState()
     {
         Debug.Log("Exited state: " + _Name);
     }
 
-    public void SwitchState(State newstate)
+    public void SwitchState(State newState)
     {
         ExitState();
-        newstate.EnterState();
+        _StateMachine.ChangeState(newState);
+        newState.EnterState();
     }
 
-    protected void AddSwitchCase(bool boolSwitchCase, State newState)
+    protected void AddSwitchCase(SwitchCaseWrapper boolSwitchCase, State newState)
     {
         _SwitchStateCases.Add(boolSwitchCase , newState);
     }
@@ -37,14 +40,13 @@ public abstract class State
     {
         foreach (var pair in _SwitchStateCases)
         {
-            if (pair.Key)
+            if (pair.Key._boolWrapper.Value == pair.Key._trueOrFalse)
             {
                 SwitchState(pair.Value);
+                return;
             }
         }
     }
-
-    public abstract void AddSwitchCases();
 
     public string GetName()
     {
@@ -58,5 +60,32 @@ public abstract class State
 
     private string _Name;
     private StateMachine _StateMachine;
-    private Dictionary<bool , State> _SwitchStateCases;
+    private Dictionary<SwitchCaseWrapper , State> _SwitchStateCases;
+}
+
+public class BoolWrapper
+{
+    public bool Value { get; set; }
+
+    public BoolWrapper(bool value)
+    {
+        Value = value;
+    }
+
+    public static BoolWrapper operator !(BoolWrapper wrapBool)
+    {
+        return new BoolWrapper(!wrapBool.Value);
+    }
+}
+
+public class SwitchCaseWrapper
+{
+    public SwitchCaseWrapper(BoolWrapper boolWrapper, bool trueOrFalse)
+    {
+        _boolWrapper = boolWrapper;
+        _trueOrFalse = trueOrFalse;
+    }
+
+    public BoolWrapper _boolWrapper;
+    public bool _trueOrFalse;
 }

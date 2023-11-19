@@ -3,25 +3,6 @@ using UnityEngine.InputSystem;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void Action();
-    public delegate void Bool(bool isDeath);
-    public delegate void MoveEvent(Vector2 move);
-    public event MoveEvent OnMoveEvent;
-
-    public event Bool OnAttackEvent;
-
-    public event Bool OnRunEvent;
-
-    public event Action OnDashEvent;
-
-    public event Bool OnInteractEvent;
-
-    public event Bool OnShowEvent;
-
-    public event Bool OnDeathEvent;
-
-    public event Bool OnDialogueEvent;
-
     private EventManager() { }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -74,7 +55,24 @@ public class EventManager : MonoBehaviour
         return _eventManager;
     }
  
+    public delegate void Action();
+    public delegate void Bool(bool isDeath);
+    public delegate void MoveEvent(Vector2 move);
+    public event MoveEvent OnMoveEvent;
 
+    public event Bool OnAttackEvent;
+
+    public event Bool OnRunEvent;
+
+    public event Action OnDashEvent;
+
+    public event Bool OnInteractEvent;
+
+    public event Bool OnShowEvent;
+
+    public event Bool OnDeathEvent;
+
+    public event Bool OnDialogueEvent;
 
     private static EventManager _eventManager;
 }

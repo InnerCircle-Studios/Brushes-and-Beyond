@@ -22,7 +22,7 @@ public class PlayerShowState : State
 
     public override void AddSwitchCases() 
     {
-        AddSwitchCase(_PlayerStateMachine._IsShowDone, _PlayerStateMachine.GetState("PlayerIdleState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsShowDone, true) , _PlayerStateMachine.GetState("PlayerIdleState"));
     }
 
     private PlayerStateMachine _PlayerStateMachine;

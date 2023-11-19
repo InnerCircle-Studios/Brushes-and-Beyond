@@ -22,11 +22,11 @@ public class PlayerRunState : State
 
     public override void AddSwitchCases() 
     {
-        AddSwitchCase(_PlayerStateMachine._IsDeath, _PlayerStateMachine.GetState("PlayerDeathState"));
-        AddSwitchCase(!_PlayerStateMachine._IsMovementPressed, _PlayerStateMachine.GetState("PlayerIdleState"));
-        AddSwitchCase(_PlayerStateMachine._IsDialogueActive, _PlayerStateMachine.GetState("PlayerDialogueState"));
-        AddSwitchCase(!_PlayerStateMachine._IsRunningPressed, _PlayerStateMachine.GetState("PlayerWalkState"));
-        AddSwitchCase(_PlayerStateMachine._IsAttackPressed, _PlayerStateMachine.GetState("PlayerAttackState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDeath, true), _PlayerStateMachine.GetState("PlayerDeathState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsMovementPressed, false), _PlayerStateMachine.GetState("PlayerIdleState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true), _PlayerStateMachine.GetState("PlayerDialogueState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsRunningPressed, false), _PlayerStateMachine.GetState("PlayerWalkState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsAttackPressed, true), _PlayerStateMachine.GetState("PlayerAttackState"));
     }
 
     private PlayerStateMachine _PlayerStateMachine;

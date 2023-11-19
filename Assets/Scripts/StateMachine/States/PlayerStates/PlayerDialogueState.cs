@@ -22,7 +22,7 @@ public class PlayerDialogueState : State
 
     public override void AddSwitchCases() 
     {
-        AddSwitchCase(!_PlayerStateMachine._IsDialogueActive, _PlayerStateMachine.GetState("PlayerDialogueState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true), _PlayerStateMachine.GetState("PlayerDialogueState"));
     }
 
     private PlayerStateMachine _PlayerStateMachine; 

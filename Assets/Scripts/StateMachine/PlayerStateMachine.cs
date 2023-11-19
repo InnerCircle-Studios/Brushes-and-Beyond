@@ -21,6 +21,8 @@ public class PlayerStateMachine : StateMachine
         AddState(new PlayerWalkState("PlayerWalkState", this));
 
         ChangeState(GetState("PlayerIdleState"));
+
+        InitStitchCases();
     }
 
     ~PlayerStateMachine()
@@ -37,42 +39,43 @@ public class PlayerStateMachine : StateMachine
     {
         _CurrentMovementInput = movement;
 
-        _IsMovementPressed = _CurrentMovementInput.x != 0 || _CurrentMovementInput.y != 0;
+        _IsMovementPressed.Value = _CurrentMovementInput.x != 0 || _CurrentMovementInput.y != 0;
+        Debug.Log(_CurrentMovementInput.x);
     }
 
     public void OnAttackEvent(bool isAttackPressed)
     {
-        _IsAttackPressed = isAttackPressed;
+        _IsAttackPressed.Value = isAttackPressed;
     }
 
     public void OnDeathEvent(bool isDeath)
     {
-        _IsDeath = isDeath;
+        _IsDeath.Value = isDeath;
     }
 
     public void OnShowEvent(bool isShowPressed)
     {
-        _IsShowPressed = isShowPressed;
+        _IsShowPressed.Value = isShowPressed;
 
-        _IsShowDone = false;
+        _IsShowDone.Value = false;
     }
 
     public void OnDialogueEvent(bool isDialogueActive)
     {
-        _IsDialogueActive = isDialogueActive;
+        _IsDialogueActive.Value = isDialogueActive;
     }
 
     public void OnRunEvent(bool isRunningPressed)
     {
-        _IsRunningPressed = isRunningPressed;
+        _IsRunningPressed.Value = isRunningPressed;
     }
 
     public Vector2 _CurrentMovementInput = new Vector2();
-    public bool _IsMovementPressed = false;
-    public bool _IsDeath = false;
-    public bool _IsAttackPressed = false;
-    public bool _IsShowPressed = false;
-    public bool _IsDialogueActive = false;
-    public bool _IsShowDone = false;
-    public bool _IsRunningPressed = false;
+    public BoolWrapper _IsMovementPressed { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsDeath { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsAttackPressed { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsShowPressed { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsDialogueActive { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsShowDone { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsRunningPressed { get; set; } = new BoolWrapper(false);
 }
