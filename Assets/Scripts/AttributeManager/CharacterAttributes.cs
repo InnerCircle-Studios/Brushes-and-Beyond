@@ -14,6 +14,8 @@ public class CharacterAttributes : ScriptableObject {
 
     public float Speed;
 
+    public float SprintSpeed;
+
     public GameObject Loot;
 
     public enum Role {
@@ -34,6 +36,7 @@ public class CharacterAttributes : ScriptableObject {
         newCharacterAttributes.Damage = Damage;
         newCharacterAttributes.Speed = Speed;
         newCharacterAttributes.Loot = Loot;
+        newCharacterAttributes.SprintSpeed = SprintSpeed;
 
         return newCharacterAttributes;
     }
