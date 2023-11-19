@@ -37,7 +37,7 @@ public class PlayerAttackState : State
 
     private IEnumerator WaitForAttack() //Delay for groundCheck
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(0.5f);
 
         _PlayerStateMachine._AttackTimer.Value = true;
     }
