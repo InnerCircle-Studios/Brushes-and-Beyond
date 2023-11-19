@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerRunState : State
 {
     public PlayerRunState(string name, StateMachine stateMachine) : base(name, stateMachine)
@@ -22,6 +24,7 @@ public class PlayerRunState : State
 
     public override void UpdateState()
     {
+        HandleRun();
         CheckSwitchStates();
     }
 
@@ -32,6 +35,13 @@ public class PlayerRunState : State
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true), _PlayerStateMachine.GetState("PlayerDialogueState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsRunningPressed, false), _PlayerStateMachine.GetState("PlayerWalkState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsAttackPressed, true), _PlayerStateMachine.GetState("PlayerAttackState"));
+    }
+
+    private void HandleRun()
+    {
+        float currentSpeed = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().SprintSpeed;
+        Vector2 desiresMovement = new Vector2(_PlayerStateMachine._CurrentMovementInput.x, _PlayerStateMachine._CurrentMovementInput.y).normalized * currentSpeed * Time.deltaTime;
+        _PlayerStateMachine.GetActor().HandleWalk(desiresMovement);
     }
 
     private PlayerStateMachine _PlayerStateMachine;
