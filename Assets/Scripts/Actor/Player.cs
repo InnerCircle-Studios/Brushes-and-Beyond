@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Player : Actor
 {
     public override void Start()
@@ -14,7 +12,7 @@ public class Player : Actor
 
     public override void HandleMeleeAttack()
     {
-        foreach (Actor hits in GetCombat().MeleeAttack(new Vector2(0,0), 1.5f, "Player"))
+        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position , 1.5f, "Enemy"))
         {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
         }
