@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 public abstract class StateMachine
 {
     public StateMachine(Actor actor)
