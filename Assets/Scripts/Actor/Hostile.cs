@@ -1,0 +1,27 @@
+public class Hostile : Actor
+{
+    public override void Start()
+    {
+        _HostileStateMachine = new HostileStateMachine(this);
+    }
+
+    public override void Update()
+    {
+        
+    }
+
+    public override void HandleMeleeAttack()
+    {
+        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Player"))
+        {
+            hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
+        }
+    }
+
+    public override void HandleRangedAttack()
+    {
+        
+    }
+
+    private HostileStateMachine _HostileStateMachine;
+}

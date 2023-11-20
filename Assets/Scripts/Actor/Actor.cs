@@ -41,7 +41,13 @@ public abstract class Actor : MonoBehaviour
         _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
+    protected Rigidbody2D GetRigidBody()
+    {
+        return _RigidBody;
+    }
+
     private IAttrubuteManager _AttributeManager;
+    
     [SerializeField] private CharacterAttributes attributes;
 
     private Rigidbody2D _RigidBody;

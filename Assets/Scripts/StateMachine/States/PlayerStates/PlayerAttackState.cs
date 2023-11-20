@@ -15,7 +15,10 @@ public class PlayerAttackState : State
 
     public override void EnterState()
     {
-        GetStateMachine().GetActor().StartCoroutine(WaitForAttack());
+        Actor actor = GetStateMachine().GetActor();
+
+        actor.HandleMeleeAttack();
+        actor.StartCoroutine(WaitForAttack());
     }
 
     public override void UpdateState()
@@ -33,7 +36,7 @@ public class PlayerAttackState : State
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._AttackTimer, true), _PlayerStateMachine.GetState("PlayerIdleState"));
     }
 
-    private IEnumerator WaitForAttack() //Delay for groundCheck
+    private IEnumerator WaitForAttack()
     {
         yield return new WaitForSeconds(0.5f);
 
