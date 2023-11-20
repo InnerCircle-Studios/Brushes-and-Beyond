@@ -29,7 +29,7 @@ public abstract class StateMachine
         return null;
     }
 
-    protected void InitStitchCases()
+    protected void InitSwitchCases()
     {
         foreach (State state in _States)
         {

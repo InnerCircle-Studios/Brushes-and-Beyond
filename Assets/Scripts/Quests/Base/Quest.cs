@@ -1,43 +1,68 @@
 using UnityEngine;
 
-public abstract class Quest : IQuest {
-    [SerializeField] private int id;
-    [SerializeField] private string questName;
-    [SerializeField] private QuestState state;
-    [SerializeField] private int requirement;
-    [SerializeField] private int rewards;
-    [SerializeField] private int progress;
+public abstract class Quest {
 
-    public Quest(int id, string questName, QuestState state, int requirement, int rewards, int progress) {
-        this.id = id;
-        this.questName = questName;
-        this.state = state;
-        this.requirement = requirement;
-        this.rewards = rewards;
-        this.progress = progress;
+    protected QuestChannel questChannel;
+    private int id;
+    private string questName;
+    private QuestState state;
+    private int requirement;
+    private int rewards;
+    private int progress;
+
+
+    
+    protected void EnableQuest() {
+        questChannel.QuestActivatedEvent += QuestActiveEvent;
+        questChannel.QuestCompletedEvent += QuestCompletedEvent;
+        questChannel.QuestUpdate += QuestUpdatedEvent;
+
+        if (state == QuestState.ACTIVE) {
+            QuestActive();
+        }
+    }
+    protected void DisableQuest() {
+        questChannel.QuestActivatedEvent -= QuestActiveEvent;
+        questChannel.QuestCompletedEvent -= QuestCompletedEvent;
+    }
+     protected void CompleteQuest() {
+        questChannel.CompleteQuest(this);
     }
 
-    public void EnableQuest() {
-        state = QuestState.ACTIVE;
+    protected abstract void QuestActive();
+    protected abstract void QuestCompleted();
+    protected abstract void QuestUpdated();
+
+
+
+    private void QuestActiveEvent(Quest activeQuest) {
+        if (activeQuest.id == id) {
+            state = QuestState.ACTIVE;
+            QuestActive();
+        }
     }
-    public void DisableQuest() {
-        state = QuestState.UNLOCKED;
+    private void QuestCompletedEvent(Quest completedQuest) {
+        if (completedQuest.id == id) {
+            state = QuestState.COMPLETED;
+            QuestCompleted();
+        }
+    }
+    private void QuestUpdatedEvent(Quest updatedQuest, int progress){
+        if(updatedQuest.id == id){
+            this.progress = progress;
+            QuestUpdated();
+        }
     }
 
-    public void QuestActiveEvent(Quest activeQuest) {
 
-    }
-
-    public abstract void QuestActive();
+   
 
 
 
-    public void QuestCompletedEvent(Quest completedQuest) {
-    }
+    
 
-    public abstract void QuestCompleted();
 
-    public void CompleteQuest() {
-    }
+
+
 
 }
