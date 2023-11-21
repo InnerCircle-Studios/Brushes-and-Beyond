@@ -22,7 +22,7 @@ public class PlayerStateMachine : StateMachine
 
         ChangeState(GetState("PlayerIdleState"));
 
-        InitStitchCases();
+        InitSwitchCases();
     }
 
     ~PlayerStateMachine()
