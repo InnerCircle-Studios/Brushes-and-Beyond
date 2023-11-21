@@ -7,7 +7,7 @@ public class Hostile : Actor
 
     public override void Update()
     {
-        
+        _HostileStateMachine.GetCurrentState().UpdateState();
     }
 
     public override void HandleMeleeAttack()
@@ -20,7 +20,7 @@ public class Hostile : Actor
 
     public override void HandleRangedAttack()
     {
-        
+
     }
 
     private HostileStateMachine _HostileStateMachine;
