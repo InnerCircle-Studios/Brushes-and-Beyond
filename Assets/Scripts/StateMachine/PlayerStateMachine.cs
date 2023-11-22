@@ -4,12 +4,12 @@ public class PlayerStateMachine : StateMachine
 {
     public PlayerStateMachine(Actor actor) : base(actor)
     {
-        GetEventManager().OnMoveEvent += OnMoveEvent;
-        GetEventManager().OnAttackEvent += OnAttackEvent;
-        GetEventManager().OnDeathEvent += OnDeathEvent;
-        GetEventManager().OnShowEvent += OnShowEvent;
-        GetEventManager().OnDialogueEvent += OnDialogueEvent;
-        GetEventManager().OnRunEvent += OnRunEvent;
+        EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMoveEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttackEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.DEATH_EVENT, OnDeathEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.F_KEY, OnShowEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnRunEvent);
 
         AddState(new PlayerIdleState("PlayerIdleState", this));
         AddState(new PlayerAttackState("PlayerAttackState", this));
@@ -27,12 +27,12 @@ public class PlayerStateMachine : StateMachine
 
     ~PlayerStateMachine()
     {
-        GetEventManager().OnMoveEvent -= OnMoveEvent;
-        GetEventManager().OnAttackEvent -= OnAttackEvent;
-        GetEventManager().OnDeathEvent -= OnDeathEvent;
-        GetEventManager().OnShowEvent -= OnShowEvent;
-        GetEventManager().OnDialogueEvent -= OnDialogueEvent;
-        GetEventManager().OnRunEvent -= OnRunEvent;
+        EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMoveEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttackEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.DEATH_EVENT, OnDeathEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.F_KEY, OnShowEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnRunEvent);
     }
 
     public void OnMoveEvent(Vector2 movement)
