@@ -25,7 +25,7 @@ public class Player : Actor
 
     public void OnDeath()
     {
-        GetEventManager().OnDeath(true);
+        EventBus.TriggerEvent(EventBusEvents.EventName.DEATH_EVENT, true);
     }
 
     private PlayerStateMachine _PlayerStateMachine;
