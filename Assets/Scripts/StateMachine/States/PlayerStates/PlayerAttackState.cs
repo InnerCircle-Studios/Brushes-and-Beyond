@@ -16,7 +16,7 @@ public class PlayerAttackState : State
     public override void EnterState()
     {
         Actor actor = GetStateMachine().GetActor();
-
+        actor.GetAnimator().Play("ShowBrush");
         actor.HandleMeleeAttack();
         actor.StartCoroutine(WaitForAttack());
     }

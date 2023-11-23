@@ -23,6 +23,8 @@ public class PlayerIdleState : State
     public override void UpdateState()
     {
         CheckSwitchStates();
+        _PlayerStateMachine.GetActor().GetAnimator().Play("Idle",_PlayerStateMachine._CurrentDirection);
+
     }
 
     public override void AddSwitchCases() 
