@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public abstract class Actor : MonoBehaviour
-{
-    public void Awake()
-    {
+public abstract class Actor : MonoBehaviour {
+    public void Awake() {
+
         _AttributeManager = new AttributeManager(attributes);
 
         _Combat = new Combat();
-        
+
+        _Animator = new AnimationManager(GetComponent<Animator>());
+
         _RigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -19,31 +20,32 @@ public abstract class Actor : MonoBehaviour
 
     public abstract void HandleRangedAttack();
 
-    public IAttrubuteManager GetAttrubuteManager()
-    {
+    public IAttrubuteManager GetAttrubuteManager() {
         return _AttributeManager;
     }
 
-    public ICombat GetCombat()
-    {
+    public ICombat GetCombat() {
         return _Combat;
     }
 
-    public void HandleWalk(Vector2 desiredMovement)
-    {
+    public IAnimator GetAnimator() {
+        return _Animator;
+    }
+
+    public void HandleWalk(Vector2 desiredMovement) {
         _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
-    protected Rigidbody2D GetRigidBody()
-    {
+    protected Rigidbody2D GetRigidBody() {
         return _RigidBody;
     }
 
     private IAttrubuteManager _AttributeManager;
-    
+
     [SerializeField] private CharacterAttributes attributes;
 
     private Rigidbody2D _RigidBody;
 
     private ICombat _Combat;
+    private IAnimator _Animator;
 }

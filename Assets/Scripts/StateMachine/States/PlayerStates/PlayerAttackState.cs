@@ -16,7 +16,7 @@ public class PlayerAttackState : State
     public override void EnterState()
     {
         Actor actor = GetStateMachine().GetActor();
-
+        actor.GetAnimator().Play("SwordSwing", _PlayerStateMachine._CurrentDirection);
         actor.HandleMeleeAttack();
         actor.StartCoroutine(WaitForAttack());
     }

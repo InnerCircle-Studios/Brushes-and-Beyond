@@ -21,6 +21,7 @@ public class PlayerWalkState : State
     {
         HandleWalk();
         CheckSwitchStates();
+        _PlayerStateMachine.GetActor().GetAnimator().Play("Move",_PlayerStateMachine._CurrentDirection);
     }
 
     public override void ExitState()

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Player : Actor
 {
     public override void Start()
@@ -8,6 +10,7 @@ public class Player : Actor
     public override void Update()
     {
         _PlayerStateMachine.GetCurrentState().UpdateState();
+        Debug.Log(_PlayerStateMachine._CurrentDirection);
     }
 
     public override void HandleMeleeAttack()
