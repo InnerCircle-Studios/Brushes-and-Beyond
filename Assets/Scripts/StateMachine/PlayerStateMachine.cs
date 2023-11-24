@@ -63,9 +63,12 @@ public class PlayerStateMachine : StateMachine {
     private void UpdateMovementDirection() {
         if (_CurrentMovementInput.x > 0) {
             _CurrentDirection = MovementDirection.RIGHT;
+            GetActor().GetComponent<SpriteRenderer>().flipX = false;
+
         }
         else if (_CurrentMovementInput.x < 0) {
             _CurrentDirection = MovementDirection.LEFT;
+            GetActor().GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (_CurrentMovementInput.y > 0) {
             _CurrentDirection = MovementDirection.UP;
@@ -92,5 +95,4 @@ public enum MovementDirection {
     DOWN,
     LEFT,
     RIGHT
-
 }
