@@ -12,6 +12,7 @@ public class Player : Actor {
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
         }
+        _PlayerStateMachine.GetActor().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
     }
 
     public override void HandleMeleeAttack() {
@@ -19,6 +20,7 @@ public class Player : Actor {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
 
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
+            
         }
     }
 

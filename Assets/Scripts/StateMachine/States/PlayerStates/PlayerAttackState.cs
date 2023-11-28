@@ -16,7 +16,6 @@ public class PlayerAttackState : State {
         actor.GetAnimator().Play("SwordSwing", _PlayerStateMachine._CurrentDirection);
         actor.HandleMeleeAttack();
         actor.StartCoroutine(WaitForAttack());
-        _PlayerStateMachine.GetActor().GetWindowManager().InitDialogueBox(_PlayerStateMachine.GetActor());
     }
 
     public override void UpdateState() {

@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using TMPro;
+
 using UnityEngine;
 
 public class WindowManager : MonoBehaviour {
     [SerializeField] private List<Window> staticWindows;
+    [SerializeField] private List<TextWindow> textWindows;
+
     [SerializeField] private DialogueBox dialogueBox;
     // insert custom classes for tutorial etc (or make them static)
 
@@ -18,6 +22,9 @@ public class WindowManager : MonoBehaviour {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(actor);
     }
+    public void UpdateDialogueBox(string text) {
+        dialogueBox.SetMessage(text);
+    }
     public void ShowDialogueBox() {
         dialogueBox.gameObject.SetActive(true);
     }
@@ -25,20 +32,37 @@ public class WindowManager : MonoBehaviour {
         dialogueBox.gameObject.SetActive(false);
     }
 
+
     // static screens
-    public void ShowScreen(string screen) {
-        staticWindows?.First(e => e.Name == screen).Element.SetActive(true);
+    public void ShowWindow(string window) {
+        staticWindows?.First(e => e.Name == window).Element.SetActive(true);
     }
-    public void HideScreen(string screen) {
-        staticWindows?.First(e => e.Name == screen).Element.SetActive(false);
+    public void HideWindow(string window) {
+        staticWindows?.First(e => e.Name == window).Element.SetActive(false);
     }
-    public void ToggleScreen(string screen) {
-        GameObject window = staticWindows?.First(e => e.Name == screen).Element;
-        window.SetActive(!window.activeSelf);
+    public void ToggleWindow(string window) {
+        GameObject screen = staticWindows?.First(e => e.Name == window).Element;
+        screen.SetActive(!screen.activeSelf);
+    }
 
+    // Text windows
+    public void ShowTextWindow(string window) {
+        TextMeshProUGUI text = textWindows?.First(e => e.Name == window).Element;
+        text.enabled = true;
+    }
+    public void HideTextWindow(string window) {
+        TextMeshProUGUI text = textWindows?.First(e => e.Name == window).Element;
+        text.enabled = false;
+    }
+    public void UpdateTextWindow(string window, string content) {
+        TextWindow screen = textWindows?.First(e => e.Name == window);
+        screen.Element.SetText(screen.DefaultText + content);
     }
 
+
+    // Global
     public void ClearScreen(string[] excludedScreens) {
-        staticWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideScreen(e.Name));
+        staticWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideWindow(e.Name));
+        textWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideWindow(e.Name));
     }
 }
