@@ -13,7 +13,8 @@ ScriptedImporter:
   warnings:
   - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_Ground.tsx'
     (16)
-  missingSortingLayers: []
+  missingSortingLayers:
+  - 
   missingLayers: []
   missingTags: []
   importerVersion: 26
