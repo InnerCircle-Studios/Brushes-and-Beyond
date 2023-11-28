@@ -1,3 +1,5 @@
+using System.Collections;
+
 using UnityEngine;
 
 public abstract class Actor : MonoBehaviour {
@@ -19,6 +21,13 @@ public abstract class Actor : MonoBehaviour {
     public abstract void HandleMeleeAttack();
 
     public abstract void HandleRangedAttack();
+
+    public IEnumerator FlashSpriteOnHit(SpriteRenderer sRenderer) {
+        Color startColor = sRenderer.color;
+        sRenderer.color = Color.red;
+        yield return new WaitForSecondsRealtime(0.2f);
+        sRenderer.color = startColor;
+    }
 
     public IAttrubuteManager GetAttrubuteManager() {
         return _AttributeManager;

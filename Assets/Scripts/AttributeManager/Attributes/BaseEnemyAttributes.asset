@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
-  m_Name: CharacterAttributes
+  m_Name: BaseEnemyAttributes
   m_EditorClassIdentifier: 
+  DialogueSprite: {fileID: 0}
   Type: 0
-  Name: Vin
-  MaxHealth: 10
-  CurrentHealth: 10
-  Damage: 10
-  Speed: 10
-  SprintSpeed: 20
+  Name: 
+  MaxHealth: 0
+  CurrentHealth: 0
+  Damage: 0
+  Speed: 0
+  SprintSpeed: 0
   Loot: {fileID: 0}

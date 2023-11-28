@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour {
     private int _textbox_width = 200;
     private int _textbox_height = 64;
     private int _border = 8;
     private int _line_sep = 12;
     private int _line_width;
-    [SerializeField]private Texture2D _textbox_spr;
+    [SerializeField] private Texture2D _textbox_spr;
     private int _textbox_spt_w;
     private int _textbox_spr_h;
 
@@ -32,13 +31,11 @@ public class DialogueManager : MonoBehaviour
     private bool _is_space_pressed;
 
 
-    ~DialogueManager()
-    {
+    ~DialogueManager() {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
     }
 
-    public void Awake()
-    {
+    public void Awake() {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
 
         _text[0] = "Hallo dit is een test";
@@ -52,12 +49,10 @@ public class DialogueManager : MonoBehaviour
         _textbox_x_offset = new int[_text.Length];
         _text_lengt = new int[3];
 
-        if (!_setup)
-        {
+        if (!_setup) {
             _page_number = _text.Length;
 
-            for (int i = 0; i < _page_number; i++)
-            {
+            for (int i = 0; i < _page_number; i++) {
                 _text_lengt[i] = _text[i].Length;
 
                 _textbox_x_offset[i] = 44;
@@ -65,31 +60,24 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (_draw_char < _text_lengt[_page])
-        {
+    public void Update() {
+        if (_draw_char < _text_lengt[_page]) {
             _draw_char += _text_speed;
             _draw_char = Math.Clamp(_draw_char, 0, _text_lengt[_page]);
         }
 
-        if (_is_space_pressed)
-        {
+        if (_is_space_pressed) {
             EventBus.TriggerEvent(EventBusEvents.EventName.SPACE_KEY, false);
-            if (_draw_char == _text_lengt[_page])
-            {
-                if (_page < _page_number-1)
-                {
+            if (_draw_char == _text_lengt[_page]) {
+                if (_page < _page_number - 1) {
                     _page++;
                     _draw_char = 0;
                 }
-                else
-                {
+                else {
                     //Stop Displaying text
                 }
             }
-            else
-            {
+            else {
                 _draw_char = _text_lengt[_page];
             }
         }
@@ -100,14 +88,12 @@ public class DialogueManager : MonoBehaviour
         Graphics.DrawTexture(new Rect(new Vector2(_textbox_x + _textbox_x_offset[_page], _textbox_y), new Vector2(_textbox_spt_w, _textbox_spr_h)), _textbox_spr);
     }
 
-    public void OnGUI()
-    {
+    public void OnGUI() {
         string _draw_text = _text[_page].Substring(0, _draw_char);
         GUI.Label(new Rect(new Vector2(_textbox_x + _textbox_x_offset[_page] + _border, _textbox_y + _border), new Vector2(_textbox_spt_w, _textbox_x)), _draw_text);
     }
 
-    public void OnDialogueSkip(bool is_space_pressed)
-    {
+    public void OnDialogueSkip(bool is_space_pressed) {
         _is_space_pressed = is_space_pressed;
     }
 }

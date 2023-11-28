@@ -1,3 +1,7 @@
+using System.Collections;
+
+using UnityEngine;
+
 public class Player : Actor {
     public override void Start() {
         _PlayerStateMachine = new PlayerStateMachine(this);
@@ -13,8 +17,12 @@ public class Player : Actor {
     public override void HandleMeleeAttack() {
         foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Enemy")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
+
+            StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
         }
     }
+
+
 
     public override void HandleRangedAttack() {
 
