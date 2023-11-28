@@ -41,12 +41,16 @@ public abstract class Actor : MonoBehaviour {
         return _Animator;
     }
 
-    public void HandleWalk(Vector2 desiredMovement) {
-        _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
+    public WindowManager GetWindowManager(){
+        return FindAnyObjectByType<WindowManager>();
     }
 
     protected Rigidbody2D GetRigidBody() {
         return _RigidBody;
+    }
+
+    public void HandleWalk(Vector2 desiredMovement) {
+        _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
     private IAttrubuteManager _AttributeManager;

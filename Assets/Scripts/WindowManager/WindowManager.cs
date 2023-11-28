@@ -14,15 +14,15 @@ public class WindowManager : MonoBehaviour {
     public DialogueBox GetDialogueBox() {
         return dialogueBox;
     }
-    public void InitDialogueBox(Actor actor){
+    public void InitDialogueBox(Actor actor) {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(actor);
     }
     public void ShowDialogueBox() {
-        dialogueBox.enabled = true;
+        dialogueBox.gameObject.SetActive(true);
     }
     public void HideDialogueBox() {
-        dialogueBox.enabled = false;
+        dialogueBox.gameObject.SetActive(false);
     }
 
     // static screens
