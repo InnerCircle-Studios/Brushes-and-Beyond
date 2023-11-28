@@ -9,6 +9,10 @@ public class AttributeManager : IAttrubuteManager {
         return attributes;
     }
 
+    public bool IsAlive(){
+        return attributes.CurrentHealth > 0;
+    }
+
     public void ApplyDamage(int hp) {
         attributes.CurrentHealth -= hp;
     }
