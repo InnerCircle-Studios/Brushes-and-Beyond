@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Player : Actor {
     public override void Start() {
         _PlayerStateMachine = new PlayerStateMachine(this);
