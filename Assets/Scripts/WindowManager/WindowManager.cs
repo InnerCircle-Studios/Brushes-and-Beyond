@@ -14,6 +14,10 @@ public class WindowManager : MonoBehaviour {
     public DialogueBox GetDialogueBox() {
         return dialogueBox;
     }
+    public void InitDialogueBox(Actor actor){
+        ShowDialogueBox();
+        dialogueBox.LoadCharacter(actor);
+    }
     public void ShowDialogueBox() {
         dialogueBox.enabled = true;
     }
@@ -28,7 +32,6 @@ public class WindowManager : MonoBehaviour {
     public void HideScreen(string screen) {
         staticWindows?.First(e => e.Name == screen).Element.SetActive(false);
     }
-
     public void ToggleScreen(string screen) {
         GameObject window = staticWindows?.First(e => e.Name == screen).Element;
         window.SetActive(!window.activeSelf);
@@ -38,7 +41,4 @@ public class WindowManager : MonoBehaviour {
     public void ClearScreen(string[] excludedScreens) {
         staticWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideScreen(e.Name));
     }
-
-
-
 }

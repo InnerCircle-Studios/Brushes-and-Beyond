@@ -9,7 +9,8 @@ public class DialogueBox : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI avatarName;
     [SerializeField] private TextMeshProUGUI message;
 
-    public void LoadCharacter(CharacterAttributes attribs){
+    public void LoadCharacter(Actor actor){
+        CharacterAttributes attribs = actor.GetAttrubuteManager().GetAttributes();
         avatar.sprite = attribs.DialogueSprite;
         avatarName.SetText(attribs.Name);
     }
