@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="11">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="12">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Ground(Free).tsx"/>
  <tileset firstgid="4867" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1257,5 +1257,6 @@
   <object id="8" gid="6188" x="1180" y="1085" width="174" height="123"/>
   <object id="9" gid="6203" x="1351.5" y="1092" width="70" height="90"/>
   <object id="10" gid="2147489836" x="1685.83" y="1180" width="174" height="123"/>
+  <object id="11" gid="6217" x="1302.5" y="1087" width="50" height="50"/>
  </objectgroup>
 </map>
