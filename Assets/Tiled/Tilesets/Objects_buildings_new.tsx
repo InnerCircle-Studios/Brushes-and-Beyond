@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="5" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="6" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="3">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4Final.png"/>
@@ -44,6 +44,15 @@
   <objectgroup draworder="index" id="2">
    <object id="1" x="9.25" y="2.5" width="163" height="75.25"/>
    <object id="2" x="22.5" y="74" width="38.5" height="43"/>
+  </objectgroup>
+ </tile>
+ <tile id="6">
+  <image width="155" height="76" source="../../Art/Buildings/Assets/HouseAaronV6Red.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="16" y="52.5" width="80"/>
+   <object id="2" x="7" y="44.75">
+    <polygon points="0,0 0,26.25 142.5,26.25 141,-0.25"/>
+   </object>
   </objectgroup>
  </tile>
 </tileset>

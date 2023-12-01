@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 513874457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.059845, y: -68.397385, z: -20.485958}
+  m_LocalPosition: {x: 89.14689, y: -65.71355, z: -19.54332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,9 +268,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2742531577517295397, guid: d67c2c1371c1fda40922efb820185fc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 4379841805360134132, guid: d67c2c1371c1fda40922efb820185fc1, type: 3}
       propertyPath: m_Name
       value: TownMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727079722939594246, guid: d67c2c1371c1fda40922efb820185fc1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727079722939594246, guid: d67c2c1371c1fda40922efb820185fc1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -804751201
       objectReference: {fileID: 0}
     - target: {fileID: 5121001655814998592, guid: d67c2c1371c1fda40922efb820185fc1, type: 3}
       propertyPath: m_LocalPosition.x
