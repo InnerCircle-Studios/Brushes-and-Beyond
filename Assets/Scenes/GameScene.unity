@@ -29311,7 +29311,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1792340912}
         m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
-        m_MethodName: ToggleScreen
+        m_MethodName: ToggleWindow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30157,8 +30157,6 @@ GameObject:
   - component: {fileID: 765869094}
   - component: {fileID: 765869093}
   - component: {fileID: 765869092}
-  - component: {fileID: 765869091}
-  - component: {fileID: 765869090}
   m_Layer: 5
   m_Name: UI - PauseButton
   m_TagString: Untagged
@@ -30166,30 +30164,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &765869090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765869089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d9e214e8fc21841a901c1fede8be16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &765869091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765869089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd215f9f4e8f8584f973a74b672bc543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &765869092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30764,7 +30738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1792340912}
         m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
-        m_MethodName: ToggleScreen
+        m_MethodName: ToggleWindow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31330,9 +31304,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: NextMessage
+      - m_Target: {fileID: 1792340912}
+        m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
+        m_MethodName: HideDialogueBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31697,7 +31671,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1792340912}
         m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
-        m_MethodName: HideScreen
+        m_MethodName: HideWindow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34094,7 +34068,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1792340912}
         m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
-        m_MethodName: ToggleScreen
+        m_MethodName: ToggleWindow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
