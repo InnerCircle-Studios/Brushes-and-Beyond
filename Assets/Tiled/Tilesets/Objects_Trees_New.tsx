@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_Trees_New" tilewidth="300" tileheight="300" tilecount="31" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_Trees_New" tilewidth="300" tileheight="300" tilecount="36" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="27" height="27" source="../../Art/Trees and Bushes/Assets/ChoppedTree 1.png"/>
@@ -114,7 +114,7 @@
   </objectgroup>
  </tile>
  <tile id="14">
-  <image width="70" height="90" source="../../Art/Trees and Bushes/Assets/Tree 5 Vines.png"/>
+  <image width="90" height="115" source="../../Art/Trees and Bushes/Assets/Tree 5 Vines.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="25.0909" y="73.7273">
     <polygon points="0,0 1.45455,-4.27273 20.7273,-6.63636 21.5455,1.36364 14.7273,3.81818 5.18182,3.36364"/>
@@ -212,10 +212,13 @@
   </objectgroup>
  </tile>
  <tile id="29">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 5.png"/>
+  <image width="26" height="25" source="../../Art/Trees and Bushes/Assets/Bush 5.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="13" y="67">
     <polygon points="0,0 1.75,5 1.25,11 0,15.25 2.75,20 7.25,23.25 13.75,29 15.75,30.75 53,31.25 59.75,26 59.25,19.5 64.75,15.5 64.25,0.25"/>
+   </object>
+   <object id="2" x="7" y="21.5455">
+    <polygon points="0,0 12.6364,1 16.5455,-5 -3.72727,-5.54545"/>
    </object>
   </objectgroup>
  </tile>
@@ -226,5 +229,20 @@
     <polygon points="0,0 0,5 -5.25,10.75 -5.5,14.25 4,21.25 55.25,22 60,16.75 58,11.5 57.5,1.75"/>
    </object>
   </objectgroup>
+ </tile>
+ <tile id="31">
+  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV1.png"/>
+ </tile>
+ <tile id="32">
+  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV2.png"/>
+ </tile>
+ <tile id="33">
+  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV3.png"/>
+ </tile>
+ <tile id="34">
+  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV4.png"/>
+ </tile>
+ <tile id="35">
+  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16Mushrooms.png"/>
  </tile>
 </tileset>

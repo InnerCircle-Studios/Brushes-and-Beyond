@@ -32,7 +32,7 @@
   </objectgroup>
  </tile>
  <tile id="2">
-  <image source="../../Art/Buildings/Assets/HouseAaronV3.png"/>
+  <image width="174" height="123" source="../../Art/Buildings/Assets/HouseAaronV5Red.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="8.25" y="74.75">
     <polygon points="0,0 11.25,0 13.25,41.25 51,41.75 52,-0.5 92.5,-1.25 98.25,1.5 102,1.75 105,-1 162.5,-1.25 164.5,-57.5 -3,-59.5"/>
@@ -40,7 +40,7 @@
   </objectgroup>
  </tile>
  <tile id="1">
-  <image source="../../Art/Buildings/Assets/HouseAaronV4.png"/>
+  <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4FinalYellow.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="9.25" y="2.5" width="163" height="75.25"/>
    <object id="2" x="22.5" y="74" width="38.5" height="43"/>
