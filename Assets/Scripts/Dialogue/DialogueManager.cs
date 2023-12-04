@@ -1,6 +1,5 @@
 using System;
-
-using TMPro;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -31,9 +30,6 @@ public class DialogueManager : MonoBehaviour {
 
     private bool _is_space_pressed;
 
-    [SerializeField]private GameObject textbox;
-    [SerializeField]private TextMeshProUGUI textMeshPro;
-
 
     ~DialogueManager() {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
@@ -42,15 +38,16 @@ public class DialogueManager : MonoBehaviour {
     public void Awake() {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
 
-        textMeshPro.margin = new Vector4(8, 8, 8, 8);
-
         _text[0] = "Hallo dit is een test";
         _text[1] = "Als dit werkt zal het wel cool zijn";
         _text[2] = "maar het gaat prob niet werken";
 
+        _textbox_x = Camera.main.transform.position.x + 100;
+        _textbox_y = Camera.main.transform.position.y + 203;
+
         _line_width = _textbox_width - (_border * 2);
         _textbox_x_offset = new int[_text.Length];
-        _text_lengt = new int[3]; 
+        _text_lengt = new int[3];
 
         if (!_setup) {
             _page_number = _text.Length;
@@ -58,11 +55,9 @@ public class DialogueManager : MonoBehaviour {
             for (int i = 0; i < _page_number; i++) {
                 _text_lengt[i] = _text[i].Length;
 
-                _textbox_x_offset[i] = 120;
+                _textbox_x_offset[i] = 44;
             }
         }
-
-        textbox.transform.Translate(new Vector2(_textbox_x_offset[_page], 0));
     }
 
     public void Update() {
@@ -95,7 +90,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void OnGUI() {
         string _draw_text = _text[_page].Substring(0, _draw_char);
-        textMeshPro.text = _draw_text;
+        GUI.Label(new Rect(new Vector2(_textbox_x + _textbox_x_offset[_page] + _border, _textbox_y + _border), new Vector2(_textbox_spt_w, _textbox_x)), _draw_text);
     }
 
     public void OnDialogueSkip(bool is_space_pressed) {
