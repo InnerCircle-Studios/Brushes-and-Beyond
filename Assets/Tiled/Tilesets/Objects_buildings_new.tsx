@@ -42,8 +42,9 @@
  <tile id="1">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4FinalYellow.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="9.25" y="2.5" width="163" height="75.25"/>
-   <object id="2" x="22.5" y="74" width="38.5" height="43"/>
+   <object id="3" x="8" y="196.667">
+    <polygon points="0,0 -0.333333,-58.6667 0,-85 154,-84 154.667,-9 150.667,-8.66667 150.667,-26 127,-26.3333 122.667,-16 112,-10.3333 101,-10 101,0.333333"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="6">

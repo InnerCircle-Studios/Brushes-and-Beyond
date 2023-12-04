@@ -116,8 +116,8 @@
  <tile id="14">
   <image width="90" height="115" source="../../Art/Trees and Bushes/Assets/Tree 5 Vines.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="25.0909" y="73.7273">
-    <polygon points="0,0 1.45455,-4.27273 20.7273,-6.63636 21.5455,1.36364 14.7273,3.81818 5.18182,3.36364"/>
+   <object id="1" x="33.0909" y="92.0201">
+    <polygon points="0,0 1.65708,-6.92925 23.6134,-10.7624 24.5455,2.21147 16.7779,6.19209 5.90334,5.45495"/>
    </object>
   </objectgroup>
  </tile>
@@ -214,9 +214,6 @@
  <tile id="29">
   <image width="26" height="25" source="../../Art/Trees and Bushes/Assets/BushAaron1.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="13" y="67">
-    <polygon points="0,0 1.75,5 1.25,11 0,15.25 2.75,20 7.25,23.25 13.75,29 15.75,30.75 53,31.25 59.75,26 59.25,19.5 64.75,15.5 64.25,0.25"/>
-   </object>
    <object id="2" x="7" y="21.5455">
     <polygon points="0,0 12.6364,1 16.5455,-5 -3.72727,-5.54545"/>
    </object>
