@@ -10,7 +10,7 @@ public class PlayerWalkState : State {
     }
 
     public override void EnterState() {
-        
+
 
     }
 
