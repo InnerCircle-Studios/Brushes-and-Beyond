@@ -25,7 +25,7 @@ public class PlayerRunState : State
     public override void UpdateState()
     {
         HandleRun();
-        _PlayerStateMachine.GetActor().GetAnimator().Play("Move",_PlayerStateMachine._CurrentDirection);
+        _PlayerStateMachine.GetActor().GetAnimator().Play("Sprint",_PlayerStateMachine._CurrentDirection);
         CheckSwitchStates();
     }
 
