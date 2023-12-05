@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="6" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="7" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="3">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4Final.png"/>
@@ -55,5 +55,8 @@
     <polygon points="0,0 0,26.25 142.5,26.25 141,-0.25"/>
    </object>
   </objectgroup>
+ </tile>
+ <tile id="7">
+  <image width="128" height="80" source="../../Art/Buildings/Assets/BridgeV1.png"/>
  </tile>
 </tileset>
