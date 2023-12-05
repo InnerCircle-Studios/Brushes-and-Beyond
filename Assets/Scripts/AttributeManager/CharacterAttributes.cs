@@ -1,6 +1,9 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "CharacterAttributes", menuName = "Brushes/Actor/Attributes")]
 public class CharacterAttributes : ScriptableObject {
+
+    public Sprite DialogueSprite;
 
     public Role Type;
 
@@ -28,7 +31,8 @@ public class CharacterAttributes : ScriptableObject {
 
     public CharacterAttributes Copy() {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
-
+        
+        newCharacterAttributes.DialogueSprite = DialogueSprite;
         newCharacterAttributes.Type = Type;
         newCharacterAttributes.Name = Name;
         newCharacterAttributes.MaxHealth = MaxHealth;

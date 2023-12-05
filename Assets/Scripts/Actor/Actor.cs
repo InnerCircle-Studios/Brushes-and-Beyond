@@ -1,3 +1,5 @@
+using System.Collections;
+
 using UnityEngine;
 
 public abstract class Actor : MonoBehaviour {
@@ -20,6 +22,13 @@ public abstract class Actor : MonoBehaviour {
 
     public abstract void HandleRangedAttack();
 
+    public IEnumerator FlashSpriteOnHit(SpriteRenderer sRenderer) {
+        Color startColor = sRenderer.color;
+        sRenderer.color = Color.red;
+        yield return new WaitForSecondsRealtime(0.2f);
+        sRenderer.color = startColor;
+    }
+
     public IAttrubuteManager GetAttrubuteManager() {
         return _AttributeManager;
     }
@@ -32,12 +41,16 @@ public abstract class Actor : MonoBehaviour {
         return _Animator;
     }
 
-    public void HandleWalk(Vector2 desiredMovement) {
-        _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
+    public WindowManager GetWindowManager(){
+        return FindAnyObjectByType<WindowManager>();
     }
 
     protected Rigidbody2D GetRigidBody() {
         return _RigidBody;
+    }
+
+    public void HandleWalk(Vector2 desiredMovement) {
+        _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
     private IAttrubuteManager _AttributeManager;

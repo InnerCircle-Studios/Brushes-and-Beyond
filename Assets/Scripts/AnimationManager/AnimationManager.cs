@@ -19,6 +19,10 @@ public class AnimationManager : IAnimator {
 
     }
 
+    public float GetAnimationDuration(){
+        return animator.GetCurrentAnimatorStateInfo(0).length;
+    }
+
     public void Stop() {
         animator.StopPlayback();
     }

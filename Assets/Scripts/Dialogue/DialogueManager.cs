@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour {
     private int _textbox_width = 200;
     private int _textbox_height = 64;
     private int _border = 8;
@@ -27,8 +26,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]TextMeshProUGUI _textbox;
 
 
-    ~DialogueManager()
-    {
+    ~DialogueManager() {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
     }
 
@@ -100,8 +98,7 @@ public class DialogueManager : MonoBehaviour
                     _is_dialogue_done = true;
                 }
             }
-            else
-            {
+            else {
                 _draw_char = _text_lengt[_page];
             }
         }
@@ -110,8 +107,7 @@ public class DialogueManager : MonoBehaviour
         _textbox.text = _draw_text;
     }
 
-    public void OnDialogueSkip(bool is_space_pressed)
-    {
+    public void OnDialogueSkip(bool is_space_pressed) {
         _is_space_pressed = is_space_pressed;
     }
 }

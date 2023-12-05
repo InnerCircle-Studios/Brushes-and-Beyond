@@ -8,6 +8,7 @@ public class EventBusEvents
         G_KEY,
         E_KEY,
         F_KEY,
+        PAUSE_KEY,
         DEATH_EVENT,
         DIALOGUE_EVENT,
     }
