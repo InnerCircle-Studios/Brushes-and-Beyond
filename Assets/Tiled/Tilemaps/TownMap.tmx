@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="883">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="898">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Ground(Free).tsx"/>
  <tileset firstgid="4867" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1048,26 +1048,17 @@
   <properties>
    <property name="unity:sortingLayerName" value="Props"/>
   </properties>
-  <object id="818" gid="6222" x="1274.85" y="1631.21" width="16" height="16"/>
-  <object id="819" gid="6224" x="1279.52" y="1627.88" width="16" height="16"/>
-  <object id="820" gid="6221" x="1284.52" y="1631.21" width="16" height="16"/>
   <object id="821" gid="6225" x="1285.52" y="1625.88" width="16" height="16"/>
   <object id="826" gid="6225" x="1253.82" y="1482.26" width="16" height="16"/>
   <object id="827" gid="6225" x="1170.82" y="1487.93" width="16" height="16"/>
   <object id="828" gid="6225" x="1337.48" y="1515.93" width="16" height="16"/>
   <object id="829" gid="2147489873" x="1352.82" y="1508.59" width="16" height="16"/>
   <object id="830" gid="6225" x="1526.59" y="1603.92" width="16" height="16"/>
-  <object id="831" gid="6223" x="1527.59" y="1516.92" width="16" height="16"/>
-  <object id="832" gid="6221" x="1428.91" y="1514.58" width="16" height="16"/>
   <object id="833" gid="2147489873" x="1584.41" y="1573.51" width="16" height="16"/>
   <object id="834" gid="6225" x="1624.74" y="1558.84" width="16" height="16"/>
-  <object id="835" gid="6224" x="1616.41" y="1609.51" width="16" height="16"/>
   <object id="836" gid="6225" x="1653.09" y="1615.16" width="16" height="16"/>
-  <object id="839" gid="6222" x="1545.67" y="1193" width="16" height="16"/>
-  <object id="840" gid="6222" x="1573.5" y="1362.75" width="16" height="16"/>
   <object id="841" gid="6225" x="1125.17" y="1372.67" width="16" height="16"/>
   <object id="842" gid="2147489873" x="1137.17" y="1367.33" width="16" height="16"/>
-  <object id="843" gid="6221" x="1116.17" y="1363.33" width="16" height="16"/>
   <object id="859" gid="6225" x="1427.33" y="1297.83" width="16" height="16"/>
   <object id="860" gid="2147489873" x="1419.67" y="1308.17" width="16" height="16"/>
   <object id="861" gid="2147489873" x="1442.33" y="1304.17" width="16" height="16"/>
@@ -1075,15 +1066,10 @@
   <object id="863" gid="2147489873" x="1597" y="1276.17" width="16" height="16"/>
   <object id="868" gid="6225" x="1358.05" y="1079.05" width="16" height="16"/>
   <object id="869" gid="2147489873" x="1402.96" y="1073.6" width="16" height="16"/>
-  <object id="870" gid="6221" x="1428.77" y="1051.96" width="16" height="16"/>
-  <object id="871" gid="6222" x="1324.23" y="1061.78" width="16" height="16"/>
   <object id="872" gid="6225" x="1171" y="1085" width="16" height="16"/>
   <object id="876" gid="2147489873" x="1616.66" y="960.834" width="16" height="16"/>
   <object id="877" gid="6225" x="1605.34" y="956.167" width="16" height="16"/>
-  <object id="878" gid="6223" x="1606.99" y="889.167" width="16" height="16"/>
-  <object id="879" gid="6223" x="1340.84" y="1735.92" width="16" height="16"/>
   <object id="880" gid="6225" x="1377.84" y="1722.92" width="16" height="16"/>
-  <object id="881" gid="6224" x="1388.16" y="1740.58" width="16" height="16"/>
  </objectgroup>
  <layer id="7" name="Rock Slopes old" width="300" height="200">
   <properties>
@@ -1384,10 +1370,10 @@
   <object id="467" gid="6231" x="1115.67" y="1795" width="79" height="90"/>
   <object id="468" gid="6229" x="1192" y="1797.67" width="80" height="90"/>
   <object id="469" gid="6229" x="1193.33" y="1878.33" width="80" height="90"/>
-  <object id="470" gid="6232" x="1271.67" y="1878.33" width="79" height="90"/>
-  <object id="471" gid="6229" x="1349.33" y="1878.33" width="80" height="90"/>
-  <object id="472" gid="6231" x="1425.67" y="1881" width="79" height="90"/>
-  <object id="473" gid="6230" x="1503" y="1883.67" width="86" height="97"/>
+  <object id="470" gid="6232" x="1270.67" y="1887.33" width="79" height="90"/>
+  <object id="471" gid="6229" x="1350.33" y="1887.33" width="80" height="90"/>
+  <object id="472" gid="6231" x="1425.67" y="1887" width="79" height="90"/>
+  <object id="473" gid="6230" x="1502" y="1893.67" width="86" height="97"/>
   <object id="474" gid="6229" x="1586" y="1882.33" width="80" height="90"/>
   <object id="475" gid="6231" x="1608.33" y="1953.67" width="79" height="90"/>
   <object id="476" gid="6235" x="1762.33" y="222.333" width="86" height="97"/>
@@ -1627,8 +1613,22 @@
   <object id="775" gid="6233" x="1614.59" y="2025.06" width="80" height="90"/>
   <object id="776" gid="6234" x="2194.32" y="1684.69" width="80" height="90"/>
   <object id="777" gid="6235" x="2232.15" y="1672.85" width="86" height="97"/>
-  <object id="788" gid="6221" x="1608" y="1070.67" width="16" height="16"/>
   <object id="809" gid="6226" x="1363.33" y="1728.33" width="26" height="25"/>
   <object id="882" gid="6238" x="1461" y="1420.45" width="79" height="110"/>
+  <object id="883" gid="6221" x="1435.65" y="1054.04" width="16" height="16"/>
+  <object id="884" gid="6222" x="1331.12" y="1063.86" width="16" height="16"/>
+  <object id="885" gid="6223" x="1613.88" y="891.249" width="16" height="16"/>
+  <object id="886" gid="6221" x="1614.88" y="1072.75" width="16" height="16"/>
+  <object id="887" gid="6223" x="1529.3" y="1510.66" width="16" height="16"/>
+  <object id="888" gid="6221" x="1430.62" y="1508.32" width="16" height="16"/>
+  <object id="889" gid="6224" x="1618.12" y="1603.25" width="16" height="16"/>
+  <object id="890" gid="6222" x="1547.38" y="1186.74" width="16" height="16"/>
+  <object id="891" gid="6222" x="1575.21" y="1356.49" width="16" height="16"/>
+  <object id="892" gid="6221" x="1117.88" y="1357.07" width="16" height="16"/>
+  <object id="893" gid="6222" x="1273.34" y="1632.98" width="16" height="16"/>
+  <object id="894" gid="6224" x="1278.01" y="1629.65" width="16" height="16"/>
+  <object id="895" gid="6221" x="1283.01" y="1632.98" width="16" height="16"/>
+  <object id="896" gid="6223" x="1339.33" y="1737.69" width="16" height="16"/>
+  <object id="897" gid="6224" x="1386.65" y="1742.35" width="16" height="16"/>
  </objectgroup>
 </map>
