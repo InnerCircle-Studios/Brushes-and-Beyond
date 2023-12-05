@@ -18,6 +18,6 @@ MonoBehaviour:
   MaxHealth: 10
   CurrentHealth: 10
   Damage: 10
-  Speed: 10
-  SprintSpeed: 20
+  Speed: 5
+  SprintSpeed: 10
   Loot: {fileID: 0}
