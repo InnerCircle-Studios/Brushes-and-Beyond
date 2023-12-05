@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -10,26 +10,21 @@ public class DialogueManager : MonoBehaviour
     private int _border = 8;
     private int _line_sep = 12;
     private int _line_width;
-    [SerializeField]private Texture2D _textbox_spr;
     private int _textbox_spt_w;
     private int _textbox_spr_h;
 
     private int _page = 0;
     private int _page_number = 0;
-    private string[] _text = new string[3];
-    private int[] _text_lengt;
+    private List<Page> _text;
+    private List<int> _text_lengt;
     private int _draw_char = 0;
     private int _text_speed = 1;
 
-    private bool _setup = false;
-
-    private Canvas _canvas;
-
-    private float _textbox_x;
-    private float _textbox_y;
-    private int[] _textbox_x_offset;
+    private List<Vector2> _textbox_x_offset;
 
     private bool _is_space_pressed;
+    private bool _is_dialogue_done;
+    [SerializeField]TextMeshProUGUI _textbox;
 
 
     ~DialogueManager()
@@ -39,43 +34,60 @@ public class DialogueManager : MonoBehaviour
 
     public void Awake()
     {
-        EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
-
-        _text[0] = "Hallo dit is een test";
-        _text[1] = "Als dit werkt zal het wel cool zijn";
-        _text[2] = "maar het gaat prob niet werken";
-
-        _textbox_x = Camera.main.transform.position.x + 100;
-        _textbox_y = Camera.main.transform.position.y + 203;
-
-        _line_width = _textbox_width - (_border * 2);
-        _textbox_x_offset = new int[_text.Length];
-        _text_lengt = new int[3];
-
-        if (!_setup)
-        {
-            _page_number = _text.Length;
-
-            for (int i = 0; i < _page_number; i++)
-            {
-                _text_lengt[i] = _text[i].Length;
-
-                _textbox_x_offset[i] = 44;
-            }
-        }
     }
 
     public void Update()
     {
+        if (!_is_dialogue_done)
+        {
+            UpdateDialogue();
+        }
+    }
+
+    public void LoadDialogue(Dialogue dialogue)
+    {
+        EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
+
+        _text = dialogue.GetDialogue();
+
+        _page = 0;
+
+        _is_dialogue_done = false;
+
+        _page_number = dialogue.GetDialogue().Count;
+        _textbox_x_offset.Clear();
+
+        for (int i = 0; i < _page_number; i++)
+        {
+            _text_lengt[i] = _text[i].GetSentence().Length;
+
+            switch(_text[i].GetPosition())
+            {
+                case DialoguePosition.LEFT:
+                    _textbox_x_offset.Add(new Vector2());
+                    break;
+
+                case DialoguePosition.MIDDLE:
+                    _textbox_x_offset.Add(new Vector2());
+                    break;
+
+                case DialoguePosition.RIGHT:
+                    _textbox_x_offset.Add(new Vector2());
+                    break;
+            }
+        }
+    }
+
+    public void UpdateDialogue()
+    {
         if (_draw_char < _text_lengt[_page])
         {
             _draw_char += _text_speed;
-            _draw_char = Math.Clamp(_draw_char, 0, _text_lengt[_page]);
+            _draw_char = Math.Clamp(_draw_char, 0, _text_lengt[_page]);            
         }
 
         if (_is_space_pressed)
         {
-            EventBus.TriggerEvent(EventBusEvents.EventName.SPACE_KEY, false);
             if (_draw_char == _text_lengt[_page])
             {
                 if (_page < _page_number-1)
@@ -85,7 +97,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    //Stop Displaying text
+                    _is_dialogue_done = true;
                 }
             }
             else
@@ -94,16 +106,8 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        _textbox_spr_h = _textbox_spr.height;
-        _textbox_spt_w = _textbox_spr.width;
-
-        Graphics.DrawTexture(new Rect(new Vector2(_textbox_x + _textbox_x_offset[_page], _textbox_y), new Vector2(_textbox_spt_w, _textbox_spr_h)), _textbox_spr);
-    }
-
-    public void OnGUI()
-    {
-        string _draw_text = _text[_page].Substring(0, _draw_char);
-        GUI.Label(new Rect(new Vector2(_textbox_x + _textbox_x_offset[_page] + _border, _textbox_y + _border), new Vector2(_textbox_spt_w, _textbox_x)), _draw_text);
+        string _draw_text = _text[_page].GetSentence().Substring(0, _draw_char);
+        _textbox.text = _draw_text;
     }
 
     public void OnDialogueSkip(bool is_space_pressed)
