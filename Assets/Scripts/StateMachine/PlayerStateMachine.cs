@@ -6,6 +6,7 @@ public class PlayerStateMachine : StateMachine {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttackEvent);
         EventBus.StartListening<bool>(EventBusEvents.EventName.DEATH_EVENT, OnDeathEvent);
         EventBus.StartListening<bool>(EventBusEvents.EventName.F_KEY, OnShowEvent);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.E_KEY, OnInteractEvent);
         EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEvent);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnRunEvent);
 
@@ -13,6 +14,7 @@ public class PlayerStateMachine : StateMachine {
         AddState(new PlayerAttackState("PlayerAttackState", this));
         AddState(new PlayerDashState("PlayerDashState", this));
         AddState(new PlayerDeathState("PlayerDeathState", this));
+        AddState(new PlayerInteractState("PlayerInteractState", this));
         AddState(new PlayerDialogueState("PlayerDialogueState", this));
         AddState(new PlayerRunState("PlayerRunState", this));
         AddState(new PlayerShowState("PlayerShowState", this));
@@ -28,6 +30,7 @@ public class PlayerStateMachine : StateMachine {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttackEvent);
         EventBus.StopListening<bool>(EventBusEvents.EventName.DEATH_EVENT, OnDeathEvent);
         EventBus.StopListening<bool>(EventBusEvents.EventName.F_KEY, OnShowEvent);
+        EventBus.StopListening<bool>(EventBusEvents.EventName.E_KEY, OnInteractEvent);
         EventBus.StopListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEvent);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnRunEvent);
     }
@@ -50,6 +53,10 @@ public class PlayerStateMachine : StateMachine {
         _IsShowPressed.Value = isShowPressed;
 
         _IsShowDone.Value = false;
+    }
+    public void OnInteractEvent(bool isInteractPressed) {
+        _IsInteractPressed.Value = isInteractPressed;
+
     }
 
     public void OnDialogueEvent(bool isDialogueActive) {
@@ -84,6 +91,7 @@ public class PlayerStateMachine : StateMachine {
     public BoolWrapper _IsDeath { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsAttackPressed { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsShowPressed { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _IsInteractPressed { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsDialogueActive { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsShowDone { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsRunningPressed { get; set; } = new BoolWrapper(false);

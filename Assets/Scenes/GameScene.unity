@@ -32039,9 +32039,8 @@ GameObject:
   - component: {fileID: 1579753558}
   - component: {fileID: 1579753557}
   - component: {fileID: 1579753560}
-  - component: {fileID: 1579753559}
-  - component: {fileID: 1579753562}
   - component: {fileID: 1579753563}
+  - component: {fileID: 1579753564}
   m_Layer: 9
   m_Name: Blockade 1
   m_TagString: Blockade
@@ -32116,18 +32115,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428007776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.197}
---- !u!114 &1579753559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579753556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1579753560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32173,18 +32160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1167827, y: 2.9009864}
   m_EdgeRadius: 0
---- !u!114 &1579753562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579753556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &1579753563
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -32323,6 +32298,45 @@ PolygonCollider2D:
       - {x: -0.225, y: -2.3899999}
       - {x: -0.015, y: -2.33}
   m_UseDelaunayMesh: 0
+--- !u!114 &1579753564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579753556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065c2a873d72ef842874758e9072980b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEventTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1792340912}
+        m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
+        m_MethodName: InitDialogueBox
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2137030349}
+          m_ObjectArgumentAssemblyTypeName: Actor, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1792340912}
+        m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
+        m_MethodName: UpdateDialogueBox
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Not enough Paint!
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1631939546
 GameObject:
   m_ObjectHideFlags: 0
@@ -33639,12 +33653,8 @@ GameObject:
   - component: {fileID: 1959386088}
   - component: {fileID: 1959386087}
   - component: {fileID: 1959386086}
-  - component: {fileID: 1959386085}
   - component: {fileID: 1959386094}
   - component: {fileID: 1959386093}
-  - component: {fileID: 1959386092}
-  - component: {fileID: 1959386091}
-  - component: {fileID: 1959386090}
   - component: {fileID: 1959386089}
   m_Layer: 7
   m_Name: Brushy
@@ -33653,18 +33663,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1959386085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959386084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b57f4673b43818544a37e6a25914c0b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1959386086
 Animator:
   serializedVersion: 5
@@ -33762,45 +33760,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959386084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
+  m_Script: {fileID: 11500000, guid: 065c2a873d72ef842874758e9072980b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1959386090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959386084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1959386091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959386084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1959386092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959386084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3617b56b414e0ea4eabc734ce168a0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  OnEventTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1792340912}
+        m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
+        m_MethodName: InitDialogueBox
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2137030349}
+          m_ObjectArgumentAssemblyTypeName: Actor, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1792340912}
+        m_TargetAssemblyTypeName: WindowManager, Assembly-CSharp
+        m_MethodName: UpdateDialogueBox
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Text!
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1959386093
 BoxCollider2D:
   m_ObjectHideFlags: 0

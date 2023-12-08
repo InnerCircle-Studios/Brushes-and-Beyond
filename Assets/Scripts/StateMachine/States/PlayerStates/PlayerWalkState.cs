@@ -10,7 +10,7 @@ public class PlayerWalkState : State {
     }
 
     public override void EnterState() {
-        
+
 
     }
 
@@ -26,6 +26,8 @@ public class PlayerWalkState : State {
 
     public override void AddSwitchCases() {
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDeath, true), _PlayerStateMachine.GetState("PlayerDeathState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsInteractPressed, true), _PlayerStateMachine.GetState("PlayerInteractState"));
+
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsMovementPressed, false), _PlayerStateMachine.GetState("PlayerIdleState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsRunningPressed, true), _PlayerStateMachine.GetState("PlayerRunState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true), _PlayerStateMachine.GetState("PlayerDialogueState"));
