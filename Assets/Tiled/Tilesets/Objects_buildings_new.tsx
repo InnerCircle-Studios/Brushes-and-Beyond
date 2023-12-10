@@ -24,35 +24,35 @@
   </objectgroup>
  </tile>
  <tile id="5">
-  <image width="174" height="123" source="../../Art/Buildings/Assets/HouseAaronV5.png"/>
+  <image width="180" height="130" source="../../Art/Buildings/Assets/HouseAaronV5.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="172.125" y="41.875">
-    <polygon points="0,0 0.125,33.625 -56,33.125 -60.625,36.5 -64.25,36.25 -68.125,35.375 -71.25,33.25 -110.5,33.75 -110.375,75.125 -110.375,76.625 -150.875,76.625 -151.75,32.75 -163.875,32.875 -164.875,5.875 -166.125,-8.875 -0.625,-8.375"/>
+    <polygon points="0,0 0.511266,39.0327 -49.0472,38.919 -53.6722,41.5215 -58.0697,43.2028 -65.8074,41.9415 -71.25,39.4303 -105.865,39.1577 -110.375,75.125 -110.375,76.625 -150.875,76.625 -151.75,32.75 -163.875,32.875 -164.875,5.875 -166.125,-8.875 -0.625,-8.375"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="2">
-  <image width="174" height="123" source="../../Art/Buildings/Assets/HouseAaronV5Red.png"/>
+  <image width="180" height="130" source="../../Art/Buildings/Assets/HouseAaronV5Red.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="8.25" y="74.75">
-    <polygon points="0,0 11.25,0 13.25,41.25 51,41.75 52,-0.5 92.5,-1.25 98.25,1.5 102,1.75 105,-1 162.5,-1.25 164.5,-57.5 -3,-59.5"/>
+    <polygon points="1.1588,8.11159 11.25,6.95279 15.1813,49.7479 54.4764,49.8616 57.4077,7.22532 95.2039,7.63412 102.113,10.3841 108.953,10.6341 113.112,6.33906 162.886,7.24785 164.5,-57.5 -3,-59.5"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="1">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4FinalYellow.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="3" x="8" y="196.667">
-    <polygon points="0,0 -0.333333,-58.6667 0,-85 154,-84 154.667,-9 150.667,-8.66667 150.667,-26 127,-26.3333 122.667,-16 112,-10.3333 101,-10 101,0.333333"/>
+   <object id="4" x="8.49785" y="110.472">
+    <polygon points="0,0 -0.772532,84.9785 22.4034,84.5923 23.9485,89.2275 32.4464,89.2275 36.309,86.5236 39.0129,83.8197 102.361,86.9099 101.588,76.4807 113.948,75.3219 122.833,71.073 127.854,59.8712 148.712,60.6438 147.94,77.2532 156.052,77.2532 156.052,2.3176"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="6">
-  <image width="155" height="76" source="../../Art/Buildings/Assets/HouseAaronV6Red.png"/>
+  <image width="155" height="80" source="../../Art/Buildings/Assets/HouseAaronV6Red.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="16" y="52.5" width="80"/>
-   <object id="2" x="7" y="44.75">
-    <polygon points="0,0 0,26.25 142.5,26.25 141,-0.25"/>
+   <object id="3" x="6.18026" y="48.6695">
+    <polygon points="0,0 -0.386266,24.721 74.1631,26.2661 79.9571,31.6738 86.1373,29.3562 91.1588,25.8798 142.918,26.2661 143.305,-2.3176"/>
    </object>
   </objectgroup>
  </tile>
