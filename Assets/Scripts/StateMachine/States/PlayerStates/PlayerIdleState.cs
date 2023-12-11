@@ -30,6 +30,7 @@ public class PlayerIdleState : State
     public override void AddSwitchCases() 
     {
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDeath, true), _PlayerStateMachine.GetState("PlayerDeathState"));
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsInteractPressed, true) , _PlayerStateMachine.GetState("PlayerInteractState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true) , _PlayerStateMachine.GetState("PlayerDialogueState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsMovementPressed, true) , _PlayerStateMachine.GetState("PlayerWalkState"));
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsAttackPressed, true) , _PlayerStateMachine.GetState("PlayerAttackState"));
