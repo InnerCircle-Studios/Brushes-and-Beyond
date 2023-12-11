@@ -4,6 +4,7 @@ using UnityEngine;
 public class CharacterAttributes : ScriptableObject {
 
     public Sprite DialogueSprite;
+    public float InteractionRange;
 
     public Role Type;
 
@@ -33,6 +34,7 @@ public class CharacterAttributes : ScriptableObject {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
         
         newCharacterAttributes.DialogueSprite = DialogueSprite;
+        newCharacterAttributes.InteractionRange = InteractionRange;
         newCharacterAttributes.Type = Type;
         newCharacterAttributes.Name = Name;
         newCharacterAttributes.MaxHealth = MaxHealth;
