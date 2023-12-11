@@ -229,15 +229,35 @@
  </tile>
  <tile id="31">
   <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV1.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="3.96875" y="12.875">
+    <polygon points="0,0 9.9375,-0.03125 11,-3.8125 -1.5625,-3.8125"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="32">
   <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV2.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="1.03125" y="9.6875">
+    <polygon points="0,0 1.9375,3.25 5.03125,4.1875 12.6875,4.25 14.0313,0.28125"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="33">
   <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV3.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="2.96875" y="13">
+    <polygon points="0,0 7.03125,0 12.0938,-4.28125 -2,-4.28125"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="34">
   <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV4.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="2" x="6.0625" y="13">
+    <polygon points="0,0 7.8125,0 9.9375,-2.125 9.875,-4 -3,-4.25"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="35">
   <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16Mushrooms.png"/>
