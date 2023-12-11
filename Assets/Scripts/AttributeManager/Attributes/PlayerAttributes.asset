@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerAttributes
   m_EditorClassIdentifier: 
   DialogueSprite: {fileID: 21300000, guid: 4bdb3f831a008b34ca48f796bf89d985, type: 3}
+  InteractionRange: 1.5
   Type: 0
   Name: Vin
   MaxHealth: 10
