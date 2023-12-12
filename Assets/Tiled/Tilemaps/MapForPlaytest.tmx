@@ -15,6 +15,7 @@
  <tileset firstgid="7219" source="../Tilesets/Objects_Tree_Without_Colliders.tsx"/>
  <tileset firstgid="7224" source="../Tilesets/Object_Tree_With_Large_Colliders.tsx"/>
  <tileset firstgid="7229" source="../Tilesets/Painting.tsx"/>
+ <tileset firstgid="7283" source="../Tilesets/Props_New.tsx"/>
  <layer id="7" name="Ground" width="200" height="200">
   <properties>
    <property name="unity:sortingLayer" value="Ground"/>
@@ -1500,7 +1501,7 @@
   </object>
   <object id="114" gid="137" x="803" y="683" width="32" height="40"/>
   <object id="133" gid="4199" x="485.333" y="779.333" width="16" height="16"/>
-  <object id="2961" gid="7220" x="442.667" y="439" width="80" height="90"/>
+  <object id="2961" gid="7220" x="446.667" y="450.333" width="80" height="90"/>
   <object id="2962" gid="7220" x="508" y="445.333" width="80" height="90"/>
   <object id="2963" gid="7221" x="569.667" y="449.667" width="86" height="97"/>
   <object id="2964" gid="7222" x="651.667" y="451.667" width="79" height="90"/>
@@ -1626,7 +1627,7 @@
   <object id="3163" gid="7220" x="998.833" y="1665.33" width="80" height="90"/>
   <object id="3164" gid="7221" x="1011.83" y="1602.33" width="86" height="97"/>
   <object id="3169" gid="7215" x="630" y="495" width="16" height="16"/>
-  <object id="3170" gid="7210" x="625.333" y="480" width="26" height="25"/>
+  <object id="3170" gid="7210" x="634.833" y="482" width="26" height="25"/>
   <object id="3177" gid="7216" x="778" y="1073" width="16" height="16"/>
   <object id="3179" gid="7218" x="305" y="1209" width="26" height="25"/>
   <object id="3198" gid="7217" x="458" y="833" width="26" height="25"/>
