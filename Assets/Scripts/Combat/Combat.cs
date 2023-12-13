@@ -5,13 +5,13 @@ using System.Linq;
 
 public class Combat : ICombat {
     public List<Actor> MeleeAttack(Vector2 position, float attackRange, string layer) {
-        List<Actor> hitActors = new();
+        List<Actor> hitActors = new List<Actor>();
 
         RaycastHit2D[] hits = Physics2D.CircleCastAll(position, attackRange, new Vector3(1, 0, 0), 0f, LayerMask.GetMask(layer)).Distinct().ToArray();
 
         foreach (RaycastHit2D hit in hits) {
-            Debug.Log(hit.collider.gameObject.name);
-            if (hit.transform.CompareTag(layer)) {
+            if (hit.collider.CompareTag(layer)) {
+                Debug.Log(hit.collider.gameObject.name);
                 hitActors.Add(hit.collider.gameObject.GetComponent<Actor>());
             }
         }

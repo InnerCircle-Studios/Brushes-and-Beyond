@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: BaseEnemyAttributes
   m_EditorClassIdentifier: 
   DialogueSprite: {fileID: 21300000, guid: 7119cc871921d7b4c8a4cbca898a07c8, type: 3}
+  InteractionRange: 0
   Type: 0
   Name: PaintBlob
-  MaxHealth: 10
-  CurrentHealth: 10
+  MaxHealth: 2147483647
+  CurrentHealth: 2147483647
   Damage: 1
   Speed: 5
   SprintSpeed: 20
