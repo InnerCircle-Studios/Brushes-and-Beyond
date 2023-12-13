@@ -12,7 +12,7 @@ public class Dialogue
         return _pages;
     }
 
-    private List<Page> _pages = new List<Page>();
+    private List<Page> _pages;
 }
 
 public class Page

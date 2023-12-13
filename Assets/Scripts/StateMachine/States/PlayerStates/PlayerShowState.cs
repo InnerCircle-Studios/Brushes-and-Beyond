@@ -13,6 +13,9 @@ public class PlayerShowState : State {
 
     public override void EnterState() {
         GetStateMachine().GetActor().StartCoroutine(WaitForShow());
+        _PlayerStateMachine.GetActor().GetAnimator().Play("ShowBrush");
+        _PlayerStateMachine.GetActor().GetWindowManager().InitDialogueBox(_PlayerStateMachine.GetActor());
+        _PlayerStateMachine.GetActor().GetWindowManager().UpdateDialogueBox("Test string. Blood for the blood god! Skulls for the skull throne!");
     }
 
     public override void ExitState() {
