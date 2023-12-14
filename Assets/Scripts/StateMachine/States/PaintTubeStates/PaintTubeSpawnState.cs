@@ -16,14 +16,13 @@ public class PaintTubeSpawnState : State
 
     public override void EnterState()
     {
-        _PaintStateMachine._isSpawning.Value = false;
         GetStateMachine().GetActor().StartCoroutine(WaitForSpawn());
         GetStateMachine().GetActor().GetAnimator().Play("Spawn");
     }
 
     public override void UpdateState()
     {
-        
+        CheckSwitchStates();
     } 
 
     public override void ExitState()
