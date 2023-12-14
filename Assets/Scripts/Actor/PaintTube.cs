@@ -3,8 +3,6 @@ using UnityEngine;
 public class PaintTube : Actor {
     public override void Start() 
     {
-        _Player = GetComponent<Player>();
-        
         _PaintTubeStateMachine = new PaintTubeStateMachine(this, _Player);
     }
 
@@ -40,5 +38,5 @@ public class PaintTube : Actor {
 
     private PaintTubeStateMachine _PaintTubeStateMachine;
 
-    private Player _Player;
+    [SerializeField]private Player _Player;
 }

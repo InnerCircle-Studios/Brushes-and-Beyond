@@ -91,12 +91,7 @@ public class PaintTubeWalkState : State
 
     private void MoveToTarget()
     {
-        GetStateMachine().GetActor().transform.position = Vector2.MoveTowards(GetStateMachine().GetActor().transform.position, _move, 10f + Time.deltaTime);
-
-        if (Vector2.Distance(GetStateMachine().GetActor().transform.position, _move) < 0.1f)
-        {
-            Move();
-        }
+        GetStateMachine().GetActor().HandleWalk(_move);
     }
 
     private PaintTubeStateMachine _PaintStateMachine;

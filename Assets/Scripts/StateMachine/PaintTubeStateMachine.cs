@@ -10,11 +10,15 @@ public class PaintTubeStateMachine : StateMachine
         AddState(new PaintTubeDeathState("PaintTubeDeathState", this));
 
         ChangeState(GetState("PaintTubeIdleState"));
+
+        InitSwitchCases();
+
+        _PaintTube = GetActor() as PaintTube;
     }
 
     public void CheckPlayerInRange()
     {
-        float distance = Vector2.Distance(GetActor().transform.position, _Player.transform.position);
+        float distance = Vector2.Distance(GetActor().transform.position, _PaintTube.GetPlayer().transform.position);
 
         if (distance < _hostileRange)
         {
@@ -34,5 +38,5 @@ public class PaintTubeStateMachine : StateMachine
     public BoolWrapper _isIdle { get; set; } = new BoolWrapper(false);
     public BoolWrapper _isSpawning { get; set; } = new BoolWrapper(false);
 
-    private Player _Player;
+    private PaintTube _PaintTube;
 }
