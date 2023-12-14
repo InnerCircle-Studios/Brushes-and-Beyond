@@ -3,6 +3,8 @@ using UnityEngine;
 public class Hostile : Actor {
     public override void Start() {
         _HostileStateMachine = new HostileStateMachine(this);
+
+        _Player = GetComponent<Player>();
     }
 
     public override void Update() {
@@ -25,10 +27,17 @@ public class Hostile : Actor {
 
     }
 
+    public Player GetPlayer()
+    {
+        return _Player;
+    }
+
     private void OnDeath()
     {
         Destroy(gameObject);
     }
 
     private HostileStateMachine _HostileStateMachine;
+
+    private Player _Player;
 }

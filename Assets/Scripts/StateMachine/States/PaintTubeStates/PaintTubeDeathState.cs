@@ -2,7 +2,7 @@ public class PaintTubeDeathState : State
 {
     public PaintTubeDeathState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        _PaintStateMachine = GetStateMachine() as PaintTubeStateMachine;
     }
 
     public override void AwakeState()
@@ -12,7 +12,7 @@ public class PaintTubeDeathState : State
 
     public override void EnterState()
     {
-        
+        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeDeath");
     }
 
     public override void UpdateState()
@@ -29,4 +29,6 @@ public class PaintTubeDeathState : State
     {
         
     }
+
+    private PaintTubeStateMachine _PaintStateMachine;
 }
