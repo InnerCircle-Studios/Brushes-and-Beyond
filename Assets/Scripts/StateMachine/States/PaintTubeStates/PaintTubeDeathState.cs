@@ -12,7 +12,7 @@ public class PaintTubeDeathState : State
 
     public override void EnterState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeDeath");
+        GetStateMachine().GetActor().GetAnimator().Play("Death");
     }
 
     public override void UpdateState()

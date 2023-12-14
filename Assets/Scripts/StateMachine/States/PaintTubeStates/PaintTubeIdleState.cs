@@ -14,19 +14,19 @@ public class PaintTubeIdleState : State
 
     public override void EnterState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeSitDown");
+        GetStateMachine().GetActor().GetAnimator().Play("SitDown");
     }
 
     public override void UpdateState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeIdle");
+        GetStateMachine().GetActor().GetAnimator().Play("Idle");
         _PaintStateMachine.CheckPlayerInRange();
         CheckSwitchStates();
     } 
 
     public override void ExitState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeStandUp");
+        GetStateMachine().GetActor().GetAnimator().Play("StandUp");
     }
 
     public override void AddSwitchCases() 

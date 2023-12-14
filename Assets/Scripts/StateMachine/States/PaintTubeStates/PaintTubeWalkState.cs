@@ -24,7 +24,7 @@ public class PaintTubeWalkState : State
     {
         MoveToTarget();
         CheckDirection();
-        GetStateMachine().GetActor().GetAnimator().Play("PaintTubeWalk", _direction);
+        GetStateMachine().GetActor().GetAnimator().Play("Move", _direction);
         _PaintStateMachine.CheckPlayerInRange();
         CheckSwitchStates();
     } 
