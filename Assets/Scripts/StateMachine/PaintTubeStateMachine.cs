@@ -9,4 +9,17 @@ public class PaintTubeStateMachine : StateMachine
 
         ChangeState(GetState("PaintTubeIdleState"));
     }
+
+
+    
+
+
+    public BoolWrapper _isInRange { get; set; } = new BoolWrapper(false);
+    public BoolWrapper _isDead { get; set; } = new BoolWrapper(false);
+    
+
+
+
+
+
 }
