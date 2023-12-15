@@ -60,14 +60,14 @@ public class PaintTubeWalkState : State {
     }
 
     private void Move() {
-        bool moveOnX = Random.Range(0, 2) == 0;
-        float randomDistance = Random.Range(-10f, 10f);
+        bool _moveOnX = Random.Range(0, 2) == 0;
+        float _randomDistance = Random.Range(-10f, 10f);
 
-        if (moveOnX) {
-            _move = new Vector2(randomDistance, 0);
+        if (_moveOnX) {
+            _move = new Vector2(_randomDistance, 0);
         }
         else {
-            _move = new Vector2(0, randomDistance);
+            _move = new Vector2(0, _randomDistance);
         }
 
         _targetPosition = (Vector2)GetStateMachine().GetActor().transform.position + _move;
