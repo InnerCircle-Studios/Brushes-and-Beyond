@@ -1,3 +1,5 @@
+using System.Collections;
+
 using UnityEngine;
 
 public class PaintTubeIdleState : State 
@@ -14,7 +16,7 @@ public class PaintTubeIdleState : State
 
     public override void EnterState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("SitDown");
+         GetStateMachine().GetActor().StartCoroutine(WaitForSitDown());
     }
 
     public override void UpdateState()
@@ -26,7 +28,7 @@ public class PaintTubeIdleState : State
 
     public override void ExitState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("StandUp");
+        GetStateMachine().GetActor().StartCoroutine(WaitForStandup());
     }
 
     public override void AddSwitchCases() 
@@ -35,6 +37,18 @@ public class PaintTubeIdleState : State
         AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isInRange, true), _PaintStateMachine.GetState("PaintTubeWalkState"));
     }
 
+
+    private IEnumerator WaitForSitDown() 
+    {
+        GetStateMachine().GetActor().GetAnimator().Play("SitDown");
+        yield return new WaitForSeconds(1.8f);
+    }
+
+    private IEnumerator WaitForStandup()
+    {
+        GetStateMachine().GetActor().GetAnimator().Play("StandUp");
+        yield return new WaitForSeconds(1.8f);
+    }
     
 
     private PaintTubeStateMachine _PaintStateMachine;

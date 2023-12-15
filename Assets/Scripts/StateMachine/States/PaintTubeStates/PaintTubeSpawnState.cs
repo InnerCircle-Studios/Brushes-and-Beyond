@@ -38,7 +38,7 @@ public class PaintTubeSpawnState : State
 
     private IEnumerator WaitForSpawn() //Delay for groundCheck
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1f);
 
         _PaintStateMachine._isSpawning.Value = false;
     }
