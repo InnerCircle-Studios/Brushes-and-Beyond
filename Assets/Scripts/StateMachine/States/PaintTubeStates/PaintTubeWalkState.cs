@@ -17,7 +17,7 @@ public class PaintTubeWalkState : State {
     }
 
     public override void UpdateState() {
-        if (Vector2.Distance(GetStateMachine().GetActor().transform.position, _targetPosition) < 0.1f) {
+        if ((Vector2.Distance(GetStateMachine().GetActor().transform.position, _targetPosition) < 0.1f)||IsWallAhead()) {
             Move();
         }
 
@@ -63,10 +63,26 @@ public class PaintTubeWalkState : State {
         _PaintStateMachine._currentMovement = _move.normalized;
     }
 
+    private bool IsWallAhead()
+{
+    RaycastHit2D hit = Physics2D.Raycast(GetStateMachine().GetActor().transform.position, _PaintStateMachine._currentMovement, 1f); // Adjust the detection distance as needed
+
+    if (hit.collider != null)
+    {
+        Renderer hitRenderer = hit.collider.GetComponent<Renderer>();
+        if (hitRenderer != null)
+        {
+            return hitRenderer.sortingLayerName == "YourSortingLayerName"; // Replace with your sorting layer name
+        }
+    }
+
+    return false;
+}
+
 
     private void MoveToTarget() {
         Transform actorTransform = GetStateMachine().GetActor().transform;
-        actorTransform.position = Vector2.MoveTowards(actorTransform.position, _targetPosition, 5f * Time.deltaTime);
+        actorTransform.position = Vector2.MoveTowards(actorTransform.position, _targetPosition, 1f * Time.deltaTime);
     }
 
     private PaintTubeStateMachine _PaintStateMachine;
