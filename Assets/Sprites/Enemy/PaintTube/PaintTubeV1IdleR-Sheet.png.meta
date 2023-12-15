@@ -126,10 +126,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 24
-        height: 38
+        x: 0
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 24
-        height: 38
+        x: 32
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 4
-        width: 24
-        height: 38
+        x: 64
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 4
-        width: 24
-        height: 38
+        x: 96
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_4
       rect:
         serializedVersion: 2
-        x: 132
-        y: 4
-        width: 24
-        height: 38
+        x: 128
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_5
       rect:
         serializedVersion: 2
-        x: 164
-        y: 4
-        width: 26
-        height: 38
+        x: 160
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: PaintTubeV1IdleR-Sheet_7
       rect:
         serializedVersion: 2
-        x: 196
-        y: 4
-        width: 27
-        height: 38
+        x: 224
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,13 +270,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PaintTubeV1IdleR-Sheet_9
+      name: PaintTubeV1IdleR-Sheet_6
       rect:
         serializedVersion: 2
-        x: 228
-        y: 4
-        width: 24
-        height: 38
+        x: 192
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19a18981e764c0546aba413c8555521b
-      internalID: -936595403
+      spriteID: 3d7de68d53dfd07429679ecad59f84b5
+      internalID: -2077601666
       vertices: []
       indices: 
       edges: []
@@ -309,8 +309,6 @@ TextureImporter:
       PaintTubeV1IdleR-Sheet_5: -198641037
       PaintTubeV1IdleR-Sheet_6: -2077601666
       PaintTubeV1IdleR-Sheet_7: 349066666
-      PaintTubeV1IdleR-Sheet_8: -1079751080
-      PaintTubeV1IdleR-Sheet_9: -936595403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

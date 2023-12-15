@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Blockade
   - Enemy
+  - Objects
   layers:
   - Default
   - TransparentFX

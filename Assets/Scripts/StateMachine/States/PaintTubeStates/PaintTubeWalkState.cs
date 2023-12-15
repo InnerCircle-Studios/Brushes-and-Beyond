@@ -17,7 +17,7 @@ public class PaintTubeWalkState : State {
     }
 
     public override void UpdateState() {
-        if ((Vector2.Distance(GetStateMachine().GetActor().transform.position, _targetPosition) < 0.1f)||IsWallAhead()) {
+        if (Vector2.Distance(GetStateMachine().GetActor().transform.position, _targetPosition) < 0.1f) {
             Move();
         }
 
@@ -39,13 +39,17 @@ public class PaintTubeWalkState : State {
     }
 
     private void CheckDirection() {
-        if (_PaintStateMachine._currentMovement.x != 0)
-        {
+        if (_PaintStateMachine._currentMovement.x != 0) {
             _direction = _PaintStateMachine._currentMovement.x > 0 ? MovementDirection.RIGHT : MovementDirection.LEFT;
+            if (_direction == MovementDirection.RIGHT) {
+                GetStateMachine().GetActor().GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else {
+                GetStateMachine().GetActor().GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
 
-        if (_PaintStateMachine._currentMovement.y != 0)
-        {
+        if (_PaintStateMachine._currentMovement.y != 0) {
             _direction = _PaintStateMachine._currentMovement.y > 0 ? MovementDirection.UP : MovementDirection.DOWN;
         }
     }
@@ -69,23 +73,6 @@ public class PaintTubeWalkState : State {
         _targetPosition = (Vector2)GetStateMachine().GetActor().transform.position + _move;
         _PaintStateMachine._currentMovement = _move.normalized;
     }
-
-    private bool IsWallAhead()
-{
-    RaycastHit2D hit = Physics2D.Raycast(GetStateMachine().GetActor().transform.position, _PaintStateMachine._currentMovement, 1f); // Adjust the detection distance as needed
-
-    if (hit.collider != null)
-    {
-        Renderer hitRenderer = hit.collider.GetComponent<Renderer>();
-        if (hitRenderer != null)
-        {
-            return hitRenderer.sortingLayerName == "YourSortingLayerName"; // Replace with your sorting layer name
-        }
-    }
-
-    return false;
-}
-
 
     private void MoveToTarget() {
         Transform actorTransform = GetStateMachine().GetActor().transform;
