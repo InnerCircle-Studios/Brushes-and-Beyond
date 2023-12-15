@@ -39,8 +39,15 @@ public class PaintTubeWalkState : State {
     }
 
     private void CheckDirection() {
-        _direction = _PaintStateMachine._currentMovement.x > 0 ? MovementDirection.RIGHT : MovementDirection.LEFT;
-        _direction = _PaintStateMachine._currentMovement.y > 0 ? MovementDirection.UP : MovementDirection.DOWN;
+        if (_PaintStateMachine._currentMovement.x != 0)
+        {
+            _direction = _PaintStateMachine._currentMovement.x > 0 ? MovementDirection.RIGHT : MovementDirection.LEFT;
+        }
+
+        if (_PaintStateMachine._currentMovement.y != 0)
+        {
+            _direction = _PaintStateMachine._currentMovement.y > 0 ? MovementDirection.UP : MovementDirection.DOWN;
+        }
     }
 
     private IEnumerator CheckTime() {
