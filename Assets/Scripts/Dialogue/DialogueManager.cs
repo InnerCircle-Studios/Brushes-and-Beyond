@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+
 using TMPro;
+
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour {
@@ -23,27 +25,23 @@ public class DialogueManager : MonoBehaviour {
 
     private bool _is_space_pressed;
     private bool _is_dialogue_done;
-    [SerializeField]TextMeshProUGUI _textbox;
+    [SerializeField] TextMeshProUGUI _textbox;
 
 
     ~DialogueManager() {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
     }
 
-    public void Awake()
-    {
+    public void Awake() {
     }
 
-    public void Update()
-    {
-        if (!_is_dialogue_done)
-        {
+    public void Update() {
+        if (!_is_dialogue_done) {
             UpdateDialogue();
         }
     }
 
-    public void LoadDialogue(Dialogue dialogue)
-    {
+    public void LoadDialogue(Dialogue dialogue) {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnDialogueSkip);
 
         _text = dialogue.GetDialogue();
@@ -55,12 +53,10 @@ public class DialogueManager : MonoBehaviour {
         _page_number = dialogue.GetDialogue().Count;
         _textbox_x_offset.Clear();
 
-        for (int i = 0; i < _page_number; i++)
-        {
+        for (int i = 0; i < _page_number; i++) {
             _text_lengt[i] = _text[i].GetSentence().Length;
 
-            switch(_text[i].GetPosition())
-            {
+            switch (_text[i].GetPosition()) {
                 case DialoguePosition.LEFT:
                     _textbox_x_offset.Add(new Vector2());
                     break;
@@ -76,25 +72,19 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-    public void UpdateDialogue()
-    {
-        if (_draw_char < _text_lengt[_page])
-        {
+    public void UpdateDialogue() {
+        if (_draw_char < _text_lengt[_page]) {
             _draw_char += _text_speed;
-            _draw_char = Math.Clamp(_draw_char, 0, _text_lengt[_page]);            
+            _draw_char = Math.Clamp(_draw_char, 0, _text_lengt[_page]);
         }
 
-        if (_is_space_pressed)
-        {
-            if (_draw_char == _text_lengt[_page])
-            {
-                if (_page < _page_number-1)
-                {
+        if (_is_space_pressed) {
+            if (_draw_char == _text_lengt[_page]) {
+                if (_page < _page_number - 1) {
                     _page++;
                     _draw_char = 0;
                 }
-                else
-                {
+                else {
                     _is_dialogue_done = true;
                 }
             }
