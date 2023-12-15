@@ -2,7 +2,7 @@ public class HostileAttackState : State
 {
     public HostileAttackState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        _HostileStateMachine = GetStateMachine() as HostileStateMachine;
     }
 
     public override void AwakeState()
@@ -12,7 +12,7 @@ public class HostileAttackState : State
 
     public override void EnterState()
     {
-        
+        GetStateMachine().GetActor().GetAnimator().Play("Shoot");
     }
 
     public override void UpdateState()
@@ -29,4 +29,6 @@ public class HostileAttackState : State
     {
         
     }
+
+    private HostileStateMachine _HostileStateMachine;
 }

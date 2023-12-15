@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Hostile : Actor {
     public override void Start() {
-        _HostileStateMachine = new HostileStateMachine(this);
-
-        _Player = GetComponent<Player>();
+        _HostileStateMachine = new HostileStateMachine(this, _Player);
     }
 
     public override void Update() {
@@ -39,5 +37,5 @@ public class Hostile : Actor {
 
     private HostileStateMachine _HostileStateMachine;
 
-    private Player _Player;
+    [SerializeField]private Player _Player;
 }

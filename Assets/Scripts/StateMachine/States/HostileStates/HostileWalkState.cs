@@ -2,7 +2,7 @@ public class HostileWalkState : State
 {
     public HostileWalkState(string name, StateMachine stateMachine) : base(name, stateMachine)
     {
-
+        _HostileStateMachine = GetStateMachine() as HostileStateMachine;
     }
 
     public override void AwakeState()
@@ -29,4 +29,6 @@ public class HostileWalkState : State
     {
         
     }
+
+    private HostileStateMachine _HostileStateMachine;
 }
