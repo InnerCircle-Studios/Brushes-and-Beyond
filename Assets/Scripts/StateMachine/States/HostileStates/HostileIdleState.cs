@@ -12,23 +12,25 @@ public class HostileIdleState : State
 
     public override void EnterState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("Idle");
+        
     }
 
     public override void UpdateState()
     {
-        
+        GetStateMachine().GetActor().GetAnimator().Play("Idle");
+        _HostileStateMachine.CheckPlayerInRange();
+        CheckSwitchStates();
     }
 
     public override void ExitState()
     {
-         AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isDead, true), _HostileStateMachine.GetState("HostileDeathState"));
-         AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isInRange, true), _HostileStateMachine.GetState("HostileWalkState"));
+
     }
 
     public override void AddSwitchCases() 
     {
-        
+         AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isDead, true), _HostileStateMachine.GetState("HostileDeathState"));
+         AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isInRange, true), _HostileStateMachine.GetState("HostileWalkState"));
     }
 
     private HostileStateMachine _HostileStateMachine;

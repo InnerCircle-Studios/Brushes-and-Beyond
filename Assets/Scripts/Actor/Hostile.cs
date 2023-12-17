@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Hostile : Actor {
     public override void Start() {
-        _HostileStateMachine = new HostileStateMachine(this, _Player);
+        _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
     }
 
     public override void Update() {
@@ -35,7 +35,13 @@ public class Hostile : Actor {
         Destroy(gameObject);
     }
 
+    private bool GetHostileType(){
+        return _isMelee;
+    }
+    
+
     private HostileStateMachine _HostileStateMachine;
 
     [SerializeField]private Player _Player;
+    [SerializeField]private bool _isMelee = false;
 }
