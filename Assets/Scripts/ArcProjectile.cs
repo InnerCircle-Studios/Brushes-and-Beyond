@@ -27,6 +27,7 @@ public class ArcProjectile : MonoBehaviour
     public void Launch()
     {
         rb.velocity = initialVelocity;
+        rb.gravityScale = 20;
     }
 
     private IEnumerator SpawnEnemyAfterDelay()
@@ -36,7 +37,7 @@ public class ArcProjectile : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Instantiate the enemy and destroy the projectile
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        //Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
