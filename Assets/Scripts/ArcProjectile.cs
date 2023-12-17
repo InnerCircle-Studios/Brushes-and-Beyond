@@ -1,43 +1,46 @@
 using UnityEngine;
-using System.Collections;
 
-public class ArcProjectile : MonoBehaviour
-{
-    public GameObject enemyPrefab; // Assign this in the Unity inspector
-    public Vector2 initialVelocity;
-    public Rigidbody2D rb;
-    private Animator _animator;
-    public bool launched = false;
+public class ArcProjectile2D : MonoBehaviour {
+    public GameObject enemyPrefab; // Assign in Unity inspector
+    public float duration = 3f; // Total duration of the flight
 
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+    private Vector2 startPosition;
+    private Vector2 midPosition;
+    private Vector2 endPosition;
+    private float elapsedTime;
+    public bool launch = false;
+
+    private void Start() {
+        startPosition = transform.position;
+        endPosition = new Vector2(startPosition.x + RandomOffset(), startPosition.y - 3); // End 5 units to the right (change this to whatever you want
+        midPosition = (startPosition + endPosition) / 2 + new Vector2(0, 6f); // Midpoint + 3 units up
+
+        elapsedTime = 0f;
     }
 
-    private void Update()
-    {
-        if (launched)
-        {
-            Launch();
-            StartCoroutine(SpawnEnemyAfterDelay());
+    private void Update() {
+        if (launch) {
+            elapsedTime += Time.deltaTime;
+
+            float t = elapsedTime / duration; // Normalized time
+            if (t > 1f) {
+                Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                return;
+            }
+
+            // Parabolic interpolation
+            Vector2 position = ParabolicLerp(startPosition, midPosition, endPosition, t);
+            transform.position = position;
         }
     }
 
-    public void Launch()
-    {
-        rb.velocity = initialVelocity;
-        rb.gravityScale = 20;
+    private Vector2 ParabolicLerp(Vector2 start, Vector2 mid, Vector2 end, float t) {
+        // Quadratic bezier curve: B(t) = (1-t)^2 * P0 + 2(1-t)t * P1 + t^2 * P2
+        return (1 - t) * (1 - t) * start + 2 * (1 - t) * t * mid + t * t * end;
     }
 
-    private IEnumerator SpawnEnemyAfterDelay()
-    {
-        // Wait for a random time between 3 and 6 seconds
-        float delay = Random.Range(3.0f, 6.0f);
-        yield return new WaitForSeconds(delay);
-
-        // Instantiate the enemy and destroy the projectile
-        //Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+    int RandomOffset() {
+        return Random.Range(0, 2) == 0 ? -3 : 3;
     }
 }
