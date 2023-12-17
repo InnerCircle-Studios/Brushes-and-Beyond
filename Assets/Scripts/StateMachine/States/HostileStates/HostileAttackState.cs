@@ -21,13 +21,11 @@ public class HostileAttackState : State
     {
         if (_canAttack)
         {
-            Debug.Log("Attacking");
             Attack();
             _canAttack = false;
         }
         else
         {
-            Debug.Log("Waiting for attack cooldown");
             GetStateMachine().GetActor().StartCoroutine(WaitForAttackcooldown());
         }
         _HostileStateMachine.CheckPlayerInAttackRange();
