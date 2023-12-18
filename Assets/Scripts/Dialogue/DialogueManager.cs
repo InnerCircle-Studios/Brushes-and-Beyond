@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+
 using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,10 +42,8 @@ public class DialogueManager : MonoBehaviour
         EventBus.StartListening<bool>(EventBusEvents.EventName.F_KEY, Test);
     }
 
-    public void Update()
-    {
-        if (!_is_dialogue_done)
-        {
+    public void Update() {
+        if (!_is_dialogue_done) {
             UpdateDialogue();
         }
     }
@@ -127,8 +127,7 @@ public class DialogueManager : MonoBehaviour
                     _page++;
                     _draw_char = 0;
                 }
-                else
-                {
+                else {
                     _is_dialogue_done = true;
                 }
             }
