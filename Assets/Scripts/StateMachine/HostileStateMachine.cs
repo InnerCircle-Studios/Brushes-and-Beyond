@@ -4,12 +4,13 @@ public class HostileStateMachine : StateMachine
 {   
     public HostileStateMachine(Actor actor, Player player, bool isMelee) : base(actor)
     {
+        AddState(new HostileSpawnState("HostileSpawnState", this));
         AddState(new HostileIdleState("HostileIdleState", this));
         AddState(new HostileAttackState("HostileAttackState", this));
         AddState(new HostileDeathState("HostileDeathState", this));
         AddState(new HostileWalkState("HostileWalkState", this));
 
-        ChangeState(GetState("HostileIdleState"));
+        ChangeState(GetState("HostileSpawnState"));
 
         InitSwitchCases();
 
@@ -50,6 +51,7 @@ public class HostileStateMachine : StateMachine
     public float _hostileRange = 10f;
     public float _attackRange = 3f;
 
+    public BoolWrapper _isSpawned { get; set; } = new BoolWrapper(true);
     public BoolWrapper _isInRange { get; set; } = new BoolWrapper(false);
     public BoolWrapper _isInAttackRange { get; set; } = new BoolWrapper(false);
     public BoolWrapper _isMelee{ get; set; } = new BoolWrapper(false);

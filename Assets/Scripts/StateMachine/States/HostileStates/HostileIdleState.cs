@@ -1,3 +1,6 @@
+using UnityEngine;
+using System.Collections;
+
 public class HostileIdleState : State
 {
     public HostileIdleState(string name, StateMachine stateMachine) : base(name, stateMachine)
@@ -31,7 +34,14 @@ public class HostileIdleState : State
     {
          AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isDead, true), _HostileStateMachine.GetState("HostileDeathState"));
          AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isInRange, true), _HostileStateMachine.GetState("HostileWalkState"));
+         AddSwitchCase(new SwitchCaseWrapper(_HostileStateMachine._isSpawned, false), _HostileStateMachine.GetState("HostileSpawnState"));
     }
 
     private HostileStateMachine _HostileStateMachine;
+
+    private IEnumerator WaitForAnimation() 
+    {
+        yield return new WaitForSeconds(1.8f);
+
+    }
 }
