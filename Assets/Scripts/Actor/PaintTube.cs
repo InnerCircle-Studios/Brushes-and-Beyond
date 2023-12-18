@@ -23,7 +23,7 @@ public class PaintTube : Actor {
     }
 
     public override void HandleRangedAttack() {
-
+        Instantiate(_paintTubeProjectile, transform.position, Quaternion.identity);
     }
 
     public Player GetPlayer()
@@ -39,4 +39,5 @@ public class PaintTube : Actor {
     private PaintTubeStateMachine _PaintTubeStateMachine;
 
     [SerializeField]private Player _Player;
+    [SerializeField]private GameObject _paintTubeProjectile;
 }

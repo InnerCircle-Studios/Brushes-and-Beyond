@@ -8,7 +8,6 @@ public class ArcProjectile2D : MonoBehaviour {
     private Vector2 midPosition;
     private Vector2 endPosition;
     private float elapsedTime;
-    public bool launch = false;
 
     private void Start() {
         startPosition = transform.position;
@@ -19,20 +18,20 @@ public class ArcProjectile2D : MonoBehaviour {
     }
 
     private void Update() {
-        if (launch) {
-            elapsedTime += Time.deltaTime;
+        elapsedTime += Time.deltaTime;
 
-            float t = elapsedTime / duration; // Normalized time
-            if (t > 1f) {
-                Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                return;
-            }
-
-            // Parabolic interpolation
-            Vector2 position = ParabolicLerp(startPosition, midPosition, endPosition, t);
-            transform.position = position;
+        float t = elapsedTime / duration; // Normalized time
+        if (t > 1f) {
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            return;
         }
+
+        // Parabolic interpolation
+        Vector2 position = ParabolicLerp(startPosition, midPosition, endPosition, t);
+        transform.position = position;
+
+
     }
 
     private Vector2 ParabolicLerp(Vector2 start, Vector2 mid, Vector2 end, float t) {
