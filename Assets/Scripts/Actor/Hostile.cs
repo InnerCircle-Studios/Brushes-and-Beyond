@@ -1,7 +1,10 @@
 using UnityEngine;
 
 public class Hostile : Actor {
-    public override void Start() {
+    public override void Start() 
+    {
+        _Player = FindAnyObjectByType<Player>();
+
         _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
     }
 
@@ -42,6 +45,6 @@ public class Hostile : Actor {
 
     private HostileStateMachine _HostileStateMachine;
 
-    [SerializeField]private Player _Player;
+    private Player _Player;
     [SerializeField]private bool _isMelee = false;
 }
