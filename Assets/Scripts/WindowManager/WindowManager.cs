@@ -18,6 +18,10 @@ public class WindowManager : MonoBehaviour {
     public DialogueBox GetDialogueBox() {
         return dialogueBox;
     }
+    public void InitDialogueBox(DialogueBox box){
+        ShowDialogueBox();
+        dialogueBox.LoadBox(box);
+    }
     public void InitDialogueBox(Actor actor) {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(actor);

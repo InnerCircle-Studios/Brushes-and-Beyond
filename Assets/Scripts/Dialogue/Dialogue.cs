@@ -1,41 +1,33 @@
 using System.Collections.Generic;
 
-public class Dialogue
-{
-    public void AddDialogue(string page, string speaker, DialoguePosition position)
-    {
+public class Dialogue {
+    public void AddDialogue(string page, string speaker, DialoguePosition position) {
         _pages.Add(new Page(page, speaker, position));
     }
 
-    public List<Page> GetDialogue()
-    {
+    public List<Page> GetDialogue() {
         return _pages;
     }
 
     private List<Page> _pages = new List<Page>();
 }
 
-public class Page
-{
-    public Page(string sentence, string speaker, DialoguePosition position)
-    {
+public class Page {
+    public Page(string sentence, string speaker, DialoguePosition position) {
         _sentence = sentence;
         _speaker = speaker;
         _position = position;
     }
 
-    public string GetSpeaker()
-    {
+    public string GetSpeaker() {
         return _speaker;
     }
 
-    public string GetSentence()
-    {
+    public string GetSentence() {
         return _sentence;
     }
 
-    public DialoguePosition GetPosition()
-    {
+    public DialoguePosition GetPosition() {
         return _position;
     }
     private string _speaker;
@@ -43,8 +35,7 @@ public class Page
     private DialoguePosition _position;
 }
 
-public enum DialoguePosition
-{
+public enum DialoguePosition {
     LEFT,
     MIDDLE,
     RIGHT,
