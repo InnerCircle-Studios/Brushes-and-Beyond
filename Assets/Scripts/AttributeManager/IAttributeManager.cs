@@ -1,5 +1,4 @@
-public interface IAttrubuteManager
-{
+public interface IAttributeManager {
     public CharacterAttributes GetAttributes();
 
     public bool IsAlive();

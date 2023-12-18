@@ -1,11 +1,14 @@
 using UnityEngine;
 
 public class Hostile : Actor {
-    public override void Start() 
-    {
+    public override void Start() {
         _Player = FindAnyObjectByType<Player>();
 
         _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
+
+        _AttributeManager = new AttributeManager(attributes);
+
+
     }
 
     public override void Update() {
@@ -18,7 +21,6 @@ public class Hostile : Actor {
     public override void HandleMeleeAttack() {
         foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Player")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
-
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
 
         }
@@ -28,23 +30,21 @@ public class Hostile : Actor {
 
     }
 
-    public Player GetPlayer()
-    {
+    public Player GetPlayer() {
         return _Player;
     }
 
-    private void OnDeath()
-    {
+    private void OnDeath() {
         Destroy(gameObject);
     }
 
-    private bool GetHostileType(){
+    private bool GetHostileType() {
         return _isMelee;
     }
-    
+
 
     private HostileStateMachine _HostileStateMachine;
 
     private Player _Player;
-    [SerializeField]private bool _isMelee = false;
+    [SerializeField] private bool _isMelee = false;
 }

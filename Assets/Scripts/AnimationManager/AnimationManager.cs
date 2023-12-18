@@ -10,7 +10,6 @@ public class AnimationManager : IAnimator {
         this.animator = animator;
     }
     public void Play(string animationName, MovementDirection direction) {
-        // Debug.Log(ConvertMovementToAnimation(direction)+animationName);
         animator.Play(ConvertMovementToAnimation(direction)+animationName);
     }
 

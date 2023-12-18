@@ -30,7 +30,7 @@ public abstract class Actor : MonoBehaviour {
         sRenderer.color = startColor;
     }
 
-    public IAttrubuteManager GetAttrubuteManager() {
+    public IAttributeManager GetAttrubuteManager() {
         return _AttributeManager;
     }
 
@@ -61,13 +61,13 @@ public abstract class Actor : MonoBehaviour {
 
     public void Knockback(Vector2 direction)
     {
-        Debug.Log(direction);
+        // Debug.Log(direction);
         _RigidBody.AddForce(direction * 5f, ForceMode2D.Impulse);
     }
 
-    private IAttrubuteManager _AttributeManager;
+    protected IAttributeManager _AttributeManager;
 
-    [SerializeField] private CharacterAttributes attributes;
+    [SerializeField] protected CharacterAttributes attributes;
 
     private Rigidbody2D _RigidBody;
 
