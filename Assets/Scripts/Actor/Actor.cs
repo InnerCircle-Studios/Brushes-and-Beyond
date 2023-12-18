@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 using UnityEngine;
@@ -24,12 +25,12 @@ public abstract class Actor : MonoBehaviour {
 
     public IEnumerator FlashSpriteOnHit(SpriteRenderer sRenderer) {
         Color startColor = sRenderer.color;
-        sRenderer.color = Color.red;
+        sRenderer.color = Color.gray;
         yield return new WaitForSecondsRealtime(0.2f);
         sRenderer.color = startColor;
     }
 
-    public IAttrubuteManager GetAttrubuteManager() {
+    public IAttributeManager GetAttrubuteManager() {
         return _AttributeManager;
     }
 
@@ -45,7 +46,7 @@ public abstract class Actor : MonoBehaviour {
         return FindAnyObjectByType<WindowManager>();
     }
 
-    protected Rigidbody2D GetRigidBody() {
+    public Rigidbody2D GetRigidBody() {
         return _RigidBody;
     }
 
@@ -53,9 +54,20 @@ public abstract class Actor : MonoBehaviour {
         _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
-    private IAttrubuteManager _AttributeManager;
+    public void Dash(Vector2 currentInput)
+    {
+        _RigidBody.AddForce(currentInput.normalized * 10f, ForceMode2D.Impulse);
+    }
 
-    [SerializeField] private CharacterAttributes attributes;
+    public void Knockback(Vector2 direction)
+    {
+        // Debug.Log(direction);
+        _RigidBody.AddForce(direction * 5f, ForceMode2D.Impulse);
+    }
+
+    protected IAttributeManager _AttributeManager;
+
+    [SerializeField] protected CharacterAttributes attributes;
 
     private Rigidbody2D _RigidBody;
 

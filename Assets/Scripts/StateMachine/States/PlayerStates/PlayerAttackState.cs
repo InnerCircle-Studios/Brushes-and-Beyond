@@ -14,6 +14,7 @@ public class PlayerAttackState : State {
     public override void EnterState() {
         Actor actor = GetStateMachine().GetActor();
         actor.GetAnimator().Play("SwordSwing", _PlayerStateMachine._CurrentDirection);
+        Dash();
         actor.HandleMeleeAttack();
         actor.StartCoroutine(WaitForAttack());
     }
@@ -34,6 +35,10 @@ public class PlayerAttackState : State {
         yield return new WaitForSeconds(0.5f);
 
         _PlayerStateMachine._AttackTimer.Value = true;
+    }
+
+    private void Dash() {
+        _PlayerStateMachine.GetActor().Dash(_PlayerStateMachine._CurrentMovementInput);
     }
 
     private PlayerStateMachine _PlayerStateMachine;

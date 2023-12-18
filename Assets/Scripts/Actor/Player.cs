@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Linq;
-
 using UnityEngine;
 
 public class Player : Actor {
@@ -21,6 +19,7 @@ public class Player : Actor {
     public override void HandleMeleeAttack() {
         foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Enemy")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
+            hits.Knockback(hits.GetRigidBody().position - GetRigidBody().position);
 
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
 

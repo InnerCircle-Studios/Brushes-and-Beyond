@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Blockade
   - Enemy
+  - Objects
   layers:
   - Default
   - TransparentFX
@@ -59,6 +60,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2006517101
+    locked: 0
+  - name: Enemy
+    uniqueID: 1342162233
     locked: 0
   - name: Objects
     uniqueID: 3490216095

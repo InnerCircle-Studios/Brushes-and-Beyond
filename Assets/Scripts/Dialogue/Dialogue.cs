@@ -9,7 +9,7 @@ public class Dialogue {
         return _pages;
     }
 
-    private List<Page> _pages;
+    private List<Page> _pages = new List<Page>();
 }
 
 public class Page {

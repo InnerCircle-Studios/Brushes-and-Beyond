@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="7" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="8" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="3">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4Final.png"/>
@@ -64,6 +64,14 @@
    </object>
    <object id="2" x="9.45455" y="17.0909">
     <polygon points="0,0 2,0 2.18182,3.63636 4,4.72727 10.5455,4.72727 11.4545,3.27273 11.4545,-0.181818 22.5455,0 30.7273,-0.181818 32,-5.63636 77.4545,-6 77.4545,-0.545455 79.0909,0.363636 85.0909,0.545455 86.1818,-0.181818 97.0909,-0.181818 97.2727,3.27273 98.7273,5.09091 106,4.72727 106.727,3.63636 106.545,-2.18182 104,-6 101.455,-7.45455 85.6364,-7.27273 82.7273,-13.4545 73.6364,-16.1818 33.4545,-16.3636 21.6364,-7.45455 12.5455,-7.27273 5.45455,-6.54545 2,-1.81818"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="8">
+  <image width="180" height="130" source="../../Art/Buildings/Assets/HouseAaronV5Flipped.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="10" y="53">
+    <polygon points="0,0 0,28.3333 55.6667,28.6667 61,31.3333 68.3333,30.6667 71.6667,26.3333 109.333,28 110.667,70.6667 149.667,71.6667 150.583,27.8333 161.667,27 162.333,-1"/>
    </object>
   </objectgroup>
  </tile>

@@ -1,4 +1,4 @@
-public class AttributeManager : IAttrubuteManager {
+public class AttributeManager : IAttributeManager {
     private CharacterAttributes attributes;
 
     public AttributeManager(CharacterAttributes attributes) {

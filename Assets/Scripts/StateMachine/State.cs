@@ -26,7 +26,7 @@ public abstract class State
         ExitState();
         _StateMachine.ChangeState(newState);
         newState.EnterState();
-        Debug.Log("Entering state: " + newState._Name);
+        // Debug.Log("Entering state: " + newState._Name);
     }
 
     protected void AddSwitchCase(SwitchCaseWrapper boolSwitchCase, State newState)
