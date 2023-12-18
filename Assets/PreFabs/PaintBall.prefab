@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5793106403438545804}
   - component: {fileID: 7976090939366389497}
   - component: {fileID: 4054709535128626937}
+  - component: {fileID: 1031919424511447355}
   m_Layer: 6
   m_Name: PaintBall
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7750705467220416283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.08, y: 5.35, z: -4.5892906}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.0485, y: 5.35, z: -4.5892906}
+  m_LocalScale: {x: 1.0315, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,3 +123,38 @@ MonoBehaviour:
   attributes: {fileID: 11400000, guid: 25cc66e93e442ef5f8ce7faf5dbcaefc, type: 2}
   _Player: {fileID: 0}
   _isMelee: 0
+--- !u!58 &1031919424511447355
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750705467220416283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01018624, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4669253

@@ -28391,6 +28391,11 @@ MonoBehaviour:
   _textbox: {fileID: 0}
   _DialogueBox: {fileID: 0}
   _AvatarBox: {fileID: 0}
+--- !u!1 &190768760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+  m_PrefabInstance: {fileID: 4603509001495818456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261100405
 GameObject:
   m_ObjectHideFlags: 0
@@ -34302,6 +34307,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2020726659301412121, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
   m_PrefabInstance: {fileID: 4603509001495818456}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1986603660
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190768760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02396965, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.47265053
 --- !u!1 &2019691738
 GameObject:
   m_ObjectHideFlags: 0
@@ -35077,7 +35117,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1986603660}
   m_SourcePrefab: {fileID: 100100000, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
 --- !u!1001 &6457311898338961601
 PrefabInstance:
