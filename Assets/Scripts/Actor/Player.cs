@@ -1,4 +1,5 @@
 using System.Linq;
+
 using UnityEngine;
 
 public class Player : Actor {
@@ -26,7 +27,7 @@ public class Player : Actor {
         }
     }
 
-    private void HandleInteractions(){
+    private void HandleInteractions() {
         Interactable toBeInteracted = GetClosestInteractable();
         if (toBeInteracted != null) {
             toBeInteracted.ActivateIndicator();

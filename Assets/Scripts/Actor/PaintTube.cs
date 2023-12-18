@@ -1,8 +1,7 @@
 using UnityEngine;
 
 public class PaintTube : Actor {
-    public override void Start() 
-    {
+    public override void Start() {
         _PaintTubeStateMachine = new PaintTubeStateMachine(this, _Player);
     }
 
@@ -18,7 +17,6 @@ public class PaintTube : Actor {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
 
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
-
         }
     }
 
@@ -26,18 +24,16 @@ public class PaintTube : Actor {
         Instantiate(_paintTubeProjectile, transform.position, Quaternion.identity);
     }
 
-    public Player GetPlayer()
-    {
+    public Player GetPlayer() {
         return _Player;
     }
 
-    private void OnDeath()
-    {
+    private void OnDeath() {
         Destroy(gameObject);
     }
 
     private PaintTubeStateMachine _PaintTubeStateMachine;
 
-    [SerializeField]private Player _Player;
-    [SerializeField]private GameObject _paintTubeProjectile;
+    [SerializeField] private Player _Player;
+    [SerializeField] private GameObject _paintTubeProjectile;
 }

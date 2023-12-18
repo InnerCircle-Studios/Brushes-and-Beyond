@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Combat : ICombat {
     public List<Actor> MeleeAttack(Vector2 position, float attackRange, string layer) {
-        List<Actor> hitActors = new List<Actor>();
+        List<Actor> hitActors = new();
 
         RaycastHit2D[] hits = Physics2D.CircleCastAll(position, attackRange, new Vector3(1, 0, 0), 0f, LayerMask.GetMask(layer)).Distinct().ToArray();
 

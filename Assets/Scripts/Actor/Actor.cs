@@ -27,7 +27,12 @@ public abstract class Actor : MonoBehaviour {
         Color startColor = sRenderer.color;
         sRenderer.color = Color.gray;
         yield return new WaitForSecondsRealtime(0.2f);
-        sRenderer.color = startColor;
+
+        // Handles an edge case where the enemy has died before the sprite could be reset
+        if (sRenderer != null) { 
+            sRenderer.color = startColor;
+        }
+
     }
 
     public IAttributeManager GetAttrubuteManager() {
@@ -42,7 +47,7 @@ public abstract class Actor : MonoBehaviour {
         return _Animator;
     }
 
-    public WindowManager GetWindowManager(){
+    public WindowManager GetWindowManager() {
         return FindAnyObjectByType<WindowManager>();
     }
 
@@ -54,13 +59,11 @@ public abstract class Actor : MonoBehaviour {
         _RigidBody.MovePosition(_RigidBody.position + desiredMovement);
     }
 
-    public void Dash(Vector2 currentInput)
-    {
+    public void Dash(Vector2 currentInput) {
         _RigidBody.AddForce(currentInput.normalized * 10f, ForceMode2D.Impulse);
     }
 
-    public void Knockback(Vector2 direction)
-    {
+    public void Knockback(Vector2 direction) {
         // Debug.Log(direction);
         _RigidBody.AddForce(direction * 5f, ForceMode2D.Impulse);
     }
