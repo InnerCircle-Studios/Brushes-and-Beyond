@@ -35,7 +35,7 @@ public class Hostile : Actor {
     }
 
     private void OnDeath() {
-        Destroy(gameObject);
+        _HostileStateMachine._isDead.Value = true;
     }
 
     private bool GetHostileType() {
