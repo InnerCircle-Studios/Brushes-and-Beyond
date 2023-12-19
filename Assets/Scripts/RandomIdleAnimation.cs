@@ -1,34 +1,29 @@
 using System.Collections;
+
 using UnityEngine;
 
-public class RandomIdleAnimation : MonoBehaviour
-{
+public class RandomIdleAnimation : MonoBehaviour {
     private Animator animator;
     private float timer;
 
-    private void Start()
-    {
+    private void Start() {
         animator = GetComponent<Animator>();
         timer = 5f; // Set initial timer to 5 seconds
     }
 
-    private void Update()
-    {
+    private void Update() {
         timer -= Time.deltaTime;
 
-        if (timer <= 0f)
-        {
+        if (timer <= 0f) {
             PlayRandomAnimation();
             timer = 5f; // Reset timer to 5 seconds
         }
     }
 
-    private void PlayRandomAnimation()
-    {
+    private void PlayRandomAnimation() {
         int randomAnimation = Random.Range(0, 4);
 
-        switch (randomAnimation)
-        {
+        switch (randomAnimation) {
             case 0:
                 animator.Play("ForwardIdle");
                 break;
