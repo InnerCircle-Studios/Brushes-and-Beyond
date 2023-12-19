@@ -29,6 +29,10 @@ public class Player : Actor {
 
     private void HandleInteractions() {
         Interactable toBeInteracted = GetClosestInteractable();
+
+        // Disable indicators for every interactable not currently the closest in range. 
+        FindObjectsOfType<Interactable>().Where(o => o != toBeInteracted).ToList().ForEach(o => o.DeactivateIndicator());
+
         if (toBeInteracted != null) {
             toBeInteracted.ActivateIndicator();
         }
@@ -39,20 +43,20 @@ public class Player : Actor {
 
         Vector2 currentPosition = _PlayerStateMachine.GetActor().transform.position;
 
-
         Interactable closestInteractable = null;
         float smallestDistance = 100f;
 
-        // Get the closest interactable and activate it
-        foreach (Interactable interactable in FindObjectsOfType<Interactable>()) {
+        // Find the closest interactable in a circle arround the player.
+        foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, interactionRange, Vector2.zero)) {
+            if (hit.transform.gameObject.TryGetComponent<Interactable>(out Interactable interactable)) {
 
-            float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
-            if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {
-                closestInteractable = interactable;
-                smallestDistance = distanceBetweenTargets;
+                float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
+                if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {
+                    closestInteractable = interactable;
+                    smallestDistance = distanceBetweenTargets;
+                }
             }
         }
-        FindObjectsOfType<Interactable>().Where(o => o != closestInteractable).ToList().ForEach(o => o.DeactivateIndicator());
         return closestInteractable;
     }
 
