@@ -13,7 +13,7 @@ public class PaintTubeDeathState : State {
     }
 
     public override void EnterState() {
-        GetStateMachine().GetActor().gameObject.tag = "";
+        GetStateMachine().GetActor().gameObject.tag = "Untagged";
         GetStateMachine().GetActor().GetAnimator().Play("Death");
         GetStateMachine().GetActor().StartCoroutine(WaitForAnim());
     }
