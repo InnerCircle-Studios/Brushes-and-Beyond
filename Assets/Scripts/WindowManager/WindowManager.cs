@@ -12,7 +12,9 @@ public class WindowManager : MonoBehaviour {
     [SerializeField] private DialogueBox dialogueBox;
     // insert custom classes for tutorial etc (or make them static)
 
-
+    private void Awake() {
+        EventBus.StartListening<bool>(EventBusEvents.EventName.PAUSE_KEY, (bool keyPressed) => ToggleWindow("PauseMenu"));
+    }
 
     // Dialogue
     public DialogueBox GetDialogueBox() {
