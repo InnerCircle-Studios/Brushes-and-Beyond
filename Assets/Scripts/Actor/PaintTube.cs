@@ -29,7 +29,7 @@ public class PaintTube : Actor {
     }
 
     private void OnDeath() {
-        Destroy(gameObject);
+        _PaintTubeStateMachine._isDead.Value = true;
     }
 
     private PaintTubeStateMachine _PaintTubeStateMachine;

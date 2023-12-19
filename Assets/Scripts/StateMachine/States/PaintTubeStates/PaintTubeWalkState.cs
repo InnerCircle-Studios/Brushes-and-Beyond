@@ -33,9 +33,9 @@ public class PaintTubeWalkState : State {
     }
 
     public override void AddSwitchCases() {
+        AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isDead, true), _PaintStateMachine.GetState("PaintTubeDeathState"));
         AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isInRange, false), _PaintStateMachine.GetState("PaintTubeIdleState"));
         AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isSpawning, true), _PaintStateMachine.GetState("PaintTubeSpawnState"));
-        AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isDead, true), _PaintStateMachine.GetState("PaintTubeDeathState"));
     }
 
     private void CheckDirection() {
