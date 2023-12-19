@@ -10,31 +10,13 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
   missingFiles: []
   errors: []
-  warnings:
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_Ground.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_Shadow.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_Road.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_Ground(Free).tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Tileset_RockSlopes.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Object_Tree_With_Large_Colliders.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Objects_Trees_New.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Objects_Tree_Without_Colliders.tsx'
-    (16)
-  - Pixels Per Unit mismatch between map (100) and tileset '../Tilesets/Painting.tsx'
-    (16)
+  warnings: []
   missingSortingLayers:
   - 
   missingLayers: []
   missingTags: []
   importerVersion: 26
-  pixelsPerUnit: 100
+  pixelsPerUnit: 16
   edgesPerEllipse: 32
   numberOfObjectsImported: 2
   tilesAsObjects: 0
