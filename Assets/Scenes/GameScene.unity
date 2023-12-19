@@ -28338,7 +28338,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261100407}
-  - component: {fileID: 261100406}
   m_Layer: 0
   m_Name: AudioHandler
   m_TagString: Untagged
@@ -28346,18 +28345,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &261100406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261100405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a2da9a435c2fa4fa3158da85c2df1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &261100407
 Transform:
   m_ObjectHideFlags: 0
@@ -28815,8 +28802,6 @@ GameObject:
   - component: {fileID: 414546942}
   - component: {fileID: 414546940}
   - component: {fileID: 414546943}
-  - component: {fileID: 414546945}
-  - component: {fileID: 414546944}
   m_Layer: 9
   m_Name: Blockade 3
   m_TagString: Blockade
@@ -29048,30 +29033,6 @@ PolygonCollider2D:
       - {x: 0.965, y: 2.36}
       - {x: 0.895, y: 2.3799999}
   m_UseDelaunayMesh: 0
---- !u!114 &414546944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414546939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &414546945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414546939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &428007775
 GameObject:
   m_ObjectHideFlags: 0
@@ -29120,8 +29081,6 @@ GameObject:
   - component: {fileID: 446473269}
   - component: {fileID: 446473268}
   - component: {fileID: 446473267}
-  - component: {fileID: 446473266}
-  - component: {fileID: 446473265}
   m_Layer: 5
   m_Name: PauseButton - Button
   m_TagString: Untagged
@@ -29149,88 +29108,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &446473265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446473263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163b93212767fde418e200b5b3d846ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &446473266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446473263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b00d51a3b86c3aa49a9b2252f227119c, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f12903c0-d256-4591-8044-1ec02f04c0fd
-    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8ba19fba-8d61-4ac7-b910-60249a2a1f38
-    m_ActionName: Movement/Attack[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6c90608c-332d-4c59-a847-aa9544fb7a9e
-    m_ActionName: Movement/Run[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6d2ed788-4434-449b-b9cf-51f368b03f98
-    m_ActionName: Movement/Dash[/Keyboard/g]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 70d5dfce-92e3-432d-8e8c-d6b9c08765db
-    m_ActionName: Movement/Interact[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e7f0a168-ab15-4f8a-87c0-3ef3a83053de
-    m_ActionName: Movement/Show[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 446473265}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: OnPause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 84a0bcc5-1be5-4596-9671-270e183b90d6
-    m_ActionName: Settings/Pause[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Settings
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &446473267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29647,7 +29524,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -29807,18 +29683,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a275b4029f1c044a0f58f68558144c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &593852570
 GameObject:
   m_ObjectHideFlags: 0
@@ -30180,6 +30044,7 @@ GameObject:
   - component: {fileID: 765869094}
   - component: {fileID: 765869093}
   - component: {fileID: 765869092}
+  - component: {fileID: 765869095}
   m_Layer: 5
   m_Name: UI - PauseButton
   m_TagString: Untagged
@@ -30245,6 +30110,76 @@ RectTransform:
   m_AnchoredPosition: {x: -22, y: -7}
   m_SizeDelta: {x: 1089.1946, y: 162.0509}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &765869095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765869089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b00d51a3b86c3aa49a9b2252f227119c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f12903c0-d256-4591-8044-1ec02f04c0fd
+    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ba19fba-8d61-4ac7-b910-60249a2a1f38
+    m_ActionName: Movement/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c90608c-332d-4c59-a847-aa9544fb7a9e
+    m_ActionName: Movement/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6d2ed788-4434-449b-b9cf-51f368b03f98
+    m_ActionName: Movement/Dash[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70d5dfce-92e3-432d-8e8c-d6b9c08765db
+    m_ActionName: Movement/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e7f0a168-ab15-4f8a-87c0-3ef3a83053de
+    m_ActionName: Movement/Show[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 501580351}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 84a0bcc5-1be5-4596-9671-270e183b90d6
+    m_ActionName: Settings/Pause[/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Settings
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &772584850
 GameObject:
   m_ObjectHideFlags: 0
@@ -30254,7 +30189,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772584852}
-  - component: {fileID: 772584853}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -30277,18 +30211,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1200029264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &772584853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772584850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c18f32601820643a1624481649e6d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &772932321
 GameObject:
   m_ObjectHideFlags: 0
@@ -31865,8 +31787,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1425179974}
   - component: {fileID: 1425179973}
-  - component: {fileID: 1425179976}
-  - component: {fileID: 1425179975}
   - component: {fileID: 1425179978}
   - component: {fileID: 1425179977}
   m_Layer: 0
@@ -31943,30 +31863,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1409685984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1425179975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425179972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1425179976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425179972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcebddbcbde1ce64f95b24a6665c1a5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1425179977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33393,8 +33289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1824873852}
   - component: {fileID: 1824873851}
-  - component: {fileID: 1824873854}
-  - component: {fileID: 1824873853}
   - component: {fileID: 1824873855}
   m_Layer: 9
   m_Name: Blockade 2
@@ -33470,30 +33364,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428007776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.657}
---- !u!114 &1824873853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824873850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd0c7a209612b42a0ab3f415450f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1824873854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824873850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b264a14c7fc1714c99a1e5dd90bc17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &1824873855
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -34604,7 +34474,6 @@ GameObject:
   - component: {fileID: 2137048791}
   - component: {fileID: 2137048790}
   - component: {fileID: 2137048789}
-  - component: {fileID: 2137048788}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -34612,18 +34481,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2137048788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137048787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f11012f142f5014ea09e9b194194075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &2137048789
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
