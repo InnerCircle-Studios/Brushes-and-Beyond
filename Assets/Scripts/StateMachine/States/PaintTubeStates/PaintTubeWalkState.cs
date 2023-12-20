@@ -38,7 +38,7 @@ public class PaintTubeWalkState : State {
         AddSwitchCase(new SwitchCaseWrapper(_PaintStateMachine._isSpawning, true), _PaintStateMachine.GetState("PaintTubeSpawnState"));
     }
 
-    private void CheckDirection() {
+    private void CheckDirection() { //Pruely for animation direction. Not for movement
         if (_PaintStateMachine._currentMovement.x != 0) {
             _direction = _PaintStateMachine._currentMovement.x > 0 ? MovementDirection.RIGHT : MovementDirection.LEFT;
             if (_direction == MovementDirection.RIGHT) {
@@ -54,12 +54,12 @@ public class PaintTubeWalkState : State {
         }
     }
 
-    private IEnumerator CheckTime() {
+    private IEnumerator CheckTime() { //Check if it should spawn a paintball
         yield return new WaitForSeconds(Random.Range(5f, 10f));
         _PaintStateMachine._isSpawning.Value = true;
     }
 
-    private void Move() {
+    private void Move() { //Move to a random position
         bool _moveOnX = Random.Range(0, 2) == 0;
         float _randomDistance = Random.Range(-10f, 10f);
 
@@ -74,7 +74,7 @@ public class PaintTubeWalkState : State {
         _PaintStateMachine._currentMovement = _move.normalized;
     }
 
-    private void MoveToTarget() {
+    private void MoveToTarget() { //Move to the target position
         Transform actorTransform = GetStateMachine().GetActor().transform;
         actorTransform.position = Vector2.MoveTowards(actorTransform.position, _targetPosition, 1f * Time.deltaTime);
     }
