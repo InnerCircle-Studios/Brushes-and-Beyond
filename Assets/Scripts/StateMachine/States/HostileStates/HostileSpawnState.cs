@@ -38,7 +38,8 @@ public class HostileSpawnState : State
 
     private IEnumerator WaitForAnimation() 
     {
-        yield return new WaitForSeconds(1.8f);
+        float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
+        yield return new WaitForSeconds(animDuration);
 
         _HostileStateMachine._isSpawned.Value = false;
     }
