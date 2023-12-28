@@ -1,9 +1,14 @@
+using System;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[Serializable]
 public class Player : Actor {
+
     public override void Start() {
+        HandleSceneLoad();
         _PlayerStateMachine = new PlayerStateMachine(this);
     }
 
@@ -12,9 +17,14 @@ public class Player : Actor {
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
         }
-        _PlayerStateMachine.GetActor().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
+        // _PlayerStateMachine.GetActor().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
+
+        if (Input.GetKeyDown(KeyCode.I)) {
+            DontDestroyOnLoad(gameObject);
+            SceneManager.LoadScene("MazeScene");
+        }
     }
 
     public override void HandleMeleeAttack() {
@@ -25,6 +35,22 @@ public class Player : Actor {
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
 
         }
+    }
+
+
+
+
+    public override void HandleRangedAttack() {
+
+    }
+
+    private void HandleSceneLoad() {
+        // Set vin to his spawn location if defined in the scene.
+        SpawnPoint point = FindObjectsOfType<SpawnPoint>().Where(e => e.GetSpawnType() == SpawnType.PLAYER).First();
+        if (point) {
+            transform.position = point.transform.position;
+        }
+
     }
 
     private void HandleInteractions() {
@@ -58,12 +84,6 @@ public class Player : Actor {
             }
         }
         return closestInteractable;
-    }
-
-
-
-    public override void HandleRangedAttack() {
-
     }
 
     public void OnDeath() {

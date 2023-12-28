@@ -11,7 +11,7 @@ public class PlayerInteractState : State {
 
     public override void AwakeState() {
         AddSwitchCases();
-       interactionRange =  _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().InteractionRange;
+        interactionRange = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().InteractionRange;
     }
 
     public override void EnterState() {
@@ -27,16 +27,18 @@ public class PlayerInteractState : State {
     }
 
     public override void AddSwitchCases() {
+        AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, true), _PlayerStateMachine.GetState("PlayerDialogueState"));
+
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsDialogueActive, false), _PlayerStateMachine.GetState("PlayerIdleState"));
     }
 
     private void CheckInteractions() {
-        Player myplayer = (Player) _PlayerStateMachine.GetActor() ;
+        Player myplayer = (Player)_PlayerStateMachine.GetActor();
         Interactable closestInteractable = myplayer.GetClosestInteractable();
-        if(closestInteractable != null){
+        if (closestInteractable != null) {
             closestInteractable.OnEventTrigger.Invoke();
         }
-        
+
     }
 
 
