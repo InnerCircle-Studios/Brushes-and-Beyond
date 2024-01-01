@@ -13,17 +13,20 @@ public class DialogueManager2 : MonoBehaviour {
         wm = FindAnyObjectByType<WindowManager>();
     }
 
-    public void StartDialogueSet() {
-        EventBus.TriggerEvent(EventBusEvents.EventName.DIALOGUE_EVENT, true);
-        wm.InitDialogueBox(activeSet.GetCurrentEntry());
-    }
-
     public void SetActiveDialogue(DialogueSet set) {
         activeSet = set;
     }
     public void SetActiveDialogueSet(int index) {
         activeSet = dialogueSets[index];
     }
+
+
+    public void StartDialogueSet() {
+        EventBus.TriggerEvent(EventBusEvents.EventName.DIALOGUE_EVENT, true);
+        wm.InitDialogueBox(activeSet.GetCurrentEntry());
+    }
+
+    // loads the next line to the dialogue box. Sends an exit event if there are no more lines.
     public void NextEntry() {
         DialogueEntry nextEntry = activeSet.GetNextEntry();
         if (nextEntry != null) {

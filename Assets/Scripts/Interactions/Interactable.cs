@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour {
     public void ActivateIndicator() {
         activationKey.enabled = true;
         if(dialogueSet !=null){
-            FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet);
+            FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.1
         }
     }
 
