@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class DialogueSet {
     [SerializeField] private List<DialogueEntry> dialogueList = new();
-    [SerializeField] private int currentIndex = 0;
+    private int currentIndex = 0;
 
     public DialogueSet(List<DialogueEntry> dialogueEntries){
         dialogueList = dialogueEntries;

@@ -8,7 +8,7 @@ public class CharacterAttributes : ScriptableObject {
 
     public Sprite DialogueSprite;
     public float InteractionRange;
-    public Role Type;
+    public ActorType Type;
     public string Name;
     public int MaxHealth;
     public int CurrentHealth;
@@ -30,7 +30,7 @@ public class CharacterAttributes : ScriptableObject {
     }
 }
 
-public enum Role {
+public enum ActorType {
     Player,
     Enemy,
     PaintEnemy,

@@ -14,6 +14,7 @@ public class PlayerDialogueState : State {
 
     public override void EnterState() {
         _PlayerStateMachine._IsInteractPressed.Value = false;
+        _PlayerStateMachine.GetActor().GetAnimator().Play("Idle",_PlayerStateMachine._CurrentDirection);
     }
 
     public override void ExitState() {
