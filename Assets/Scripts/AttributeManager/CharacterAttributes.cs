@@ -7,7 +7,7 @@ using UnityEngine;
 public class CharacterAttributes : ScriptableObject {
 
     public Sprite DialogueSprite;
-    public float InteractionRange;
+    public float AttackRange;
     public ActorType Type;
     public string Name;
     public int MaxHealth;

@@ -28,7 +28,7 @@ public class Player : Actor {
     }
 
     public override void HandleMeleeAttack() {
-        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Enemy")) {
+        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, _AttributeManager.GetAttributes().AttackRange, "Enemy")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
             hits.Knockback(hits.GetRigidBody().position - GetRigidBody().position);
 
@@ -63,18 +63,17 @@ public class Player : Actor {
     }
 
     public Interactable GetClosestInteractable() {
-        float interactionRange = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().InteractionRange;
-
         Vector2 currentPosition = _PlayerStateMachine.GetActor().transform.position;
 
         Interactable closestInteractable = null;
         float smallestDistance = 100f;
 
         // Find the closest interactable in a circle arround the player.
-        foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, interactionRange, Vector2.zero)) {
+        foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, 10, Vector2.zero)) {
             if (hit.transform.gameObject.TryGetComponent<Interactable>(out Interactable interactable)) {
 
                 float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
+                float interactionRange = interactable.GetInteractionRange();
                 if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {
                     closestInteractable = interactable;
                     smallestDistance = distanceBetweenTargets;

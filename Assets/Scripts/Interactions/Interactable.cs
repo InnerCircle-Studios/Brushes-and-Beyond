@@ -5,6 +5,7 @@ public class Interactable : MonoBehaviour {
 
     public UnityEvent OnEventTrigger = new();
     [SerializeField] private DialogueSet dialogueSet;
+    [SerializeField,Range(0,10)] private float interactionRange;
 
     private SpriteRenderer activationKey;
 
@@ -26,8 +27,14 @@ public class Interactable : MonoBehaviour {
         activationKey.enabled = false;
     }
 
+    public float GetInteractionRange() {
+        return interactionRange;
+    }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, .3f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 }
