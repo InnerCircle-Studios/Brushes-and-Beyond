@@ -1,25 +1,38 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DialogueSet", menuName = "Brushes/Dialogue/DialogueSet")]
+[Serializable]
 public class DialogueSet {
-    [SerializeField] private List<DialogueEntry> DialogueList = new();
+    [SerializeField] private List<DialogueEntry> dialogueList = new();
     [SerializeField] private int currentIndex = 0;
+
+    public DialogueSet(List<DialogueEntry> dialogueEntries){
+        dialogueList = dialogueEntries;
+    }
 
     public DialogueEntry GetNextEntry() {
         currentIndex++;
-        if (currentIndex >= DialogueList.Count) {
-            return new();
+        if (currentIndex > dialogueList.Count-1) {
+            return null;
         }
-        return DialogueList[currentIndex];
+        return dialogueList[currentIndex];
     }
 
     public DialogueEntry GetCurrentEntry() {
-        if (currentIndex >= DialogueList.Count) {
-            return new();
+        if (currentIndex > dialogueList.Count-1) {
+            return null;
         }
-        return DialogueList[currentIndex];
+        return dialogueList[currentIndex];
+    }
+
+    public void ResetIndex(){
+        currentIndex = 0;
+    }
+
+    public int GetCurrentIndex(){
+        return currentIndex;
     }
 
 }

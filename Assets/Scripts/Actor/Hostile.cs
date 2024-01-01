@@ -5,10 +5,6 @@ public class Hostile : Actor {
         _Player = FindAnyObjectByType<Player>();
 
         _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
-
-        _AttributeManager = new AttributeManager(attributes);
-
-
     }
 
     public override void Update() {

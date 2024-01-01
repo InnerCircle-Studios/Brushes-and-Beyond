@@ -37,12 +37,10 @@ public class Player : Actor {
         }
     }
 
-
-
-
     public override void HandleRangedAttack() {
 
     }
+    
 
     private void HandleSceneLoad() {
         // Set vin to his spawn location if defined in the scene.
