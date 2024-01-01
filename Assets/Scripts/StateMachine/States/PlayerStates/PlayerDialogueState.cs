@@ -13,20 +13,26 @@ public class PlayerDialogueState : State {
     }
 
     public override void EnterState() {
-        _PlayerStateMachine._IsInteractPressed.Value = false;
+        _PlayerStateMachine._IsInteractPressed.Value = false; // avoid instant skipping
         _PlayerStateMachine.GetActor().GetAnimator().Play("Idle",_PlayerStateMachine._CurrentDirection);
     }
 
     public override void ExitState() {
-        _PlayerStateMachine._IsInteractPressed.Value = false;
+        _PlayerStateMachine._IsInteractPressed.Value = false; // To avoid triggering the dialogue again when exiting the state.
     }
 
     public override void UpdateState() {
         CheckSwitchStates();
 
-        if (_PlayerStateMachine._IsInteractPressed.Value && !hasCooldown) {
+        if (_PlayerStateMachine._IsInteractPressed.Value && !hasCooldown && letInteractGo) {
             _PlayerStateMachine.GetActor().GetGameManager().GetDialogueManager().NextEntry();
             _PlayerStateMachine.GetActor().StartCoroutine(Cooldown());
+            letInteractGo = false; // Avoids skipping the dialogue when the player holds the interact button.
+        }
+        
+        // reset letInteractGo when the player stops holding the interact button.
+        if(!_PlayerStateMachine._IsInteractPressed.Value && !letInteractGo){
+            letInteractGo = true;
         }
     }
 
@@ -44,5 +50,6 @@ public class PlayerDialogueState : State {
 
     private PlayerStateMachine _PlayerStateMachine;
     private bool hasCooldown;
+    private bool letInteractGo; // If false, the player is holding the interact button.
 
 }
