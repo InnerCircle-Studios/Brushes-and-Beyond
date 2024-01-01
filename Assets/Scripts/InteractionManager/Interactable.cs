@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour {
+
     public UnityEvent OnEventTrigger = new();
+    [SerializeField] private DialogueSet dialogueSet;
 
     private SpriteRenderer activationKey;
 
@@ -10,11 +12,17 @@ public class Interactable : MonoBehaviour {
         activationKey = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ActivateIndicator(){
+    //TODO add method to change dialogue when a quest is updated.
+
+
+    public void ActivateIndicator() {
         activationKey.enabled = true;
+        if(dialogueSet !=null){
+            FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet);
+        }
     }
 
-    public void DeactivateIndicator(){
+    public void DeactivateIndicator() {
         activationKey.enabled = false;
     }
 
