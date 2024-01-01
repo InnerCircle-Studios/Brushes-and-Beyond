@@ -33,6 +33,7 @@ public class WindowManager : MonoBehaviour {
         dialogueBox.LoadCharacter(diagEntry.Actor);
         UpdateDialogueBox(diagEntry.Dialogue);
     }
+    
     public void UpdateDialogueBox(string text) {
         dialogueBox.SetMessage(text);
     }

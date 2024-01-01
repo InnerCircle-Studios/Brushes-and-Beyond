@@ -5323,7 +5323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5867184660009142464, guid: 7ed354703b7cfb34d8132bc828a27e13, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -5867184660009142464, guid: 7ed354703b7cfb34d8132bc828a27e13, type: 3}
       propertyPath: m_SortingLayerID
@@ -22743,7 +22743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5633989121446719512, guid: 7ed354703b7cfb34d8132bc828a27e13, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5633989121446719512, guid: 7ed354703b7cfb34d8132bc828a27e13, type: 3}
       propertyPath: m_SortingOrder
@@ -29019,7 +29019,7 @@ Transform:
   - {fileID: 1579753558}
   - {fileID: 1824873852}
   - {fileID: 414546942}
-  - {fileID: 2137048791}
+  - {fileID: 1767504142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446473263
@@ -30354,7 +30354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSet:
     dialogueList: []
-    currentIndex: 0
   dialogueSets:
   - dialogueList:
     - Actor: {fileID: 2137030349}
@@ -30363,7 +30362,6 @@ MonoBehaviour:
     - Actor: {fileID: 1986603659}
       Dialogue: asdasdasdasd
       ActorMood: 0
-    currentIndex: 0
 --- !u!1 &1029593567
 GameObject:
   m_ObjectHideFlags: 0
@@ -30862,7 +30860,7 @@ GameObject:
   - component: {fileID: 1111061833}
   - component: {fileID: 1111061832}
   m_Layer: 5
-  m_Name: Diag - NextText
+  m_Name: Dialogue - NextText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31131,7 +31129,7 @@ GameObject:
   - component: {fileID: 1188579440}
   - component: {fileID: 1188579439}
   m_Layer: 5
-  m_Name: Diag - NextButton
+  m_Name: Dialogue - NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31154,7 +31152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 34.80002, y: 85.00006}
+  m_AnchoredPosition: {x: 34.8, y: 85}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188579439
@@ -31299,7 +31297,7 @@ GameObject:
   - component: {fileID: 1223076819}
   - component: {fileID: 1223076818}
   m_Layer: 5
-  m_Name: Diag - Message
+  m_Name: Dialogue - Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31321,7 +31319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 10.300049, y: 37.6}
+  m_AnchoredPosition: {x: 10.3, y: 37.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223076818
@@ -31467,6 +31465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diagmgr: {fileID: 1003741325}
   wm: {fileID: 1792340912}
+  player: {fileID: 0}
 --- !u!1 &1356350374
 GameObject:
   m_ObjectHideFlags: 0
@@ -32349,7 +32348,7 @@ GameObject:
   - component: {fileID: 1665681410}
   - component: {fileID: 1665681409}
   m_Layer: 5
-  m_Name: Diag - Avatar
+  m_Name: Dialogue - Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32371,7 +32370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -35.80005, y: 54.8}
+  m_AnchoredPosition: {x: -35.8, y: 54.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665681409
@@ -32618,7 +32617,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 100.00012, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742201053
 MonoBehaviour:
@@ -32635,6 +32634,7 @@ MonoBehaviour:
   avatar: {fileID: 1665681409}
   avatarName: {fileID: 1783798968}
   message: {fileID: 1223076818}
+  nextButton: {fileID: 1188579439}
 --- !u!114 &1742201054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32871,6 +32871,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 261100407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1767504142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
+  m_PrefabInstance: {fileID: 296292886526784276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1783798966
 GameObject:
   m_ObjectHideFlags: 0
@@ -32883,7 +32888,7 @@ GameObject:
   - component: {fileID: 1783798969}
   - component: {fileID: 1783798968}
   m_Layer: 5
-  m_Name: Diag - Name
+  m_Name: Dialogue - Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32905,7 +32910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -10.699951, y: 77.2}
+  m_AnchoredPosition: {x: -10.7, y: 77.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783798968
@@ -34206,12 +34211,28 @@ PrefabInstance:
       value: 2095325719
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
-      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: dialogueSet.dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
+      value: 
+      objectReference: {fileID: 2137030349}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
+      value: Not enough paint!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].ActorMood
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -34220,7 +34241,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1792340912}
+      objectReference: {fileID: 1003741325}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -34235,7 +34256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitDialogueBox
+      value: StartDialogueSet
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -34243,7 +34264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WindowManager, Assembly-CSharp
+      value: DialogueManager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -34252,7 +34273,11 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2137030349}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Not enough Paint!
+      objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
@@ -34263,7 +34288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Actor, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -34480,145 +34505,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 8ae31b5b7b313e67f9e05748f093b7a2, type: 2}
---- !u!1 &2137048787
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2137048791}
-  - component: {fileID: 2137048790}
-  - component: {fileID: 2137048789}
-  m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!70 &2137048789
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137048787}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
---- !u!212 &2137048790
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137048787}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &2137048791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137048787}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3201714, y: -26.137146, z: 0.21924847}
-  m_LocalScale: {x: 3, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 428007776}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &296292886526784276
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 428007776}
     m_Modifications:
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.077663
+      value: -20.042507
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.51
+      value: 29.242855
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.21924847
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34626,15 +34531,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34800,7 +34705,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
@@ -34811,12 +34716,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2137030349}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[2].Actor
+      value: 
+      objectReference: {fileID: 2137030349}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
       value: I am depressed.
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[1].Dialogue
-      value: :(
+      value: LoL!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[2].Dialogue
+      value: Me too!
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].ActorMood
@@ -34975,4 +34888,3 @@ SceneRoots:
   - {fileID: 1200029264}
   - {fileID: 2025498611}
   - {fileID: 1792340911}
-  - {fileID: 296292886526784276}
