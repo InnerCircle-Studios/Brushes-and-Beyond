@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerDialogueState : State {
-    private bool hasCooldown;
     public PlayerDialogueState(string name, StateMachine stateMachine) : base(name, stateMachine) {
         _PlayerStateMachine = GetStateMachine() as PlayerStateMachine;
     }
@@ -43,4 +42,6 @@ public class PlayerDialogueState : State {
     }
 
     private PlayerStateMachine _PlayerStateMachine;
+    private bool hasCooldown;
+
 }

@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 
 public class PlayerInteractState : State {
-    private float interactionRange;
 
     public PlayerInteractState(string name, StateMachine stateMachine) : base(name, stateMachine) {
         _PlayerStateMachine = GetStateMachine() as PlayerStateMachine;
@@ -11,7 +10,6 @@ public class PlayerInteractState : State {
 
     public override void AwakeState() {
         AddSwitchCases();
-        interactionRange = _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().InteractionRange;
     }
 
     public override void EnterState() {
@@ -38,7 +36,6 @@ public class PlayerInteractState : State {
         if (closestInteractable != null) {
             closestInteractable.OnEventTrigger.Invoke();
         }
-
     }
 
 
