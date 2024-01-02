@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasePaintTubeAttributes
   m_EditorClassIdentifier: 
   DialogueSprite: {fileID: -716878740, guid: 1c03488983383a94683eb9ba9728be05, type: 3}
-  InteractionRange: 0
+  AttackRange: 1.5
   Type: 1
   Name: PaintTube
   MaxHealth: 50

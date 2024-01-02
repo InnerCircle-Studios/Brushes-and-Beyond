@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasePaintBlobAttributes
   m_EditorClassIdentifier: 
   DialogueSprite: {fileID: -505659693, guid: c52490642b42d234abca80b06af2e7c7, type: 3}
-  InteractionRange: 0
+  AttackRange: 1.5
   Type: 1
   Name: PaintBlob
   MaxHealth: 20
