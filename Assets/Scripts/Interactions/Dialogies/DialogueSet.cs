@@ -8,7 +8,7 @@ using UnityEngine;
 public class DialogueSet {
     [SerializeField] private List<DialogueEntry> dialogueList = new();
     [SerializeField] private List<DialogueAction> actionList = new();
-    private int currentIndex = 0;
+    [SerializeField, HideInInspector] private int currentIndex = 0;
 
     public DialogueSet(List<DialogueEntry> dialogueEntries) {
         dialogueList = dialogueEntries;

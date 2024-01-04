@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class DialogueAction {
     [SerializeField] public int PlayAfterIndex;
     [SerializeField] public UnityEvent Action;
-    private bool hasBeenTriggered = false;
+    [SerializeField,HideInInspector] private bool hasBeenTriggered = false;
     [SerializeField] public bool OneTimeEvent = false;
 
     public DialogueAction(int playAfterIndex, UnityEvent action, bool oneTimeEvent) {
