@@ -5,20 +5,27 @@ using UnityEngine;
 
 public class AnimationManager : IAnimator {
     [SerializeField] private Animator animator;
+    private string previousAnimation;
 
     public AnimationManager(Animator animator) {
         this.animator = animator;
     }
     public void Play(string animationName, MovementDirection direction) {
-        animator.Play(ConvertMovementToAnimation(direction)+animationName);
+        string animation = ConvertMovementToAnimation(direction) + animationName;
+        previousAnimation = animation;
+        animator.Play(animation);
     }
 
     public void Play(string animationName) {
+        previousAnimation = animationName;
         animator.Play(animationName);
-
     }
 
-    public float GetAnimationDuration(){
+    public void PlayPrevious() {
+        animator.Play(previousAnimation);
+    }
+
+    public float GetAnimationDuration() {
         return animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
