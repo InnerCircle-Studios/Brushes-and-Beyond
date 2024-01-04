@@ -17,13 +17,20 @@ public class Player : Actor {
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
         }
-        // _PlayerStateMachine.GetActor().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
+        _PlayerStateMachine.GetActor().GetGameManager().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
 
         if (Input.GetKeyDown(KeyCode.I)) {
-            DontDestroyOnLoad(gameObject);
-            SceneManager.LoadScene("MazeScene");
+            string jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
+            Debug.Log(jsontext);
+            CharacterData newAttributes = JsonUtility.FromJson<CharacterData>(jsontext);
+            GetAttrubuteManager().Setattributes(newAttributes);
+            jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
+            Debug.Log(jsontext);
+
+            // DontDestroyOnLoad(gameObject);
+            // SceneManager.LoadScene("MazeScene");
         }
     }
 
@@ -40,7 +47,7 @@ public class Player : Actor {
     public override void HandleRangedAttack() {
 
     }
-    
+
 
     private void HandleSceneLoad() {
         // Set vin to his spawn location if defined in the scene.
