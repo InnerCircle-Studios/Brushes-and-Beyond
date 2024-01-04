@@ -5,20 +5,24 @@ public class AttributeManager : IAttributeManager {
         this.attributes = attributes.Copy();
     }
 
-    public CharacterAttributes GetAttributes() {
-        return attributes;
+    public void Setattributes(CharacterData attributes) {
+        this.attributes.Attributes = attributes;
     }
 
-    public bool IsAlive(){
-        return attributes.CurrentHealth > 0;
+    public CharacterData GetAttributes() {
+        return attributes.Attributes;
+    }
+
+    public bool IsAlive() {
+        return attributes.Attributes.CurrentHealth > 0;
     }
 
     public void ApplyDamage(int hp) {
-        attributes.CurrentHealth -= hp;
+        attributes.Attributes.CurrentHealth -= hp;
     }
 
     public void ApplyHeal(int hp) {
-        attributes.CurrentHealth += hp;
+        attributes.Attributes.CurrentHealth += hp;
     }
 
 }

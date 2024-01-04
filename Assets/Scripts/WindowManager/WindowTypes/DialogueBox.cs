@@ -19,7 +19,7 @@ public class DialogueBox : MonoBehaviour {
     }
 
     public void LoadCharacter(Actor actor) {
-        CharacterAttributes attribs = actor.GetAttrubuteManager().GetAttributes();
+        CharacterData attribs = actor.GetAttrubuteManager().GetAttributes();
         avatar.sprite = attribs.DialogueSprite;
         avatarName.SetText(attribs.Name);
         HandleCharacters(actor);

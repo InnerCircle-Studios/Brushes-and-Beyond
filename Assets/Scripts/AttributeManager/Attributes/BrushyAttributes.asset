@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
   m_Name: BrushyAttributes
   m_EditorClassIdentifier: 
-  DialogueSprite: {fileID: -1587470228, guid: 508452e9aab52d747994aa44dd515193, type: 3}
-  InteractionRange: 0
-  Type: 3
-  Name: Brushy
-  MaxHealth: 1
-  CurrentHealth: 1
-  Damage: 0
-  Speed: 0
-  SprintSpeed: 0
-  Loot: {fileID: 0}
+  Attributes:
+    DialogueSprite: {fileID: -1587470228, guid: 508452e9aab52d747994aa44dd515193, type: 3}
+    AttackRange: 0
+    Type: 3
+    Name: Brushy
+    MaxHealth: 1
+    CurrentHealth: 1
+    Damage: 0
+    Speed: 0
+    SprintSpeed: 0
+    Loot: {fileID: 0}

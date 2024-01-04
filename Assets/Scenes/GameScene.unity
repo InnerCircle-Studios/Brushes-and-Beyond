@@ -28317,7 +28317,7 @@ Transform:
   m_Children:
   - {fileID: 1029593569}
   - {fileID: 1753927773}
-  m_Father: {fileID: 1200029264}
+  m_Father: {fileID: 1305563010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291742649
 GameObject:
@@ -29472,7 +29472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1200029264}
+  m_Father: {fileID: 1305563010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -30177,7 +30177,6 @@ Transform:
   - {fileID: 1986603656}
   - {fileID: 1858262536}
   - {fileID: 376865294}
-  - {fileID: 1921880249}
   m_Father: {fileID: 1409685984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &778732196 stripped
@@ -30344,12 +30343,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003741323}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1200029264}
+  m_Father: {fileID: 1305563010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1003741325
 MonoBehaviour:
@@ -30554,7 +30553,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1200029264}
+  m_Father: {fileID: 1305563010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1068375162
 MonoBehaviour:
@@ -31254,42 +31253,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188579437}
   m_CullTransparentMesh: 1
---- !u!1 &1200029263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1200029264}
-  m_Layer: 0
-  m_Name: Systems
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1200029264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200029263}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: 7.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 261100407}
-  - {fileID: 501580352}
-  - {fileID: 1068375161}
-  - {fileID: 1003741324}
-  - {fileID: 1305563010}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223076816
 GameObject:
   m_ObjectHideFlags: 0
@@ -31449,12 +31412,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305563009}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.3, y: 7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1200029264}
+  m_Children:
+  - {fileID: 261100407}
+  - {fileID: 501580352}
+  - {fileID: 1068375161}
+  - {fileID: 1003741324}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1305563011
 MonoBehaviour:
@@ -31470,7 +31437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diagmgr: {fileID: 1003741325}
   wm: {fileID: 1792340912}
-  player: {fileID: 0}
+  player: {fileID: 2137030349}
 --- !u!1 &1356350374
 GameObject:
   m_ObjectHideFlags: 0
@@ -33507,51 +33474,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2020726659301412121, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
   m_PrefabInstance: {fileID: 2114140591}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1921880247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1921880249}
-  - component: {fileID: 1921880248}
-  m_Layer: 6
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1921880248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921880247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b99443f4fed65740be7edd82a58e59c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 00efb41a06930bb45b876a233dd34aa8, type: 2}
---- !u!4 &1921880249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921880247}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 772932322}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959386084
 GameObject:
   m_ObjectHideFlags: 0
@@ -34710,7 +34632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
@@ -34735,7 +34657,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[5].Actor
       value: 
-      objectReference: {fileID: 1921880248}
+      objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
       value: I am depressed.
@@ -35055,6 +34977,6 @@ SceneRoots:
   - {fileID: 428007776}
   - {fileID: 2137030348}
   - {fileID: 1409685984}
-  - {fileID: 1200029264}
+  - {fileID: 1305563010}
   - {fileID: 2025498611}
   - {fileID: 1792340911}
