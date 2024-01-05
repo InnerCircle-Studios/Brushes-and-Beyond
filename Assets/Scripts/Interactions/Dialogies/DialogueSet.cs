@@ -10,8 +10,9 @@ public class DialogueSet {
     [SerializeField] private List<DialogueAction> actionList = new();
     [SerializeField, HideInInspector] private int currentIndex = 0;
 
-    public DialogueSet(List<DialogueEntry> dialogueEntries) {
-        dialogueList = dialogueEntries;
+    public DialogueSet(List<DialogueEntry> dialogueList, List<DialogueAction> actionList) {
+        this.dialogueList = dialogueList;
+        this.actionList = actionList;
     }
 
     public DialogueEntry GetNextEntry() {
