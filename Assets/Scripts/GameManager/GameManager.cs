@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     [SerializeField] private DialogueManager2 dialogueManager;
@@ -15,5 +16,12 @@ public class GameManager : MonoBehaviour {
 
     public Player GetPlayer(){
         return player;
+    }
+
+    public void RestartGame(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void EndGame(){
+        Application.Quit();
     }
 }
