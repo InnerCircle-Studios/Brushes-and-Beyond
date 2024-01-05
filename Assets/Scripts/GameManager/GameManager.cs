@@ -1,16 +1,16 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    [SerializeField] private DialogueManager2 diagmgr;
-    [SerializeField] private WindowManager wm;
+    [SerializeField] private DialogueManager2 dialogueManager;
+    [SerializeField] private WindowManager windowManager;
     [SerializeField] private Player player;
 
     public DialogueManager2 GetDialogueManager(){
-        return diagmgr;
+        return dialogueManager;
     }
 
     public WindowManager GetWindowManager(){
-        return wm;
+        return windowManager;
     }
 
     public Player GetPlayer(){
