@@ -5,20 +5,20 @@ public class Interactable : MonoBehaviour {
 
     public UnityEvent OnEventTrigger = new();
     [SerializeField] private DialogueSet dialogueSet;
-    [SerializeField,Range(0,10)] private float interactionRange;
+    [SerializeField, Range(0, 10)] private float interactionRange;
 
     private SpriteRenderer activationKey;
+    private GameManager gameManager;
 
     private void Start() {
         activationKey = gameObject.GetComponent<SpriteRenderer>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
-
-    //TODO add method to change dialogue when a quest is updated.
 
 
     public void ActivateIndicator() {
         activationKey.enabled = true;
-        if(dialogueSet !=null){
+        if (dialogueSet != null) {
             FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.
         }
     }

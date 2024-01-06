@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cde18375fbbe54186ae2c38467a37f, type: 3}
+  m_Name: TutorialQuest
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: TutorialQuest
+  DisplayName: Tutorial Quest (also test)
+  PlayerStoryLevel: 1
+  RequiredQuests: []
+  Stages:
+  - {fileID: 5472256089042875822, guid: 0986541856701614489d031fdb72dd13, type: 3}
+  - {fileID: 5472256089042875822, guid: 0986541856701614489d031fdb72dd13, type: 3}
+  RewardItem: {fileID: 0}

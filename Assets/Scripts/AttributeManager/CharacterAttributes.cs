@@ -17,18 +17,24 @@ public class CharacterAttributes : ScriptableObject {
 
 [Serializable]
 public class CharacterData {
+    [Header("General")]
     [SerializeField] public Sprite DialogueSprite;
-    [SerializeField] public float AttackRange;
     [SerializeField] public ActorType Type;
     [SerializeField] public string Name;
+    [SerializeField] public int Level;
+
+    [Header("Combat")]
     [SerializeField] public int MaxHealth;
     [SerializeField] public int CurrentHealth;
     [SerializeField] public int Damage;
-    [SerializeField] public float Speed;
-    [SerializeField] public float SprintSpeed;
+    [SerializeField] public float AttackRange;
     [SerializeField] public GameObject Loot;
 
-    public CharacterData Copy(){
+    [Header("Movement")]
+    [SerializeField] public float Speed;
+    [SerializeField] public float SprintSpeed;
+
+    public CharacterData Copy() {
         CharacterData newCharacterData = new();
         FieldInfo[] fields = GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
 
