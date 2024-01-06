@@ -10,13 +10,7 @@ public class CharacterAttributes : ScriptableObject {
 
     public CharacterAttributes Copy() {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
-
-        FieldInfo[] fields = GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
-
-        foreach (FieldInfo field in fields) {
-            field.SetValue(newCharacterAttributes, field.GetValue(this));
-        }
-
+        newCharacterAttributes.Attributes = Attributes.Copy();
         return newCharacterAttributes;
     }
 }
@@ -33,6 +27,16 @@ public class CharacterData {
     [SerializeField] public float Speed;
     [SerializeField] public float SprintSpeed;
     [SerializeField] public GameObject Loot;
+
+    public CharacterData Copy(){
+        CharacterData newCharacterData = new();
+        FieldInfo[] fields = GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+        foreach (FieldInfo field in fields) {
+            field.SetValue(newCharacterData, field.GetValue(this));
+        }
+        return newCharacterData;
+    }
 }
 
 public enum ActorType {
