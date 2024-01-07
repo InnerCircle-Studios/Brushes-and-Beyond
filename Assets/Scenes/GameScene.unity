@@ -29582,6 +29582,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   togglePresistance: 0
   player: {fileID: 2137030349}
+--- !u!1 &583560976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8439175556409253974, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+  m_PrefabInstance: {fileID: 1833072469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &583560981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583560976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0113813149fc19248ae5aa079b7b9511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo: {fileID: 11400000, guid: d56a863a1b0518e48a33878e00941f94, type: 2}
 --- !u!1 &602293968
 GameObject:
   m_ObjectHideFlags: 0
@@ -33374,7 +33392,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 583560981}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -33398,7 +33416,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8439175556409253974, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 583560981}
   m_SourcePrefab: {fileID: 100100000, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
 --- !u!1 &1959386084
 GameObject:
