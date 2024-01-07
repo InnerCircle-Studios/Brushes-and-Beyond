@@ -57,15 +57,17 @@ public class HostileAttackState : State
         switch(_HostileStateMachine._Colour)
         {
             case "Red":
+                GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
                 _HostileStateMachine._Hostile.HandleMeleeAttack();
                 break;
 
             case "Yellow":
+                GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
                 _HostileStateMachine._Hostile.HandleMeleeAttack();
                 break;
 
             case "Blue":
-                GetStateMachine().GetActor().GetAnimator().Play("Shoot");
+                GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
                 _HostileStateMachine._Hostile.HandleRangedAttack();
                 break;
         }

@@ -14,7 +14,7 @@ public class HostileWalkState : State {
     }
 
     public override void UpdateState() {
-        GetStateMachine().GetActor().GetAnimator().Play("Move");
+        GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour +"Move");
         _HostileStateMachine.CheckPlayerInRange();
         MoveToTarget();
         CheckDirection();

@@ -20,7 +20,7 @@ public class HostileIdleState : State
 
     public override void UpdateState()
     {
-        GetStateMachine().GetActor().GetAnimator().Play("Idle");
+        GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Idle");
         _HostileStateMachine.CheckPlayerInRange();
         CheckSwitchStates();
     }

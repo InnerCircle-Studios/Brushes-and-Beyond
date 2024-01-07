@@ -20,7 +20,7 @@ public class HostileSpawnState : State
 
     public override void UpdateState()
     {
-        _HostileStateMachine.GetActor().GetAnimator().Play("Spawn");
+        _HostileStateMachine.GetActor().GetAnimator().Play(_HostileStateMachine._Colour +"Spawn");
         _HostileStateMachine.GetActor().StartCoroutine(WaitForAnimation());
         CheckSwitchStates();
     }
