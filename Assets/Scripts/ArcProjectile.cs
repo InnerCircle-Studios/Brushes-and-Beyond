@@ -1,3 +1,5 @@
+using System.Data;
+
 using UnityEngine;
 
 public class ArcProjectile2D : MonoBehaviour {
@@ -22,7 +24,8 @@ public class ArcProjectile2D : MonoBehaviour {
 
         float t = elapsedTime / duration; // Normalized time
         if (t > 1f) {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            int random = Random.Range(0, enemyPrefab.Length);
+            Instantiate(enemyPrefab[random], transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }
