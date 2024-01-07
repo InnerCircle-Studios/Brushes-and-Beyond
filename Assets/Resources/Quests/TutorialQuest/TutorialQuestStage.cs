@@ -39,6 +39,7 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+        QuestEvents.StartQuest("FirstPaintQuest");
     }
 
     private void OnMove(Vector2 a) {
@@ -62,6 +63,7 @@ public class TutorialQuestStage : QuestStage {
     private void CheckCompleted() {
         UpdateState();
         if (hasMoved && hasAttacked && hasSprinted) {
+            GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().Level = 2;
             FinishStage();
         }
     }
