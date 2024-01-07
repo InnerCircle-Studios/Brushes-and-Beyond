@@ -30051,6 +30051,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4054709535128626937, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+      propertyPath: _colour
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
       propertyPath: m_Name
       value: PaintBall (2)
@@ -34687,6 +34691,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4054709535128626937, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+      propertyPath: _colour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793106403438545804, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2cf20f54a8c9f24faac93a1c46143c6, type: 2}
     - target: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
       propertyPath: m_Name
       value: PaintBall

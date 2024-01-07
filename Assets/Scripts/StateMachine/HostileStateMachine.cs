@@ -28,12 +28,12 @@ public class HostileStateMachine : StateMachine
             case "Yellow":
                 _Colour = "Yellow";
                 _isMelee.Value = isMelee;
+                _attackRange = 5f;
                 break;
 
             case "Blue":
                 _Colour = "Blue";
                 _isMelee.Value = isMelee;
-                _attackRange = 5f;
                 break;
         }
     }

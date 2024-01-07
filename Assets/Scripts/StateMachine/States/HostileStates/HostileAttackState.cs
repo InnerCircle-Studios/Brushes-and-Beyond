@@ -63,12 +63,12 @@ public class HostileAttackState : State
 
             case "Yellow":
                 GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
-                _HostileStateMachine._Hostile.HandleMeleeAttack();
+                _HostileStateMachine._Hostile.HandleRangedAttack();
                 break;
 
             case "Blue":
                 GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
-                _HostileStateMachine._Hostile.HandleRangedAttack();
+                _HostileStateMachine._Hostile.HandleMeleeAttack();
                 break;
         }
     }
