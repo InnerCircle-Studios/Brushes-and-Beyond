@@ -10,6 +10,7 @@ public class Player : Actor {
     public override void Start() {
         HandleSceneLoad();
         _PlayerStateMachine = new PlayerStateMachine(this);
+        InteractionEvents.OnPaintBucketActivated += HandlePaintAdded;
     }
 
     public override void Update() {
@@ -48,6 +49,12 @@ public class Player : Actor {
 
     }
 
+    private void HandlePaintAdded(int amount) {
+        if (!(_AttributeManager.GetAttributes().PaintCount + amount > 3)) {
+            _AttributeManager.GetAttributes().PaintCount += amount;
+        }
+    }
+
 
     private void HandleSceneLoad() {
         // Set vin to his spawn location if defined in the scene.
@@ -62,7 +69,7 @@ public class Player : Actor {
         Interactable toBeInteracted = GetClosestInteractable();
 
         // Disable indicators for every interactable not currently the closest in range. 
-        FindObjectsOfType<Interactable>().Where(o => o != toBeInteracted).ToList().ForEach(o => o.DeactivateIndicator());
+        FindObjectsOfType<Interactable>().Where(o => o != toBeInteracted && o.isActiveAndEnabled).ToList().ForEach(o => o.DeactivateIndicator());
 
         if (toBeInteracted != null) {
             toBeInteracted.ActivateIndicator();
@@ -78,13 +85,15 @@ public class Player : Actor {
         // Find the closest interactable in a circle arround the player.
         foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, 10, Vector2.zero)) {
             if (hit.transform.gameObject.TryGetComponent<Interactable>(out Interactable interactable)) {
-
-                float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
-                float interactionRange = interactable.GetInteractionRange();
-                if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {
-                    closestInteractable = interactable;
-                    smallestDistance = distanceBetweenTargets;
+                if (interactable.isActiveAndEnabled){
+                    float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
+                    float interactionRange = interactable.GetInteractionRange();
+                    if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {
+                        closestInteractable = interactable;
+                        smallestDistance = distanceBetweenTargets;
+                    }
                 }
+
             }
         }
         return closestInteractable;

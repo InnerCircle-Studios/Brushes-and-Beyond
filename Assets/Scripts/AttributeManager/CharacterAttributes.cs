@@ -34,6 +34,12 @@ public class CharacterData {
     [SerializeField] public float Speed;
     [SerializeField] public float SprintSpeed;
 
+    [Header("Player specific")]
+    /**
+     * This is purely here becouse unity is stupid about inheritance/overriding
+     */
+    [SerializeField, Range(0,3)] public int PaintCount;
+
     public CharacterData Copy() {
         CharacterData newCharacterData = new();
         FieldInfo[] fields = GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);

@@ -14,10 +14,10 @@ public class Interactable : MonoBehaviour {
     private SpriteRenderer activationKey;
     private GameManager gameManager;
 
-    private void Start() {
+    private void OnEnable() {
+        QuestEvents.OnChangeDialogue += ChangeDialogue;
         activationKey = gameObject.GetComponent<SpriteRenderer>();
         gameManager = FindAnyObjectByType<GameManager>();
-        QuestEvents.OnChangeDialogue += ChangeDialogue;
     }
 
     private void OnDisable() {

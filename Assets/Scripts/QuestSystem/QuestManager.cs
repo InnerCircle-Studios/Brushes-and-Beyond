@@ -35,7 +35,7 @@ public class QuestManager : MonoBehaviour {
 
     private void Start() {
         questMap.Values.ToList().ForEach(q => {
-            if (q.State != QuestState.ACTIVE) {
+            if (q.State == QuestState.ACTIVE) {
                 q.InitCurrentQuestStep(transform);
             }
             QuestEvents.ChangeQuestState(q);
@@ -67,6 +67,7 @@ public class QuestManager : MonoBehaviour {
 
 
     private void ChangeQuestState(string id, QuestState state) {
+        Debug.Log("[ ChangeQuestState  ]: " + id + " " + state);
         Quest quest = GetQuestByID(id);
         quest.State = state;
         QuestEvents.ChangeQuestState(quest);
@@ -85,7 +86,7 @@ public class QuestManager : MonoBehaviour {
             quest.InitCurrentQuestStep(transform);
         }
         else {
-            ChangeQuestState(id, QuestState.COMPLETED);
+            ChangeQuestState(id, QuestState.FINISHED); // Temporary finished, change to completed later
         }
     }
 

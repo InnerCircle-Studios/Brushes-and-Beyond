@@ -31,5 +31,12 @@ public class DialogueAction {
 
 }
 
+public enum DialogueActionType{
+    ACTIVATE_OBJECT,
+    DEACTIVATE_OBJECT,
+    PLAY_ANIMATION,
+    CAMERA_MOVE
+}
+
 [Serializable]
 public class EventWrapper : UnityEvent { }
