@@ -20,6 +20,10 @@ public class Interactable : MonoBehaviour {
         QuestEvents.OnChangeDialogue += ChangeDialogue;
     }
 
+    private void OnDisable() {
+        QuestEvents.OnChangeDialogue -= ChangeDialogue;
+    }
+    
     private void ChangeDialogue(Dictionary<string, DialogueSet> data) {
         if (data.ContainsKey(gameObject.name)) {
             questDialogueSet = data[gameObject.name];
@@ -27,7 +31,6 @@ public class Interactable : MonoBehaviour {
         else if (transform.parent != null && data.ContainsKey(transform.parent.gameObject.name)) {
             questDialogueSet = data[transform.parent.gameObject.name];
         }
-        Debug.Log(JsonUtility.ToJson(questDialogueSet));
     }
 
     public void ActivateIndicator() {
