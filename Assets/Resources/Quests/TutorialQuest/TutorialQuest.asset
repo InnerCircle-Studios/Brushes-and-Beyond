@@ -18,5 +18,4 @@ MonoBehaviour:
   RequiredQuests: []
   Stages:
   - {fileID: 5472256089042875822, guid: 0986541856701614489d031fdb72dd13, type: 3}
-  - {fileID: 5472256089042875822, guid: 0986541856701614489d031fdb72dd13, type: 3}
   RewardItem: {fileID: 0}
