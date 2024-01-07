@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 8231413812314156323}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a348490a6a41c14282e4ba83f012058, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0ea68f87ac9cea4aa0e3f28f26517d2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -68,9 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66a63b977387aa41853590b438c9852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+  enemyPrefab: {fileID: 7750705467220416283, guid: d9ee414c280bc744cbb72a870c74113b, type: 3}
   duration: 2
-  launch: 0
 --- !u!50 &8991425185271582479
 Rigidbody2D:
   serializedVersion: 4

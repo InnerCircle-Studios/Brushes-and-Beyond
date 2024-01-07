@@ -68,9 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66a63b977387aa41853590b438c9852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7750705467220416283, guid: c12a67dc792250b4f9f9762ca507dd20, type: 3}
+  enemyPrefab: {fileID: 7750705467220416283, guid: 713aa14e5c561394b9a3a94daff1a805, type: 3}
   duration: 2
-  launch: 0
 --- !u!50 &8991425185271582479
 Rigidbody2D:
   serializedVersion: 4
