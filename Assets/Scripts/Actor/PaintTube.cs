@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PaintTube : Actor {
     public override void Start() {
-        _PaintTubeStateMachine = new PaintTubeStateMachine(this, _Player);
+        _PaintTubeStateMachine = new PaintTubeStateMachine(this, _Player, _colour.ToString());
     }
 
     public override void Update() {
@@ -36,4 +36,13 @@ public class PaintTube : Actor {
 
     [SerializeField] private Player _Player;
     [SerializeField] private GameObject _paintTubeProjectile;
+    [SerializeField] private Colour _colour;
+
+    public enum Colour
+    {
+        Red,
+        Yellow,
+        Blue,
+        Rainbow,
+    }
 }
