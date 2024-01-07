@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -11,13 +13,8 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        // Destroy the projectile after a certain time
         Destroy(gameObject, maxLifetime);
-
-        // Find the player GameObject
         player = GameObject.FindGameObjectWithTag("Player");
-        
-        // Set the target position to the player's position at the moment of projectile's instantiation
         if (player != null)
         {
             target = player.transform.position;
@@ -26,13 +23,9 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        // Move towards the target
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        // Rotate the projectile
         transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 
-        // If the projectile reaches the target point (considering some small threshold), destroy it
         if (Vector2.Distance(transform.position, target) < 0.1f)
         {
             Destroy(gameObject);
@@ -44,16 +37,10 @@ public class Projectile : MonoBehaviour
         // Check if it hits the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Call the Damage function on the player
-            Debug.Log("Player hit!");
+           Debug.Log(collision.gameObject.name + " was hit by " + gameObject.name);
+            collision.gameObject.GetComponent<Player>().GetAttrubuteManager().ApplyDamage(1);
+            //StartCoroutine(collision.gameObject.GetComponent<Player>().FlashSpriteOnHit(collision.gameObject.GetComponent<SpriteRenderer>()));
 
-            // Destroy the projectile
-            Destroy(gameObject);
-        }
-        // Check if it hits anything else
-        else if (!collision.gameObject.CompareTag("Projectile")) // To prevent self-collision
-        {
-            // Destroy the projectile
             Destroy(gameObject);
         }
     }
