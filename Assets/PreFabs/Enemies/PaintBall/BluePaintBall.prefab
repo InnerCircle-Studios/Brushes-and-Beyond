@@ -124,6 +124,7 @@ MonoBehaviour:
   attributes: {fileID: 11400000, guid: 25cc66e93e442ef5f8ce7faf5dbcaefc, type: 2}
   _isMelee: 0
   _colour: 2
+  _projectile: {fileID: 2460371208303766996, guid: 10bc44c0fe742b742a784bed3ad671db, type: 3}
 --- !u!58 &1031919424511447355
 CircleCollider2D:
   m_ObjectHideFlags: 0
