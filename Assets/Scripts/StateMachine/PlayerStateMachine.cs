@@ -91,7 +91,7 @@ public class PlayerStateMachine : StateMachine {
         int random = Random.Range(0, 5);
         switch (random) {
             case 0:
-                AudioManager.instance.PlaySfx("Walksound1");
+                AudioManager.instance.PlaySfx("Walksound2");
                 break;
             case 1:
                 AudioManager.instance.PlaySfx("Walksound2");

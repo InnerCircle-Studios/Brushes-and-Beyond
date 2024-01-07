@@ -788,6 +788,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b71314b4af76ed846a0b30e8c794ae5b, type: 3}
   - name: Walksound4
     clip: {fileID: 8300000, guid: ec4d0f4dd3a1eb8439ec1d6acd3a881d, type: 3}
+  - name: PaintBallHit1
+    clip: {fileID: 8300000, guid: 679c189d0a7f3e3418e1f0b386451798, type: 3}
+  - name: PaintBallHit2
+    clip: {fileID: 8300000, guid: 0ad69796000092044afac401393136de, type: 3}
   musicSource: {fileID: 1724475358}
   sfxSource: {fileID: 1632449875}
 --- !u!1 &754944641

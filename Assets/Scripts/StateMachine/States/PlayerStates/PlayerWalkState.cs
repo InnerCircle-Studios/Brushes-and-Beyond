@@ -49,5 +49,5 @@ public class PlayerWalkState : State {
 
     private PlayerStateMachine _PlayerStateMachine;
     private float walkSoundTimer = 0f;
-    private float walkSoundInterval = 0.4f;
+    private float walkSoundInterval = 0.8f;
 }

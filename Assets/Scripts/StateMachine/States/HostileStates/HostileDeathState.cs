@@ -16,6 +16,7 @@ public class HostileDeathState : State {
     public override void EnterState() {
         GetStateMachine().GetActor().gameObject.tag = "Untagged";
         GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Death");
+        _HostileStateMachine.PlayRandomDeathSound();
         GetStateMachine().GetActor().StartCoroutine(WaitForAnim());
 
     }
