@@ -95,6 +95,7 @@ public class QuestManager : MonoBehaviour {
     }
 
     private void QuestStageStateChanged(string id, int index, QuestStageState state) {
+        // Debug.Log($"[  QuestStageStateChanged  ]: {id} {index} {state.State}");
         Quest quest = GetQuestByID(id);
         quest.StoreQuestStageState(state, index);
         ChangeQuestState(id, quest.State);

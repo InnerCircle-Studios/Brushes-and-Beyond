@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -15,10 +16,11 @@ public class TutorialQuestStage : QuestStage {
                     new(GameManager.Instance.GetBrushy(), "Welcome to the tutorial!", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "This is a tutorial quest, it will teach you the basics of the game.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "You can move around with WASD or the arrow keys.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can attack with the space bar.", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can sprint with the shift key.", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can interact with objects by pressing E.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing E",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "Good luck!",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>())
             }
         });
@@ -65,13 +67,27 @@ public class TutorialQuestStage : QuestStage {
     }
 
     private void UpdateState() {
-        string newState = hasMoved.ToString();
-        ChangeState(newState);
+
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasMoved, hasAttacked, hasSprinted }));
+        ChangeState(data);
     }
 
     protected override void SetQuestStageState(string state) {
-        bool.TryParse(state, out hasMoved);
+        bool[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;
+        hasMoved = data[0];
+        hasAttacked = data[1];
+        hasSprinted = data[2];
+        // Debug.Log($"[ TutorialQuestStage ]: {data}");
+
         UpdateState();
+    }
+
+    [Serializable]
+    public class StupidJSONWrapper {
+        public bool[] Values;
+        public StupidJSONWrapper(bool[] values) {
+            Values = values;
+        }
     }
 
 

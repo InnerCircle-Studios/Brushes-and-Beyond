@@ -29428,7 +29428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2291c2240224e34b8f68a1abb1a1735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  togglePresistance: 0
+  togglePresistance: 1
   player: {fileID: 2137030349}
 --- !u!1 &602293968
 GameObject:
