@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class ArcProjectile2D : MonoBehaviour {
-    [SerializeField] private GameObject enemyPrefab; // Assign in Unity inspector
+    [SerializeField] private GameObject[] enemyPrefab; // Assign in Unity inspector
     [SerializeField] private float duration = 3f; // Total duration of the flight
 
     private Vector2 startPosition;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8991425185271582479}
   - component: {fileID: 6233305545525223371}
   m_Layer: 6
-  m_Name: PaintBallSpawing
+  m_Name: YellowSpawningPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
