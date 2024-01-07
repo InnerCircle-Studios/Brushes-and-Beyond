@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviour {
 
     public UnityEvent OnEventTrigger = new();
     [SerializeField] private DialogueSet dialogueSet;
+
+    private DialogueSet questDialogueSet;
     [SerializeField, Range(0, 10)] private float interactionRange;
 
     private SpriteRenderer activationKey;
@@ -20,17 +22,20 @@ public class Interactable : MonoBehaviour {
 
     private void ChangeDialogue(Dictionary<string, DialogueSet> data) {
         if (data.ContainsKey(gameObject.name)) {
-            dialogueSet = data[gameObject.name];
+            questDialogueSet = data[gameObject.name];
         }
         else if (transform.parent != null && data.ContainsKey(transform.parent.gameObject.name)) {
-            dialogueSet = data[transform.parent.gameObject.name];
+            questDialogueSet = data[transform.parent.gameObject.name];
         }
-        // Debug.Log(JsonUtility.ToJson(dialogueSet));
+        Debug.Log(JsonUtility.ToJson(questDialogueSet));
     }
 
     public void ActivateIndicator() {
         activationKey.enabled = true;
-        if (dialogueSet != null) {
+        if(questDialogueSet != null) {
+            gameManager.GetDialogueManager().SetActiveDialogue(questDialogueSet);
+        }
+        else if (dialogueSet != null) {
             FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.
         }
     }
