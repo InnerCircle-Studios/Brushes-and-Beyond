@@ -19,17 +19,15 @@ public class HostileAttackState : State
 
     public override void UpdateState()
     {
-        if (_canAttack)
-        {
-            Attack();
-            _canAttack = false;
-        }
-        else
-        {
-            GetStateMachine().GetActor().StartCoroutine(WaitForAttackcooldown());
-        }
         _HostileStateMachine.CheckPlayerInAttackRange();
         CheckSwitchStates();
+        if (_canAttack)
+        {
+            
+            Attack();
+            GetStateMachine().GetActor().StartCoroutine(WaitForAttackcooldown());
+        }
+        
     } 
 
     public override void ExitState()
@@ -46,6 +44,8 @@ public class HostileAttackState : State
 
     private IEnumerator WaitForAttackcooldown() 
     {
+        _canAttack = false;
+
         yield return new WaitForSeconds(_attackCooldown);
 
         _canAttack = true;
@@ -69,6 +69,7 @@ public class HostileAttackState : State
             case "Blue":
                 GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Shoot");
                 _HostileStateMachine._Hostile.HandleMeleeAttack();
+                _HostileStateMachine._isDead.Value = true;
                 break;
         }
     }
