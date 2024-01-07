@@ -4,7 +4,7 @@ public class Hostile : Actor {
     public override void Start() {
         _Player = FindAnyObjectByType<Player>();
 
-        _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
+        _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee, _colour.ToString());
     }
 
     public override void Update() {
@@ -22,7 +22,8 @@ public class Hostile : Actor {
         }
     }
 
-    public override void HandleRangedAttack() {
+    public override void HandleRangedAttack() 
+    {
 
     }
 
@@ -43,4 +44,13 @@ public class Hostile : Actor {
 
     private Player _Player;
     [SerializeField] private bool _isMelee = false;
+    [SerializeField] private Colour _colour;
+
+
+    public enum Colour
+    {
+        Red,
+        Yellow,
+        Blue,
+    }
 }
