@@ -19,6 +19,13 @@ public class PlayerWalkState : State {
         _PlayerStateMachine.GetActor().GetAnimator().Play("Move", _PlayerStateMachine._CurrentDirection);
         CheckSwitchStates();
 
+        if (walkSoundTimer <= 0f) {
+            _PlayerStateMachine.PlayRandomWalkSound();
+            walkSoundTimer = walkSoundInterval;
+        } else {
+            walkSoundTimer -= Time.deltaTime;
+        }
+
     }
 
     public override void ExitState() {
@@ -41,4 +48,6 @@ public class PlayerWalkState : State {
     }
 
     private PlayerStateMachine _PlayerStateMachine;
+    private float walkSoundTimer = 0f;
+    private float walkSoundInterval = 0.4f;
 }

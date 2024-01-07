@@ -85,6 +85,26 @@ public class PlayerStateMachine : StateMachine {
         }
     }
 
+
+
+    public void PlayRandomWalkSound() {
+        int random = Random.Range(0, 5);
+        switch (random) {
+            case 0:
+                AudioManager.instance.PlaySfx("Walksound1");
+                break;
+            case 1:
+                AudioManager.instance.PlaySfx("Walksound2");
+                break;
+            case 2:
+                AudioManager.instance.PlaySfx("Walksound3");
+                break;
+            case 3:
+                AudioManager.instance.PlaySfx("Walksound4");
+                break;
+        }
+    }
+
     public MovementDirection _CurrentDirection = MovementDirection.DOWN;
     public Vector2 _CurrentMovementInput = new Vector2();
     public BoolWrapper _IsMovementPressed { get; set; } = new BoolWrapper(false);
