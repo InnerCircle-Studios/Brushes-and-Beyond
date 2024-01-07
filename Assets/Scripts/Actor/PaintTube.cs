@@ -1,3 +1,5 @@
+using System.Data;
+
 using UnityEngine;
 
 public class PaintTube : Actor {
@@ -22,7 +24,8 @@ public class PaintTube : Actor {
     }
 
     public override void HandleRangedAttack() {
-        Instantiate(_paintTubeProjectile, transform.position, Quaternion.identity);
+        int random = Random.Range(0, _paintTubeProjectile.Length);
+        Instantiate(_paintTubeProjectile[random], transform.position, Quaternion.identity);
     }
 
     public Player GetPlayer() {
@@ -36,7 +39,7 @@ public class PaintTube : Actor {
     private PaintTubeStateMachine _PaintTubeStateMachine;
 
     [SerializeField] private Player _Player;
-    [SerializeField] private GameObject _paintTubeProjectile;
+    [SerializeField] private GameObject[] _paintTubeProjectile;
     [SerializeField] private Colour _colour;
 
     public enum Colour {

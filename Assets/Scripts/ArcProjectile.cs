@@ -3,7 +3,7 @@ using System.Data;
 using UnityEngine;
 
 public class ArcProjectile2D : MonoBehaviour {
-    [SerializeField] private GameObject[] enemyPrefab; // Assign in Unity inspector
+    [SerializeField] private GameObject enemyPrefab; // Assign in Unity inspector
     [SerializeField] private float duration = 3f; // Total duration of the flight
 
     private Vector2 startPosition;
@@ -24,8 +24,7 @@ public class ArcProjectile2D : MonoBehaviour {
 
         float t = elapsedTime / duration; // Normalized time
         if (t > 1f) {
-            int random = Random.Range(0, enemyPrefab.Length);
-            Instantiate(enemyPrefab[random], transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }
