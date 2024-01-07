@@ -15,7 +15,7 @@ public class HostileDeathState : State {
 
     public override void EnterState() {
         GetStateMachine().GetActor().gameObject.tag = "Untagged";
-        GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour +"Death");
+        GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Death");
         GetStateMachine().GetActor().StartCoroutine(WaitForAnim());
 
     }
@@ -29,7 +29,7 @@ public class HostileDeathState : State {
 
     IEnumerator WaitForAnim() {
         float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
-        yield return new WaitForSeconds(animDuration + 0.25f);
+        yield return new WaitForSeconds(animDuration - 0.25f);
         animationHasFinished = true;
     }
 

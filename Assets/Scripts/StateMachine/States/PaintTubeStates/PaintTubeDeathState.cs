@@ -19,7 +19,7 @@ public class PaintTubeDeathState : State {
     }
 
     public override void UpdateState() {
-        if(animationHasFinished){
+        if (animationHasFinished) {
             Object.Destroy(GetStateMachine().GetActor().gameObject);
         }
 
@@ -33,9 +33,9 @@ public class PaintTubeDeathState : State {
 
     }
 
-    IEnumerator WaitForAnim(){
+    IEnumerator WaitForAnim() {
         float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
-        yield return new WaitForSeconds(animDuration+0.20f);
+        yield return new WaitForSeconds(animDuration);
         animationHasFinished = true;
     }
 
