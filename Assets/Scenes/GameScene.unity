@@ -30433,6 +30433,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 013b01ba09689354ca8a2144a2bf7d33, type: 3}
+--- !u!224 &983396219 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7348048702688004703, guid: 013b01ba09689354ca8a2144a2bf7d33, type: 3}
+  m_PrefabInstance: {fileID: 983396218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003741323
 GameObject:
   m_ObjectHideFlags: 0
@@ -33048,8 +33053,8 @@ RectTransform:
   - {fileID: 602293969}
   - {fileID: 127241704}
   - {fileID: 1742201052}
-  - {fileID: 1866832939}
   - {fileID: 923031057}
+  - {fileID: 983396219}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -33077,7 +33082,7 @@ MonoBehaviour:
   - Name: ControlsPanel
     Element: {fileID: 602293968}
   - Name: Settings
-    Element: {fileID: 1866832936}
+    Element: {fileID: 0}
   textWindows:
   - Name: HealthIndicator
     Element: {fileID: 923031058}
@@ -33369,7 +33374,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 95934295}
+      objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -33393,10 +33398,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8439175556409253974, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 95934295}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
 --- !u!1 &1959386084
 GameObject:
@@ -35041,3 +35043,4 @@ SceneRoots:
   - {fileID: 1305563010}
   - {fileID: 2025498611}
   - {fileID: 1792340911}
+  - {fileID: 1833072469}

@@ -89,20 +89,21 @@ public class PlayerStateMachine : StateMachine {
 
     public void PlayRandomWalkSound() {
         int random = Random.Range(0, 5);
-        switch (random) {
-            case 0:
-                AudioManager.instance.PlaySfx("Walksound2");
-                break;
-            case 1:
-                AudioManager.instance.PlaySfx("Walksound2");
-                break;
-            case 2:
-                AudioManager.instance.PlaySfx("Walksound3");
-                break;
-            case 3:
-                AudioManager.instance.PlaySfx("Walksound4");
-                break;
-        }
+        // AARON PLZ FIX!
+        // switch (random) {
+        //     case 0:
+        //         AudioManager.instance.PlaySfx("Walksound2");
+        //         break;
+        //     case 1:
+        //         AudioManager.instance.PlaySfx("Walksound2");
+        //         break;
+        //     case 2:
+        //         AudioManager.instance.PlaySfx("Walksound3");
+        //         break;
+        //     case 3:
+        //         AudioManager.instance.PlaySfx("Walksound4");
+        //         break;
+        // }
     }
 
     public MovementDirection _CurrentDirection = MovementDirection.DOWN;
