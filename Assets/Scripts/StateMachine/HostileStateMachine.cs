@@ -1,8 +1,10 @@
+using UnityEditor.ShaderGraph;
+
 using UnityEngine;
 
 public class HostileStateMachine : StateMachine
 {   
-    public HostileStateMachine(Actor actor, Player player, bool isMelee) : base(actor)
+    public HostileStateMachine(Actor actor, Player player, bool isMelee, string colour) : base(actor)
     {
         AddState(new HostileSpawnState("HostileSpawnState", this));
         AddState(new HostileIdleState("HostileIdleState", this));
@@ -14,8 +16,26 @@ public class HostileStateMachine : StateMachine
 
         InitSwitchCases();
 
-        _isMelee.Value = isMelee;
         _Hostile = GetActor() as Hostile;
+
+        switch(colour)
+        {
+            case "Red":
+                _Colour = "Red";
+                _isMelee.Value = isMelee;
+                break;
+            
+            case "Yellow":
+                _Colour = "Yellow";
+                _isMelee.Value = isMelee;
+                break;
+
+            case "Blue":
+                _Colour = "Blue";
+                _isMelee.Value = isMelee;
+                _attackRange = 5f;
+                break;
+        }
     }
     
 
@@ -49,7 +69,8 @@ public class HostileStateMachine : StateMachine
 
     public Vector2 _currentMovement = new Vector2();
     public float _hostileRange = 10f;
-    public float _attackRange = 3f;
+    public float _attackRange = 0.5f;
+    public string _Colour = "Red";
 
     public BoolWrapper _isSpawned { get; set; } = new BoolWrapper(true);
     public BoolWrapper _isInRange { get; set; } = new BoolWrapper(false);

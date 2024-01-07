@@ -53,14 +53,21 @@ public class HostileAttackState : State
 
     private void Attack()
     {  
-        if(_HostileStateMachine._isMelee.Value == true)
+
+        switch(_HostileStateMachine._Colour)
         {
-            _HostileStateMachine._Hostile.HandleMeleeAttack();
-        }
-        else
-        {
-            GetStateMachine().GetActor().GetAnimator().Play("Shoot");
-            _HostileStateMachine._Hostile.HandleRangedAttack();
+            case "Red":
+                _HostileStateMachine._Hostile.HandleMeleeAttack();
+                break;
+
+            case "Yellow":
+                _HostileStateMachine._Hostile.HandleMeleeAttack();
+                break;
+
+            case "Blue":
+                GetStateMachine().GetActor().GetAnimator().Play("Shoot");
+                _HostileStateMachine._Hostile.HandleRangedAttack();
+                break;
         }
     }
 

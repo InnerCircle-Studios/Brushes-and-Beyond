@@ -49,6 +49,8 @@ MonoBehaviour:
   OnEventTrigger:
     m_PersistentCalls:
       m_Calls: []
+  dialogueSet:
+    dialogueList: []
 --- !u!212 &2090554083955946369
 SpriteRenderer:
   m_ObjectHideFlags: 0

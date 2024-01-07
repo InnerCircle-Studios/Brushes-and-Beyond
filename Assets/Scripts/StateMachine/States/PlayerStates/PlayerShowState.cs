@@ -9,13 +9,14 @@ public class PlayerShowState : State {
 
     public override void AwakeState() {
         AddSwitchCases();
+        windowManager = _PlayerStateMachine.GetActor().GetGameManager().GetWindowManager();
     }
 
     public override void EnterState() {
         GetStateMachine().GetActor().StartCoroutine(WaitForShow());
         _PlayerStateMachine.GetActor().GetAnimator().Play("ShowBrush");
-        _PlayerStateMachine.GetActor().GetWindowManager().InitDialogueBox(_PlayerStateMachine.GetActor());
-        _PlayerStateMachine.GetActor().GetWindowManager().UpdateDialogueBox("Test string. Blood for the blood god! Skulls for the skull throne!");
+        windowManager.InitDialogueBox(_PlayerStateMachine.GetActor());
+        windowManager.UpdateDialogueBox("Test string. Blood for the blood god! Skulls for the skull throne!");
     }
 
     public override void ExitState() {
@@ -30,12 +31,13 @@ public class PlayerShowState : State {
         AddSwitchCase(new SwitchCaseWrapper(_PlayerStateMachine._IsShowDone, true), _PlayerStateMachine.GetState("PlayerIdleState"));
     }
 
-    private IEnumerator WaitForShow() //Delay for groundCheck
-    {
+    private IEnumerator WaitForShow() {
         yield return new WaitForSeconds(1.8f);
 
         _PlayerStateMachine._IsShowDone.Value = true;
     }
 
     private PlayerStateMachine _PlayerStateMachine;
+    private WindowManager windowManager;
+
 }

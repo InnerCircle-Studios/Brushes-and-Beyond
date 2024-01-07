@@ -4,11 +4,7 @@ public class Hostile : Actor {
     public override void Start() {
         _Player = FindAnyObjectByType<Player>();
 
-        _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee);
-
-        _AttributeManager = new AttributeManager(attributes);
-
-
+        _HostileStateMachine = new HostileStateMachine(this, _Player, _isMelee, _colour.ToString());
     }
 
     public override void Update() {
@@ -19,14 +15,15 @@ public class Hostile : Actor {
     }
 
     public override void HandleMeleeAttack() {
-        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Player")) {
+        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, _AttributeManager.GetAttributes().AttackRange, "Player")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
 
         }
     }
 
-    public override void HandleRangedAttack() {
+    public override void HandleRangedAttack() 
+    {
 
     }
 
@@ -47,4 +44,13 @@ public class Hostile : Actor {
 
     private Player _Player;
     [SerializeField] private bool _isMelee = false;
+    [SerializeField] private Colour _colour;
+
+
+    public enum Colour
+    {
+        Red,
+        Yellow,
+        Blue,
+    }
 }

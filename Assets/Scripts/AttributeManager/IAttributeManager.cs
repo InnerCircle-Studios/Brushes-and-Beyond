@@ -1,6 +1,6 @@
 public interface IAttributeManager {
-    public CharacterAttributes GetAttributes();
-
+    public CharacterData GetAttributes();
+    public void Setattributes(CharacterData attributes);
     public bool IsAlive();
     public void ApplyDamage(int hp);
 

@@ -13,7 +13,7 @@ public class PaintTube : Actor {
     }
 
     public override void HandleMeleeAttack() {
-        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, 1.5f, "Player")) {
+        foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, _AttributeManager.GetAttributes().AttackRange, "Player")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
 
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));

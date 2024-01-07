@@ -47,12 +47,12 @@ public abstract class Actor : MonoBehaviour {
         return _Animator;
     }
 
-    public WindowManager GetWindowManager() {
-        return FindAnyObjectByType<WindowManager>();
-    }
-
     public Rigidbody2D GetRigidBody() {
         return _RigidBody;
+    }
+
+    public GameManager GetGameManager() {
+        return FindObjectOfType<GameManager>();
     }
 
     public void HandleWalk(Vector2 desiredMovement) {

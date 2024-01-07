@@ -1,49 +1,54 @@
+using System;
+using System.Reflection;
+
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterAttributes", menuName = "Brushes/Actor/Attributes")]
+[CreateAssetMenu(fileName = "CharacterAttributes", menuName = "Brushes/Actor/Attributes"), Serializable]
 public class CharacterAttributes : ScriptableObject {
 
-    public Sprite DialogueSprite;
-    public float InteractionRange;
-
-    public Role Type;
-
-    public string Name;
-
-    public int MaxHealth;
-
-    public int CurrentHealth;
-
-    public int Damage;
-
-    public float Speed;
-
-    public float SprintSpeed;
-
-    public GameObject Loot;
-
-    public enum Role {
-        Player,
-        Enemy,
-        PaintEnemy,
-        NPC,
-        Static
-    }
+    public CharacterData Attributes;
 
     public CharacterAttributes Copy() {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
-        
-        newCharacterAttributes.DialogueSprite = DialogueSprite;
-        newCharacterAttributes.InteractionRange = InteractionRange;
-        newCharacterAttributes.Type = Type;
-        newCharacterAttributes.Name = Name;
-        newCharacterAttributes.MaxHealth = MaxHealth;
-        newCharacterAttributes.CurrentHealth = CurrentHealth;
-        newCharacterAttributes.Damage = Damage;
-        newCharacterAttributes.Speed = Speed;
-        newCharacterAttributes.Loot = Loot;
-        newCharacterAttributes.SprintSpeed = SprintSpeed;
-
+        newCharacterAttributes.Attributes = Attributes.Copy();
         return newCharacterAttributes;
     }
+}
+
+[Serializable]
+public class CharacterData {
+    [Header("General")]
+    [SerializeField] public Sprite DialogueSprite;
+    [SerializeField] public ActorType Type;
+    [SerializeField] public string Name;
+    [SerializeField] public int Level;
+
+    [Header("Combat")]
+    [SerializeField] public int MaxHealth;
+    [SerializeField] public int CurrentHealth;
+    [SerializeField] public int Damage;
+    [SerializeField] public float AttackRange;
+    [SerializeField] public GameObject Loot;
+
+    [Header("Movement")]
+    [SerializeField] public float Speed;
+    [SerializeField] public float SprintSpeed;
+
+    public CharacterData Copy() {
+        CharacterData newCharacterData = new();
+        FieldInfo[] fields = GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+        foreach (FieldInfo field in fields) {
+            field.SetValue(newCharacterData, field.GetValue(this));
+        }
+        return newCharacterData;
+    }
+}
+
+public enum ActorType {
+    Player,
+    Enemy,
+    PaintEnemy,
+    NPC,
+    Static
 }

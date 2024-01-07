@@ -74,6 +74,25 @@ public class BoolWrapper
     {
         return new BoolWrapper(!wrapBool.Value);
     }
+    public static bool operator ==(BoolWrapper wrapBool1, BoolWrapper wrapBool2) {
+        return wrapBool1.Value == wrapBool2.Value;
+    }
+    public static bool operator !=(BoolWrapper wrapBool1, BoolWrapper wrapBool2) {
+        return wrapBool1.Value != wrapBool2.Value;
+    }
+
+    public override bool Equals(object obj) {
+        if (obj == null || GetType() != obj.GetType()) {
+            return false;
+        }
+
+        BoolWrapper other = (BoolWrapper)obj;
+        return Value == other.Value;
+    }
+
+    public override int GetHashCode() {
+        return Value.GetHashCode();
+    }
 }
 
 public class SwitchCaseWrapper

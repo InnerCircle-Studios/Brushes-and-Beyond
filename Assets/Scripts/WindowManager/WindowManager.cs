@@ -28,6 +28,12 @@ public class WindowManager : MonoBehaviour {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(actor);
     }
+    public void InitDialogueBox(DialogueEntry diagEntry){
+        ShowDialogueBox();
+        dialogueBox.LoadCharacter(diagEntry.Actor);
+        UpdateDialogueBox(diagEntry.Dialogue);
+    }
+    
     public void UpdateDialogueBox(string text) {
         dialogueBox.SetMessage(text);
     }
