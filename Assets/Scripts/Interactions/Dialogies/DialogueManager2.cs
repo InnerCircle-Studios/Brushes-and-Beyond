@@ -36,7 +36,6 @@ public class DialogueManager2 : MonoBehaviour {
             EventBus.TriggerEvent(EventBusEvents.EventName.DIALOGUE_EVENT, false);
             activeSet.ResetIndex();
             wm.HideDialogueBox();
-
         }
     }
 
