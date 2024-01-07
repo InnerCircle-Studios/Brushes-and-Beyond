@@ -8,6 +8,8 @@ public class Hostile : Actor {
     }
 
     public override void Update() {
+        _HostileStateMachine._Colour = _colour.ToString();
+
         _HostileStateMachine.GetCurrentState().UpdateState();
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
@@ -22,8 +24,7 @@ public class Hostile : Actor {
         }
     }
 
-    public override void HandleRangedAttack() 
-    {
+    public override void HandleRangedAttack() {
 
     }
 
@@ -47,8 +48,7 @@ public class Hostile : Actor {
     [SerializeField] private Colour _colour;
 
 
-    public enum Colour
-    {
+    public enum Colour {
         Red,
         Yellow,
         Blue,

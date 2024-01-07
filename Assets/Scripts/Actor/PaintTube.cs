@@ -6,6 +6,7 @@ public class PaintTube : Actor {
     }
 
     public override void Update() {
+        _PaintTubeStateMachine._colour = _colour.ToString();
         _PaintTubeStateMachine.GetCurrentState().UpdateState();
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
@@ -38,8 +39,7 @@ public class PaintTube : Actor {
     [SerializeField] private GameObject _paintTubeProjectile;
     [SerializeField] private Colour _colour;
 
-    public enum Colour
-    {
+    public enum Colour {
         Red,
         Yellow,
         Blue,
