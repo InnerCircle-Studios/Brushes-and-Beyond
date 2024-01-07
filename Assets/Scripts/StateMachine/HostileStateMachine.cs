@@ -69,7 +69,7 @@ public class HostileStateMachine : StateMachine
 
     public Vector2 _currentMovement = new Vector2();
     public float _hostileRange = 10f;
-    public float _attackRange = 0.5f;
+    public float _attackRange = 1.5f;
     public string _Colour = "Red";
 
     public BoolWrapper _isSpawned { get; set; } = new BoolWrapper(true);

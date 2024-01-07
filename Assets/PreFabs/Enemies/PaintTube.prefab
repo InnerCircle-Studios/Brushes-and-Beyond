@@ -208,4 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 85dd199e7e124f343ae0224406698d79, type: 2}
   _Player: {fileID: 0}
-  _paintTubeProjectile: {fileID: 8231413812314156323, guid: b5841358c71a3b34b981728190a1f3af, type: 3}
+  _paintTubeProjectile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _colour: 0
