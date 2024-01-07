@@ -123,6 +123,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &29117613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 772932322}
+    m_Modifications:
+    - target: {fileID: 3951611424333662284, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_Name
+      value: RedPaintTube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: _Player
+      value: 
+      objectReference: {fileID: 2137030349}
+    - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: _colour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: _paintTubeProjectile.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: _paintTubeProjectile.Array.data[0]
+      value: 
+      objectReference: {fileID: 8231413812314156323, guid: c92425a53514c364cae354019d1ca7d0, type: 3}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.18592328
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
 --- !u!1 &43045435
 GameObject:
   m_ObjectHideFlags: 0
@@ -29322,6 +29395,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466546179}
   m_CullTransparentMesh: 1
+--- !u!4 &476220127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
+  m_PrefabInstance: {fileID: 29117613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &501580349
 GameObject:
   m_ObjectHideFlags: 0
@@ -30246,6 +30324,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 333433939}
+  - {fileID: 476220127}
   - {fileID: 778732196}
   - {fileID: 178803049}
   - {fileID: 1986603656}
@@ -31552,11 +31631,11 @@ PrefabInstance:
       objectReference: {fileID: 8231413812314156323, guid: b5841358c71a3b34b981728190a1f3af, type: 3}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: -6.77
       objectReference: {fileID: 0}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.37
+      value: 11.82
       objectReference: {fileID: 0}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31738,7 +31817,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3951611424333662284, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_Name
-      value: PaintTube
+      value: YellowPaintTube
       objectReference: {fileID: 0}
     - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: _Player
@@ -35228,7 +35307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3951611424333662284, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_Name
-      value: PaintTube
+      value: BluePaintTube
       objectReference: {fileID: 0}
     - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: _Player
@@ -35236,7 +35315,7 @@ PrefabInstance:
       objectReference: {fileID: 2137030349}
     - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: _colour
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: _paintTubeProjectile.Array.size
@@ -35245,14 +35324,14 @@ PrefabInstance:
     - target: {fileID: 7678726378123846467, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: _paintTubeProjectile.Array.data[0]
       value: 
-      objectReference: {fileID: 8231413812314156323, guid: c92425a53514c364cae354019d1ca7d0, type: 3}
+      objectReference: {fileID: 8231413812314156323, guid: 95bbd30425a6e604cb792c0cae1ed175, type: 3}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: -12.49
       objectReference: {fileID: 0}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.37
+      value: 11.91
       objectReference: {fileID: 0}
     - target: {fileID: 7879369736674493005, guid: a97987bf221fe053abd3ecbb370f6112, type: 3}
       propertyPath: m_LocalPosition.z
