@@ -11,7 +11,6 @@ public class Combat : ICombat {
 
         foreach (RaycastHit2D hit in hits) {
             if (hit.collider.CompareTag(layer)) {
-                Debug.Log(hit.collider.gameObject.name);
                 hitActors.Add(hit.collider.gameObject.GetComponent<Actor>());
             }
         }
