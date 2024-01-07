@@ -19,8 +19,30 @@ public class Hostile : Actor {
     public override void HandleMeleeAttack() {
         foreach (Actor hits in GetCombat().MeleeAttack(GetRigidBody().position, _AttributeManager.GetAttributes().AttackRange, "Player")) {
             hits.GetAttrubuteManager().ApplyDamage(GetAttrubuteManager().GetAttributes().Damage);
+            PlayRandomAttackSound();
             StartCoroutine(FlashSpriteOnHit(hits.GetComponent<SpriteRenderer>()));
 
+        }
+    }
+
+    public void PlayRandomAttackSound() {
+        int random = Random.Range(0, 5);
+        switch (random) {
+            case 0:
+                AudioManager.instance.PlaySfx("HitEffect1");
+                break;
+            case 1:
+                AudioManager.instance.PlaySfx("HitEffect2");
+                break;
+            case 2:
+                AudioManager.instance.PlaySfx("HitEffect3");
+                break;
+            case 3:
+                AudioManager.instance.PlaySfx("HitEffect4");
+                break;
+            case 4:
+                AudioManager.instance.PlaySfx("HitEffect5");
+                break;
         }
     }
 

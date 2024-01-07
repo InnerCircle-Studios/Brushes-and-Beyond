@@ -21,6 +21,12 @@ public class PlayerRunState : State {
         HandleRun();
         _PlayerStateMachine.GetActor().GetAnimator().Play("Sprint", _PlayerStateMachine._CurrentDirection);
         CheckSwitchStates();
+        if (walkSoundTimer <= 0f) {
+            _PlayerStateMachine.PlayRandomWalkSound();
+            walkSoundTimer = walkSoundInterval;
+        } else {
+            walkSoundTimer -= Time.deltaTime;
+        }
     }
 
     public override void AddSwitchCases() {
@@ -38,4 +44,6 @@ public class PlayerRunState : State {
     }
 
     private PlayerStateMachine _PlayerStateMachine;
+    private float walkSoundTimer = 0f;
+    private float walkSoundInterval = 0.4f;
 }
