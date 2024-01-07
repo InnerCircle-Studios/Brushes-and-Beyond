@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,8 +15,18 @@ public class Interactable : MonoBehaviour {
     private void Start() {
         activationKey = gameObject.GetComponent<SpriteRenderer>();
         gameManager = FindAnyObjectByType<GameManager>();
+        QuestEvents.OnChangeDialogue += ChangeDialogue;
     }
 
+    private void ChangeDialogue(Dictionary<string, DialogueSet> data) {
+        if (data.ContainsKey(gameObject.name)) {
+            dialogueSet = data[gameObject.name];
+        }
+        else if (transform.parent != null && data.ContainsKey(transform.parent.gameObject.name)) {
+            dialogueSet = data[transform.parent.gameObject.name];
+        }
+        // Debug.Log(JsonUtility.ToJson(dialogueSet));
+    }
 
     public void ActivateIndicator() {
         activationKey.enabled = true;
