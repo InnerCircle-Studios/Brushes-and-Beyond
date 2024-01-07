@@ -9,7 +9,7 @@ public class PaintTubeStateMachine : StateMachine
         AddState(new PaintTubeSpawnState("PaintTubeSpawnState", this));
         AddState(new PaintTubeDeathState("PaintTubeDeathState", this));
 
-        ChangeState(GetState("PaintTubeIdleState"));
+        ChangeState(GetState("PaintTubeWalkState"));
 
         InitSwitchCases();
 

@@ -26,7 +26,7 @@ public class PaintTubeIdleState : State {
     }
 
     public override void ExitState() {
-        GetStateMachine().GetActor().StartCoroutine(WaitForStandup());
+        // GetStateMachine().GetActor().StartCoroutine(WaitForStandup());
     }
 
     public override void AddSwitchCases() {
@@ -43,7 +43,6 @@ public class PaintTubeIdleState : State {
 
     private IEnumerator WaitForStandup() {
         float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
-        GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "StandUp");
         yield return new WaitForSeconds(animDuration + 0.20f);
     }
 
