@@ -727,7 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 727344023}
-  - component: {fileID: 727344022}
+  - component: {fileID: 727344024}
   m_Layer: 0
   m_Name: AudioHandler
   m_TagString: Untagged
@@ -735,18 +735,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &727344022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727344021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a2da9a435c2fa4fa3158da85c2df1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &727344023
 Transform:
   m_ObjectHideFlags: 0
@@ -764,6 +752,26 @@ Transform:
   - {fileID: 1632449876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727344024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727344021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b52333646d2094a8a61f9ca0342f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSounds:
+  - name: BaseMusic
+    clip: {fileID: 8300000, guid: 65699c003c785a446acb448f857130c6, type: 3}
+  - name: BattleMusic
+    clip: {fileID: 8300000, guid: d7c3ec8634e116f4d9b80e4d4bbd8990, type: 3}
+  sfxSounds: []
+  musicSource: {fileID: 1724475358}
+  sfxSource: {fileID: 1632449875}
 --- !u!1 &754944641
 GameObject:
   m_ObjectHideFlags: 0
