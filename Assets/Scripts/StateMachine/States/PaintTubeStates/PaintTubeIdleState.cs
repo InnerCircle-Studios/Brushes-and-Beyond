@@ -18,7 +18,7 @@ public class PaintTubeIdleState : State {
 
     public override void UpdateState() {
         if (!isSittingDown) {
-            GetStateMachine().GetActor().GetAnimator().Play("Idle");
+            GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "Idle");
         }
 
         _PaintStateMachine.CheckPlayerInRange();
@@ -36,14 +36,14 @@ public class PaintTubeIdleState : State {
 
     private IEnumerator WaitForSitDown() {
         float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
-        GetStateMachine().GetActor().GetAnimator().Play("SitDown");
+        GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "SitDown");
         yield return new WaitForSeconds(0.66f);
         isSittingDown = false;
     }
 
     private IEnumerator WaitForStandup() {
         float animDuration = GetStateMachine().GetActor().GetAnimator().GetAnimationDuration();
-        GetStateMachine().GetActor().GetAnimator().Play("StandUp");
+        GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "StandUp");
         yield return new WaitForSeconds(animDuration + 0.20f);
     }
 

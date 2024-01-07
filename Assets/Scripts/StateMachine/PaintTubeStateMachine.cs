@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PaintTubeStateMachine : StateMachine
 {
-    public PaintTubeStateMachine(Actor actor, Player player) : base(actor)
+    public PaintTubeStateMachine(Actor actor, Player player, string colour) : base(actor)
     {
         AddState(new PaintTubeIdleState("PaintTubeIdleState", this));
         AddState(new PaintTubeWalkState("PaintTubeWalkState", this));
@@ -12,6 +12,8 @@ public class PaintTubeStateMachine : StateMachine
         ChangeState(GetState("PaintTubeIdleState"));
 
         InitSwitchCases();
+
+        _colour = colour;
 
         _PaintTube = GetActor() as PaintTube;
     }
@@ -32,6 +34,7 @@ public class PaintTubeStateMachine : StateMachine
 
     public Vector2 _currentMovement = new Vector2();
     public float _hostileRange = 10f;
+    public string _colour = "Red";
 
     public BoolWrapper _isInRange { get; set; } = new BoolWrapper(false);
     public BoolWrapper _isDead { get; set; } = new BoolWrapper(false);

@@ -18,7 +18,7 @@ public class PaintTubeSpawnState : State
     {
         GetStateMachine().GetActor().StartCoroutine(WaitForSpawn());
         GetStateMachine().GetActor().HandleRangedAttack();
-        GetStateMachine().GetActor().GetAnimator().Play("Spawn");
+        GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "Spawn");
     }
 
     public override void UpdateState()
