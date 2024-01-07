@@ -31431,6 +31431,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1003741325}
   windowManager: {fileID: 1792340912}
   player: {fileID: 2137030349}
+  brushy: {fileID: 1959386095}
 --- !u!1 &1356350374
 GameObject:
   m_ObjectHideFlags: 0
@@ -34391,11 +34392,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.96
+      value: -21.88
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.64
+      value: 26.2
       objectReference: {fileID: 0}
     - target: {fileID: 2990922300779350539, guid: 492e7e9500d9c5141bfb78228ed74042, type: 3}
       propertyPath: m_LocalPosition.z
