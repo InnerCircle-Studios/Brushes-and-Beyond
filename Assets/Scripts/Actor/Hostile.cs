@@ -25,7 +25,7 @@ public class Hostile : Actor {
     }
 
     public override void HandleRangedAttack() {
-
+        Instantiate(_projectile, transform.position, Quaternion.identity);
     }
 
     public Player GetPlayer() {
@@ -46,6 +46,7 @@ public class Hostile : Actor {
     private Player _Player;
     [SerializeField] private bool _isMelee = false;
     [SerializeField] private Colour _colour;
+    [SerializeField] private GameObject _projectile;
 
 
     public enum Colour {
