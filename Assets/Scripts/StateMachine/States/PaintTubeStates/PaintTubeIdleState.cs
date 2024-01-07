@@ -26,7 +26,7 @@ public class PaintTubeIdleState : State {
     }
 
     public override void ExitState() {
-        GetStateMachine().GetActor().StartCoroutine(WaitForStandup());
+        // GetStateMachine().GetActor().StartCoroutine(WaitForStandup());
     }
 
     public override void AddSwitchCases() {
