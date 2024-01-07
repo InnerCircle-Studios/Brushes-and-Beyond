@@ -1562,7 +1562,7 @@
   <object id="3013" gid="7220" x="185" y="1183" width="80" height="90"/>
   <object id="3014" gid="7221" x="177" y="1253" width="86" height="97"/>
   <object id="3015" gid="7221" x="171" y="1315" width="86" height="97"/>
-  <object id="3016" gid="7220" x="170" y="1362" width="80" height="90"/>
+  <object id="3016" gid="7220" x="177" y="1362" width="73" height="90"/>
   <object id="3017" gid="7221" x="173" y="1428" width="86" height="97"/>
   <object id="3018" gid="7221" x="179" y="1487" width="86" height="97"/>
   <object id="3019" gid="7221" x="170" y="1556" width="86" height="97"/>
