@@ -8,7 +8,7 @@ public class PlayerDeathState : State {
     }
 
     public override void EnterState() {
-
+        GameManager.Instance.GetWindowManager().ClearQuest();
     }
 
     public override void ExitState() {
