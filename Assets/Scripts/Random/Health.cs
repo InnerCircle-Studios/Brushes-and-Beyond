@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     public Image[] _hearts;
     public Sprite _fullHeart;
     public Sprite _halfHeart;
-    public Sprite _epmtyHearth;
+    public Sprite _emptyHearth;
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
             }
             else
             {
-                _hearts[i].sprite = _epmtyHearth;
+                _hearts[i].sprite = _emptyHearth;
             }
         }
     }
