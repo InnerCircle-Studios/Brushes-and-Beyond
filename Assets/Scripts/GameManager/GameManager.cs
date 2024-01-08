@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void Update(){
+        if (player.GetAttrubuteManager().IsAlive() == false){
+            windowManager.ShowWindow("GameOverMenu");
+            Time.timeScale = 0;
+        }
+    }
     
     public DialogueManager2 GetDialogueManager(){
         return dialogueManager;
@@ -35,6 +42,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGame(){
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void EndGame(){
