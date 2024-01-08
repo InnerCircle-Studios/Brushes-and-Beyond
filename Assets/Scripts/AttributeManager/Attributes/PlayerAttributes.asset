@@ -18,7 +18,7 @@ MonoBehaviour:
     Name: Vin
     Level: 1
     MaxHealth: 10
-    CurrentHealth: 4
+    CurrentHealth: 10
     Damage: 10
     AttackRange: 1.5
     Loot: {fileID: 0}
