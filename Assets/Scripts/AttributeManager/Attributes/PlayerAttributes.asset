@@ -22,6 +22,6 @@ MonoBehaviour:
     Damage: 10
     AttackRange: 1.5
     Loot: {fileID: 0}
-    Speed: 5
-    SprintSpeed: 8
+    Speed: 15
+    SprintSpeed: 25
     PaintCount: 0

@@ -32,7 +32,7 @@ public class InkyStartQuestStage2 : QuestStage {
                     new(GameManager.Instance.GetPlayer(), "Nice! Now let's make some friends!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
                     new(1,vanishevent ,true),
-                    new(99,UIevent ,true)
+                    new(1,UIevent ,true)
                 })
             }
         });
