@@ -67,7 +67,7 @@ public class QuestManager : MonoBehaviour {
 
 
     private void ChangeQuestState(string id, QuestState state) {
-        Debug.Log("[ ChangeQuestState  ]: " + id + " " + state);
+        Logger.Log("ChangeQuestState", id + " " + state);
         Quest quest = GetQuestByID(id);
         quest.State = state;
         QuestEvents.ChangeQuestState(quest);
@@ -110,7 +110,7 @@ public class QuestManager : MonoBehaviour {
         Dictionary<string, Quest> map = new();
         quests.ToList().ForEach(q => {
             if (map.ContainsKey(q.Id)) {
-                Debug.LogError($"Duplicate quest id: {q.Id}");
+                Logger.LogError("CreateQuestMap",$"Duplicate quest id: {q.Id}");
             }
             map.Add(q.Id, LoadQuest(q));
         });
@@ -120,7 +120,7 @@ public class QuestManager : MonoBehaviour {
     private Quest GetQuestByID(string id) {
         Quest quest = questMap[id];
         if (quest == null) {
-            Debug.LogError($"Quest with id {id} not found");
+            Logger.LogError("GetQuestByID", $"Quest with id {id} not found");
         }
         return quest;
     }
@@ -138,7 +138,7 @@ public class QuestManager : MonoBehaviour {
             PlayerPrefs.SetString(quest.Info.Id, jsonData);
         }
         catch (Exception e) {
-            Debug.LogError($" Failed to save quest: {quest.Info.Id} with error: {e}");
+            Logger.LogError("SaveQuest", $" Failed to save quest: {quest.Info.Id} with error: {e}");
         }
     }
 
@@ -155,7 +155,7 @@ public class QuestManager : MonoBehaviour {
             }
         }
         catch (Exception e) {
-            Debug.LogError($" Failed to load quest: {questInfo.Id} with error: {e}");
+            Logger.LogError("LoadQuest", $" Failed to load quest: {questInfo.Id} with error: {e}");
         }
         return quest;
     }
