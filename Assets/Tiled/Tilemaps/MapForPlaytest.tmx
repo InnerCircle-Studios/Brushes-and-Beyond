@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="49" nextobjectid="3303">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="49" nextobjectid="3304">
  <tileset firstgid="1" source="../Tilesets/Objects_Buildings.tsx"/>
  <tileset firstgid="43" source="../Tilesets/Objects_Props.tsx"/>
  <tileset firstgid="201" source="../Tilesets/Objects_Rocks.tsx"/>
@@ -1302,6 +1302,7 @@
   <object id="3300" gid="7216" x="929" y="1465" width="16" height="16"/>
   <object id="3301" gid="7216" x="1028.5" y="1437" width="16" height="16"/>
   <object id="3302" gid="7216" x="1043.5" y="1468.5" width="16" height="16"/>
+  <object id="3303" gid="7216" x="850" y="922" width="16" height="16"/>
  </objectgroup>
  <layer id="8" name="RockSlopes" width="200" height="200" visible="0">
   <data encoding="csv">
@@ -1553,9 +1554,9 @@
   <object id="3003" gid="7223" x="450" y="1693" width="79" height="90"/>
   <object id="3004" gid="7210" x="798.5" y="554.75" width="26" height="25"/>
   <object id="3005" gid="7210" x="787" y="590.667" width="26" height="25"/>
-  <object id="3006" gid="7212" x="782.333" y="602" width="16" height="16"/>
-  <object id="3007" gid="7213" x="796" y="621.333" width="16" height="16"/>
-  <object id="3008" gid="7214" x="766" y="621" width="16" height="16"/>
+  <object id="3006" gid="7212" x="783.333" y="602" width="16" height="16"/>
+  <object id="3007" gid="7213" x="798" y="633.333" width="16" height="16"/>
+  <object id="3008" gid="7214" x="765" y="625" width="16" height="16"/>
   <object id="3010" gid="7218" x="757.5" y="556.5" width="26" height="25"/>
   <object id="3011" gid="7221" x="184" y="1071" width="86" height="97"/>
   <object id="3012" gid="7220" x="187" y="1129" width="80" height="90"/>
@@ -1645,7 +1646,6 @@
   <object id="3201" gid="7212" x="822.667" y="897.333" width="16" height="16"/>
   <object id="3202" gid="7213" x="772.667" y="943.333" width="16" height="16"/>
   <object id="3203" gid="7215" x="834.333" y="997.333" width="16" height="16"/>
-  <object id="3204" gid="7216" x="852" y="926.667" width="16" height="16"/>
   <object id="3205" gid="7188" x="840.667" y="867.667" width="80" height="90"/>
   <object id="3206" gid="7188" x="920.667" y="871.667" width="80" height="90"/>
   <object id="3213" gid="7217" x="772.333" y="811.333" width="26" height="25"/>
