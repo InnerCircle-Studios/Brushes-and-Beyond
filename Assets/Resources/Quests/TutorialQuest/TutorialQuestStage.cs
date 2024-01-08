@@ -15,7 +15,7 @@ public class TutorialQuestStage : QuestStage {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetBrushy(), "Welcome to the tutorial!", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "This is a tutorial quest, it will teach you the basics of the game.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can move around with WASD or the arrow keys.",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "You can move around with WASD.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing E",DialogueActorMood.HAPPY),
