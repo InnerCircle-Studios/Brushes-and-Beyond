@@ -16,14 +16,16 @@ public class Interactable : MonoBehaviour {
 
     private void OnEnable() {
         QuestEvents.OnChangeDialogue += ChangeDialogue;
+        QuestEvents.OnOverrideBaseDialogue += OverrideBaseDialogue;
         activationKey = gameObject.GetComponent<SpriteRenderer>();
         gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void OnDisable() {
         QuestEvents.OnChangeDialogue -= ChangeDialogue;
+        QuestEvents.OnOverrideBaseDialogue -= OverrideBaseDialogue;
     }
-    
+
     private void ChangeDialogue(Dictionary<string, DialogueSet> data) {
         if (data.ContainsKey(gameObject.name)) {
             questDialogueSet = data[gameObject.name];
@@ -33,9 +35,18 @@ public class Interactable : MonoBehaviour {
         }
     }
 
+    private void OverrideBaseDialogue(Dictionary<string, DialogueSet> data) {
+        if (data.ContainsKey(gameObject.name)) {
+            dialogueSet = data[gameObject.name];
+        }
+        else if (transform.parent != null && data.ContainsKey(transform.parent.gameObject.name)) {
+            dialogueSet = data[transform.parent.gameObject.name];
+        }
+    }
+
     public void ActivateIndicator() {
         activationKey.enabled = true;
-        if(questDialogueSet != null) {
+        if (questDialogueSet != null) {
             gameManager.GetDialogueManager().SetActiveDialogue(questDialogueSet);
         }
         else if (dialogueSet != null) {

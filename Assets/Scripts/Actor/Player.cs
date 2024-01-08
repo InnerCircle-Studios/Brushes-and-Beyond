@@ -50,8 +50,10 @@ public class Player : Actor {
     }
 
     private void HandlePaintAdded(int amount) {
-        if (!(_AttributeManager.GetAttributes().PaintCount + amount > 3)) {
-            _AttributeManager.GetAttributes().PaintCount += amount;
+        int newAmount = _AttributeManager.GetAttributes().PaintCount + amount;
+        if (!(newAmount > 3)) {
+            
+            _AttributeManager.SetPaint(newAmount);
         }
     }
 
@@ -85,7 +87,7 @@ public class Player : Actor {
         // Find the closest interactable in a circle arround the player.
         foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, 10, Vector2.zero)) {
             if (hit.transform.gameObject.TryGetComponent<Interactable>(out Interactable interactable)) {
-                if (interactable.isActiveAndEnabled){
+                if (interactable.isActiveAndEnabled) {
                     float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
                     float interactionRange = interactable.GetInteractionRange();
                     if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {

@@ -48,7 +48,7 @@ public class InkyStartQuestStage2 : QuestStage {
 
     private void OnWallVanished(string name) {
         if (name == blockadeName) {
-            GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().PaintCount = 0;
+            GameManager.Instance.GetPlayer().GetAttrubuteManager().SetPaint(0);
             hasVanished = true;
             CheckCompleted();
         }

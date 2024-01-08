@@ -43,7 +43,7 @@ public class InkyStartQuestStage : QuestStage {
     }
 
     private void InkyGivePaint() {
-        GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().PaintCount = 3;
+        GameManager.Instance.GetPlayer().GetAttrubuteManager().SetPaint(3);
         isDoneTalking = true;
         CheckCompleted();
     }

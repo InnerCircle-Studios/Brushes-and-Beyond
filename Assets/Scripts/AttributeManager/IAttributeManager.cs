@@ -5,4 +5,6 @@ public interface IAttributeManager {
     public void ApplyDamage(int hp);
 
     public void ApplyHeal(int hp);
+
+    public void SetPaint(int paintLevel);
 }

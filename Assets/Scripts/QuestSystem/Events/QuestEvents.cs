@@ -26,4 +26,7 @@ public static class QuestEvents {
     public static event Action<Dictionary<string, DialogueSet>> OnChangeDialogue;
     public static void ChangeDialogue(Dictionary<string, DialogueSet> data) => OnChangeDialogue?.Invoke(data);
 
+    public static event Action<Dictionary<string, DialogueSet>> OnOverrideBaseDialogue;
+    public static void OverrideBaseDialogue(Dictionary<string, DialogueSet> data) => OnOverrideBaseDialogue?.Invoke(data);
+
 }

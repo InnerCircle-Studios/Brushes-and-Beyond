@@ -35,6 +35,14 @@ public class TutorialQuestStage : QuestStage {
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", null }
         });
+        // Override base dialogue to avoid repeating the tutorial start sequence when a quest resets Brushy's dialogue
+        QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() { 
+            { "Brushy", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetBrushy(), "Hi vin!", DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){
+                })
+            }
+        });
 
         EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);

@@ -40,7 +40,7 @@ public class FirstPaintQuestStage : QuestStage {
     }
 
     private void OnPaintBucketActivated(int amount) {
-        paintCounter += amount;
+        paintCounter++;
         CheckCompleted();
     }
 
