@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private WindowManager windowManager;
     [SerializeField] private Player player;
     [SerializeField] private Actor brushy;
+    [SerializeField] private Actor inky;
 
     public static GameManager Instance { get; private set; }
 
@@ -32,6 +33,9 @@ public class GameManager : MonoBehaviour {
 
     public Actor GetBrushy(){
         return brushy;
+    }
+    public Actor GetInky(){
+        return inky;
     }
 
     public void RestartGame(){

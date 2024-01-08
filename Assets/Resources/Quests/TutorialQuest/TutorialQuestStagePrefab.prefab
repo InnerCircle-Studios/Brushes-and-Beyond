@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4595447316983050503}
   - component: {fileID: 4349905185025475597}
   m_Layer: 0
-  m_Name: TutorialQuestPrefab
+  m_Name: TutorialQuestStagePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

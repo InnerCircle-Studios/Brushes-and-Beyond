@@ -39,6 +39,8 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+
+        // Start the next quest
         QuestEvents.StartQuest("FirstPaintQuest");
     }
 

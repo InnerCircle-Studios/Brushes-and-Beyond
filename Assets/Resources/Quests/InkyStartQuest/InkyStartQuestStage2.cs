@@ -4,44 +4,46 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class FirstPaintQuestStage2 : QuestStage {
-    string blockadeName = "FirstPaintQuestBlockade";
+public class InkyStartQuestStage2 : QuestStage {
+    string blockadeName = "InkyStartQuestBlockade";
     private bool hasVanished = false;
+
     private void OnEnable() {
         // Load dialogue for character during quest 
+
+
         EventWrapper vanishevent = new();
         vanishevent.AddListener(() => InteractionEvents.HideObject(blockadeName));
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
-            { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "You have enough paint! Go fill in the blank spot over there", DialogueActorMood.HAPPY),
-                }, new List<DialogueAction>(){
-
-                })
+            { "Inky", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetInky(), "Are you doing it right?", DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){})
             },
-            { "Blockade 1", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetPlayer(), "...", DialogueActorMood.HAPPY),
+            { "Blockade 2", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetPlayer(), "That weird guy gave me some paint, lets see if that trick works a second time.", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "...", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "Nice! Now let's make some friends!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
-                    new(0,vanishevent ,true)
+                    new(1,vanishevent ,true)
                 })
             }
         });
         InteractionEvents.OnHideObject += OnWallVanished;
     }
 
+
     private void OnDisable() {
         // Reset dialogue back to default
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
-            { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
-                }, new List<DialogueAction>(){
-
-                })
+            { "Inky", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetInky(), "Yay you did it!", DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){})
             },
-            { "Blockade 1", null }
+            { "Blockade 2", null }
         });
-        QuestEvents.StartQuest("InkyStartQuest");
+
     }
 
     private void OnWallVanished(string name) {
@@ -56,6 +58,7 @@ public class FirstPaintQuestStage2 : QuestStage {
     private void CheckCompleted() {
         UpdateState();
         if (hasVanished) {
+            GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().Level = 3;
             FinishStage();
         }
     }
