@@ -7,6 +7,11 @@ public class Blockade : MonoBehaviour {
         InteractionEvents.OnHideObject += OnHideObject;
     }
 
+    private void OnDestroy() {
+        InteractionEvents.OnShowObject -= OnShowObject;
+        InteractionEvents.OnHideObject -= OnHideObject;
+    }
+
     private void OnShowObject(string name) {
         if (name == blockadeName) {
             gameObject.SetActive(true);
