@@ -10,6 +10,7 @@ public class WindowManager : MonoBehaviour {
     [SerializeField] private List<TextWindow> textWindows;
 
     [SerializeField] private DialogueBox dialogueBox;
+    [SerializeField] private QuestBox questBox;
     // insert custom classes for tutorial etc (or make them static)
 
     private void Awake() {
@@ -44,6 +45,26 @@ public class WindowManager : MonoBehaviour {
         dialogueBox.gameObject.SetActive(false);
     }
 
+    // QuestMenu
+    public void SetQuestName(string name){
+        questBox.SetName(name);
+    }
+    public void SetQuestObjectives(string text){
+        questBox.SetObjectives(text);
+    }
+    public void AddQuestObjective(string text){
+        questBox.AddObjective(text);
+    }
+    public void ClearQuest(){
+        questBox.SetName("");
+        questBox.SetObjectives("");
+    }
+    public void ShowQuestMenu(){
+        questBox.gameObject.SetActive(true);
+    }
+    public void HideQuestMenu(){
+        questBox.gameObject.SetActive(false);
+    }
 
     // static screens
     public void ShowWindow(string window) {

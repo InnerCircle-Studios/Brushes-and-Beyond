@@ -11,6 +11,10 @@ public class TutorialQuestStage : QuestStage {
 
     private void OnEnable() {
         // Load dialogue for character during quest 
+        EventWrapper dialogueEvent = new();
+        dialogueEvent.AddListener(() => OnQuestShow());
+
+
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetBrushy(), "Welcome to the tutorial!", DialogueActorMood.HAPPY),
@@ -21,7 +25,9 @@ public class TutorialQuestStage : QuestStage {
                     new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing E",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Good luck!",DialogueActorMood.HAPPY),
-                }, new List<DialogueAction>())
+                }, new List<DialogueAction>(){
+                    new(99,dialogueEvent,true)
+                })
             }
         });
 
@@ -36,7 +42,7 @@ public class TutorialQuestStage : QuestStage {
             { "Brushy", null }
         });
         // Override base dialogue to avoid repeating the tutorial start sequence when a quest resets Brushy's dialogue
-        QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() { 
+        QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetBrushy(), "Hi vin!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
@@ -50,6 +56,14 @@ public class TutorialQuestStage : QuestStage {
 
         // Start the next quest
         QuestEvents.StartQuest("FirstPaintQuest");
+    }
+
+    private void OnQuestShow() {
+        WindowManager wm = GameManager.Instance.GetWindowManager();
+        wm.ShowQuestMenu();
+        wm.SetQuestName("TutorialQuest");
+        wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
+
     }
 
     private void OnMove(Vector2 a) {
@@ -72,8 +86,10 @@ public class TutorialQuestStage : QuestStage {
 
     private void CheckCompleted() {
         UpdateState();
+        OnQuestShow();
         if (hasMoved && hasAttacked && hasSprinted) {
             GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().Level = 2;
+            GameManager.Instance.GetWindowManager().ClearQuest();
             FinishStage();
         }
     }
