@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void Update(){
+        if (player.GetAttrubuteManager().IsAlive() == false){
+            windowManager.ShowWindow("GameOverMenu");
+        }
+    }
     
     public DialogueManager2 GetDialogueManager(){
         return dialogueManager;
