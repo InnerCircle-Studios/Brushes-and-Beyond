@@ -6,24 +6,38 @@ using UnityEngine;
 
 public class FirstPaintQuestStage : QuestStage {
     private int paintCounter = 0;
+    WindowManager wm;
 
     private void OnEnable() {
         // Load dialogue for character during quest 
 
+        wm = GameManager.Instance.GetWindowManager();
+        wm.ShowQuestMenu();
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Talk with Brushy");
+
+        EventWrapper hideQuestUI = new();
+        hideQuestUI.AddListener(() => wm.ClearQuest());
+
         EventWrapper showevent = new();
         showevent.AddListener(() => InteractionEvents.ShowObject("FirstPaintQuestBuckets"));
+
+        EventWrapper updateQuestUI = new();
+        updateQuestUI.AddListener(() => SetPaintBucketCollectionUI());
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetBrushy(), "Now that you have completed the tutorial, we can start with painting!", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Grab these three paintbuckets and fill in the blank spot.",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
-                    new(1,showevent ,true)
+                    new(0, hideQuestUI,true),
+                    new(1,showevent ,true),
+                    new(1,updateQuestUI,true)
                 })
             },
             { "Blockade 1", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetPlayer(), "I don't have enough paint :(", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetPlayer(), "Maybe those buckets contain some?",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetPlayer(), "Maybe Brushy has some",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>())
             }
         });
@@ -39,8 +53,14 @@ public class FirstPaintQuestStage : QuestStage {
 
     }
 
+    private void SetPaintBucketCollectionUI(){
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
+    }
+
     private void OnPaintBucketActivated(int amount) {
         paintCounter++;
+        SetPaintBucketCollectionUI();
         CheckCompleted();
     }
 

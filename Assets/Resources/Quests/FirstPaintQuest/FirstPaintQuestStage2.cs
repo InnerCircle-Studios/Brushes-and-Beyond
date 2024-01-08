@@ -7,8 +7,15 @@ using UnityEngine;
 public class FirstPaintQuestStage2 : QuestStage {
     string blockadeName = "FirstPaintQuestBlockade";
     private bool hasVanished = false;
+    WindowManager wm;
+
     private void OnEnable() {
         // Load dialogue for character during quest 
+        wm = GameManager.Instance.GetWindowManager();
+        wm.ShowQuestMenu();
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Fill in the blank spot");
+
         EventWrapper vanishevent = new();
         vanishevent.AddListener(() => InteractionEvents.HideObject(blockadeName));
 
@@ -56,6 +63,7 @@ public class FirstPaintQuestStage2 : QuestStage {
     private void CheckCompleted() {
         UpdateState();
         if (hasVanished) {
+            wm.ClearQuest();
             FinishStage();
         }
     }
