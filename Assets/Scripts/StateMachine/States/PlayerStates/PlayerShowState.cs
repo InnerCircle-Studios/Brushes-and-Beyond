@@ -9,7 +9,7 @@ public class PlayerShowState : State {
 
     public override void AwakeState() {
         AddSwitchCases();
-        windowManager = _PlayerStateMachine.GetActor().GetGameManager().GetWindowManager();
+        windowManager = GameManager.Instance.GetWindowManager();
     }
 
     public override void EnterState() {
