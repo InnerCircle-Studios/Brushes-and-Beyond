@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour {
     private void OnEnable() {
         QuestEvents.OnChangeDialogue += ChangeDialogue;
         QuestEvents.OnOverrideBaseDialogue += OverrideBaseDialogue;
-        activationKey = gameObject.GetComponent<SpriteRenderer>();
+        activationKey = gameObject.GetComponentInChildren<SpriteRenderer>();
         gameManager = FindAnyObjectByType<GameManager>();
     }
 
