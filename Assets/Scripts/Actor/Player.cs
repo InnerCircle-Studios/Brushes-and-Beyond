@@ -18,7 +18,7 @@ public class Player : Actor {
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
         }
-        _PlayerStateMachine.GetActor().GetGameManager().GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
+        GameManager.Instance.GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
 

@@ -25,6 +25,9 @@ public class FirstPaintQuestStage : QuestStage {
         EventWrapper updateQuestUI = new();
         updateQuestUI.AddListener(() => SetPaintBucketCollectionUI());
 
+        EventWrapper updateDialogue = new();
+        updateDialogue.AddListener(() => UpdateDialogueAfterConversation());
+
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetBrushy(), "Now that you have completed the tutorial, we can start with painting!", DialogueActorMood.HAPPY),
@@ -32,13 +35,9 @@ public class FirstPaintQuestStage : QuestStage {
                 }, new List<DialogueAction>(){
                     new(0, hideQuestUI,true),
                     new(1,showevent ,true),
-                    new(1,updateQuestUI,true)
+                    new(1,updateQuestUI,true),
+                    new(99,updateDialogue,true)
                 })
-            },
-            { "Blockade 1", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetPlayer(), "I don't have enough paint :(", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetPlayer(), "Maybe Brushy has some",DialogueActorMood.HAPPY),
-                }, new List<DialogueAction>())
             }
         });
         InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
@@ -53,30 +52,41 @@ public class FirstPaintQuestStage : QuestStage {
 
     }
 
-    private void SetPaintBucketCollectionUI(){
-        wm.SetQuestName("Painting");
-        wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
+    private void UpdateDialogueAfterConversation() {
+        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
+        {
+            "Blockade 1", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetPlayer(), "I don't have enough paint :(", DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetPlayer(), "Maybe Brushy has some?",DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>())
+            }
+        });
     }
 
-    private void OnPaintBucketActivated(int amount) {
-        paintCounter++;
-        SetPaintBucketCollectionUI();
-        CheckCompleted();
-    }
-
-
-    private void CheckCompleted() {
-        UpdateState();
-        if (paintCounter >= 3) {
-            InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
-            FinishStage();
+    private void SetPaintBucketCollectionUI() {
+            wm.SetQuestName("Painting");
+            wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
         }
-    }
 
-    private void UpdateState() {
-        string data = JsonUtility.ToJson(new StupidJSONWrapper(new int[] { paintCounter }));
-        ChangeState(data);
-    }
+        private void OnPaintBucketActivated(int amount) {
+            paintCounter++;
+            SetPaintBucketCollectionUI();
+            CheckCompleted();
+        }
+
+
+        private void CheckCompleted() {
+            UpdateState();
+            if (paintCounter >= 3) {
+                InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
+                FinishStage();
+            }
+        }
+
+        private void UpdateState() {
+            string data = JsonUtility.ToJson(new StupidJSONWrapper(new int[] { paintCounter }));
+            ChangeState(data);
+        }
 
     protected override void SetQuestStageState(string state) {
         int[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;

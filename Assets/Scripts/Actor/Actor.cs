@@ -52,7 +52,7 @@ public abstract class Actor : MonoBehaviour {
     }
 
     public GameManager GetGameManager() {
-        return FindObjectOfType<GameManager>();
+        return GameManager.Instance;
     }
 
     public void HandleWalk(Vector2 desiredMovement) {

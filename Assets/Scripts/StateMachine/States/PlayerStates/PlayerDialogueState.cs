@@ -25,7 +25,7 @@ public class PlayerDialogueState : State {
         CheckSwitchStates();
 
         if (_PlayerStateMachine._IsInteractPressed.Value && !hasCooldown && letInteractGo) {
-            _PlayerStateMachine.GetActor().GetGameManager().GetDialogueManager().NextEntry();
+           GameManager.Instance.GetDialogueManager().NextEntry();
             _PlayerStateMachine.GetActor().StartCoroutine(Cooldown());
             letInteractGo = false; // Avoids skipping the dialogue when the player holds the interact button.
         }
