@@ -30,7 +30,7 @@ public class QuestManager : MonoBehaviour {
 
     private void Awake() {
         questMap = CreateQuestMap();
-        player = FindAnyObjectByType<GameManager>().GetPlayer();
+        player = FindAnyObjectByType<Player>();
     }
 
     private void Start() {
