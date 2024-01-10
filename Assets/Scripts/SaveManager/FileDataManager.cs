@@ -6,10 +6,13 @@ using UnityEngine;
 public class FileDataManager {
     private string dataDir = "";
     private string fileName = "";
+    private bool useEncryption = false;
+    private readonly string encryptionKey = "Blood_For_The_Blood_God";
 
-    public FileDataManager(string dataDir, string fileName) {
+    public FileDataManager(string dataDir, string fileName, bool useEncryption) {
         this.dataDir = dataDir;
         this.fileName = fileName;
+        this.useEncryption = useEncryption;
     }
 
     public GameData Load() {
@@ -20,6 +23,9 @@ public class FileDataManager {
                 using FileStream stream = new(savePath, FileMode.Open);
                 using StreamReader reader = new(stream);
                 string json = reader.ReadToEnd();
+                if (useEncryption) {
+                    json = EncryptDecrypt(json);
+                }
                 return JsonUtility.FromJson<GameData>(json);
             }
             else {
@@ -41,6 +47,9 @@ public class FileDataManager {
 
             string jsonToSave = JsonUtility.ToJson(data, true);
 
+            if (useEncryption) {
+                jsonToSave = EncryptDecrypt(jsonToSave);
+            }
             using FileStream stream = new(savePath, FileMode.Create);
             using StreamWriter writer = new(stream);
             writer.Write(jsonToSave);
@@ -52,6 +61,12 @@ public class FileDataManager {
         }
     }
 
-
+    private string EncryptDecrypt(string data) {
+        string result = "";
+        for (int i = 0; i < data.Length; i++) {
+            result += (char)(data[i] ^ encryptionKey[(i % encryptionKey.Length)]);
+        }
+        return result;
+    }
 
 }

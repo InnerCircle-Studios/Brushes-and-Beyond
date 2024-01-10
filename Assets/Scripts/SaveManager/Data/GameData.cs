@@ -5,9 +5,8 @@ using UnityEngine;
 
 [Serializable]
 public class GameData {
-    public Vector3 PlayerPosition;
+    public PlayerData PlayerData = new();
     public SerializableDict<string, bool> Toggles = new();
     public GameData() {
-        PlayerPosition = Vector3.zero;
     }
 }

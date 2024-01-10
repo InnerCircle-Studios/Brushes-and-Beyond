@@ -95,13 +95,13 @@ public class Player : Actor, ISaveable {
     }
 
     public void LoadData(GameData data) {
-        if (data.PlayerPosition != Vector3.zero) {
-            transform.position = data.PlayerPosition;
+        if (data.PlayerData.PlayerPosition != Vector3.zero) {
+            transform.position = data.PlayerData.PlayerPosition;
         }
     }
 
     public void SaveData(GameData data) {
-        data.PlayerPosition = transform.position;
+        data.PlayerData.PlayerPosition = transform.position;
     }
 
     private PlayerStateMachine _PlayerStateMachine;

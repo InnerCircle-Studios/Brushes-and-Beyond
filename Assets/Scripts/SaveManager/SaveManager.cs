@@ -6,6 +6,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour {
     [Header("Saving config")]
     [SerializeField] private string filename = "brushes";
+    [SerializeField] private bool useEncryption = false;
 
     private GameData gameData;
     private List<ISaveable> saveables;
@@ -25,7 +26,7 @@ public class SaveManager : MonoBehaviour {
     }
 
     private void Start() {
-        dataManager = new FileDataManager(Application.persistentDataPath, filename + ".WDF");
+        dataManager = new FileDataManager(Application.persistentDataPath, filename + ".WDF", useEncryption);
         saveables = FindAllSaveables();
         LoadGame();    // Remove after testing
     }
