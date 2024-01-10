@@ -110,7 +110,7 @@ public class QuestManager : MonoBehaviour {
         Dictionary<string, Quest> map = new();
         quests.ToList().ForEach(q => {
             if (map.ContainsKey(q.Id)) {
-                Logger.LogError("CreateQuestMap",$"Duplicate quest id: {q.Id}");
+                Logger.LogError("CreateQuestMap", $"Duplicate quest id: {q.Id}");
             }
             map.Add(q.Id, LoadQuest(q));
         });

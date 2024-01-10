@@ -31,7 +31,7 @@ public class DialogueBox : MonoBehaviour {
 
     private void HandleCharacters(Actor actor) {
         //TODO add logic to switch the box to the left or right side of the screen.
-        if (actor.GetAttrubuteManager().GetAttributes().Type == ActorType.Player) {
+        if (actor.GetAttrubuteManager().GetAttributes().Type == ActorType.PLAYER) {
             // switch the box to the left side of the screen.
         }
         else {

@@ -84,7 +84,6 @@ public class Player : Actor, ISaveable {
                         smallestDistance = distanceBetweenTargets;
                     }
                 }
-
             }
         }
         return closestInteractable;
@@ -98,10 +97,14 @@ public class Player : Actor, ISaveable {
         if (data.PlayerData.PlayerPosition != Vector3.zero) {
             transform.position = data.PlayerData.PlayerPosition;
         }
+        if (data.PlayerData.PlayerAttributes.Type == ActorType.PLAYER) {
+            GetAttrubuteManager().Setattributes(data.PlayerData.PlayerAttributes);
+        }
     }
 
     public void SaveData(GameData data) {
         data.PlayerData.PlayerPosition = transform.position;
+        data.PlayerData.PlayerAttributes = GetAttrubuteManager().GetAttributes();
     }
 
     private PlayerStateMachine _PlayerStateMachine;
