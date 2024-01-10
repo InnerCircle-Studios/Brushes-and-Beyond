@@ -22,7 +22,7 @@ public class TutorialQuestStage : QuestStage {
                     new(GameManager.Instance.GetBrushy(), "You can move around with WASD.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing E",DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing <sprite=\"Ekey\" index=0>",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetBrushy(), "Good luck!",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){

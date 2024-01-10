@@ -2,7 +2,7 @@ using System.Collections;
 
 using UnityEngine;
 
-public class Campfire : MonoBehaviour {
+public class Campfire : MonoBehaviour, ISaveable {
     [SerializeField] private bool isLit = false;
     [SerializeField] private Sprite defaultSprite;
     private Animator animator;
@@ -33,5 +33,13 @@ public class Campfire : MonoBehaviour {
         isOnCooldown = true;
         yield return new WaitForSeconds(0.1f);
         isOnCooldown = false;
+    }
+
+    public void LoadData(GameData data) {
+        data.Toggles.TryGetValue("CampfireLit", out isLit);
+    }
+
+    public void SaveData(GameData data) {
+       data.Toggles["CampfireLit"] = isLit;
     }
 }

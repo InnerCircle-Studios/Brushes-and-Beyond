@@ -64,29 +64,29 @@ public class FirstPaintQuestStage : QuestStage {
     }
 
     private void SetPaintBucketCollectionUI() {
-            wm.SetQuestName("Painting");
-            wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
-        }
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
+    }
 
-        private void OnPaintBucketActivated(int amount) {
-            paintCounter++;
-            SetPaintBucketCollectionUI();
-            CheckCompleted();
-        }
+    private void OnPaintBucketActivated(int amount) {
+        paintCounter++;
+        SetPaintBucketCollectionUI();
+        CheckCompleted();
+    }
 
 
-        private void CheckCompleted() {
-            UpdateState();
-            if (paintCounter >= 3) {
-                InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
-                FinishStage();
-            }
+    private void CheckCompleted() {
+        UpdateState();
+        if (paintCounter >= 3) {
+            InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
+            FinishStage();
         }
+    }
 
-        private void UpdateState() {
-            string data = JsonUtility.ToJson(new StupidJSONWrapper(new int[] { paintCounter }));
-            ChangeState(data);
-        }
+    private void UpdateState() {
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(new int[] { paintCounter }));
+        ChangeState(data);
+    }
 
     protected override void SetQuestStageState(string state) {
         int[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;

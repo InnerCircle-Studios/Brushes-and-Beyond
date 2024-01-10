@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public class Player : Actor {
+public class Player : Actor, ISaveable {
 
     public override void Start() {
-        HandleSceneLoad();
         _PlayerStateMachine = new PlayerStateMachine(this);
         InteractionEvents.OnPaintBucketActivated += HandlePaintAdded;
     }
@@ -52,19 +51,9 @@ public class Player : Actor {
     private void HandlePaintAdded(int amount) {
         int newAmount = _AttributeManager.GetAttributes().PaintCount + amount;
         if (!(newAmount > 3)) {
-            
+
             _AttributeManager.SetPaint(newAmount);
         }
-    }
-
-
-    private void HandleSceneLoad() {
-        // Set vin to his spawn location if defined in the scene.
-        SpawnPoint point = FindObjectsOfType<SpawnPoint>().Where(e => e.GetSpawnType() == SpawnType.PLAYER).First();
-        if (point) {
-            transform.position = point.transform.position;
-        }
-
     }
 
     private void HandleInteractions() {
@@ -103,6 +92,16 @@ public class Player : Actor {
 
     public void OnDeath() {
         EventBus.TriggerEvent(EventBusEvents.EventName.DEATH_EVENT, true);
+    }
+
+    public void LoadData(GameData data) {
+        if (data.PlayerPosition != Vector3.zero) {
+            transform.position = data.PlayerPosition;
+        }
+    }
+
+    public void SaveData(GameData data) {
+        data.PlayerPosition = transform.position;
     }
 
     private PlayerStateMachine _PlayerStateMachine;
