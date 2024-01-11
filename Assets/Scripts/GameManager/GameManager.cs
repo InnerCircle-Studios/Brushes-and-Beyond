@@ -18,38 +18,48 @@ public class GameManager : MonoBehaviour {
         }
         else {
             Destroy(gameObject);
+            return;
         }
     }
 
-    private void Update(){
-        if (player.GetAttrubuteManager().IsAlive() == false){
+    private void Update() {
+        if (player.GetAttrubuteManager().IsAlive() == false) {
             windowManager.ShowWindow("GameOverMenu");
         }
     }
-    
-    public DialogueManager2 GetDialogueManager(){
+
+    public DialogueManager2 GetDialogueManager() {
         return dialogueManager;
     }
 
-    public WindowManager GetWindowManager(){
+    public WindowManager GetWindowManager() {
         return windowManager;
     }
 
-    public Player GetPlayer(){
+    public Player GetPlayer() {
         return player;
     }
 
-    public Actor GetBrushy(){
+    public Actor GetBrushy() {
         return brushy;
     }
-    public Actor GetInky(){
+    public Actor GetInky() {
         return inky;
     }
 
-    public void RestartGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public void RestartGame() {
+        SaveManager.Instance.NewGame();
+        SaveManager.Instance.SaveGame();
+        SceneManager.LoadScene("GameScene");
     }
-    public void EndGame(){
-        Application.Quit();
+
+    public void ReturnToMainMenu() {
+        SaveManager.Instance.SaveGame();
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void EndGame() {
+        SaveManager.Instance.SaveGame();
+        SceneManager.LoadSceneAsync(0);
     }
 }

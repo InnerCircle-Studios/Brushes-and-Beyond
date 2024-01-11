@@ -2,8 +2,6 @@ using System;
 
 using TMPro;
 
-using UnityEngine;
-
 [Serializable]
 public class TextWindow {
     public string Name;

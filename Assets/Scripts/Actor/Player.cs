@@ -20,18 +20,6 @@ public class Player : Actor, ISaveable {
         GameManager.Instance.GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
-
-        if (Input.GetKeyDown(KeyCode.I)) {
-            string jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
-            Debug.Log(jsontext);
-            CharacterData newAttributes = JsonUtility.FromJson<CharacterData>(jsontext);
-            GetAttrubuteManager().Setattributes(newAttributes);
-            jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
-            Debug.Log(jsontext);
-
-            // DontDestroyOnLoad(gameObject);
-            // SceneManager.LoadScene("MazeScene");
-        }
     }
 
     public override void HandleMeleeAttack() {
@@ -105,6 +93,7 @@ public class Player : Actor, ISaveable {
     public void SaveData(GameData data) {
         data.PlayerData.PlayerPosition = transform.position;
         data.PlayerData.PlayerAttributes = GetAttrubuteManager().GetAttributes();
+        data.PlayerData.SceneName = SceneManager.GetActiveScene().name;
     }
 
     private PlayerStateMachine _PlayerStateMachine;

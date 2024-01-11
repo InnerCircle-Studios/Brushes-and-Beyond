@@ -6,6 +6,6 @@ public static class Logger {
     }
 
     public static void LogError(string name, string message) {
-        Debug.LogError($"<color=silver>[  <color=red>{name}</color>  ]: " + message+"</color>");
+        Debug.Log($"<color=silver>[  <color=red>{name}</color>  ]: " + message+"</color>");
     }
 }
