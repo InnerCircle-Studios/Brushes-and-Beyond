@@ -36,7 +36,6 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
-        
     }
 
     private void Start() {
@@ -67,12 +66,14 @@ public class TutorialQuestStage : QuestStage {
         QuestEvents.StartQuest("FirstPaintQuest");
     }
 
+
     private void OnQuestShow() {
         WindowManager wm = GameManager.Instance.GetWindowManager();
         wm.ShowQuestMenu();
         wm.SetQuestName("TutorialQuest");
         wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
     }
+
 
     private void OnMove(Vector2 a) {
         hasMoved = true;
@@ -92,6 +93,7 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
     }
 
+
     private void CheckCompleted() {
         UpdateState();
         OnQuestShow();
@@ -106,6 +108,8 @@ public class TutorialQuestStage : QuestStage {
         string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasMoved, hasAttacked, hasSprinted, dialogueFinished }));
         ChangeState(data);
     }
+
+
 
     protected override void SetQuestStageState(string state) {
         bool[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;

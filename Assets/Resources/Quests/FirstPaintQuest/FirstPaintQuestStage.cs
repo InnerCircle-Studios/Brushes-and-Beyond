@@ -60,6 +60,11 @@ public class FirstPaintQuestStage : QuestStage {
         }
     }
 
+    private void SetPaintBucketCollectionUI() {
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
+    }
+
     private void UpdateDialogueAfterConversation() {
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
@@ -72,11 +77,6 @@ public class FirstPaintQuestStage : QuestStage {
                 }, new List<DialogueAction>())
             }
         });
-    }
-
-    private void SetPaintBucketCollectionUI() {
-        wm.SetQuestName("Painting");
-        wm.SetQuestObjectives($"* Collect the buckets : {paintCounter}/3");
     }
 
     private void OnPaintBucketActivated(int amount) {

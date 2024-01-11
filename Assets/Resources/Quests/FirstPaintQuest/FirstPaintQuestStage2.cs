@@ -48,8 +48,17 @@ public class FirstPaintQuestStage2 : QuestStage {
             },
             { "Blockade 1", null }
         });
+        QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
+            { "Brushy", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetBrushy(), "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){
+
+                })
+            }
+        });
         QuestEvents.StartQuest("InkyStartQuest");
     }
+
 
     private void OnWallVanished(string name) {
         if (name == blockadeName) {
@@ -67,6 +76,7 @@ public class FirstPaintQuestStage2 : QuestStage {
             FinishStage();
         }
     }
+
 
     private void UpdateState() {
         string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasVanished }));

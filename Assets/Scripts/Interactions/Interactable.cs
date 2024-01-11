@@ -11,6 +11,7 @@ public class Interactable : MonoBehaviour, ISaveable {
 
 
     private DialogueSet questDialogueSet;
+    private DialogueSet savedDialogueSet;
     private SpriteRenderer activationKey;
     private GameManager gameManager;
 
@@ -25,6 +26,12 @@ public class Interactable : MonoBehaviour, ISaveable {
     private void OnDisable() {
         QuestEvents.OnChangeDialogue -= ChangeDialogue;
         QuestEvents.OnOverrideBaseDialogue -= OverrideBaseDialogue;
+    }
+
+    private void Start() {
+        if (savedDialogueSet != null) {
+            dialogueSet = savedDialogueSet;
+        }
     }
 
     private void ChangeDialogue(Dictionary<string, DialogueSet> data) {
@@ -74,7 +81,7 @@ public class Interactable : MonoBehaviour, ISaveable {
         if (data.ObjectData.InteractionData.ContainsKey(gameObject.name)) {
             SerializableDict<string, DialogueSet> newData = data.ObjectData.InteractionData[gameObject.name];
             // newData.TryGetValue("QuestDialogueSet", out questDialogueSet);
-            newData.TryGetValue("DialogueSet", out questDialogueSet);
+            newData.TryGetValue("DialogueSet", out dialogueSet);
         }
 
     }
