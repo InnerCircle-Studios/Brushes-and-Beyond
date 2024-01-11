@@ -79,20 +79,20 @@ public class FirstPaintQuestStage : QuestStage {
         });
     }
 
-    private void OnPaintBucketActivated(int amount) {
-        paintCounter++;
-        SetPaintBucketCollectionUI();
-        CheckCompleted();
-    }
-
-
-    private void CheckCompleted() {
-        UpdateState();
-        if (paintCounter >= 3) {
-            InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
-            FinishStage();
+        private void OnPaintBucketActivated(int amount) {
+            paintCounter++;
+            SetPaintBucketCollectionUI();
+            CheckCompleted();
         }
-    }
+
+
+        private void CheckCompleted() {
+            UpdateState();
+            if (paintCounter >= 3) {
+                InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
+                FinishStage();
+            }
+        }
 
     private void UpdateState() {
         string data = JsonUtility.ToJson(new StupidJSONWrapper(
