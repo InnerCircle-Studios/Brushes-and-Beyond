@@ -36,10 +36,10 @@ public class Campfire : MonoBehaviour, ISaveable {
     }
 
     public void LoadData(GameData data) {
-        data.Toggles.TryGetValue("CampfireLit", out isLit);
+        data.ObjectData.Toggles.TryGetValue("CampfireLit", out isLit);
     }
 
     public void SaveData(GameData data) {
-       data.Toggles["CampfireLit"] = isLit;
+        data.ObjectData.Toggles["CampfireLit"] = isLit;
     }
 }

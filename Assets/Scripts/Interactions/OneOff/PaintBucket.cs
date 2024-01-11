@@ -1,8 +1,11 @@
+using Unity.VisualScripting;
+
 using UnityEngine;
 
-public class PaintBucket : MonoBehaviour {
+public class PaintBucket : MonoBehaviour, ISaveable {
 
     public string BucketSet;
+
 
     private void Start() {
         OnHideObject(BucketSet);
@@ -35,6 +38,16 @@ public class PaintBucket : MonoBehaviour {
 
     public void OnActivation() {
         InteractionEvents.ActivatePaintBucket(1);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void LoadData(GameData data) {
+        if (data.ObjectData.Toggles.TryGetValue(gameObject.name, out bool value) && value) {
+            OnShowObject(BucketSet);
+        }
+    }
+
+    public void SaveData(GameData data) {
+        data.ObjectData.Toggles[gameObject.name] = gameObject.activeSelf && gameObject.GetComponent<SpriteRenderer>().enabled;
     }
 }

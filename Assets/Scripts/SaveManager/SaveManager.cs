@@ -50,7 +50,7 @@ public class SaveManager : MonoBehaviour {
 
     public void SaveGame() {
         Logger.Log("SaveManager", "Saving game.");
-        saveables.ForEach(saveable => saveable.SaveData(gameData));
+        saveables.ForEach(saveable => saveable?.SaveData(gameData));
         dataManager.Save(gameData);
     }
 

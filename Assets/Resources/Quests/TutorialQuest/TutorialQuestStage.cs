@@ -30,12 +30,13 @@ public class TutorialQuestStage : QuestStage {
                 }, new List<DialogueAction>(){
                     new(99,dialogueEvent,true)
                 })
-            }
+            },
         });
 
         EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+        
     }
 
     private void Start() {

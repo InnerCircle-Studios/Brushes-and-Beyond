@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
     private Player player;
     private Dictionary<string, Quest> questMap = new();
 
-    Dictionary<string, string> runtimeQuestStateContainer = new();
+    SerializableDict<string, string> runtimeQuestStateContainer = new();
 
     private void OnEnable() {
         QuestEvents.OnStartQuest += StartQuest;
@@ -74,6 +74,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
         Quest quest = GetQuestByID(id);
         quest.State = state;
         QuestEvents.ChangeQuestState(quest);
+        SaveQuest(quest);
     }
 
     private void StartQuest(string id) {
@@ -149,7 +150,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
         Quest quest = null;
         try {
             if (runtimeQuestStateContainer.ContainsKey(questInfo.Id) && togglePresistance) {
-                Logger.Log("LoadQuest", $"Loading quest: {questInfo.Id}");
+                // Logger.Log("LoadQuest", $"Loading quest: {questInfo.Id}");
                 string jsonData = runtimeQuestStateContainer[questInfo.Id];
                 QuestData questData = JsonUtility.FromJson<QuestData>(jsonData);
                 quest = new Quest(questInfo, questData.State, questData.QuestStageIndex, questData.StageStates);
@@ -171,6 +172,6 @@ public class QuestManager : MonoBehaviour, ISaveable {
     }
 
     public void SaveData(GameData data) {
-        data.QuestData = (SerializableDict<string, string>)runtimeQuestStateContainer;
+        data.QuestData = runtimeQuestStateContainer;
     }
 }

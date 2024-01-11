@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interactable : MonoBehaviour {
+public class Interactable : MonoBehaviour, ISaveable {
 
     public UnityEvent OnEventTrigger = new();
     [SerializeField] private DialogueSet dialogueSet;
-
-    private DialogueSet questDialogueSet;
     [SerializeField, Range(0, 10)] private float interactionRange;
 
+
+    private DialogueSet questDialogueSet;
     private SpriteRenderer activationKey;
     private GameManager gameManager;
+
 
     private void OnEnable() {
         QuestEvents.OnChangeDialogue += ChangeDialogue;
@@ -67,5 +68,22 @@ public class Interactable : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, .3f);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, interactionRange);
+    }
+
+    public void LoadData(GameData data) {
+        if (data.ObjectData.InteractionData.ContainsKey(gameObject.name)) {
+            SerializableDict<string, DialogueSet> newData = data.ObjectData.InteractionData[gameObject.name];
+            // newData.TryGetValue("QuestDialogueSet", out questDialogueSet);
+            newData.TryGetValue("DialogueSet", out questDialogueSet);
+        }
+
+    }
+
+    public void SaveData(GameData data) {
+        if (gameObject != null && this != null) {
+            data.ObjectData.InteractionData[gameObject.name] = new(){
+            // { "QuestDialogueSet", questDialogueSet },
+            { "DialogueSet", dialogueSet }};
+        }
     }
 }
