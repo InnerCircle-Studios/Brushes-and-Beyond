@@ -28885,7 +28885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filename: brushes
   useEncryption: 0
-  togglePresistance: 1
+  togglePresistance: 0
 --- !u!1001 &376250973
 PrefabInstance:
   m_ObjectHideFlags: 0
