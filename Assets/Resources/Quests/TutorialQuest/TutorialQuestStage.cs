@@ -9,10 +9,12 @@ public class TutorialQuestStage : QuestStage {
     private bool hasAttacked = false;
     private bool hasSprinted = false;
 
+    private bool dialogueFinished = false;
+
     private void OnEnable() {
         // Load dialogue for character during quest 
         EventWrapper dialogueEvent = new();
-        dialogueEvent.AddListener(() => OnQuestShow());
+        dialogueEvent.AddListener(() => { OnQuestShow(); dialogueFinished = true; });
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
@@ -34,6 +36,12 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+    }
+
+    private void Start() {
+        if (dialogueFinished) {
+            OnQuestShow();
+        }
     }
 
     private void OnDisable() {
@@ -63,7 +71,6 @@ public class TutorialQuestStage : QuestStage {
         wm.ShowQuestMenu();
         wm.SetQuestName("TutorialQuest");
         wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
-
     }
 
     private void OnMove(Vector2 a) {
@@ -95,19 +102,19 @@ public class TutorialQuestStage : QuestStage {
     }
 
     private void UpdateState() {
-
-        string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasMoved, hasAttacked, hasSprinted }));
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasMoved, hasAttacked, hasSprinted, dialogueFinished }));
         ChangeState(data);
     }
 
     protected override void SetQuestStageState(string state) {
         bool[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;
-        hasMoved = data[0];
-        hasAttacked = data[1];
-        hasSprinted = data[2];
-        // Debug.Log($"[ TutorialQuestStage ]: {data}");
+        if (data.Length == 4) {
+            hasMoved = data[0];
+            hasAttacked = data[1];
+            hasSprinted = data[2];
+            dialogueFinished = data[3];
+        }
 
-        UpdateState();
     }
 
     [Serializable]
