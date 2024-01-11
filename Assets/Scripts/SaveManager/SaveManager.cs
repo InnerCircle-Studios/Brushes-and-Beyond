@@ -7,7 +7,7 @@ public class SaveManager : MonoBehaviour {
     [Header("Saving config")]
     [SerializeField] private string filename = "brushes";
     [SerializeField] private bool useEncryption = false;
-
+    [SerializeField] private bool togglePresistance = true;
     private GameData gameData;
     private List<ISaveable> saveables;
     private FileDataManager dataManager;
@@ -28,7 +28,9 @@ public class SaveManager : MonoBehaviour {
     private void Start() {
         dataManager = new FileDataManager(Application.persistentDataPath, filename + ".WDF", useEncryption);
         saveables = FindAllSaveables();
-        LoadGame();    // Remove after testing
+        if (togglePresistance) {
+            LoadGame();    // Remove after testing
+        }
     }
 
     public void NewGame() {
@@ -53,7 +55,9 @@ public class SaveManager : MonoBehaviour {
     }
 
     private void OnApplicationQuit() {
-        SaveGame();
+        if (togglePresistance) {
+            SaveGame();
+        }
     }
 
     private List<ISaveable> FindAllSaveables() {

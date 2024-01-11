@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+
+    [Header("References")]
     [SerializeField] private DialogueManager2 dialogueManager;
     [SerializeField] private WindowManager windowManager;
     [SerializeField] private Player player;

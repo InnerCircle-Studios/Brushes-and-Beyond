@@ -4,11 +4,13 @@ using System.Linq;
 
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour {
+public class QuestManager : MonoBehaviour, ISaveable {
     [Header("Config")]
     [SerializeField] private bool togglePresistance = true;
+    private Player player;
     private Dictionary<string, Quest> questMap = new();
-    [SerializeField] private Player player;
+
+    Dictionary<string, string> runtimeQuestStateContainer = new();
 
     private void OnEnable() {
         QuestEvents.OnStartQuest += StartQuest;
@@ -30,10 +32,11 @@ public class QuestManager : MonoBehaviour {
 
     private void Awake() {
         questMap = CreateQuestMap();
-        player = FindAnyObjectByType<Player>();
     }
 
     private void Start() {
+        player = GameManager.Instance.GetPlayer();
+        
         questMap.Values.ToList().ForEach(q => {
             if (q.State == QuestState.ACTIVE) {
                 q.InitCurrentQuestStep(transform);
@@ -135,7 +138,7 @@ public class QuestManager : MonoBehaviour {
         try {
             QuestData questData = quest.GetQuestData();
             string jsonData = JsonUtility.ToJson(questData);
-            PlayerPrefs.SetString(quest.Info.Id, jsonData);
+            runtimeQuestStateContainer[quest.Info.Id] = jsonData;
         }
         catch (Exception e) {
             Logger.LogError("SaveQuest", $" Failed to save quest: {quest.Info.Id} with error: {e}");
@@ -145,8 +148,9 @@ public class QuestManager : MonoBehaviour {
     private Quest LoadQuest(QuestInfo questInfo) {
         Quest quest = null;
         try {
-            if (PlayerPrefs.HasKey(questInfo.Id) && togglePresistance) {
-                string jsonData = PlayerPrefs.GetString(questInfo.Id);
+            if (runtimeQuestStateContainer.ContainsKey(questInfo.Id) && togglePresistance) {
+                Logger.Log("LoadQuest", $"Loading quest: {questInfo.Id}");
+                string jsonData = runtimeQuestStateContainer[questInfo.Id];
                 QuestData questData = JsonUtility.FromJson<QuestData>(jsonData);
                 quest = new Quest(questInfo, questData.State, questData.QuestStageIndex, questData.StageStates);
             }
@@ -158,5 +162,15 @@ public class QuestManager : MonoBehaviour {
             Logger.LogError("LoadQuest", $" Failed to load quest: {questInfo.Id} with error: {e}");
         }
         return quest;
+    }
+
+    public void LoadData(GameData data) {
+        runtimeQuestStateContainer = data.QuestData;
+        Awake();
+        // Start();
+    }
+
+    public void SaveData(GameData data) {
+        data.QuestData = (SerializableDict<string, string>)runtimeQuestStateContainer;
     }
 }

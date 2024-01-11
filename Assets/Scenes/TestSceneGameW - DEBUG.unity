@@ -28884,6 +28884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filename: brushes
+  useEncryption: 0
+  togglePresistance: 1
 --- !u!1001 &376250973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30142,8 +30144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2291c2240224e34b8f68a1abb1a1735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  togglePresistance: 0
-  player: {fileID: 6995589000037843843}
+  togglePresistance: 1
 --- !u!1 &602293968
 GameObject:
   m_ObjectHideFlags: 0
