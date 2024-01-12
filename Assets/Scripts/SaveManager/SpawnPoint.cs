@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour {
         this.type = type;
     }
 
-    public SpawnType GetSpawnType(){
+    public SpawnType GetSpawnType() {
         return type;
     }
 

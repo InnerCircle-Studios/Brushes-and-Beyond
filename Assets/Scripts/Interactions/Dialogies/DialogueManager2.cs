@@ -5,6 +5,8 @@ using UnityEngine;
 
 [Serializable]
 public class DialogueManager2 : MonoBehaviour {
+
+    [Header("Loaded Dialogues")]
     [SerializeField] private DialogueSet activeSet;
     [SerializeField] private List<DialogueSet> dialogueSets = new();
     private WindowManager wm;

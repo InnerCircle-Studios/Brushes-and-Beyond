@@ -6,9 +6,11 @@ using UnityEngine.Events;
 
 [Serializable]
 public class DialogueAction {
+
+    [Header("Settings")]
     [SerializeField] public int PlayAfterIndex;
     [SerializeField] public EventWrapper Action;
-    [SerializeField,HideInInspector] private bool hasBeenTriggered = false;
+    [SerializeField, HideInInspector] private bool hasBeenTriggered = false;
     [SerializeField] public bool OneTimeEvent = false;
 
     public DialogueAction(int playAfterIndex, EventWrapper action, bool oneTimeEvent) {
@@ -31,7 +33,7 @@ public class DialogueAction {
 
 }
 
-public enum DialogueActionType{
+public enum DialogueActionType {
     ACTIVATE_OBJECT,
     DEACTIVATE_OBJECT,
     PLAY_ANIMATION,

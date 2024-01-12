@@ -29336,6 +29336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paintbucket
       objectReference: {fileID: 0}
+    - target: {fileID: 3026504292561292171, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
+      propertyPath: bucketSet
+      value: FirstPaintQuestBuckets
+      objectReference: {fileID: 0}
     - target: {fileID: 4911376160149533462, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.36
@@ -30814,6 +30818,10 @@ PrefabInstance:
     - target: {fileID: 2555439780598467538, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026504292561292171, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
+      propertyPath: bucketSet
+      value: FirstPaintQuestBuckets
       objectReference: {fileID: 0}
     - target: {fileID: 4911376160149533462, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33186,6 +33194,10 @@ PrefabInstance:
     - target: {fileID: 2555439780598467538, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026504292561292171, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
+      propertyPath: bucketSet
+      value: FirstPaintQuestBuckets
       objectReference: {fileID: 0}
     - target: {fileID: 4911376160149533462, guid: d53d58d8119986e4e80806871a1a3525, type: 3}
       propertyPath: m_LocalPosition.x

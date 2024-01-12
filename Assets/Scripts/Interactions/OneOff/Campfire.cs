@@ -3,8 +3,11 @@ using System.Collections;
 using UnityEngine;
 
 public class Campfire : MonoBehaviour, ISaveable {
+
+    [Header("Animation")]
     [SerializeField] private bool isLit = false;
     [SerializeField] private Sprite defaultSprite;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isOnCooldown = false;

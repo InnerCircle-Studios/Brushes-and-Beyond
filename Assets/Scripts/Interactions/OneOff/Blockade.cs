@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class Blockade : MonoBehaviour , ISaveable{
+public class Blockade : MonoBehaviour, ISaveable {
+
+    [Header("EventSelector")]
     [SerializeField] private string blockadeName;
+
     private void Start() {
         InteractionEvents.OnShowObject += OnShowObject;
         InteractionEvents.OnHideObject += OnHideObject;
@@ -25,7 +28,7 @@ public class Blockade : MonoBehaviour , ISaveable{
     }
 
     public void LoadData(GameData data) {
-        if( data.ObjectData.Toggles.TryGetValue(blockadeName, out bool value)) {
+        if (data.ObjectData.Toggles.TryGetValue(blockadeName, out bool value)) {
             gameObject.SetActive(value);
         }
     }

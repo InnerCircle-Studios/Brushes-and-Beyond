@@ -36,7 +36,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
 
     private void Start() {
         player = GameManager.Instance.GetPlayer();
-        
+
         questMap.Values.ToList().ForEach(q => {
             if (q.State == QuestState.ACTIVE) {
                 q.InitCurrentQuestStep(transform);

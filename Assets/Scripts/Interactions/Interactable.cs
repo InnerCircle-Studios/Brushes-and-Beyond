@@ -5,9 +5,12 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour, ISaveable {
 
+    [Header("General")]
     public UnityEvent OnEventTrigger = new();
-    [SerializeField] private DialogueSet dialogueSet;
     [SerializeField, Range(0, 10)] private float interactionRange;
+
+    [Header("Dialogue")]
+    [SerializeField] private DialogueSet dialogueSet;
 
 
     private DialogueSet questDialogueSet;

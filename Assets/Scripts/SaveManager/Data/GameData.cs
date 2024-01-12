@@ -11,7 +11,5 @@ public class GameData {
     public SerializableDict<string, string> QuestData = new();
 
 
-    public GameData() {
-
-    }
+    public GameData() { }
 }

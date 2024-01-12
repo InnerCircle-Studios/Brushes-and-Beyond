@@ -5,6 +5,5 @@ using System.Collections.Generic;
 public class NPCData {
     public SerializableDict<string, CharacterAttributes> NPCvalues = new();
     
-    public NPCData() {
-    }
+    public NPCData() { }
 }

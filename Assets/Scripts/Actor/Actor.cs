@@ -29,7 +29,7 @@ public abstract class Actor : MonoBehaviour {
         yield return new WaitForSecondsRealtime(0.2f);
 
         // Handles an edge case where the enemy has died before the sprite could be reset
-        if (sRenderer != null) { 
+        if (sRenderer != null) {
             sRenderer.color = startColor;
         }
 
