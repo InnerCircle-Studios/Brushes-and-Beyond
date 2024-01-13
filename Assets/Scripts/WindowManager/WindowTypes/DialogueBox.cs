@@ -15,6 +15,14 @@ public class DialogueBox : MonoBehaviour {
     [SerializeField] private Button nextButton;
     [SerializeField] private TextMeshProUGUI hurryUpText;
 
+    [Header("Settings")]
+    [SerializeField] private bool toggleDialogueShifting = true;
+    private Animator layoutAnimator;
+
+    private void Awake() {
+        layoutAnimator = GetComponent<Animator>();
+    }
+
     public void LoadBox(DialogueBox box) {
         avatar = box.avatar;
         avatarName = box.avatarName;
@@ -35,12 +43,15 @@ public class DialogueBox : MonoBehaviour {
     }
 
     private void HandleCharacters(Actor actor) {
-        //TODO add logic to switch the box to the left or right side of the screen.
-        if (actor.GetAttrubuteManager().GetAttributes().Type == ActorType.PLAYER) {
-            // switch the box to the left side of the screen.
-        }
-        else {
-            // switch the box to the right side of the screen.
+        if (toggleDialogueShifting) {
+            if (actor.GetAttrubuteManager().GetAttributes().Type == ActorType.PLAYER) {
+                // switch the box to the left side of the screen.
+                layoutAnimator.Play("left");
+            }
+            else {
+                // switch the box to the right side of the screen.
+                layoutAnimator.Play("right");
+            }
         }
     }
 
