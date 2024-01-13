@@ -21,7 +21,7 @@ public class WindowManager : MonoBehaviour {
     public DialogueBox GetDialogueBox() {
         return dialogueBox;
     }
-    public void InitDialogueBox(DialogueBox box){
+    public void InitDialogueBox(DialogueBox box) {
         ShowDialogueBox();
         dialogueBox.LoadBox(box);
     }
@@ -29,12 +29,12 @@ public class WindowManager : MonoBehaviour {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(actor);
     }
-    public void InitDialogueBox(DialogueEntry diagEntry){
+    public void InitDialogueBox(DialogueEntry diagEntry) {
         ShowDialogueBox();
         dialogueBox.LoadCharacter(diagEntry.Actor);
         UpdateDialogueBox(diagEntry.Dialogue);
     }
-    
+
     public void UpdateDialogueBox(string text) {
         dialogueBox.SetMessage(text);
     }
@@ -46,23 +46,23 @@ public class WindowManager : MonoBehaviour {
     }
 
     // QuestMenu
-    public void SetQuestName(string name){
+    public void SetQuestName(string name) {
         questBox.SetName(name);
     }
-    public void SetQuestObjectives(string text){
+    public void SetQuestObjectives(string text) {
         questBox.SetObjectives(text);
     }
-    public void AddQuestObjective(string text){
+    public void AddQuestObjective(string text) {
         questBox.AddObjective(text);
     }
-    public void ClearQuest(){
+    public void ClearQuest() {
         questBox.SetName("");
         questBox.SetObjectives("");
     }
-    public void ShowQuestMenu(){
+    public void ShowQuestMenu() {
         questBox.gameObject.SetActive(true);
     }
-    public void HideQuestMenu(){
+    public void HideQuestMenu() {
         questBox.gameObject.SetActive(false);
     }
 

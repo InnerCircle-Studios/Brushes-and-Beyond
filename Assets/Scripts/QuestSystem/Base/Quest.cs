@@ -8,12 +8,12 @@ public class Quest {
     private int currentStage;
     private QuestStageState[] stageStates;
 
-    public Quest(QuestInfo info){
+    public Quest(QuestInfo info) {
         Info = info;
         State = QuestState.UNAVAILABLE;
         currentStage = 0;
         stageStates = new QuestStageState[Info.Stages.Length];
-        for(int i = 0; i < stageStates.Length; i++){
+        for (int i = 0; i < stageStates.Length; i++) {
             stageStates[i] = new QuestStageState();
         }
     }
@@ -23,48 +23,48 @@ public class Quest {
         State = state;
         this.currentStage = currentStage;
         this.stageStates = stageStates;
-        if(this.stageStates.Length != this.Info.Stages.Length){
+        if (this.stageStates.Length != this.Info.Stages.Length) {
             Debug.LogError("QuestStageState length does not match QuestInfo.Stages length for quest: " + Info.Id + " stage: " + currentStage + "");
         }
     }
 
 
-    public void MoveToNextStage(){
+    public void MoveToNextStage() {
         currentStage++;
     }
 
-    public bool CurrentStageExists(){
+    public bool CurrentStageExists() {
         return currentStage < Info.Stages.Length;
     }
 
-    public void InitCurrentQuestStep(Transform parent){
+    public void InitCurrentQuestStep(Transform parent) {
         GameObject stagePrefab = GetCurrentStagePrefab();
-        if(stagePrefab != null){
+        if (stagePrefab != null) {
             GameObject stage = Object.Instantiate(stagePrefab, parent);
             stage.GetComponent<QuestStage>().Init(Info.Id, currentStage, stageStates[currentStage].State);
         }
     }
 
-    private GameObject GetCurrentStagePrefab(){
-        if(CurrentStageExists()){
+    private GameObject GetCurrentStagePrefab() {
+        if (CurrentStageExists()) {
             return Info.Stages[currentStage];
         }
-        else{
+        else {
             Debug.Log("No next questStage for quest: " + Info.Id + " stage: " + currentStage + "");
             return null;
         }
     }
 
-    public void StoreQuestStageState(QuestStageState questStageState, int index){
-        if(index < stageStates.Length){
+    public void StoreQuestStageState(QuestStageState questStageState, int index) {
+        if (index < stageStates.Length) {
             stageStates[index].State = questStageState.State;
         }
-        else{
+        else {
             Debug.LogError("Stepindex out of range for quest: " + Info.Id + " stage: " + currentStage + "");
         }
     }
 
-    public QuestData GetQuestData(){
+    public QuestData GetQuestData() {
         return new QuestData(State, currentStage, stageStates);
     }
 }

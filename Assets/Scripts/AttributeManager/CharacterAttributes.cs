@@ -38,7 +38,7 @@ public class CharacterData {
     /**
      * This is purely here becouse unity is stupid about inheritance/overriding
      */
-    [SerializeField, Range(0,3)] public int PaintCount;
+    [SerializeField, Range(0, 3)] public int PaintCount;
 
     public CharacterData Copy() {
         CharacterData newCharacterData = new();
@@ -52,9 +52,9 @@ public class CharacterData {
 }
 
 public enum ActorType {
-    Player,
-    Enemy,
-    PaintEnemy,
+    PLAYER,
+    ENEMY,
+    PAINT_ENEMY,
     NPC,
-    Static
+    STATIC
 }

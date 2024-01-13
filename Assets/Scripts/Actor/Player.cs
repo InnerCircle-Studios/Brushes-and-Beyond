@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public class Player : Actor {
+public class Player : Actor, ISaveable {
 
     public override void Start() {
-        HandleSceneLoad();
         _PlayerStateMachine = new PlayerStateMachine(this);
         InteractionEvents.OnPaintBucketActivated += HandlePaintAdded;
     }
@@ -21,18 +20,6 @@ public class Player : Actor {
         GameManager.Instance.GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
-
-        if (Input.GetKeyDown(KeyCode.I)) {
-            string jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
-            Debug.Log(jsontext);
-            CharacterData newAttributes = JsonUtility.FromJson<CharacterData>(jsontext);
-            GetAttrubuteManager().Setattributes(newAttributes);
-            jsontext = JsonUtility.ToJson(GetAttrubuteManager().GetAttributes());
-            Debug.Log(jsontext);
-
-            // DontDestroyOnLoad(gameObject);
-            // SceneManager.LoadScene("MazeScene");
-        }
     }
 
     public override void HandleMeleeAttack() {
@@ -52,19 +39,9 @@ public class Player : Actor {
     private void HandlePaintAdded(int amount) {
         int newAmount = _AttributeManager.GetAttributes().PaintCount + amount;
         if (!(newAmount > 3)) {
-            
+
             _AttributeManager.SetPaint(newAmount);
         }
-    }
-
-
-    private void HandleSceneLoad() {
-        // Set vin to his spawn location if defined in the scene.
-        SpawnPoint point = FindObjectsOfType<SpawnPoint>().Where(e => e.GetSpawnType() == SpawnType.PLAYER).First();
-        if (point) {
-            transform.position = point.transform.position;
-        }
-
     }
 
     private void HandleInteractions() {
@@ -95,7 +72,6 @@ public class Player : Actor {
                         smallestDistance = distanceBetweenTargets;
                     }
                 }
-
             }
         }
         return closestInteractable;
@@ -103,6 +79,21 @@ public class Player : Actor {
 
     public void OnDeath() {
         EventBus.TriggerEvent(EventBusEvents.EventName.DEATH_EVENT, true);
+    }
+
+    public void LoadData(GameData data) {
+        if (data.PlayerData.PlayerPosition != Vector3.zero) {
+            transform.position = data.PlayerData.PlayerPosition;
+        }
+        if (data.PlayerData.PlayerAttributes.Type == ActorType.PLAYER) {
+            GetAttrubuteManager().Setattributes(data.PlayerData.PlayerAttributes);
+        }
+    }
+
+    public void SaveData(GameData data) {
+        data.PlayerData.PlayerPosition = transform.position;
+        data.PlayerData.PlayerAttributes = GetAttrubuteManager().GetAttributes();
+        data.PlayerData.SceneName = SceneManager.GetActiveScene().name;
     }
 
     private PlayerStateMachine _PlayerStateMachine;

@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Interactable))]
 public class QuestPoint : MonoBehaviour {
+
     [Header("Quest")]
     [SerializeField] private QuestInfo questInfo;
 

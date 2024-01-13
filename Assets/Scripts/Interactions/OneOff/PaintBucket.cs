@@ -1,11 +1,15 @@
+using Unity.VisualScripting;
+
 using UnityEngine;
 
-public class PaintBucket : MonoBehaviour {
+public class PaintBucket : MonoBehaviour, ISaveable {
 
-    public string BucketSet;
+    [Header("EventSelector")]
+    [SerializeField] private string bucketSet;
+
 
     private void Start() {
-        OnHideObject(BucketSet);
+        OnHideObject(bucketSet);
     }
 
     private void OnEnable() {
@@ -19,14 +23,14 @@ public class PaintBucket : MonoBehaviour {
     }
 
     private void OnShowObject(string name) {
-        if (name == BucketSet) {
+        if (name == bucketSet) {
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
             gameObject.GetComponent<Collider2D>().enabled = true;
             gameObject.GetComponentInChildren<Interactable>().enabled = true;
         }
     }
     private void OnHideObject(string name) {
-        if (name == BucketSet) {
+        if (name == bucketSet) {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponentInChildren<Interactable>().enabled = false;
@@ -35,6 +39,16 @@ public class PaintBucket : MonoBehaviour {
 
     public void OnActivation() {
         InteractionEvents.ActivatePaintBucket(1);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void LoadData(GameData data) {
+        if (data.ObjectData.Toggles.TryGetValue(gameObject.name, out bool value) && value) {
+            OnShowObject(bucketSet);
+        }
+    }
+
+    public void SaveData(GameData data) {
+        data.ObjectData.Toggles[gameObject.name] = gameObject.activeSelf && gameObject.GetComponent<SpriteRenderer>().enabled;
     }
 }

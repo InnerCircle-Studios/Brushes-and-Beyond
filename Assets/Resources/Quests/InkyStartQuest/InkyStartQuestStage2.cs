@@ -42,6 +42,12 @@ public class InkyStartQuestStage2 : QuestStage {
 
     private void OnDisable() {
         // Reset dialogue back to default
+        QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
+            { "Inky", new(new List<DialogueEntry>() {
+                    new(GameManager.Instance.GetInky(), "Yay you did it!", DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){})
+            }
+        });
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Inky", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetInky(), "Yay you did it!", DialogueActorMood.HAPPY),
