@@ -76,21 +76,26 @@ public class TutorialQuestStage : QuestStage {
 
 
     private void OnMove(Vector2 a) {
-        hasMoved = true;
-        CheckCompleted();
-        EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
+        if (dialogueFinished) {
+            hasMoved = true;
+            CheckCompleted();
+            EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
+        }
 
     }
     private void OnAttack(bool b) {
-        hasAttacked = true;
-        CheckCompleted();
-        EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
-
+        if (dialogueFinished) {
+            hasAttacked = true;
+            CheckCompleted();
+            EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
+        }
     }
     private void OnSprint(bool b) {
-        hasSprinted = true;
-        CheckCompleted();
-        EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+        if (dialogueFinished) {
+            hasSprinted = true;
+            CheckCompleted();
+            EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+        }
     }
 
 
