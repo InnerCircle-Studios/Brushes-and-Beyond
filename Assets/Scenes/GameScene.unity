@@ -33560,6 +33560,7 @@ MonoBehaviour:
   message: {fileID: 1223076818}
   nextButton: {fileID: 1188579439}
   hurryUpText: {fileID: 422956397}
+  toggleDialogueShifting: 1
 --- !u!114 &1742201054
 MonoBehaviour:
   m_ObjectHideFlags: 0
