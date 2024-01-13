@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 using TMPro;
 
@@ -7,10 +8,12 @@ using UnityEngine.UI;
 
 [Serializable]
 public class DialogueBox : MonoBehaviour {
+    [Header("Dialogue Box components")]
     [SerializeField] private Image avatar;
     [SerializeField] private TextMeshProUGUI avatarName;
     [SerializeField] private TextMeshProUGUI message;
     [SerializeField] private Button nextButton;
+    [SerializeField] private TextMeshProUGUI hurryUpText;
 
     public void LoadBox(DialogueBox box) {
         avatar = box.avatar;
@@ -26,7 +29,9 @@ public class DialogueBox : MonoBehaviour {
     }
 
     public void SetMessage(string message) {
+        StopCoroutine(HurryUp()); // Cancel any running counters
         this.message.SetText(message);
+        StartCoroutine(HurryUp()); // Start new counter to display the press E text.
     }
 
     private void HandleCharacters(Actor actor) {
@@ -37,7 +42,12 @@ public class DialogueBox : MonoBehaviour {
         else {
             // switch the box to the right side of the screen.
         }
+    }
 
+    IEnumerator HurryUp() {
+        hurryUpText.gameObject.SetActive(false);
+        yield return new WaitForSeconds(3);
+        hurryUpText.gameObject.SetActive(true);
     }
 
 }
