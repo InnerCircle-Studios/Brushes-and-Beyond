@@ -30,9 +30,13 @@ public class FirstPaintQuestStage2 : QuestStage {
                 })
             },
             { "Blockade 1", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetPlayer(), "...", DialogueActorMood.HAPPY),
+                    new(GameManager.Instance.GetPlayer(), "What do I do now?", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "Maybe if I tap it with my brush?", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "Woha!", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "How did I do that?!", DialogueActorMood.NEUTRAL),
+
                 }, new List<DialogueAction>(){
-                    new(0,vanishevent ,true)
+                    new(2,vanishevent ,true)
                 })
             }
         });
