@@ -1,11 +1,15 @@
+using System.Collections;
+
 using UnityEngine;
 
 public class Blockade : MonoBehaviour, ISaveable {
 
     [Header("EventSelector")]
     [SerializeField] private string blockadeName;
+    private Animator animator;
 
     private void Start() {
+        animator = GetComponent<Animator>();
         InteractionEvents.OnShowObject += OnShowObject;
         InteractionEvents.OnHideObject += OnHideObject;
     }
@@ -23,7 +27,7 @@ public class Blockade : MonoBehaviour, ISaveable {
 
     private void OnHideObject(string name) {
         if (name == blockadeName) {
-            gameObject.SetActive(false);
+            StartCoroutine(HideObject());
         }
     }
 
@@ -36,4 +40,12 @@ public class Blockade : MonoBehaviour, ISaveable {
     public void SaveData(GameData data) {
         data.ObjectData.Toggles[blockadeName] = gameObject.activeSelf;
     }
+
+    private IEnumerator HideObject() {
+        animator.Play("VortexRemove");
+        yield return new WaitForSeconds(3f);
+        gameObject.SetActive(false);
+    }
+
+
 }
