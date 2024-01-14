@@ -15,7 +15,7 @@ public class TutorialQuestStage : QuestStage {
     private void OnEnable() {
         // Load dialogue for character during quest 
         EventWrapper dialogueEvent = new();
-        dialogueEvent.AddListener(() => { OnQuestShow(); dialogueFinished = true; });
+        dialogueEvent.AddListener(() => { dialogueFinished = true; OnQuestShow(); });
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
@@ -73,6 +73,7 @@ public class TutorialQuestStage : QuestStage {
         wm.ShowQuestMenu();
         wm.SetQuestName("TutorialQuest");
         wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
+        UpdateState();
     }
 
 

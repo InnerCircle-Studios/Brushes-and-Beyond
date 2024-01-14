@@ -31189,6 +31189,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6578868901327205340, guid: 646dab7912da9e145a29b7861ed543be, type: 3}
+      propertyPath: togglePresistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578868901327205340, guid: 646dab7912da9e145a29b7861ed543be, type: 3}
+      propertyPath: initializeDataIfNoneFound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7293814800278488771, guid: 646dab7912da9e145a29b7861ed543be, type: 3}
       propertyPath: m_Name
       value: SaveManager
