@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialQuestStage : QuestStage {
+    [SerializeField] CharacterAttributes brushy;
     private bool hasMoved = false;
     private bool hasAttacked = false;
     private bool hasSprinted = false;
@@ -14,19 +15,19 @@ public class TutorialQuestStage : QuestStage {
     private void OnEnable() {
         // Load dialogue for character during quest 
         EventWrapper dialogueEvent = new();
-        dialogueEvent.AddListener(() => { OnQuestShow(); dialogueFinished = true; });
+        dialogueEvent.AddListener(() => { dialogueFinished = true; OnQuestShow(); });
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Welcome to the tutorial!", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "This is a tutorial quest, it will teach you the basics of the game.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "You can move around with WASD.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Interact with objects by pressing <sprite=\"Ekey\" index=0>",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Good luck!",DialogueActorMood.HAPPY),
+                    new(brushy, "Welcome to the tutorial!", DialogueActorMood.HAPPY),
+                    new(brushy, "This is a tutorial quest, it will teach you the basics of the game.",DialogueActorMood.HAPPY),
+                    new(brushy, "You can move around with WASD.",DialogueActorMood.HAPPY),
+                    new(brushy, "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
+                    new(brushy, "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
+                    new(brushy, "Interact with objects by pressing <sprite=\"Ekey\" index=0>",DialogueActorMood.HAPPY),
+                    new(brushy, "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
+                    new(brushy, "Good luck!",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
                     new(99,dialogueEvent,true)
                 })
@@ -52,7 +53,7 @@ public class TutorialQuestStage : QuestStage {
         // Override base dialogue to avoid repeating the tutorial start sequence when a quest resets Brushy's dialogue
         QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Hi vin!", DialogueActorMood.HAPPY),
+                    new(brushy, "Hi vin!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
                 })
             }
@@ -72,6 +73,7 @@ public class TutorialQuestStage : QuestStage {
         wm.ShowQuestMenu();
         wm.SetQuestName("TutorialQuest");
         wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
+        UpdateState();
     }
 
 

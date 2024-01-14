@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InkyStartQuestStage : QuestStage {
+    [SerializeField] CharacterAttributes inky;
+
     bool isDoneTalking = false;
     WindowManager wm;
 
@@ -22,14 +24,14 @@ public class InkyStartQuestStage : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Inky", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetInky(), "Hi Vin!", DialogueActorMood.HAPPY),
+                    new(inky, "Hi Vin!", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetPlayer(), "Who are you and how do you know my name?!", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetInky(), "I am Inky, how I know your name is not important.", DialogueActorMood.NEUTRAL),
+                    new(inky, "I am Inky, how I know your name is not important.", DialogueActorMood.NEUTRAL),
                     new(GameManager.Instance.GetPlayer(), "But...", DialogueActorMood.SAD),
-                    new(GameManager.Instance.GetInky(), "You know how to paint right? I saw you fill in the blank space there.",DialogueActorMood.HAPPY),
+                    new(inky, "You know how to paint right? I saw you fill in the blank space there.",DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetPlayer(), "Well, yes but...", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetInky(), "Good! Because here is another one of those. This one sits between me and my friends over there.",DialogueActorMood.ANGRY),
-                    new(GameManager.Instance.GetInky(), "Here, I got some paint for you. Try and see if you can clear the way and meet my friends!",DialogueActorMood.HAPPY),
+                    new(inky, "Good! Because here is another one of those. This one sits between me and my friends over there.",DialogueActorMood.ANGRY),
+                    new(inky, "Here, I got some paint for you. Try and see if you can clear the way and meet my friends!",DialogueActorMood.HAPPY),
 
                 }, new List<DialogueAction>(){
                     new(99,paintevent ,true), // 99 always triggers after last dialogue entry
@@ -49,8 +51,8 @@ public class InkyStartQuestStage : QuestStage {
 
     }
 
-        
-    
+
+
 
     private void InkyGivePaint() {
         GameManager.Instance.GetPlayer().GetAttrubuteManager().SetPaint(3);

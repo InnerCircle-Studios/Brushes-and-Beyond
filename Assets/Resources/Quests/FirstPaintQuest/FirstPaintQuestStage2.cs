@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FirstPaintQuestStage2 : QuestStage {
+    [SerializeField] CharacterAttributes brushy;
+
     string blockadeName = "FirstPaintQuestBlockade";
     private bool hasVanished = false;
     WindowManager wm;
@@ -22,7 +24,7 @@ public class FirstPaintQuestStage2 : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "You have enough paint! Go fill in the blank spot over there", DialogueActorMood.HAPPY),
+                    new(brushy, "You have enough paint! Go fill in the blank spot over there", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
 
                 })
@@ -41,7 +43,7 @@ public class FirstPaintQuestStage2 : QuestStage {
         // Reset dialogue back to default
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
+                    new(brushy, "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
 
                 })
@@ -50,7 +52,7 @@ public class FirstPaintQuestStage2 : QuestStage {
         });
         QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
+                    new(brushy, "Well done! On you go brave painter!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
 
                 })

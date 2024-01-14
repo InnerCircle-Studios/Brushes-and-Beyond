@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FirstPaintQuestStage : QuestStage {
+    [SerializeField] CharacterAttributes brushy;
+
     private int paintCounter = 0;
     private bool dialogueFinished = false;
     WindowManager wm;
@@ -31,8 +33,8 @@ public class FirstPaintQuestStage : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "Now that you have completed the tutorial, we can start with painting!", DialogueActorMood.HAPPY),
-                    new(GameManager.Instance.GetBrushy(), "Grab these three paintbuckets and fill in the blank spot.",DialogueActorMood.HAPPY),
+                    new(brushy, "Now that you have completed the tutorial, we can start with painting!", DialogueActorMood.HAPPY),
+                    new(brushy, "Grab these three paintbuckets and fill in the blank spot.",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
                     new(0, hideQuestUI,true),
                     new(1,showevent ,true),
@@ -68,7 +70,7 @@ public class FirstPaintQuestStage : QuestStage {
     private void UpdateDialogueAfterConversation() {
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetBrushy(), "What are you waiting for? Go grab some paint! ", DialogueActorMood.HAPPY),
+                    new(brushy, "What are you waiting for? Go grab some paint! ", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){})
             },
             {"Blockade 1", new(new List<DialogueEntry>() {
@@ -79,20 +81,20 @@ public class FirstPaintQuestStage : QuestStage {
         });
     }
 
-        private void OnPaintBucketActivated(int amount) {
-            paintCounter++;
-            SetPaintBucketCollectionUI();
-            CheckCompleted();
-        }
+    private void OnPaintBucketActivated(int amount) {
+        paintCounter++;
+        SetPaintBucketCollectionUI();
+        CheckCompleted();
+    }
 
 
-        private void CheckCompleted() {
-            UpdateState();
-            if (paintCounter >= 3) {
-                InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
-                FinishStage();
-            }
+    private void CheckCompleted() {
+        UpdateState();
+        if (paintCounter >= 3) {
+            InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
+            FinishStage();
         }
+    }
 
     private void UpdateState() {
         string data = JsonUtility.ToJson(new StupidJSONWrapper(

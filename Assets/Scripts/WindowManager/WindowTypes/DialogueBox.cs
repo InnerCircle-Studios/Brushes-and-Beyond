@@ -4,6 +4,7 @@ using System.Collections;
 using TMPro;
 
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 [Serializable]
@@ -29,12 +30,27 @@ public class DialogueBox : MonoBehaviour {
         message = box.message;
     }
 
-    public void LoadCharacter(Actor actor) {
+    public void LoadActor(Actor actor) {
         CharacterData attribs = actor.GetAttrubuteManager().GetAttributes();
         avatar.sprite = attribs.DialogueSprite;
         avatarName.SetText(attribs.Name);
+        HandleCharacters(attribs);
+    }
+
+    public void LoadActor(CharacterAttributes actor) {
+        CharacterData attribs = actor.Attributes;
+        avatar.sprite = attribs.DialogueSprite;
+        avatarName.SetText(attribs.Name);
+        HandleCharacters(attribs);
+    }
+
+    public void LoadActor(CharacterData actor) {
+        avatar.sprite = actor.DialogueSprite;
+        avatarName.SetText(actor.Name);
         HandleCharacters(actor);
     }
+
+
 
     public void SetMessage(string message) {
         StopCoroutine(HurryUp()); // Cancel any running counters
@@ -42,9 +58,9 @@ public class DialogueBox : MonoBehaviour {
         StartCoroutine(HurryUp()); // Start new counter to display the press E text.
     }
 
-    private void HandleCharacters(Actor actor) {
+    private void HandleCharacters(CharacterData actor) {
         if (toggleDialogueShifting) {
-            if (actor.GetAttrubuteManager().GetAttributes().Type == ActorType.PLAYER) {
+            if (actor.Type == ActorType.PLAYER) {
                 // switch the box to the left side of the screen.
                 layoutAnimator.Play("left");
             }

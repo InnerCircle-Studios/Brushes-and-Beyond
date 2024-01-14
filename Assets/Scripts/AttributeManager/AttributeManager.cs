@@ -12,6 +12,9 @@ public class AttributeManager : IAttributeManager {
     public CharacterData GetAttributes() {
         return attributes.Attributes;
     }
+    public CharacterAttributes GetAttributeContainer() {
+        return attributes;
+    }
 
     public bool IsAlive() {
         return attributes.Attributes.CurrentHealth > 0;
