@@ -28150,7 +28150,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
       value: 
-      objectReference: {fileID: 1425179980}
+      objectReference: {fileID: 11400000, guid: 23e2211f1094b5f468509dc3d8df9e2a, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
       value: Hello!
@@ -28816,7 +28816,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
       value: 
-      objectReference: {fileID: 6995589000037843843}
+      objectReference: {fileID: 11400000, guid: 8ae31b5b7b313e67f9e05748f093b7a2, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
       value: Not enough paint!
@@ -30726,7 +30726,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
       value: 
-      objectReference: {fileID: 6995589000037843843}
+      objectReference: {fileID: 11400000, guid: 8ae31b5b7b313e67f9e05748f093b7a2, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
       value: This looks ... unfinished?
@@ -31536,7 +31536,7 @@ PrefabInstance:
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
       value: 
-      objectReference: {fileID: 1959386095}
+      objectReference: {fileID: 11400000, guid: bd10e2ecd35efb74494be8176e4be701, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[1].Actor
       value: 

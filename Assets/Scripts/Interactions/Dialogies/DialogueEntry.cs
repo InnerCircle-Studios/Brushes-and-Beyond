@@ -3,15 +3,18 @@ using System;
 
 [Serializable]
 public class DialogueEntry {
-    public Actor Actor;
+    public CharacterAttributes Actor;
     public string Dialogue;
     public DialogueActorMood ActorMood;
 
-    public DialogueEntry(Actor actor, string dialogue, DialogueActorMood actorMood) {
-        Actor = actor;
+    public DialogueEntry(CharacterAttributes actorAttributes, string dialogue, DialogueActorMood actorMood) {
+        Actor = actorAttributes;
         Dialogue = dialogue;
         ActorMood = actorMood;
     }
+
+    public DialogueEntry(Actor actor, string dialogue, DialogueActorMood actorMood) : this(actor.GetAttrubuteManager().GetAttributeContainer(), dialogue, actorMood) { }
+
 }
 
 [Serializable]

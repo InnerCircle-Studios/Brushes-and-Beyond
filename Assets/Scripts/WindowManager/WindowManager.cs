@@ -27,11 +27,15 @@ public class WindowManager : MonoBehaviour {
     }
     public void InitDialogueBox(Actor actor) {
         ShowDialogueBox();
-        dialogueBox.LoadCharacter(actor);
+        dialogueBox.LoadActor(actor);
+    }
+    public void InitDialogueBox(CharacterData actor) {
+        ShowDialogueBox();
+        dialogueBox.LoadActor(actor);
     }
     public void InitDialogueBox(DialogueEntry diagEntry) {
         ShowDialogueBox();
-        dialogueBox.LoadCharacter(diagEntry.Actor);
+        dialogueBox.LoadActor(diagEntry.Actor);
         UpdateDialogueBox(diagEntry.Dialogue);
     }
 

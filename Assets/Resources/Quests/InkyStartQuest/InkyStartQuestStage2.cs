@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InkyStartQuestStage2 : QuestStage {
+    [SerializeField] CharacterAttributes inky;
+
     string blockadeName = "InkyStartQuestBlockade";
     private bool hasVanished = false;
     WindowManager wm;
@@ -23,7 +25,7 @@ public class InkyStartQuestStage2 : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Inky", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetInky(), "Are you doing it right?", DialogueActorMood.HAPPY),
+                    new(inky, "Are you doing it right?", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){})
             },
             { "Blockade 2", new(new List<DialogueEntry>() {
@@ -44,13 +46,13 @@ public class InkyStartQuestStage2 : QuestStage {
         // Reset dialogue back to default
         QuestEvents.OverrideBaseDialogue(new Dictionary<string, DialogueSet>() {
             { "Inky", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetInky(), "Yay you did it!", DialogueActorMood.HAPPY),
+                    new(inky, "Yay you did it!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){})
             }
         });
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Inky", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetInky(), "Yay you did it!", DialogueActorMood.HAPPY),
+                    new(inky, "Yay you did it!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){})
             },
             { "Blockade 2", null }
