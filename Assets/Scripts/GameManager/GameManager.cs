@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private DialogueManager2 dialogueManager;
     [SerializeField] private WindowManager windowManager;
     [SerializeField] private Player player;
-    [SerializeField] private Actor brushy;
-    [SerializeField] private Actor inky;
 
     public static GameManager Instance { get; private set; }
 
@@ -38,13 +36,6 @@ public class GameManager : MonoBehaviour {
 
     public Player GetPlayer() {
         return player;
-    }
-
-    public Actor GetBrushy() {
-        return brushy;
-    }
-    public Actor GetInky() {
-        return inky;
     }
 
     public void RestartGame() {
