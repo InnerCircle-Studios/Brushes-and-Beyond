@@ -29,4 +29,7 @@ public static class QuestEvents {
     public static event Action<Dictionary<string, DialogueSet>> OnOverrideBaseDialogue;
     public static void OverrideBaseDialogue(Dictionary<string, DialogueSet> data) => OnOverrideBaseDialogue?.Invoke(data);
 
+    public static event Action<bool> OnSetDialogueAdvanceable;
+    public static void SetDialogueAdvanceable(bool value) => OnSetDialogueAdvanceable?.Invoke(value);
+
 }

@@ -50,8 +50,13 @@ public class Player : Actor, ISaveable {
         // Disable indicators for every interactable not currently the closest in range. 
         FindObjectsOfType<Interactable>().Where(o => o != toBeInteracted && o.isActiveAndEnabled).ToList().ForEach(o => o.DeactivateIndicator());
 
-        if (toBeInteracted != null) {
+        bool inHideState = _PlayerStateMachine.GetCurrentState().GetName() == "PlayerDialogueState";
+
+        if (toBeInteracted != null && !inHideState) {
             toBeInteracted.ActivateIndicator();
+        }
+        else if (toBeInteracted != null && inHideState) {
+            toBeInteracted.DeactivateIndicator();
         }
     }
 

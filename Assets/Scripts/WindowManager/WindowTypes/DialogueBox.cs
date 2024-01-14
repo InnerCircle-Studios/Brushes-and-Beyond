@@ -24,6 +24,14 @@ public class DialogueBox : MonoBehaviour {
         layoutAnimator = GetComponent<Animator>();
     }
 
+    private void OnEnable() {
+        QuestEvents.OnSetDialogueAdvanceable += SetDialogueAdvanceable;
+    }
+    private void OnDisable() {
+        QuestEvents.OnSetDialogueAdvanceable -= SetDialogueAdvanceable;
+
+    }
+
     public void LoadBox(DialogueBox box) {
         avatar = box.avatar;
         avatarName = box.avatarName;
@@ -71,10 +79,21 @@ public class DialogueBox : MonoBehaviour {
         }
     }
 
+    private void SetDialogueAdvanceable(bool value) {
+        isDialogueAdvanceable = value;
+    }
+
+
     IEnumerator HurryUp() {
         hurryUpText.gameObject.SetActive(false);
+        while (!isDialogueAdvanceable) {
+            yield return new WaitForSeconds(0.1f);
+        }
+
         yield return new WaitForSeconds(3);
         hurryUpText.gameObject.SetActive(true);
     }
+
+    private bool isDialogueAdvanceable = true;
 
 }
