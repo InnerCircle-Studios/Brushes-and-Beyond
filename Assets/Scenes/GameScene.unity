@@ -28571,15 +28571,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.5374465
+      value: 2.2374
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.349599
+      value: 2.2374
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.1225
+      value: 2.2374
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28587,7 +28587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.121
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29960,6 +29960,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blockade 3 - InteractionPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2816
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2816
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2816
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 4594522357884385278, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -30017,12 +30049,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1003741325}
     - target: {fileID: 7587173993721996376, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587173993721996376, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587173993721996376, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587173993721996376, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7587173993721996376, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.21
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588779025368663397, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8659150528446440685, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: blockadeName
