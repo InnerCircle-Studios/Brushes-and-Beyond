@@ -28,7 +28,7 @@ public class AttributeManager : IAttributeManager {
     public void SetPaint(int paintLevel) {
         attributes.Attributes.PaintCount = paintLevel;
         GameManager.Instance.GetWindowManager().ShowTextWindow("PaintIndicator");
-        GameManager.Instance.GetWindowManager().UpdateTextWindow("PaintIndicator", paintLevel.ToString());
+        GameManager.Instance.GetWindowManager().UpdateTextWindow("PaintIndicator", " "+paintLevel.ToString());
         if (paintLevel == 0) {
             GameManager.Instance.GetWindowManager().HideTextWindow("PaintIndicator");
         }

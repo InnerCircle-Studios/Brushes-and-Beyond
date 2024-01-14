@@ -8,6 +8,7 @@ public class GameData {
     public PlayerData PlayerData = new();
     public NPCData NPCData = new();
     public ObjectData ObjectData = new();
+    public UIData UIData = new();
     public SerializableDict<string, string> QuestData = new();
 
 
