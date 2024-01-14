@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
     private Player player;
     private Dictionary<string, Quest> questMap = new();
 
-    SerializableDict<string, string> runtimeQuestStateContainer = new();
+    private SerializableDict<string, string> runtimeQuestStateContainer = new();
 
     private void OnEnable() {
         QuestEvents.OnStartQuest += StartQuest;
