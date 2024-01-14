@@ -1860,6 +1860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffdf631f3965301cb642c00263c4929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questName: {fileID: 1487077565395639909}
+  questObjectives: {fileID: 3048038099313104825}
   defaultPrefix: '* '
 --- !u!1 &5327664208940495567
 GameObject:

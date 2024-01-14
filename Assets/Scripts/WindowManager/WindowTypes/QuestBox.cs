@@ -6,8 +6,8 @@ using UnityEngine;
 
 [Serializable]
 public class QuestBox : MonoBehaviour, ISaveable {
-    private TextMeshProUGUI questName;
-    private TextMeshProUGUI questObjectives;
+    [SerializeField] private TextMeshProUGUI questName;
+    [SerializeField] private TextMeshProUGUI questObjectives;
     [SerializeField] private string defaultPrefix;
 
     public void SetName(string name) {
