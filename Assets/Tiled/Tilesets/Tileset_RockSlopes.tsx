@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.1" name="RockSlopes" tilewidth="16" tileheight="16" tilecount="308" columns="14">
+<tileset version="1.10" tiledversion="1.10.2" name="RockSlopes" tilewidth="16" tileheight="16" tilecount="308" columns="14">
  <image source="../../Art/Tileset_RockSlope.png" width="224" height="352"/>
  <tile id="15">
   <objectgroup draworder="index" id="2">
@@ -38,9 +38,6 @@
  </tile>
  <tile id="21">
   <objectgroup draworder="index" id="2">
-   <object id="1" x="-27.25" y="-19.5">
-    <polygon points="0,0 0.0625,15.9375 14.0625,15.9375 14.0625,5.8125 11.0625,4.9375 9.0625,2.9375 9.0625,0"/>
-   </object>
    <object id="3" x="14.1875" y="0">
     <polygon points="0,0 -0.1875,15.9375 -14.1875,16 -14.1875,5.9375 -12.25,5.875 -9.125,2.875 -9.1875,0"/>
    </object>
