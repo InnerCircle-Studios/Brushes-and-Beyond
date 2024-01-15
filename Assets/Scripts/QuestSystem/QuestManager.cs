@@ -70,7 +70,7 @@ public class QuestManager : MonoBehaviour, ISaveable {
 
 
     private void ChangeQuestState(string id, QuestState state) {
-        Logger.Log("ChangeQuestState", id + " " + state);
+        // Logger.Log("ChangeQuestState", id + " " + state);
         Quest quest = GetQuestByID(id);
         quest.State = state;
         QuestEvents.ChangeQuestState(quest);

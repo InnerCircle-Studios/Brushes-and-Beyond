@@ -87,7 +87,8 @@ public class PlayerStateMachine : StateMachine {
 
 
     public override void ChangeState(State state) {
-        EventBus.TriggerEvent<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT,state.GetName());
+        // Logger.Log("PlayerStateChange", $"Playerstate changed to {state}");
+        EventBus.TriggerEvent<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT, state.GetName());
         base.ChangeState(state);
     }
 

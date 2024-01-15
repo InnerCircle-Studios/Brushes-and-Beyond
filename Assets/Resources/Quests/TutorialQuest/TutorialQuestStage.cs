@@ -101,7 +101,6 @@ public class TutorialQuestStage : QuestStage {
         inDialogue = value;
     }
     private void OnStateChange(string state) {
-        Logger.Log("PlayerStateChange", $"Playerstate changed to {state}");
         playerState = state;
     }
 
