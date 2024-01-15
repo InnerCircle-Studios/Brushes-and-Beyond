@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour, ISaveable {
     [Header("General")]
     public UnityEvent OnEventTrigger = new();
     [SerializeField, Range(0, 10)] private float interactionRange;
+    [SerializeField] private bool autoTrigger = false;
 
     [Header("Dialogue")]
     [SerializeField] private DialogueSet dialogueSet;
@@ -17,6 +18,7 @@ public class Interactable : MonoBehaviour, ISaveable {
     private DialogueSet savedDialogueSet;
     private SpriteRenderer activationKey;
     private GameManager gameManager;
+    private bool hasBeenTriggered;
 
 
     private void OnEnable() {
@@ -63,6 +65,10 @@ public class Interactable : MonoBehaviour, ISaveable {
         else if (dialogueSet != null) {
             FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.
         }
+        if (autoTrigger && !hasBeenTriggered) {
+            hasBeenTriggered = true;
+            OnEventTrigger.Invoke();
+        }
     }
 
     public void DeactivateIndicator() {
@@ -73,11 +79,22 @@ public class Interactable : MonoBehaviour, ISaveable {
         return interactionRange;
     }
 
+    public void SetAutoTrigger(bool value){
+        autoTrigger = value;
+    }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, .3f);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, interactionRange);
+        if (autoTrigger) {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, interactionRange);
+        }
+        else {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, interactionRange);
+        }
+
     }
 
     public void LoadData(GameData data) {

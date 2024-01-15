@@ -2490,7 +2490,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Text for the dialogue goes here.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2915cabaa70b03d4faaa25dceac15a56, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9c5c342e223f4cfd990bf9b2bb9f761a, type: 2}
   m_sharedMaterial: {fileID: 9148738789058814018, guid: 2915cabaa70b03d4faaa25dceac15a56, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2554,7 +2554,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7036306265994777848
