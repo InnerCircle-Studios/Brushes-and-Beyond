@@ -125,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.8125, y: 2.8125}
+    oldSize: {x: 5.5454545, y: 4.090909}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -170,7 +170,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.8125, y: 2.8125}
+    oldSize: {x: 5.5454545, y: 4.090909}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,22 +178,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.8125, y: -0.78125}
-      - {x: 1.9375, y: 0.375}
-      - {x: 1.9375, y: 1.21875}
-      - {x: 1.84375, y: 1.4375}
-      - {x: 1.4375, y: 1.4375}
-      - {x: 1.25, y: 1.34375}
-      - {x: -0.21875, y: 1.4375}
-      - {x: -1.8125, y: 1.4375}
-      - {x: -1.9375, y: 1.40625}
-      - {x: -1.9375, y: -1.4375}
-      - {x: -1.5, y: -1.4375}
-      - {x: -1.28125, y: -1.34375}
-      - {x: 0.875, y: -1.4375}
-      - {x: 1.90625, y: -1.4375}
-      - {x: 1.9375, y: -1.34375}
-      - {x: 1.9375, y: -1.03125}
+    - - {x: 2.1363637, y: -0.54545456}
+      - {x: 2.1363637, y: 0.72727275}
+      - {x: 1.5909091, y: 1.2727273}
+      - {x: 1.2272727, y: 1.3181819}
+      - {x: -1.2727273, y: 1.3181819}
+      - {x: -1.7727274, y: 1.1818182}
+      - {x: -2.0454545, y: 1.0909091}
+      - {x: -2.1818182, y: 0.5}
+      - {x: -2.1818182, y: -0.45454547}
+      - {x: -2.0909092, y: -1}
+      - {x: -1.5909091, y: -1.3636364}
+      - {x: -0.36363637, y: -1.3636364}
+      - {x: -0.09090909, y: -1.3181819}
+      - {x: 1.2272727, y: -1.3181819}
+      - {x: 1.909091, y: -1.0909091}
   m_UseDelaunayMesh: 0
 --- !u!114 &8659150528446440685
 MonoBehaviour:
@@ -259,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: m_LocalPosition.z
