@@ -15,7 +15,7 @@ public class TutorialQuestStage : QuestStage {
     private void OnEnable() {
         // Load dialogue for character during quest 
         EventWrapper dialogueEvent = new();
-        dialogueEvent.AddListener(() => { dialogueFinished = true; OnQuestShow(); });
+        dialogueEvent.AddListener(() => { dialogueFinished = true; OnQuestShow(); UpdateDialogue(); });
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
@@ -65,6 +65,19 @@ public class TutorialQuestStage : QuestStage {
 
         // Start the next quest
         QuestEvents.StartQuest("FirstPaintQuest");
+    }
+
+    private void UpdateDialogue() {
+        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
+            { "Brushy", new(new List<DialogueEntry>() {
+                    new(brushy, "Don't you remember? You can move around with WASD and attack enemies by using the space bar",DialogueActorMood.HAPPY),
+                    new(brushy, "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
+                    new(brushy, "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
+                    new(brushy, "Good luck!",DialogueActorMood.HAPPY),
+                }, new List<DialogueAction>(){
+                })
+            },
+        });
     }
 
 
