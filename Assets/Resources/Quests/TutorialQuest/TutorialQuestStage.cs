@@ -12,6 +12,7 @@ public class TutorialQuestStage : QuestStage {
 
     private bool dialogueFinished = false;
     private bool inDialogue = false;
+    private string playerState = "";
 
     private void OnEnable() {
         // Load dialogue for character during quest 
@@ -39,6 +40,8 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
         EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
+        EventBus.StartListening<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT, OnStateChange);
+
 
     }
 
@@ -66,6 +69,8 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
         EventBus.StopListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
+        EventBus.StopListening<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT, OnStateChange);
+
         // Start the next quest
         QuestEvents.StartQuest("FirstPaintQuest");
     }
@@ -95,6 +100,10 @@ public class TutorialQuestStage : QuestStage {
     private void OnDialogueEnter(bool value) {
         inDialogue = value;
     }
+    private void OnStateChange(string state) {
+        Logger.Log("PlayerStateChange", $"Playerstate changed to {state}");
+        playerState = state;
+    }
 
 
     private void OnMove(Vector2 a) {
@@ -113,7 +122,7 @@ public class TutorialQuestStage : QuestStage {
         }
     }
     private void OnSprint(bool b) {
-        if (dialogueFinished && !inDialogue) {
+        if (dialogueFinished && !inDialogue && playerState == "PlayerWalkState") {
             hasSprinted = true;
             CheckCompleted();
             EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);

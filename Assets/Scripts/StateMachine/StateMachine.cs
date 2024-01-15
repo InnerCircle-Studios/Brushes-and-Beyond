@@ -34,7 +34,7 @@ public abstract class StateMachine
         }
     }
 
-    public void ChangeState(State state)
+    public virtual void ChangeState(State state)
     {
         _CurrentState = state;
     }

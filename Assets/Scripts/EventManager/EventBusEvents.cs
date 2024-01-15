@@ -11,5 +11,6 @@ public class EventBusEvents
         PAUSE_KEY,
         DEATH_EVENT,
         DIALOGUE_EVENT,
+        SWITCH_STATE_EVENT,
     }
 }

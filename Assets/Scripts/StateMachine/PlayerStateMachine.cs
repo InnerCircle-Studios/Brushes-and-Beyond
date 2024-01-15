@@ -86,6 +86,11 @@ public class PlayerStateMachine : StateMachine {
     }
 
 
+    public override void ChangeState(State state) {
+        EventBus.TriggerEvent<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT,state.GetName());
+        base.ChangeState(state);
+    }
+
 
     public void PlayRandomWalkSound() {
         int random = Random.Range(0, 6);
