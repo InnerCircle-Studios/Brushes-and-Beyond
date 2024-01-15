@@ -11,6 +11,7 @@ public class TutorialQuestStage : QuestStage {
     private bool hasSprinted = false;
 
     private bool dialogueFinished = false;
+    private bool inDialogue = false;
 
     private void OnEnable() {
         // Load dialogue for character during quest 
@@ -37,6 +38,8 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
+        EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
+
     }
 
     private void Start() {
@@ -62,7 +65,7 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
-
+        EventBus.StopListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
         // Start the next quest
         QuestEvents.StartQuest("FirstPaintQuest");
     }
@@ -89,9 +92,13 @@ public class TutorialQuestStage : QuestStage {
         UpdateState();
     }
 
+    private void OnDialogueEnter(bool value) {
+        inDialogue = value;
+    }
+
 
     private void OnMove(Vector2 a) {
-        if (dialogueFinished) {
+        if (dialogueFinished && !inDialogue) {
             hasMoved = true;
             CheckCompleted();
             EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
@@ -99,14 +106,14 @@ public class TutorialQuestStage : QuestStage {
 
     }
     private void OnAttack(bool b) {
-        if (dialogueFinished) {
+        if (dialogueFinished && !inDialogue) {
             hasAttacked = true;
             CheckCompleted();
             EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         }
     }
     private void OnSprint(bool b) {
-        if (dialogueFinished) {
+        if (dialogueFinished && !inDialogue) {
             hasSprinted = true;
             CheckCompleted();
             EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
