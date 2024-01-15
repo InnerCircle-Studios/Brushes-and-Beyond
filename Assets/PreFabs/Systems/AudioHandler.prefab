@@ -63,17 +63,23 @@ MonoBehaviour:
   - name: HitEffect5
     clip: {fileID: 8300000, guid: 5590832bcf800dd44b4e47fd49c94fc8, type: 3}
   - name: Walksound1
-    clip: {fileID: 8300000, guid: ba28e03cd5f41f84ab076925f90b4f27, type: 3}
+    clip: {fileID: 8300000, guid: 0f146d18192b37948a0767521a00f4b9, type: 3}
   - name: Walksound2
-    clip: {fileID: 8300000, guid: 50a552d005b747041ab66820da2811ba, type: 3}
+    clip: {fileID: 8300000, guid: 894c57043d7c0a94ab36da0d62aace82, type: 3}
   - name: Walksound3
-    clip: {fileID: 8300000, guid: b71314b4af76ed846a0b30e8c794ae5b, type: 3}
+    clip: {fileID: 8300000, guid: fe5c5911d1be5214680cf2688bd70d01, type: 3}
   - name: Walksound4
-    clip: {fileID: 8300000, guid: ec4d0f4dd3a1eb8439ec1d6acd3a881d, type: 3}
+    clip: {fileID: 8300000, guid: 3b42b719a63be564eb04ec7c75ab58c4, type: 3}
   - name: PaintBallHit1
     clip: {fileID: 8300000, guid: 679c189d0a7f3e3418e1f0b386451798, type: 3}
   - name: PaintBallHit2
     clip: {fileID: 8300000, guid: 0ad69796000092044afac401393136de, type: 3}
+  - name: Walksound5
+    clip: {fileID: 8300000, guid: 9125c190fb2812e4aaf6b2dc7fe7d3ed, type: 3}
+  - name: Walksound6
+    clip: {fileID: 8300000, guid: cad2af8898ae23d419f176d33ff779f9, type: 3}
+  - name: Walksound7
+    clip: {fileID: 8300000, guid: 1b2934e6ce4f36d468f3e747999d1339, type: 3}
   musicSource: {fileID: 6973540887056548648}
   sfxSource: {fileID: 7335504107796212325}
 --- !u!1 &3896268392005700598
