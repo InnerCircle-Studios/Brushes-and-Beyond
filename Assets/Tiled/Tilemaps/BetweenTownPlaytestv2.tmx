@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="213">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="213">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Shadow.tsx"/>
  <tileset firstgid="2581" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1679,6 +1679,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="13" name="Bushstone">
+  <properties>
+   <property name="unity:sortingLayerName" value="Player"/>
+  </properties>
+ </objectgroup>
  <objectgroup id="8" name="Objects">
   <properties>
    <property name="unity:sortingLayerName" value="Objects"/>
