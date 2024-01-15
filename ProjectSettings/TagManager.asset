@@ -58,6 +58,9 @@ TagManager:
   - name: Props
     uniqueID: 63995279
     locked: 0
+  - name: Houses
+    uniqueID: 163843489
+    locked: 0
   - name: Player
     uniqueID: 2006517101
     locked: 0
