@@ -30777,7 +30777,7 @@ PrefabInstance:
     - target: {fileID: 6334964538514536201, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 9c5c342e223f4cfd990bf9b2bb9f761a, type: 2}
+      objectReference: {fileID: 11400000, guid: dcdea7bb5814ba345a2e52162ff708a7, type: 2}
     - target: {fileID: 6334964538514536201, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_fontStyle
       value: 16
@@ -30812,7 +30812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334964538514536201, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7694581707726507704, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
