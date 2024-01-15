@@ -13,7 +13,6 @@ public class DialogueBox : MonoBehaviour {
     [SerializeField] private Image avatar;
     [SerializeField] private TextMeshProUGUI avatarName;
     [SerializeField] private TextMeshProUGUI message;
-    [SerializeField] private Button nextButton;
     [SerializeField] private TextMeshProUGUI hurryUpText;
 
     [Header("Settings")]
