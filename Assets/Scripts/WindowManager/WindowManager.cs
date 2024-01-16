@@ -100,15 +100,13 @@ public class WindowManager : MonoBehaviour {
 
     //Healthbar
     public void ShowHealthBar() {
-        healthBarWindow.Element.gameObject.SetActive(true);
+        healthBarWindow.enabled = false;
     }
-
     public void HideHealthBar() {
-        healthBarWindow.Element.gameObject.SetActive(false);
+        healthBarWindow.enabled = false;
     }
-
     public void UpdateHealthBar(int currentHP) {
-        healthBarWindow.Element.sprite = healthBarWindow.HealthSprites[currentHP];
+        healthBarWindow.SetSprite(currentHP);
     }
 
 

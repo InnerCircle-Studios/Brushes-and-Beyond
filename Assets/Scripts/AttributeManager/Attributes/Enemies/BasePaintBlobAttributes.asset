@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
   m_Name: BasePaintBlobAttributes
   m_EditorClassIdentifier: 
-  Attributes:
-    DialogueSprite: {fileID: 1531069890, guid: c52490642b42d234abca80b06af2e7c7, type: 3}
-    AttackRange: 1.5
+  CharData:
+    DialogueSprite: {fileID: 0}
     Type: 1
     Name: PaintBlob
+    Level: 0
     MaxHealth: 20
     CurrentHealth: 20
     Damage: 1
+    AttackRange: 1.4
+    Loot: {fileID: 0}
     Speed: 5
     SprintSpeed: 20
-    Loot: {fileID: 0}
+    PaintCount: 0

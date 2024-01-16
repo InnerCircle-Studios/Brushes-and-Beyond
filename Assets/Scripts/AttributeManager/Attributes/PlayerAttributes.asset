@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
   m_Name: PlayerAttributes
   m_EditorClassIdentifier: 
-  Attributes:
+  CharData:
     DialogueSprite: {fileID: 21300000, guid: 4bdb3f831a008b34ca48f796bf89d985, type: 3}
     Type: 0
     Name: Vin
     Level: 1
     MaxHealth: 10
     CurrentHealth: 10
-    Damage: 10
+    Damage: 5
     AttackRange: 1.5
     Loot: {fileID: 0}
     Speed: 5

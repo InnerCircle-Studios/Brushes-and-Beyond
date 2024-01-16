@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
   m_Name: BasePaintTubeAttributes
   m_EditorClassIdentifier: 
-  Attributes:
-    DialogueSprite: {fileID: -716878740, guid: 1c03488983383a94683eb9ba9728be05, type: 3}
-    AttackRange: 1.5
+  CharData:
+    DialogueSprite: {fileID: 0}
     Type: 1
     Name: PaintTube
+    Level: 0
     MaxHealth: 50
     CurrentHealth: 50
     Damage: 5
+    AttackRange: 1.5
+    Loot: {fileID: 0}
     Speed: 5
     SprintSpeed: 20
-    Loot: {fileID: 0}
+    PaintCount: 0

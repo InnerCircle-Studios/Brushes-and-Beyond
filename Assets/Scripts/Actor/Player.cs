@@ -18,7 +18,6 @@ public class Player : Actor, ISaveable {
             OnDeath();
         }
         GameManager.Instance.GetWindowManager().UpdateHealthBar(_PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth);
-        GameManager.Instance.GetWindowManager().UpdateTextWindow("HealthIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth.ToString());
 
         HandleInteractions();
     }
