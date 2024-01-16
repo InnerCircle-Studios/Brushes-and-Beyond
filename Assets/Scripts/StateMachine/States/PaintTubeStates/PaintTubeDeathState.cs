@@ -20,6 +20,8 @@ public class PaintTubeDeathState : State {
 
     public override void UpdateState() {
         if (animationHasFinished) {
+            Actor me = GetStateMachine().GetActor();
+            Object.Instantiate(me.GetAttrubuteManager().GetAttributes().Loot, me.GetRigidBody().position, Quaternion.identity);
             Object.Destroy(GetStateMachine().GetActor().gameObject);
         }
 

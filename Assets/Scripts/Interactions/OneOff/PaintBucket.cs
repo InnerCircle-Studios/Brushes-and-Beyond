@@ -7,9 +7,15 @@ public class PaintBucket : MonoBehaviour, ISaveable {
     [Header("EventSelector")]
     [SerializeField] private string bucketSet;
 
+    [Header("Settings")]
+    [SerializeField] private bool hideByDefault = true;
+    [SerializeField] private bool healOnPickup = false;
+    [SerializeField] private int healAmount = 5;
 
     private void Start() {
-        OnHideObject(bucketSet);
+        if (hideByDefault) {
+            OnHideObject(bucketSet);
+        }
     }
 
     private void OnEnable() {
@@ -39,6 +45,9 @@ public class PaintBucket : MonoBehaviour, ISaveable {
 
     public void OnActivation() {
         InteractionEvents.ActivatePaintBucket(1);
+        if (healOnPickup) {
+            GameManager.Instance.GetPlayer().GetAttrubuteManager().ApplyHeal(healAmount);
+        }
         gameObject.SetActive(false);
     }
 

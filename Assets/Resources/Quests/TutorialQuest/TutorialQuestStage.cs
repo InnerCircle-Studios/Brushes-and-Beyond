@@ -121,7 +121,7 @@ public class TutorialQuestStage : QuestStage {
         }
     }
     private void OnSprint(bool b) {
-        if (dialogueFinished && !inDialogue && playerState == "PlayerWalkState") {
+        if (dialogueFinished && !inDialogue && (playerState == "PlayerWalkState" || playerState == "PlayerSprintState")) {
             hasSprinted = true;
             CheckCompleted();
             EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
