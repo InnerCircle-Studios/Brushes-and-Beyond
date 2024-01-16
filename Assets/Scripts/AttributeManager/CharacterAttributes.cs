@@ -6,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterAttributes", menuName = "Brushes/Actor/Attributes"), Serializable]
 public class CharacterAttributes : ScriptableObject {
 
-    public CharacterData Attributes;
+    public CharacterData CharData;
 
     public CharacterAttributes Copy() {
         CharacterAttributes newCharacterAttributes = CreateInstance<CharacterAttributes>();
-        newCharacterAttributes.Attributes = Attributes.Copy();
+        newCharacterAttributes.CharData = CharData.Copy();
         return newCharacterAttributes;
     }
 }
