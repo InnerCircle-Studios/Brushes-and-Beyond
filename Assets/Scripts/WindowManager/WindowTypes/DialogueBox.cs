@@ -45,7 +45,7 @@ public class DialogueBox : MonoBehaviour {
     }
 
     public void LoadActor(CharacterAttributes actor) {
-        CharacterData attribs = actor.Attributes;
+        CharacterData attribs = actor.CharData;
         avatar.sprite = attribs.DialogueSprite;
         avatarName.SetText(attribs.Name);
         HandleCharacters(attribs);
