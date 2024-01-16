@@ -25,14 +25,15 @@ public abstract class Actor : MonoBehaviour {
 
     public IEnumerator FlashSpriteOnHit(SpriteRenderer sRenderer) {
         Color startColor = sRenderer.color;
-        sRenderer.color = Color.gray;
-        yield return new WaitForSecondsRealtime(0.2f);
+        if (startColor != Color.gray) {
+            sRenderer.color = Color.gray;
+            yield return new WaitForSecondsRealtime(0.2f);
 
-        // Handles an edge case where the enemy has died before the sprite could be reset
-        if (sRenderer != null) {
-            sRenderer.color = startColor;
+            // Handles an edge case where the enemy has died before the sprite could be reset
+            if (sRenderer != null) {
+                sRenderer.color = startColor;
+            }
         }
-
     }
 
     public IAttributeManager GetAttrubuteManager() {

@@ -21,7 +21,7 @@ MonoBehaviour:
     CurrentHealth: 50
     Damage: 5
     AttackRange: 1.5
-    Loot: {fileID: 0}
+    Loot: {fileID: 2555439780598467538, guid: 6ee4edc3769ffbc479562c641d1d7ddc, type: 3}
     Speed: 5
     SprintSpeed: 20
     PaintCount: 0

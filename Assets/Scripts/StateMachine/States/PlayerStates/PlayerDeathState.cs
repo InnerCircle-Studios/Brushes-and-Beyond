@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerDeathState : State {
     public PlayerDeathState(string name, StateMachine stateMachine) : base(name, stateMachine) {
 
@@ -9,6 +11,7 @@ public class PlayerDeathState : State {
 
     public override void EnterState() {
         GameManager.Instance.GetWindowManager().ClearQuest();
+        GetStateMachine().GetActor().GetComponent<Collider2D>().enabled = false;
     }
 
     public override void ExitState() {

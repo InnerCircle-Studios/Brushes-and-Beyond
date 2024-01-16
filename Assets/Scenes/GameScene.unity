@@ -28528,7 +28528,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000fbe0d0968f7dd0039f7808d06d0599773392c56179911b386dba834a991f894639c5ff4f
+  m_ApplyToSortingLayers: 00000000fbe0d0968f7dd0039f7808d06d0599773392c56179911b386dba834a991f894639c5ff4f9b8741d7
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -29246,8 +29246,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2006517101
-  m_SortingLayer: 6
+  m_SortingLayerID: -683571301
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1083152442, guid: 5450a56899d41b046828fb395d31724b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -29717,8 +29717,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2006517101
-  m_SortingLayer: 6
+  m_SortingLayerID: -683571301
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1762924669, guid: a506045d82b4bf147b2e4f1690e9c9e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -29887,7 +29887,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -804751201
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -30456,6 +30456,22 @@ PrefabInstance:
     - target: {fileID: 1374235872882337643, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711844590076250384, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
+      propertyPath: m_Dithering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711844590076250384, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
+      propertyPath: m_Antialiasing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062669078478377130, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586629878960332249, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
+      propertyPath: orthographic size
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

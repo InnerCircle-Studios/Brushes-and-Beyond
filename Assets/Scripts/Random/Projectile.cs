@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
         // Check if it hits the player
         if (collision.gameObject.CompareTag("Player")) {
-            Debug.Log(collision.gameObject.name + " was hit by " + gameObject.name);
+            Logger.Log("DamageHandler", collision.gameObject.name + " was hit by " + gameObject.name);
             PlayRandomAttackSound();
             collision.gameObject.GetComponent<Player>().GetAttrubuteManager().ApplyDamage(1);
             //StartCoroutine(collision.gameObject.GetComponent<Player>().FlashSpriteOnHit(collision.gameObject.GetComponent<SpriteRenderer>()));

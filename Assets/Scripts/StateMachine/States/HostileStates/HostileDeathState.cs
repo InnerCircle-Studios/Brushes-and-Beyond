@@ -13,19 +13,19 @@ public class HostileDeathState : State {
     }
 
     public override void EnterState() {
-        GetStateMachine().GetActor().gameObject.tag = "Untagged";
+        GetStateMachine().GetActor().gameObject.tag = "Untagged"; // Prevent the player from hitting the dead entity
+        GetStateMachine().GetActor().GetComponent<Collider2D>().enabled = false;
+
         GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Death");
         _HostileStateMachine.PlayRandomDeathSound();
         GetStateMachine().GetActor().StartCoroutine(WaitForDeathSound());
         GetStateMachine().GetActor().StartCoroutine(WaitForAnim());
-
     }
 
     public override void UpdateState() {
         if (_animationHasFinished && _deathSoundHasFinished) {
             Object.Destroy(GetStateMachine().GetActor().gameObject);
         }
-
     }
 
     IEnumerator WaitForAnim() {
