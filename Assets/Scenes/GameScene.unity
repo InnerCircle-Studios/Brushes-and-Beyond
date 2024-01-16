@@ -29394,6 +29394,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 23e2211f1094b5f468509dc3d8df9e2a, type: 2}
+--- !u!1 &1477422104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9094622814877177258, guid: 97590931873016b4988541fbd01b698d, type: 3}
+  m_PrefabInstance: {fileID: 4792546492203877065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1477422108
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477422104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 332d856aa66fd6346a26c7a6e0ec493f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1504239421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 728439014964948302, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
@@ -30818,6 +30844,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1003741325}
+    - target: {fileID: 6574879907042956327, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574879907042956327, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574879907042956327, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574879907042956327, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280953386
+      objectReference: {fileID: 0}
     - target: {fileID: 7694581707726507704, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -30833,7 +30875,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9094622814877177258, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1477422108}
   m_SourcePrefab: {fileID: 100100000, guid: 97590931873016b4988541fbd01b698d, type: 3}
 --- !u!1001 &6457311898338961601
 PrefabInstance:
