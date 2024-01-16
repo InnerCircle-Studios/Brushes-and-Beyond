@@ -227,6 +227,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PaintBucketIndicatorAnimated_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd70b289ac17954a92ed1a9480a2a46
+      internalID: -1401371568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -243,6 +264,7 @@ TextureImporter:
       PaintBucketIndicatorAnimated_2: 923768467
       PaintBucketIndicatorAnimated_3: -94700785
       PaintBucketIndicatorAnimated_4: 609791619
+      PaintBucketIndicatorAnimated_5: -1401371568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
