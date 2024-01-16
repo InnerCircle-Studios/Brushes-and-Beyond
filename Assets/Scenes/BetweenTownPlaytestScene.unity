@@ -602,6 +602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1722427228}
     m_Modifications:
+    - target: {fileID: -7727361351968751208, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6431790438613390199, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -642,9 +646,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4014342641927363676, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2257304483013583702, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1023870842152412637, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -523673508330572559, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -182948290421308426, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -74901698557026652, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 337839420910899795, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1833163273071804652, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
       propertyPath: m_Name
       value: BetweenTownPlaytestv2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494369342305354302, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951250349920247705, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834335347909428849, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240617493526897189, guid: 1f7d47fcfb8eb454a956f59442a99ce3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
