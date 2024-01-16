@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="76" height="118" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="1366">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="76" height="118" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="1367">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Ground(Free).tsx"/>
  <tileset firstgid="4867" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1077,6 +1077,7 @@
   <properties>
    <property name="unity:sortingLayerName" value="Houses"/>
   </properties>
+  <object id="1366" gid="6184" x="737.25" y="961.75" width="171" height="203"/>
  </objectgroup>
  <objectgroup id="16" name="Bushstone">
   <properties>
@@ -1121,7 +1122,6 @@
   <object id="396" gid="6185" x="238.45" y="1085.45" width="174" height="123"/>
   <object id="397" gid="6185" x="238.45" y="1085.45" width="174" height="123"/>
   <object id="398" gid="6185" x="350.5" y="1645.5" width="174" height="123"/>
-  <object id="399" gid="6184" x="738.5" y="964" width="171" height="203"/>
   <object id="413" gid="6221" x="514.5" y="1088.33" width="26" height="25"/>
   <object id="415" gid="2147489869" x="592" y="1087.33" width="26" height="25"/>
   <object id="417" gid="2147489869" x="472.33" y="1025.33" width="26" height="25"/>
