@@ -1,32 +1,19 @@
-using System;
-
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBarUI : MonoBehaviour
 {
-    public Player _Player;
-    public int _numOfHearts;
+    public Sprite[] healthSprites; // Array of health bar sprites
+    private Image healthBarImage;
 
-    public Image[] _hearts;
-    public Sprite _fullHeart;
-    public Sprite _halfHeart;
-    public Sprite _emptyHearth;
-
-    void Update()
+    void Start()
     {
-        double Health = _Player.GetAttrubuteManager().GetAttributes().CurrentHealth;
+        healthBarImage = GetComponent<Image>();
+    }
 
-        for (int i = 0; i < _hearts.Length; i++)
-        {
-            if (i < Health / 2)
-            {
-                _hearts[i].sprite = _fullHeart;
-            }
-            else
-            {
-                _hearts[i].sprite = _emptyHearth;
-            }
-        }
+    public void UpdateHealthBar(int currentHP)
+    {
+        // Assuming 10 is max HP and sprites are ordered from full to empty
+        healthBarImage.sprite = healthSprites[currentHP];
     }
 }

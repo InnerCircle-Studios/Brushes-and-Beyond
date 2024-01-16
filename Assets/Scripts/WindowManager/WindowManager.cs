@@ -11,6 +11,7 @@ public class WindowManager : MonoBehaviour {
 
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private QuestBox questBox;
+    [SerializeField] private HealthBarWindow healthBarWindow;
     // insert custom classes for tutorial etc (or make them static)
 
     private void Awake() {
@@ -94,6 +95,20 @@ public class WindowManager : MonoBehaviour {
     public void UpdateTextWindow(string window, string content) {
         TextWindow screen = textWindows?.First(e => e.Name == window);
         screen.Element.SetText(screen.DefaultText + content);
+    }
+
+
+    //Healthbar
+    public void ShowHealthBar() {
+        healthBarWindow.Element.gameObject.SetActive(true);
+    }
+
+    public void HideHealthBar() {
+        healthBarWindow.Element.gameObject.SetActive(false);
+    }
+
+    public void UpdateHealthBar(int currentHP) {
+        healthBarWindow.Element.sprite = healthBarWindow.HealthSprites[currentHP];
     }
 
 
