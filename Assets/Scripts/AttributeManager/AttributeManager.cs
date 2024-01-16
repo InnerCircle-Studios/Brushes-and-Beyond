@@ -41,8 +41,9 @@ public class AttributeManager : IAttributeManager {
     }
 
     public void SetPaint(int paintLevel) {
-        attributes.CharData.PaintCount = paintLevel;
-        GameManager.Instance.GetWindowManager().UpdateTextWindow("PaintIndicator", paintLevel.ToString());
+        if (paintLevel >= 0 && paintLevel <= 3) {
+            attributes.CharData.PaintCount = paintLevel;
+        }
     }
 
 }

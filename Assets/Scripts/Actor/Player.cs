@@ -17,7 +17,9 @@ public class Player : Actor, ISaveable {
         if (!GetAttrubuteManager().IsAlive()) {
             OnDeath();
         }
-        GameManager.Instance.GetWindowManager().UpdateHealthBar(_PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth);
+
+        GameManager.Instance.GetWindowManager().UpdateHealthBar(_PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().CurrentHealth); // Replace with event
+        GameManager.Instance.GetWindowManager().UpdateTextWindow("PaintIndicator", _PlayerStateMachine.GetActor().GetAttrubuteManager().GetAttributes().PaintCount.ToString());
 
         HandleInteractions();
     }
