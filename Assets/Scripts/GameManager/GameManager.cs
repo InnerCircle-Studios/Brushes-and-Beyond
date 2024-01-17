@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("GameScene");
     }
 
+    public void NextScene() {
+        SaveManager.Instance.SaveGame();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void ReturnToMainMenu() {
         SaveManager.Instance.SaveGame();
         SceneManager.LoadSceneAsync(0);

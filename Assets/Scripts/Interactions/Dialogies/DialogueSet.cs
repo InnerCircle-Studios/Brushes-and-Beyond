@@ -21,7 +21,7 @@ public class DialogueSet {
         currentIndex++;
         actionList.Where(action => action.PlayAfterIndex == currentIndex && !action.HasBeenTriggered()).ToList()
                   .ForEach(action => action.Trigger());
-        
+        // Logger.Log("DialogueSet", $"Current index: {currentIndex}, for size: {dialogueList.Count}");
         if (currentIndex > dialogueList.Count - 1) {
             actionList.Where(action => action.PlayAfterIndex > currentIndex && !action.HasBeenTriggered()).ToList()
                   .ForEach(action => action.Trigger()); // Trigger all actions marked to be played after the dialogue has finished.
