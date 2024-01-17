@@ -6,24 +6,14 @@ using UnityEngine;
 //TODO start from inky's quest, enemy kill count? || paint bucket count?
 
 public class LeaveFirstSceneStage : QuestStage {
+    private int paintCounter = 0;
+
     WindowManager wm;
 
     private void OnEnable() {
 
         wm = GameManager.Instance.GetWindowManager();
-        wm.ShowQuestMenu();
-        wm.SetQuestName("Explore");
-        wm.SetQuestObjectives($"* Find a way to leave");
-
-
-        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
-            { "Barrier", new(new List<DialogueEntry>() {
-
-                }, new List<DialogueAction>(){
-
-                })
-            }
-        });
+        InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 
     private void OnDisable() {
@@ -34,33 +24,35 @@ public class LeaveFirstSceneStage : QuestStage {
 
     }
 
-
-
-
+    private void OnPaintBucketActivated(int amount) {
+        paintCounter++;
+        CheckCompleted();
+    }
 
 
     private void CheckCompleted() {
         UpdateState();
-
+        if (paintCounter >= 3) {
+            FinishStage();
+        }
     }
 
     private void UpdateState() {
-        string data = JsonUtility.ToJson(new StupidJSONWrapper(
-            new bool[] { }
-        ));
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(paintCounter));
         ChangeState(data);
     }
 
     protected override void SetQuestStageState(string state) {
-        bool[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;
+        StupidJSONWrapper data = JsonUtility.FromJson<StupidJSONWrapper>(state);
+        paintCounter = data.PaintCounter;
         UpdateState();
     }
 
     [Serializable]
     public class StupidJSONWrapper {
-        public bool[] Values;
-        public StupidJSONWrapper(bool[] values) {
-            Values = values;
+        public int PaintCounter;
+        public StupidJSONWrapper(int paintCounter) {
+            PaintCounter = paintCounter;
         }
     }
 

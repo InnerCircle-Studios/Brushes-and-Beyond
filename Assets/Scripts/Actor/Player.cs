@@ -98,6 +98,8 @@ public class Player : Actor, ISaveable {
     }
 
     public void SaveData(GameData data) {
+        //TODO fix bug where player position is set to the last position of the player in previous scene.
+        // Triggers when loading a new scene ofc.
         data.PlayerData.PlayerPosition = transform.position;
         data.PlayerData.PlayerAttributes = GetAttrubuteManager().GetAttributes();
         data.PlayerData.SceneName = SceneManager.GetActiveScene().name;

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cde18375fbbe54186ae2c38467a37f, type: 3}
   m_Name: LeaveFirstSceneQuest
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 
-  DisplayName: 
+  <Id>k__BackingField: LeaveFirstSceneQuest
+  DisplayName: Leave the scene
   PlayerStoryLevel: 0
-  RequiredQuests: []
-  Stages: []
+  RequiredQuests:
+  - {fileID: 11400000, guid: 90caf8f751879824997136cf076578e7, type: 2}
+  Stages:
+  - {fileID: 7932036845714754164, guid: 1189296d54a06704295ce05fb3e12891, type: 3}
+  - {fileID: 9219846629524293788, guid: 08bd2c9d6d1924348a2ceba0c69ca9d6, type: 3}
   RewardItem: {fileID: 0}

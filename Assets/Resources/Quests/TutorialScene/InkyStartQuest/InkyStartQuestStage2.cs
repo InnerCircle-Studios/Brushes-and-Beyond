@@ -57,7 +57,7 @@ public class InkyStartQuestStage2 : QuestStage {
             },
             { "Blockade 2", null }
         });
-
+        QuestEvents.StartQuest("LeaveFirstSceneQuest");
     }
 
     private void OnWallVanished(string name) {
