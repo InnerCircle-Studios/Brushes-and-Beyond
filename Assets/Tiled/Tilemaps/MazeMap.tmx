@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="400" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="1861">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="400" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="1862">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Ground(Free).tsx"/>
  <tileset firstgid="4867" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1727,6 +1727,7 @@
   <object id="1858" gid="5917" x="4342" y="490.5" width="26" height="25"/>
   <object id="1859" gid="5916" x="4410.5" y="513" width="26" height="25"/>
   <object id="1860" gid="5912" x="4477" y="531.5" width="16" height="16"/>
+  <object id="1861" gid="5912" x="3463" y="923.5" width="16" height="16"/>
  </objectgroup>
  <objectgroup id="8" name="Objects">
   <properties>
@@ -2303,7 +2304,6 @@
   <object id="863" gid="5922" x="4590" y="1351" width="79" height="90"/>
   <object id="940" gid="5914" x="641.5" y="1426" width="16" height="16"/>
   <object id="1050" gid="5876" x="1335" y="633.5" width="80" height="90"/>
-  <object id="1186" gid="5912" x="3463" y="923.5" width="16" height="16"/>
   <object id="1194" gid="5913" x="932.091" y="1053.36" width="16" height="16"/>
   <object id="1197" gid="5919" x="583" y="1729" width="80" height="90"/>
   <object id="1198" gid="5922" x="496" y="1743" width="79" height="90"/>
