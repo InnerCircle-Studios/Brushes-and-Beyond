@@ -1091,7 +1091,7 @@
  </objectgroup>
  <objectgroup id="16" name="Bushstone">
   <properties>
-   <property name="unity:sortingLayerName" value="Player"/>
+   <property name="unity:sortingLayerName" value="Entities"/>
   </properties>
   <object id="1381" gid="6225" x="669.273" y="454.545" width="16" height="16"/>
   <object id="1382" gid="6229" x="661.182" y="605.545" width="26" height="25"/>

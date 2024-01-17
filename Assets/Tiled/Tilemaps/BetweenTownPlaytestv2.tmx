@@ -1681,7 +1681,7 @@
  </layer>
  <objectgroup draworder="index" id="13" name="Bushstone">
   <properties>
-   <property name="unity:sortingLayerName" value="Player"/>
+   <property name="unity:sortingLayerName" value="Entities"/>
   </properties>
   <object id="219" gid="6285" x="2242.64" y="622.545" width="26" height="25"/>
   <object id="218" gid="6281" x="2268.91" y="620.909" width="16" height="16"/>

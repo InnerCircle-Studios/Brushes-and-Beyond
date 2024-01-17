@@ -1514,7 +1514,7 @@
  </layer>
  <objectgroup id="10" name="Bushstone">
   <properties>
-   <property name="unity:sortingLayerName" value="Player"/>
+   <property name="unity:sortingLayerName" value="Entities"/>
   </properties>
  </objectgroup>
  <objectgroup id="8" name="Objects">
