@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using SuperTiled2Unity;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StartMenu : MonoBehaviour {
+public class StartMenu : MonoBehaviour, ISaveable {
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button continueButton;
+    private string lastSceneLoaded = "GameScene";
 
     private void Start() {
         if (!SaveManager.Instance.HasGameData()) {
@@ -33,7 +33,7 @@ public class StartMenu : MonoBehaviour {
 
         // Works w/ Savemanager OnSceneLoaded() to load the game.
         SaveManager.Instance.SaveGame();
-        SceneManager.LoadSceneAsync("GameScene");
+        SceneManager.LoadSceneAsync(lastSceneLoaded);
     }
 
     public void QuitGame() {
@@ -44,5 +44,15 @@ public class StartMenu : MonoBehaviour {
     public void DisableButtons() {
         newGameButton.interactable = false;
         continueButton.interactable = false;
+    }
+
+    public void LoadData(GameData data) {
+        if (!data.PlayerData.SceneName.IsEmpty()) {
+            lastSceneLoaded = data.PlayerData.SceneName;
+        }
+    }
+
+    public void SaveData(GameData data) {
+        throw new System.NotImplementedException();
     }
 }

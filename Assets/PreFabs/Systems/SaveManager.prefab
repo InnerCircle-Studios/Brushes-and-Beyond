@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filename: brushes
   useEncryption: 0
-  togglePresistance: 0
-  initializeDataIfNoneFound: 0
+  togglePresistance: 1
+  initializeDataIfNoneFound: 1

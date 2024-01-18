@@ -89,7 +89,7 @@ public class Player : Actor, ISaveable {
     }
 
     public void LoadData(GameData data) {
-        if (data.PlayerData.PlayerPosition != Vector3.zero) {
+        if (data.PlayerData.PlayerPosition != Vector3.zero && data.PlayerData.SceneName == SceneManager.GetActiveScene().name) {
             transform.position = data.PlayerData.PlayerPosition;
         }
         if (data.PlayerData.PlayerAttributes.Type == ActorType.PLAYER) {
@@ -98,8 +98,7 @@ public class Player : Actor, ISaveable {
     }
 
     public void SaveData(GameData data) {
-        //TODO fix bug where player position is set to the last position of the player in previous scene.
-        // Triggers when loading a new scene ofc.
+        data.PlayerData.SceneName = SceneManager.GetActiveScene().name;
         data.PlayerData.PlayerPosition = transform.position;
         data.PlayerData.PlayerAttributes = GetAttrubuteManager().GetAttributes();
         data.PlayerData.SceneName = SceneManager.GetActiveScene().name;
