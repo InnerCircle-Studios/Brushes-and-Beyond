@@ -44,7 +44,7 @@ public class Blockade : MonoBehaviour, ISaveable {
     private IEnumerator HideObject() {
         animator.Play("VortexRemove");
         QuestEvents.SetDialogueAdvanceable(false);
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(2.30f);
         QuestEvents.SetDialogueAdvanceable(true);
         gameObject.SetActive(false);
     }

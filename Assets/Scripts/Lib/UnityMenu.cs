@@ -7,7 +7,6 @@ using System.IO;
 public class UnityMenu {
     [MenuItem("Tools/Open Savedata folder")]
     private static void OpenSaveData() {
-        UnityEngine.Debug.Log(Application.persistentDataPath);
         OpenFileManager(Application.persistentDataPath);
     }
 
