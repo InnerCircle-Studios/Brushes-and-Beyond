@@ -41,12 +41,7 @@ public class PaintTubeWalkState : State {
     private void CheckDirection() { //Pruely for animation direction. Not for movement
         if (_PaintStateMachine._currentMovement.x != 0) {
             _direction = _PaintStateMachine._currentMovement.x > 0 ? MovementDirection.RIGHT : MovementDirection.LEFT;
-            if (_direction == MovementDirection.RIGHT) {
-                GetStateMachine().GetActor().GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else {
-                GetStateMachine().GetActor().GetComponent<SpriteRenderer>().flipX = false;
-            }
+            GetStateMachine().GetActor().GetComponent<SpriteRenderer>().flipX = _direction == MovementDirection.RIGHT;
         }
 
         if (_PaintStateMachine._currentMovement.y != 0) {
@@ -55,7 +50,7 @@ public class PaintTubeWalkState : State {
     }
 
     private IEnumerator CheckTime() { //Check if it should spawn a paintball
-        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        yield return new WaitForSeconds(Random.Range(5f, 7f));
         _PaintStateMachine._isSpawning.Value = true;
     }
 

@@ -47,4 +47,4 @@ MonoBehaviour:
   filename: brushes
   useEncryption: 0
   togglePresistance: 0
-  initializeDataIfNoneFound: 1
+  initializeDataIfNoneFound: 0
