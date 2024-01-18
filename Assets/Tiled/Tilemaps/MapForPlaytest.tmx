@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="51" nextobjectid="3431">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="51" nextobjectid="3442">
  <tileset firstgid="1" source="../Tilesets/Objects_Buildings.tsx"/>
  <tileset firstgid="43" source="../Tilesets/Objects_Props.tsx"/>
  <tileset firstgid="201" source="../Tilesets/Objects_Rocks.tsx"/>
@@ -1736,7 +1736,7 @@
   <object id="3384" gid="7219" x="590" y="440.875" width="80" height="86.25"/>
   <object id="3385" gid="7219" x="549.5" y="438.5" width="80" height="83.25"/>
   <object id="3386" gid="7221" x="526" y="438.25" width="86" height="84.25"/>
-  <object id="3387" gid="7221" x="464.75" y="441" width="86" height="62.75"/>
+  <object id="3387" gid="7221" x="463.5" y="440.25" width="86" height="62.75"/>
   <object id="3388" gid="2147490871" x="492.5" y="439.5" width="79" height="73.25"/>
   <object id="3389" gid="7223" x="672.5" y="447.5" width="79" height="90"/>
   <object id="3390" gid="7223" x="696" y="449" width="79" height="90"/>
@@ -1768,6 +1768,8 @@
   <object id="3425" gid="7219" x="1122.33" y="1381.67" width="80" height="90"/>
   <object id="3426" gid="7219" x="1033" y="1378" width="80" height="90"/>
   <object id="3428" gid="7220" x="835.667" y="1381.33" width="80" height="90"/>
+  <object id="3435" gid="7194" x="921.333" y="726.333" width="57" height="65"/>
+  <object id="3440" gid="7192" x="270.5" y="666.5" width="51.3333" height="60"/>
  </objectgroup>
  <layer id="48" name="Edge" width="200" height="200">
   <data encoding="csv">
