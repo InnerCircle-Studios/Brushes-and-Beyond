@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadFromLastSave(){
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void NextScene() {
         SaveManager.Instance.SaveGame();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
@@ -58,4 +62,9 @@ public class GameManager : MonoBehaviour {
         SaveManager.Instance.SaveGame();
         SceneManager.LoadSceneAsync(0);
     }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
+
 }
