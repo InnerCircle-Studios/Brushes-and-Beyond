@@ -1707,7 +1707,7 @@
   <object id="3307" gid="7222" x="1069.5" y="1312" width="79" height="90"/>
   <object id="3350" gid="7223" x="975" y="672.5" width="79" height="90"/>
   <object id="3351" gid="7223" x="926.5" y="599.5" width="79" height="90"/>
-  <object id="3353" gid="7221" x="903.5" y="523" width="86" height="97"/>
+  <object id="3353" gid="7221" x="899.5" y="553" width="86" height="97"/>
   <object id="3355" gid="7220" x="950.5" y="560" width="80" height="90"/>
   <object id="3356" gid="7219" x="977" y="616" width="80" height="90"/>
   <object id="3357" gid="7222" x="1030.5" y="687.5" width="79" height="90"/>
@@ -1742,7 +1742,7 @@
   <object id="3390" gid="7223" x="696" y="449" width="79" height="90"/>
   <object id="3391" gid="7223" x="629.5" y="442.5" width="79" height="90"/>
   <object id="3393" gid="7220" x="823.333" y="504.333" width="80" height="90"/>
-  <object id="3394" gid="7220" x="845.333" y="438.333" width="80" height="90"/>
+  <object id="3394" gid="7220" x="845.333" y="438.333" width="80" height="75"/>
   <object id="3395" gid="7220" x="945.667" y="448" width="80" height="90"/>
   <object id="3397" gid="7220" x="348.25" y="486" width="80" height="90"/>
   <object id="3398" gid="7223" x="278.5" y="606" width="79" height="90"/>
