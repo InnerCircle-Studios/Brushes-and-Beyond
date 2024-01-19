@@ -93,34 +93,31 @@ public class PlayerStateMachine : StateMachine {
     }
 
 
+    // public void PlayRandomWalkSound() {
+    //     int random = Random.Range(0, 1);
+
+    //     switch (random) {
+    //         case 0:
+    //             AudioManager.instance.PlaySfx("RoadSound1");
+    //             break;
+    //         case 1:
+    //             AudioManager.instance.PlaySfx("RoadSound2");
+    //             break;
+
+    //     }
+    // }
     public void PlayRandomWalkSound() {
-        int random = Random.Range(0, 6);
-
-        switch (random) {
-            case 0:
-                AudioManager.instance.PlaySfx("Walksound2");
-                break;
-            case 1:
-                AudioManager.instance.PlaySfx("Walksound3");
-                break;
-            case 2:
-                AudioManager.instance.PlaySfx("Walksound4");
-                break;
-            case 3:
-                AudioManager.instance.PlaySfx("Walksound5");
-                break;
-            case 4:
-                AudioManager.instance.PlaySfx("Walksound6");
-                break;
-            case 5:
-                AudioManager.instance.PlaySfx("Walksound7");
-                break;
-            case 6:
-                AudioManager.instance.PlaySfx("Walksound1");
-                break;
-
-        }
+    if (playFirstSound) {
+        AudioManager.instance.PlaySfx("RoadSound1");
+    } else {
+        AudioManager.instance.PlaySfx("RoadSound2");
     }
+
+    // Toggle the flag for the next call
+    playFirstSound = !playFirstSound;
+}
+
+
 
     public MovementDirection _CurrentDirection = MovementDirection.DOWN;
     public Vector2 _CurrentMovementInput = new Vector2();
@@ -133,6 +130,7 @@ public class PlayerStateMachine : StateMachine {
     public BoolWrapper _IsShowDone { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsRunningPressed { get; set; } = new BoolWrapper(false);
     public BoolWrapper _AttackTimer { get; set; } = new BoolWrapper(false);
+    private bool playFirstSound = true;
 }
 
 public enum MovementDirection {

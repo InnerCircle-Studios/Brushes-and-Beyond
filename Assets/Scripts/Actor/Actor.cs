@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public abstract class Actor : MonoBehaviour {
     public void Awake() {
