@@ -50,10 +50,6 @@ public class SaveManager : MonoBehaviour {
         SaveGame();
     }
 
-
-
-
-
     public void NewGame() {
         gameData = new GameData();
     }

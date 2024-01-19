@@ -12,6 +12,7 @@ public class PlayerAttackState : State {
     }
 
     public override void EnterState() {
+        _PlayerStateMachine.PlayAttackSound();
         Actor actor = GetStateMachine().GetActor();
         actor.GetAnimator().Play("SwordSwing", _PlayerStateMachine._CurrentDirection);
         Dash();

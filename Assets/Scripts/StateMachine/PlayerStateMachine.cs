@@ -92,30 +92,45 @@ public class PlayerStateMachine : StateMachine {
         base.ChangeState(state);
     }
 
-
-    // public void PlayRandomWalkSound() {
-    //     int random = Random.Range(0, 1);
-
-    //     switch (random) {
-    //         case 0:
-    //             AudioManager.instance.PlaySfx("RoadSound1");
-    //             break;
-    //         case 1:
-    //             AudioManager.instance.PlaySfx("RoadSound2");
-    //             break;
-
-    //     }
-    // }
     public void PlayRandomWalkSound() {
-    if (playFirstSound) {
-        AudioManager.instance.PlaySfx("RoadSound1");
-    } else {
-        AudioManager.instance.PlaySfx("RoadSound2");
+        if (_playFirstSoundWalk) {
+            AudioManager.instance.PlaySfx("RoadSound1");
+        }
+        else {
+            AudioManager.instance.PlaySfx("RoadSound2");
+        }
+
+        // Toggle the flag for the next call
+        _playFirstSoundWalk = !_playFirstSoundWalk;
     }
 
-    // Toggle the flag for the next call
-    playFirstSound = !playFirstSound;
-}
+    public void PlayAttackSound() {
+        float _currentTime = Time.time;
+
+        // Check if it's been at least 2 seconds since the last attack
+        if (_currentTime - _lastAttackTime >= 2f) {
+            _attackCount = 0; // Reset the attack count to start from the beginning
+        }
+
+        _attackCount++;
+
+        switch (_attackCount) {
+            case 1:
+                AudioManager.instance.PlaySfx("VinAttack1");
+                break;
+            case 2:
+                AudioManager.instance.PlaySfx("VinAttack2");
+                break;
+            case 3:
+                AudioManager.instance.PlaySfx("VinAttack3");
+                _attackCount = 0; // Reset the attack count to start from the beginning
+                break;
+        }
+
+        _lastAttackTime = _currentTime;
+    }
+
+
 
 
 
@@ -130,7 +145,9 @@ public class PlayerStateMachine : StateMachine {
     public BoolWrapper _IsShowDone { get; set; } = new BoolWrapper(false);
     public BoolWrapper _IsRunningPressed { get; set; } = new BoolWrapper(false);
     public BoolWrapper _AttackTimer { get; set; } = new BoolWrapper(false);
-    private bool playFirstSound = true;
+    private bool _playFirstSoundWalk = true;
+    private int _attackCount = 0;
+    private float _lastAttackTime = 0f;
 }
 
 public enum MovementDirection {

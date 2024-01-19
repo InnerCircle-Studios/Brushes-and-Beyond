@@ -45,6 +45,7 @@ public class PaintBucket : MonoBehaviour, ISaveable {
 
     public void OnActivation() {
         InteractionEvents.ActivatePaintBucket(1);
+        AudioManager.instance.PlaySfx("BucketPickUp");
         if (healOnPickup) {
             GameManager.Instance.GetPlayer().GetAttrubuteManager().ApplyHeal(healAmount);
         }
