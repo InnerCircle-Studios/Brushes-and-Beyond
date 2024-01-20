@@ -33,12 +33,13 @@ public class FirstPaintQuestStage : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(brushy, "Now that you have completed the tutorial, we can start with painting!", DialogueActorMood.HAPPY),
-                    new(brushy, "Grab these three paintbuckets and fill in the blank spot.",DialogueActorMood.HAPPY),
+                    new(brushy, "Well done! Now we can start with painting!", DialogueActorMood.NEUTRAL),
+                    new(brushy, "Did you know that I can be a sponge too?", DialogueActorMood.NEUTRAL),
+                    new(brushy, "If you gather some of these buckets I can show you!", DialogueActorMood.NEUTRAL),
                 }, new List<DialogueAction>(){
                     new(0, hideQuestUI,true),
-                    new(1,showevent ,true),
-                    new(1,updateQuestUI,true),
+                    new(2,showevent ,true),
+                    new(2,updateQuestUI,true),
                     new(99,updateDialogue,true)
                 })
             }

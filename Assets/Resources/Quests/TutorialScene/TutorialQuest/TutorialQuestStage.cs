@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class TutorialQuestStage : QuestStage {
     [SerializeField] CharacterAttributes brushy;
-    private bool hasMoved = false;
     private bool hasAttacked = false;
     private bool hasSprinted = false;
 
@@ -18,17 +17,22 @@ public class TutorialQuestStage : QuestStage {
         // Load dialogue for character during quest 
         EventWrapper dialogueEvent = new();
         dialogueEvent.AddListener(() => { dialogueFinished = true; OnQuestShow(); UpdateDialogue(); });
-
+        Player player = GameManager.Instance.GetPlayer();
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(brushy, "Welcome to the tutorial!", DialogueActorMood.HAPPY),
-                    new(brushy, "This is a tutorial quest, it will teach you the basics of the game.",DialogueActorMood.HAPPY),
-                    new(brushy, "You can move around with WASD.",DialogueActorMood.HAPPY),
-                    new(brushy, "Attack enemies by using the space bar", DialogueActorMood.HAPPY),
-                    new(brushy, "Movement speed can be increased by using the shift key to sprint.", DialogueActorMood.HAPPY),
-                    new(brushy, "Interact with objects by pressing <sprite=\"Ekey\" index=0>",DialogueActorMood.HAPPY),
-                    new(brushy, "If you need a break, you can open the pause menu with the escape key.",DialogueActorMood.HAPPY),
+                    new(player, "Who are you and why am I here?!", DialogueActorMood.CONFUSED),
+
+                    new(brushy, "Long story short, the paintings started to riot. You never finish any of them! ", DialogueActorMood.NEUTRAL),
+                    new(brushy, "As for me.. I am Brushy! You know, the brush you painted with before you got here? Yep, That's me! ", DialogueActorMood.NEUTRAL),
+
+                    new(player, "Okay Brushy, I promise I'll finish my paintings. … but can I get out of here now?", DialogueActorMood.SAD),
+                    new(brushy, "Nope you have to finish the painting from inside out, but don't worry I will come with you!", DialogueActorMood.NEUTRAL),
+
+                    new(brushy, "I also have some tips for you!", DialogueActorMood.HAPPY),
+                    new(brushy, "You can use the shift key to sprint and increase your movement speed.", DialogueActorMood.NEUTRAL),
+                    new(brushy, "To defend yourself, press space and swing your brush!", DialogueActorMood.NEUTRAL),
+                    new(brushy, "If you need a break, you can open the pause menu with the escape key.", DialogueActorMood.NEUTRAL),
                     new(brushy, "Good luck!",DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
                     new(99,dialogueEvent,true)
@@ -36,7 +40,6 @@ public class TutorialQuestStage : QuestStage {
             },
         });
 
-        EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
         EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
@@ -65,7 +68,6 @@ public class TutorialQuestStage : QuestStage {
             }
         });
 
-        EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SPACE_KEY, OnAttack);
         EventBus.StopListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
         EventBus.StopListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
@@ -93,7 +95,7 @@ public class TutorialQuestStage : QuestStage {
         WindowManager wm = GameManager.Instance.GetWindowManager();
         wm.ShowQuestMenu();
         wm.SetQuestName("TutorialQuest");
-        wm.SetQuestObjectives($"* Move with WASD : {hasMoved}\n* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
+        wm.SetQuestObjectives($"* Attack with Space : {hasAttacked}\n* Sprint with Shift : {hasSprinted}");
         UpdateState();
     }
 
@@ -104,15 +106,6 @@ public class TutorialQuestStage : QuestStage {
         playerState = state;
     }
 
-
-    private void OnMove(Vector2 a) {
-        if (dialogueFinished && !inDialogue) {
-            hasMoved = true;
-            CheckCompleted();
-            EventBus.StopListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMove);
-        }
-
-    }
     private void OnAttack(bool b) {
         if (dialogueFinished && !inDialogue) {
             hasAttacked = true;
@@ -132,7 +125,7 @@ public class TutorialQuestStage : QuestStage {
     private void CheckCompleted() {
         UpdateState();
         OnQuestShow();
-        if (hasMoved && hasAttacked && hasSprinted) {
+        if (hasAttacked && hasSprinted) {
             GameManager.Instance.GetPlayer().GetAttrubuteManager().GetAttributes().Level = 2;
             GameManager.Instance.GetWindowManager().ClearQuest();
             FinishStage();
@@ -140,7 +133,7 @@ public class TutorialQuestStage : QuestStage {
     }
 
     private void UpdateState() {
-        string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasMoved, hasAttacked, hasSprinted, dialogueFinished }));
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(new bool[] { hasAttacked, hasSprinted, dialogueFinished }));
         ChangeState(data);
     }
 
@@ -149,12 +142,10 @@ public class TutorialQuestStage : QuestStage {
     protected override void SetQuestStageState(string state) {
         bool[] data = JsonUtility.FromJson<StupidJSONWrapper>(state).Values;
         if (data.Length == 4) {
-            hasMoved = data[0];
-            hasAttacked = data[1];
-            hasSprinted = data[2];
-            dialogueFinished = data[3];
+            hasAttacked = data[0];
+            hasSprinted = data[1];
+            dialogueFinished = data[2];
         }
-
     }
 
     [Serializable]

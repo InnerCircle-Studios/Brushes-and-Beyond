@@ -22,5 +22,7 @@ public enum DialogueActorMood {
     HAPPY,
     NEUTRAL,
     SAD,
-    ANGRY
+    ANGRY,
+    CONFUSED,
+    SCARED,
 }

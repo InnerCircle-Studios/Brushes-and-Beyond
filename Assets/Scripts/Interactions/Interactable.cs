@@ -58,16 +58,18 @@ public class Interactable : MonoBehaviour, ISaveable {
     }
 
     public void ActivateIndicator() {
-        activationKey.enabled = true;
-        if (questDialogueSet != null) {
-            gameManager.GetDialogueManager().SetActiveDialogue(questDialogueSet);
-        }
-        else if (dialogueSet != null) {
-            FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.
-        }
-        if (autoTrigger && !hasBeenTriggered) {
-            hasBeenTriggered = true;
-            OnEventTrigger.Invoke();
+        if (!hasBeenTriggered) {
+            activationKey.enabled = true;
+            if (questDialogueSet != null) {
+                gameManager.GetDialogueManager().SetActiveDialogue(questDialogueSet);
+            }
+            else if (dialogueSet != null) {
+                FindAnyObjectByType<GameManager>().GetDialogueManager().SetActiveDialogue(dialogueSet); // Load the dialogue set into the dialogue manager.
+            }
+            if (autoTrigger) {
+                hasBeenTriggered = true;
+                OnEventTrigger.Invoke();
+            }
         }
     }
 
@@ -78,8 +80,11 @@ public class Interactable : MonoBehaviour, ISaveable {
     public float GetInteractionRange() {
         return interactionRange;
     }
+    public bool GetAutoTrigger() {
+        return autoTrigger;
+    }
 
-    public void SetAutoTrigger(bool value){
+    public void SetAutoTrigger(bool value) {
         autoTrigger = value;
     }
 

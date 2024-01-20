@@ -71,7 +71,7 @@ public class Player : Actor, ISaveable {
         // Find the closest interactable in a circle arround the player.
         foreach (RaycastHit2D hit in Physics2D.CircleCastAll(currentPosition, 10, Vector2.zero)) {
             if (hit.transform.gameObject.TryGetComponent<Interactable>(out Interactable interactable)) {
-                if (interactable.isActiveAndEnabled) {
+                if (interactable.isActiveAndEnabled ) {
                     float distanceBetweenTargets = Vector2.Distance(currentPosition, interactable.gameObject.transform.position);
                     float interactionRange = interactable.GetInteractionRange();
                     if (distanceBetweenTargets < smallestDistance && distanceBetweenTargets <= interactionRange) {

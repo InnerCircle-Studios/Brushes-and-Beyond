@@ -35,7 +35,7 @@ public class PlayerInteractState : State {
     private void CheckInteractions() {
         Player myplayer = (Player)_PlayerStateMachine.GetActor();
         Interactable closestInteractable = myplayer.GetClosestInteractable();
-        if (closestInteractable != null) {
+        if (closestInteractable != null && !closestInteractable.GetAutoTrigger()) {
             closestInteractable.OnEventTrigger.Invoke();
         }
     }

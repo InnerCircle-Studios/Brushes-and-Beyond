@@ -24,16 +24,16 @@ public class FirstPaintQuestStage2 : QuestStage {
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
-                    new(brushy, "You have enough paint! Go fill in the blank spot over there", DialogueActorMood.HAPPY),
+                    new(brushy, "You have enough paint! Go and fill in the blank spot over there", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
 
                 })
             },
             { "Blockade 1", new(new List<DialogueEntry>() {
-                    new(GameManager.Instance.GetPlayer(), "What do I do now?", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "What do I do now?", DialogueActorMood.CONFUSED),
                     new(GameManager.Instance.GetPlayer(), "Maybe if I tap it with my brush?", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetPlayer(), "Woha!", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetPlayer(), "How did I do that?!", DialogueActorMood.NEUTRAL),
+                    new(GameManager.Instance.GetPlayer(), "Woha!", DialogueActorMood.SCARED),
+                    new(GameManager.Instance.GetPlayer(), "How did I do that?!", DialogueActorMood.CONFUSED),
 
                 }, new List<DialogueAction>(){
                     new(2,vanishevent ,true)
