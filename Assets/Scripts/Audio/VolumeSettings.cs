@@ -28,40 +28,40 @@ public class VolumeSettings : MonoBehaviour
     // Set the music volume on the mixer
     public void SetMusicVolume(float volume)
     {
-        myMixer.SetFloat("music", Mathf.Log10(volume) * 20);
+        myMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
     }
 
     // Set the sound effects volume on the mixer
     public void SetSfxVolume(float volume)
     {
-        myMixer.SetFloat("sfx", Mathf.Log10(volume) * 20);
+        myMixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
     }
 
     // Update the music volume and save the setting
     public void SetMusicVolumeFromSlider(float volume)
     {
         SetMusicVolume(volume);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
     // Update the sound effects volume and save the setting
     public void SetSfxVolumeFromSlider(float volume)
     {
         SetSfxVolume(volume);
-        PlayerPrefs.SetFloat("sfxVolume", volume);
+        PlayerPrefs.SetFloat("SfxVolume", volume);
     }
 
     // Load volume settings from saved preferences
     private void LoadVolume()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
+        if (PlayerPrefs.HasKey("MusicVolume"))
         {
-            musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
             SetMusicVolume(musicSlider.value);
         }
-        if (PlayerPrefs.HasKey("sfxVolume"))
+        if (PlayerPrefs.HasKey("SfxVolume"))
         {
-            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+            sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume");
             SetSfxVolume(sfxSlider.value);
         }
     }
