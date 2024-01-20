@@ -15,7 +15,7 @@ public class PaintTubeDeathState : State {
     public override void EnterState() {
         GetStateMachine().GetActor().gameObject.tag = "Untagged"; // Prevent the player from hitting the dead entity
         GetStateMachine().GetActor().GetComponent<Collider2D>().enabled = false;
-
+        _PaintStateMachine.PlayRandomDeathSound();
         GetStateMachine().GetActor().GetAnimator().Play(_PaintStateMachine._colour + "Death");
         GetStateMachine().GetActor().StartCoroutine(WaitForAnim());
     }
