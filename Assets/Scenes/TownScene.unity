@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 599376036}
   - component: {fileID: 599376035}
   - component: {fileID: 599376038}
+  - component: {fileID: 599376039}
   m_Layer: 0
   m_Name: Baker
   m_TagString: Untagged
@@ -395,8 +396,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2006517101
-  m_SortingLayer: 6
+  m_SortingLayerID: -683571301
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1630146688, guid: dad69e7e90fb38e48b1fcfcddb9ac58b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -443,6 +444,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 0289e07b47d121b47a961e4a6c0a76b2, type: 2}
+--- !u!61 &599376039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599376033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.297184}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 1.5625}
+    newSize: {x: 0.9375, y: 1.5625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9375, y: 0.968132}
+  m_EdgeRadius: 0
 --- !u!1 &669015069
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +502,7 @@ GameObject:
   - component: {fileID: 669015072}
   - component: {fileID: 669015071}
   - component: {fileID: 669015074}
+  - component: {fileID: 669015075}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -529,8 +576,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2006517101
-  m_SortingLayer: 6
+  m_SortingLayerID: -683571301
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 161310002, guid: ea0e257784613b948919bf6505e60064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -577,6 +624,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 486631fc805c29d498139f4e92ef8843, type: 2}
+--- !u!61 &669015075
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669015069}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8125, y: 1.125}
+    newSize: {x: 0.8125, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8125, y: 1.125}
+  m_EdgeRadius: 0
 --- !u!1 &710195549
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +682,7 @@ GameObject:
   - component: {fileID: 710195552}
   - component: {fileID: 710195551}
   - component: {fileID: 710195554}
+  - component: {fileID: 710195555}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Untagged
@@ -663,8 +756,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2006517101
-  m_SortingLayer: 6
+  m_SortingLayerID: -683571301
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 83284033, guid: e97d5a0c1c21e82429d05d45ef41494b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -711,6 +804,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: d501e0b63a5f6a549bc09d94b0367613, type: 2}
+--- !u!61 &710195555
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710195549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8125, y: 1.125}
+    newSize: {x: 0.8125, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8125, y: 1.125}
+  m_EdgeRadius: 0
 --- !u!1001 &798613611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -773,7 +911,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bd10e2ecd35efb74494be8176e4be701, type: 2}
     - target: {fileID: 5663581590622733370, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[1].Dialogue
-      value: Maybe on of the villagers near the bridge knows something!
+      value: Maybe one of the villagers near the bridge knows something!
       objectReference: {fileID: 0}
     - target: {fileID: 5663581590622733370, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].ActorMood
