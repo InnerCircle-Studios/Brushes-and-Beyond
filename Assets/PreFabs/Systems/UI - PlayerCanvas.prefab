@@ -4005,6 +4005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI - Settings Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5445735719870365149, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5937855223962295040, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
