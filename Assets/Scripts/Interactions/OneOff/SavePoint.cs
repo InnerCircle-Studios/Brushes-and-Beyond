@@ -10,13 +10,12 @@ public class SavePoint : MonoBehaviour {
     }
 
     public void SavePointInteracted() {
-        Debug.Log("Test");
         if (isActivated) {
             return;
         }
         animator.Play("SavePointSaving");
         SaveManager.Instance.SaveGame();
-        SavePointActivatedCoroutine();
+        StartCoroutine(SavePointActivatedCoroutine());
         isActivated = false;
     }
 
@@ -32,7 +31,7 @@ public class SavePoint : MonoBehaviour {
         }
         animator.Play("SavePointSaving");
         SaveManager.Instance.SaveGame();
-        SavePointActivatedCoroutine();
+        StartCoroutine(SavePointActivatedCoroutine());
         isActivated = false;
     }
 
