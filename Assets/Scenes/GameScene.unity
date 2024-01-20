@@ -31405,6 +31405,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6334964538514536201, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_margin.w
+      value: 7.3051767
+      objectReference: {fileID: 0}
     - target: {fileID: 6336273087554420098, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_SizeDelta.x
       value: 250
@@ -31445,6 +31449,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7607460835242467187, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607460835242467187, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.099998474
+      objectReference: {fileID: 0}
     - target: {fileID: 7694581707726507704, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -31452,6 +31464,10 @@ PrefabInstance:
     - target: {fileID: 8149907733508028125, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_Name
       value: UI - PlayerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749077849427340356, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
