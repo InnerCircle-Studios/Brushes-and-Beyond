@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="8" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_buildings_new" tilewidth="247" tileheight="203" tilecount="9" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="3">
   <image width="171" height="203" source="../../Art/Buildings/Assets/HouseAaronBakeV4Final.png"/>
@@ -72,6 +72,17 @@
   <objectgroup draworder="index" id="2">
    <object id="2" x="11" y="80.875">
     <polygon points="0,0 109.875,0.25 111.125,42.75 148.125,43.5 149,0 162,0.25 165.625,-70.625 -3.33333,-71.5417"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="9">
+  <image width="128" height="80" source="../../Art/Buildings/Assets/BridgeV1FullColor.png"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="7.66667" y="16">
+    <polygon points="0,0 2.09994,0 2.29085,3.63636 4.19989,4.72727 11.0725,4.72727 12.0269,3.27273 12.0269,-0.181818 23.6721,0 32.2628,-0.181818 33.5991,-5.63636 81.325,-6 81.325,-0.545455 83.0432,0.363636 89.343,0.545455 90.4885,-0.181818 101.943,-0.181818 102.134,3.27273 103.661,5.09091 111.297,4.72727 112.06,3.63636 111.869,-2.18182 109.197,-6 106.525,-7.45455 89.9158,-7.27273 86.8613,-13.4545 77.3161,-16.1818 35.1263,-16.3636 22.7176,-7.45455 13.1724,-7.27273 5.72712,-6.54545 2.09994,-1.81818"/>
+   </object>
+   <object id="2" x="10" y="66.6667">
+    <polygon points="0,0 0.12979,12.25 29.9816,12.5 30.1114,2.625 77.6147,2.5 77.7445,11.875 106.428,12.125 108.375,11.875 108.115,-0.375 104.741,-4.5 101.626,-4.5 99.1599,-1.375 86.9596,-1.375 87.2192,-4.75 84.3638,-8.625 75.9274,-8.5 74.6295,-10.25 33.6157,-10.375 27.1262,-8.5 23.7516,-8.625 19.3388,-1.875 8.30659,-1.75 6.10015,-4.375 2.7256,-4.5"/>
    </object>
   </objectgroup>
  </tile>

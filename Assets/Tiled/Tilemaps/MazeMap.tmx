@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="400" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="2906">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="400" height="200" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="2909">
  <tileset firstgid="1" source="../Tilesets/Tileset_Ground.tsx"/>
  <tileset firstgid="2521" source="../Tilesets/Tileset_Ground(Free).tsx"/>
  <tileset firstgid="4867" source="../Tilesets/Tileset_Road.tsx"/>
@@ -1789,7 +1789,7 @@
   <object id="1744" gid="5913" x="1979.33" y="586" width="16" height="16"/>
   <object id="1745" gid="5913" x="1922" y="596.667" width="16" height="16"/>
   <object id="1746" gid="5914" x="1820.67" y="580.667" width="16" height="16"/>
-  <object id="1747" gid="5917" x="2249.67" y="479.667" width="26" height="25"/>
+  <object id="1747" gid="5917" x="2264.17" y="432.849" width="21.5" height="25"/>
   <object id="1748" gid="5914" x="2064" y="473.333" width="16" height="16"/>
   <object id="1749" gid="5913" x="2150" y="303.333" width="16" height="16"/>
   <object id="1752" gid="5913" x="2317.33" y="474.667" width="16" height="16"/>
@@ -2387,7 +2387,7 @@
   <object id="439" gid="5877" x="2491" y="1936.33" width="86" height="97"/>
   <object id="440" gid="5876" x="2500" y="2002.33" width="80" height="90"/>
   <object id="441" gid="5877" x="2490.33" y="2077" width="86" height="97"/>
-  <object id="442" gid="5876" x="2376" y="2079.67" width="80" height="90"/>
+  <object id="442" gid="5876" x="2379" y="2061.67" width="80" height="90"/>
   <object id="443" gid="5875" x="2436" y="2075.67" width="80" height="90"/>
   <object id="444" gid="5875" x="2066" y="475" width="80" height="90"/>
   <object id="445" gid="5875" x="1340" y="770" width="80" height="90"/>
@@ -2414,7 +2414,7 @@
   <object id="466" gid="5875" x="1961" y="2078" width="80" height="90"/>
   <object id="467" gid="5875" x="1962" y="2007" width="80" height="90"/>
   <object id="468" gid="5876" x="1963" y="1930" width="80" height="90"/>
-  <object id="469" gid="5876" x="1800" y="1788" width="80" height="90"/>
+  <object id="469" gid="5876" x="1797.33" y="1752" width="80" height="90"/>
   <object id="470" gid="5875" x="1847" y="1794" width="80" height="90"/>
   <object id="471" gid="5875" x="1966" y="1851" width="80" height="90"/>
   <object id="472" gid="5876" x="1963" y="1772" width="80" height="90"/>
@@ -2492,7 +2492,7 @@
   <object id="557" gid="5876" x="2313" y="327" width="80" height="90"/>
   <object id="558" gid="5877" x="2298" y="403" width="86" height="97"/>
   <object id="559" gid="5875" x="2311" y="476" width="80" height="90"/>
-  <object id="560" gid="5876" x="2249.5" y="471.5" width="80" height="90"/>
+  <object id="560" gid="5876" x="2259.95" y="448.091" width="80" height="90"/>
   <object id="561" gid="5877" x="2843.67" y="319.667" width="86" height="97"/>
   <object id="562" gid="5876" x="2838.67" y="403.667" width="80" height="90"/>
   <object id="563" gid="5875" x="2908" y="429" width="80" height="90"/>
@@ -2553,7 +2553,7 @@
   <object id="625" gid="5877" x="3177" y="1577" width="86" height="97"/>
   <object id="626" gid="5876" x="3060" y="1285" width="80" height="90"/>
   <object id="627" gid="5875" x="3005.83" y="1286.5" width="80" height="90"/>
-  <object id="633" gid="5875" x="3036.26" y="1151.24" width="80" height="90"/>
+  <object id="633" gid="5875" x="3046.76" y="1120.24" width="80" height="90"/>
   <object id="634" gid="5877" x="3207.73" y="1151" width="86" height="97"/>
   <object id="635" gid="5876" x="3150.23" y="1149" width="80" height="90"/>
   <object id="636" gid="5875" x="3092.06" y="1145.5" width="80" height="90"/>
@@ -2832,7 +2832,6 @@
   <object id="1539" gid="5919" x="2976" y="905" width="80" height="90"/>
   <object id="1540" gid="5919" x="3009.33" y="995.667" width="80" height="90"/>
   <object id="1541" gid="5918" x="3005.33" y="1063.67" width="80" height="90"/>
-  <object id="1542" gid="5918" x="3006" y="1119" width="80" height="90"/>
   <object id="1543" gid="5919" x="3061.33" y="1074.33" width="80" height="90"/>
   <object id="1544" gid="5919" x="3118.67" y="1090.33" width="80" height="90"/>
   <object id="1545" gid="5919" x="3177" y="1072" width="80" height="90"/>
@@ -3528,6 +3527,8 @@
   <object id="2885" gid="5919" x="3350.67" y="727.667" width="80" height="90"/>
   <object id="2886" gid="5919" x="3224" y="574.333" width="80" height="90"/>
   <object id="2888" gid="5921" x="3202.33" y="733" width="79" height="90"/>
+  <object id="2907" gid="5875" x="3002" y="1126.25" width="80" height="90"/>
+  <object id="2908" gid="5875" x="2212.95" y="448.364" width="80" height="90"/>
  </objectgroup>
  <layer id="9" name="Edge" width="400" height="200">
   <data encoding="csv">
