@@ -31,6 +31,19 @@ public class PaintTubeStateMachine : StateMachine
             _isInRange.Value = false;
         }  
     }
+    public void PlayRandomDeathSound() {
+        int random = Random.Range(0, 3);
+
+        switch (random) {
+            case 0:
+                AudioManager.instance.PlaySfx("PaintBallHit1");
+                break;
+            case 1:
+                AudioManager.instance.PlaySfx("PaintBallHit2");
+                break;
+
+        }
+    }
 
     public Vector2 _currentMovement = new Vector2();
     public float _hostileRange = 10f;
