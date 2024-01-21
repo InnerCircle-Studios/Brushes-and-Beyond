@@ -785,7 +785,7 @@ MonoBehaviour:
 
     Linna Chi
 
-    Aiysha Sakridan
+    Alysha Sakridan
 
     Aaron van Essen
 
@@ -914,20 +914,20 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 187781300}
-  - {fileID: 952384568}
-  - {fileID: 27056814}
-  - {fileID: 357621332}
   - {fileID: 1315943714}
   - {fileID: 1516009391}
   - {fileID: 1353227803}
+  - {fileID: 480872287}
+  - {fileID: 357572773}
+  - {fileID: 1040946689}
+  - {fileID: 187781300}
+  - {fileID: 27056814}
+  - {fileID: 952384568}
+  - {fileID: 357621332}
   - {fileID: 1905610298}
   - {fileID: 567721515}
   - {fileID: 890760493}
   - {fileID: 1464785492}
-  - {fileID: 480872287}
-  - {fileID: 357572773}
-  - {fileID: 1040946689}
   m_Father: {fileID: 166405828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
