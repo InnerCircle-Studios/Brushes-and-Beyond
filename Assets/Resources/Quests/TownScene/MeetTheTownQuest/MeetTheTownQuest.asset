@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cde18375fbbe54186ae2c38467a37f, type: 3}
+  m_Name: MeetTheTownQuest
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: MeetTheTownQuest
+  DisplayName: Meet the villagers
+  PlayerStoryLevel: 0
+  RequiredQuests: []
+  Stages:
+  - {fileID: 2518506342575293938, guid: 177b7089e4857e74eac2ec4d230b5fb0, type: 3}
+  - {fileID: 5098966311015779495, guid: a59b5c6a12f53a649bed890a6188255e, type: 3}
+  - {fileID: 1482402444529194023, guid: b311f8578ca4b404c8d68144b4a84df4, type: 3}
+  RewardItem: {fileID: 0}

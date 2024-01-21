@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 380c9ac5f334eb24683e871c9b30a848
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  missingFiles: []
+  errors:
+  - Invalid rectangle (Tile ID ='6') in tileset 'Objects_buildings_new' has zero
+    height
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 13
+  pixelsPerUnit: 16
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 21
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048
