@@ -31,7 +31,7 @@ public class RandomIdleAnimation : MonoBehaviour {
                 animator.Play("ForwardIdle");
                 break;
             case 1:
-                animator.Play("BackIdle");
+                animator.Play("ForwardIdle");
                 break;
             case 2:
                 animator.Play("SideIdle");
