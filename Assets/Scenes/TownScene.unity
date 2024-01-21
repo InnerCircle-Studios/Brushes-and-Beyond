@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractionPoint - Quest Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4531958961653611092, guid: 28404be693d271e4781f5dd87a73917c, type: 3}
+      propertyPath: questInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7df09bfa38c3943908c5f5eb268163, type: 2}
     - target: {fileID: 6491348715597262262, guid: 28404be693d271e4781f5dd87a73917c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.55
@@ -747,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 3750091974957022606, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075587435278588019, guid: 97590931873016b4988541fbd01b698d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7483124890144515881, guid: 97590931873016b4988541fbd01b698d, type: 3}
       propertyPath: m_Sprite
@@ -1697,6 +1705,10 @@ PrefabInstance:
     - target: {fileID: 6816042637901536751, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
       propertyPath: m_Name
       value: Baker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499067672291100983, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
