@@ -4,7 +4,7 @@
  <tile id="0">
   <image width="100" height="130" source="../../Art/Props/New Props/Statue Vin.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="2" x="28.411" y="82.4612" width="56.4872" height="35.9713"/>
+   <object id="2" x="28.411" y="82.4612" width="56.4872" height="41.588"/>
   </objectgroup>
  </tile>
  <tile id="1">

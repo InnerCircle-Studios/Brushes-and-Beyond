@@ -32,7 +32,7 @@ public class FirstPaintQuestStage2 : QuestStage {
             { "Blockade 1", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetPlayer(), "What do I do now?", DialogueActorMood.CONFUSED),
                     new(GameManager.Instance.GetPlayer(), "Maybe if I tap it with my brush?", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetPlayer(), "Woha!", DialogueActorMood.SCARED),
+                    new(GameManager.Instance.GetPlayer(), "Woah!", DialogueActorMood.SCARED),
                     new(GameManager.Instance.GetPlayer(), "How did I do that?!", DialogueActorMood.CONFUSED),
 
                 }, new List<DialogueAction>(){

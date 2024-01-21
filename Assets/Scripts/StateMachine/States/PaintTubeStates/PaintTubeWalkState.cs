@@ -50,7 +50,7 @@ public class PaintTubeWalkState : State {
     }
 
     private IEnumerator CheckTime() { //Check if it should spawn a paintball
-        yield return new WaitForSeconds(Random.Range(5f, 7f));
+        yield return new WaitForSeconds(Random.Range(10f, 12f));
         _PaintStateMachine._isSpawning.Value = true;
     }
 
