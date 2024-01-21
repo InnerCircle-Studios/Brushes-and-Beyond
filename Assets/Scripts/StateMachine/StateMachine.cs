@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 
+[Serializable]
 public abstract class StateMachine
 {
     public StateMachine(Actor actor)

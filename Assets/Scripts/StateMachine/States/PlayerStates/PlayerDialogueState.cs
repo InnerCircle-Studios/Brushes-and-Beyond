@@ -21,10 +21,11 @@ public class PlayerDialogueState : State {
     public override void ExitState() {
         _PlayerStateMachine._IsInteractPressed.Value = false; // To avoid triggering the dialogue again when exiting the state.
         QuestEvents.OnSetDialogueAdvanceable -= SetDialogueAdvanceable;
-
+        isDialogueAdvanceable = true; // Reset to default value to avoid locking the player in unadvancable state when SetDialogueAdvanceableEvent is send after unsubscribing.
     }
 
     public override void UpdateState() {
+        Logger.Log("PlayerDialogueState", $"Dialogue advanceable: {isDialogueAdvanceable}");
         CheckSwitchStates();
 
         if (_PlayerStateMachine._IsInteractPressed.Value && !hasCooldown && letInteractGo && isDialogueAdvanceable) {

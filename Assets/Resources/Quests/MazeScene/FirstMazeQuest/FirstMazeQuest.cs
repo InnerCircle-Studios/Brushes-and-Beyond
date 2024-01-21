@@ -28,6 +28,7 @@ public class FirstMazeQuest : QuestStage {
 
     private void OnPaintBucketActivated(int amount) {
         paintCounter++;
+        wm.SetQuestObjectives($"* Explore and collect the buckets : {paintCounter}/3");
         CheckCompleted();
     }
 
