@@ -141,5 +141,7 @@
   <object id="532" gid="6514" x="1672.5" y="411.167" width="62.5" height="69.5"/>
   <object id="533" gid="6515" x="1609.33" y="411.25" width="56.25" height="64.25"/>
   <object id="534" gid="6516" x="1733" y="413" width="60.3333" height="65"/>
+  <object id="538" gid="6518" x="36.8333" y="425" width="246.5" height="171"/>
+  <object id="539" gid="6519" x="323.333" y="423.5" width="244.333" height="166.333"/>
  </objectgroup>
 </map>
