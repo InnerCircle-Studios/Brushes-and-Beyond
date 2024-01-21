@@ -12,6 +12,9 @@ public class LeaveFirstSceneStage : QuestStage {
     private void OnEnable() {
 
         wm = GameManager.Instance.GetWindowManager();
+        wm.ShowQuestMenu();
+        wm.SetQuestName("The Ink man");
+        wm.SetQuestObjectives($"* Meet Inky's friends");
         InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 

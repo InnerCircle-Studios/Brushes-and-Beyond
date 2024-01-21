@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 [Serializable]
-public class QuestBox : MonoBehaviour, ISaveable {
+public class QuestBox : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI questName;
     [SerializeField] private TextMeshProUGUI questObjectives;
     [SerializeField] private string defaultPrefix;
@@ -33,9 +33,11 @@ public class QuestBox : MonoBehaviour, ISaveable {
         questObjectives.SetText(objectives);
     }
 
-    public void SaveData(GameData data) {
-        data.UIData.UIelementActive.Add(gameObject.name, gameObject.activeSelf);
-        data.UIData.UIelementText.Add(gameObject.name + "-quest", questName.text);
-        data.UIData.UIelementText.Add(gameObject.name + "-objectives", questObjectives.text);
+    public UIData SaveData() {
+        UIData data = new();
+        data.UIelementActive.Add(gameObject.name, gameObject.activeSelf);
+        data.UIelementText.Add(gameObject.name + "-quest", questName.text);
+        data.UIelementText.Add(gameObject.name + "-objectives", questObjectives.text);
+        return data;
     }
 }

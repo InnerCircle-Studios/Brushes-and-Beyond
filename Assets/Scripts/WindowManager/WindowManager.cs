@@ -5,7 +5,7 @@ using TMPro;
 
 using UnityEngine;
 
-public class WindowManager : MonoBehaviour {
+public class WindowManager : MonoBehaviour, ISaveable {
     [SerializeField] private List<Window> staticWindows;
     [SerializeField] private List<TextWindow> textWindows;
 
@@ -114,5 +114,13 @@ public class WindowManager : MonoBehaviour {
     public void ClearScreen(string[] excludedScreens) {
         staticWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideWindow(e.Name));
         textWindows?.FindAll(e => !excludedScreens.Contains(e.Name)).ForEach(e => HideWindow(e.Name));
+    }
+
+    public void LoadData(GameData data) {
+        questBox.LoadData(data);
+    }
+
+    public void SaveData(GameData data) {
+        data.UIData = questBox.SaveData();
     }
 }
