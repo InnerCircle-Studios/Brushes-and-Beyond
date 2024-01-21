@@ -7,8 +7,10 @@ public class Blockade : MonoBehaviour, ISaveable {
     [Header("EventSelector")]
     [SerializeField] private string blockadeName;
     private Animator animator;
+    private Interactable interactable;
 
     private void Start() {
+        interactable = GetComponentInChildren<Interactable>();
         animator = GetComponent<Animator>();
         InteractionEvents.OnShowObject += OnShowObject;
         InteractionEvents.OnHideObject += OnHideObject;
@@ -22,12 +24,14 @@ public class Blockade : MonoBehaviour, ISaveable {
     private void OnShowObject(string name) {
         if (name == blockadeName) {
             gameObject.SetActive(true);
+            interactable.gameObject.SetActive(true);
         }
     }
 
     private void OnHideObject(string name) {
         if (name == blockadeName) {
             StartCoroutine(HideObject());
+            interactable.gameObject.SetActive(false);
         }
     }
 
