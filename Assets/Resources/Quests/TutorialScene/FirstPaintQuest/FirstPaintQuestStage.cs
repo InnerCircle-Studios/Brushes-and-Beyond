@@ -34,7 +34,7 @@ public class FirstPaintQuestStage : QuestStage {
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Brushy", new(new List<DialogueEntry>() {
                     new(brushy, "Well done! Now we can start with painting!", DialogueActorMood.NEUTRAL),
-                    new(brushy, "Did you know that I can be a sponge too?", DialogueActorMood.NEUTRAL),
+                    new(brushy, "I'm a brush! That means I can absorb paint better than anyone else.", DialogueActorMood.NEUTRAL),
                     new(brushy, "If you gather some of these buckets I can show you!", DialogueActorMood.NEUTRAL),
                 }, new List<DialogueAction>(){
                     new(0, hideQuestUI,true),

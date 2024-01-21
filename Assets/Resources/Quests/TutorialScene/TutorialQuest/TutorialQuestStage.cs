@@ -24,7 +24,7 @@ public class TutorialQuestStage : QuestStage {
                     new(player, "Who are you and why am I here?!", DialogueActorMood.CONFUSED),
 
                     new(brushy, "Long story short, the paintings started to riot. You never finish any of them! ", DialogueActorMood.NEUTRAL),
-                    new(brushy, "As for me.. I am Brushy! You know, the brush you painted with before you got here? Yep, That's me! ", DialogueActorMood.NEUTRAL),
+                    new(brushy, "As for me.. I am Brushy! You know, the brush you painted with before you got here? ", DialogueActorMood.NEUTRAL),
 
                     new(player, "Okay Brushy, I promise I'll finish my paintings. … but can I get out of here now?", DialogueActorMood.SAD),
                     new(brushy, "Nope you have to finish the painting from inside out, but don't worry I will come with you!", DialogueActorMood.NEUTRAL),
