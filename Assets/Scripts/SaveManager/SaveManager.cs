@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour {
     [SerializeField] private bool useEncryption = false;
     [SerializeField] private bool togglePresistance = true;
     [SerializeField] private bool initializeDataIfNoneFound = false;
+    [SerializeField] private bool saveOnApplicationQuit = false;
 
     private GameData gameData;
     private List<ISaveable> saveables;
@@ -47,7 +48,9 @@ public class SaveManager : MonoBehaviour {
     }
 
     private void OnApplicationQuit() {
-        SaveGame();
+        if (saveOnApplicationQuit) {
+            SaveGame();
+        }
     }
 
     public void NewGame() {
