@@ -3,20 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NPC
+  - Item
+  - Blockade
+  - Enemy
+  - Objects
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Item
+  - Blockade
+  - Nature
+  - Shader
   - 
   - 
   - 
@@ -40,4 +45,40 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2530271483
+    locked: 0
+  - name: Roads
+    uniqueID: 1250146925
+    locked: 0
+  - name: Slopes
+    uniqueID: 941330809
+    locked: 0
+  - name: Props
+    uniqueID: 63995279
+    locked: 0
+  - name: Houses
+    uniqueID: 163843489
+    locked: 0
+  - name: Player
+    uniqueID: 2006517101
+    locked: 0
+  - name: Entities
+    uniqueID: 3611395995
+    locked: 0
+  - name: Enemy
+    uniqueID: 1342162233
+    locked: 0
+  - name: Objects
+    uniqueID: 3490216095
+    locked: 0
+  - name: Nature
+    uniqueID: 4195496557
+    locked: 0
+  - name: Blockades
+    uniqueID: 1183391641
+    locked: 0
+  - name: Ineractables
+    uniqueID: 2095325719
     locked: 0

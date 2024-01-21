@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec67d36aacca052ab5c7445d2fcd47b, type: 3}
+  m_Name: BakerAttributes
+  m_EditorClassIdentifier: 
+  CharData:
+    DialogueSprite: {fileID: 21300000, guid: f986d55b178cb5846a181a4d9bea80f8, type: 3}
+    Type: 3
+    Name: Baker
+    Level: 0
+    MaxHealth: 1
+    CurrentHealth: 1
+    Damage: 0
+    AttackRange: 0
+    Loot: {fileID: 0}
+    Speed: 0
+    SprintSpeed: 0
+    PaintCount: 0
