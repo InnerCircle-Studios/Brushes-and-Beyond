@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba20bbd6e54adfa409c26f68f2624a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceX: 50
+  distanceX: 20
   distanceY: 0
   smoothingX: 1
   smoothingY: 1
