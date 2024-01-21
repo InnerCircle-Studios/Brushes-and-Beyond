@@ -16,7 +16,7 @@ public class LeaveFirstSceneStage : QuestStage {
     }
 
     private void OnDisable() {
-
+        InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
     }
 
     private void Start() {
