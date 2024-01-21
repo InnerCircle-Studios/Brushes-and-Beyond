@@ -328,6 +328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 246603865692883401, guid: 79ed5e4c68c32ad45bc4d789d98bf582, type: 3}
+      propertyPath: m_Name
+      value: Inky - InteractionPoint Maze
+      objectReference: {fileID: 0}
     - target: {fileID: 2621318705809081827, guid: 79ed5e4c68c32ad45bc4d789d98bf582, type: 3}
       propertyPath: m_LocalPosition.x
       value: 283.63846
@@ -1215,7 +1219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661808703237695157, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_Name
-      value: Blockade 3
+      value: Blockade 3 maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2183,7 +2187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661808703237695157, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_Name
-      value: Blockade 4
+      value: Blockade 4 maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4110,7 +4114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661808703237695157, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_Name
-      value: Blockade 1
+      value: Blockade 1 maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4309,7 +4313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661808703237695157, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_Name
-      value: Blockade 2
+      value: Blockade 2 maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4437,7 +4441,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2671744379809915054, guid: 28404be693d271e4781f5dd87a73917c, type: 3}
       propertyPath: m_Name
-      value: InteractionPoint - Quest Variant
+      value: InteractionPoint - Quest Variant Maze
       objectReference: {fileID: 0}
     - target: {fileID: 4531958961653611092, guid: 28404be693d271e4781f5dd87a73917c, type: 3}
       propertyPath: questInfo
