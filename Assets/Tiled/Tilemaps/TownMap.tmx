@@ -1146,6 +1146,7 @@
   <object id="1445" gid="6229" x="747.667" y="1052" width="26" height="25"/>
   <object id="1446" gid="6222" x="778.667" y="1024.67" width="26" height="25"/>
   <object id="1690" gid="6237" x="180.495" y="892.082" width="80" height="90"/>
+  <object id="882" gid="6241" x="508.091" y="1421.45" width="79" height="110"/>
  </objectgroup>
  <objectgroup id="2" name="Objects">
   <properties>
@@ -1299,7 +1300,6 @@
   <object id="742" gid="6240" x="1" y="1746" width="79" height="90"/>
   <object id="744" gid="6237" x="17" y="1851" width="80" height="90"/>
   <object id="770" gid="6237" x="1088.07" y="1675.15" width="80" height="90"/>
-  <object id="882" gid="6241" x="509" y="1420.45" width="79" height="110"/>
   <object id="1312" gid="6229" x="905.67" y="1525" width="26" height="25"/>
   <object id="1338" gid="6232" x="298" y="1879.67" width="80" height="90"/>
   <object id="1340" gid="6233" x="349.667" y="1888.33" width="86" height="97"/>

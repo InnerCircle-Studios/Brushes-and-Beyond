@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: VillagerAttributes
   m_EditorClassIdentifier: 
   CharData:
-    DialogueSprite: {fileID: 21300000, guid: 40ece9583bcd60b4c9ef55b71f4992bd, type: 3}
+    DialogueSprite: {fileID: 21300000, guid: 933c56d135186a549b2cb094acd5908e, type: 3}
     Type: 3
     Name: Villager
     Level: 0

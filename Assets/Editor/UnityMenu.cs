@@ -38,7 +38,7 @@ public class UnityMenu {
         }
     }
 
-    [MenuItem("Tools/Clear Savedata folder")]
+    [MenuItem("Tools/Clear Savedata")]
     private static void ClearSaveData() {
         DeleteSaveFiles(Application.persistentDataPath);
     }
