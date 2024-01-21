@@ -1,9 +1,6 @@
 # Custom stuff
 .vscode/
 .idea/
-*.[Ww][DdSs][Ff]
-#Mono crashlogs
-*.blob 
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
