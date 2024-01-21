@@ -25,7 +25,7 @@ public class PlayerDialogueState : State {
     }
 
     public override void UpdateState() {
-        Logger.Log("PlayerDialogueState", $"Dialogue advanceable: {isDialogueAdvanceable}");
+        // Logger.Log("PlayerDialogueState", $"Dialogue advanceable: {isDialogueAdvanceable}");
         CheckSwitchStates();
 
         if (_PlayerStateMachine._IsInteractPressed.Value && !hasCooldown && letInteractGo && isDialogueAdvanceable) {
