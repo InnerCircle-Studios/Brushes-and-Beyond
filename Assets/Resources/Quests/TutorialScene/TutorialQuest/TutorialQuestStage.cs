@@ -44,8 +44,6 @@ public class TutorialQuestStage : QuestStage {
         EventBus.StartListening<bool>(EventBusEvents.EventName.SHIFT_KEY, OnSprint);
         EventBus.StartListening<bool>(EventBusEvents.EventName.DIALOGUE_EVENT, OnDialogueEnter);
         EventBus.StartListening<string>(EventBusEvents.EventName.SWITCH_STATE_EVENT, OnStateChange);
-
-
     }
 
     private void Start() {
