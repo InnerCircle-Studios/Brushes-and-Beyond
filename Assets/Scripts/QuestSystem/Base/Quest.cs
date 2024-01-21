@@ -24,7 +24,7 @@ public class Quest {
         this.currentStage = currentStage;
         this.stageStates = stageStates;
         if (this.stageStates.Length != this.Info.Stages.Length) {
-            Debug.LogError("QuestStageState length does not match QuestInfo.Stages length for quest: " + Info.Id + " stage: " + currentStage + "");
+            Logger.LogError("Quest","QuestStageState length does not match QuestInfo.Stages length for quest: " + Info.Id + " stage: " + currentStage + "");
         }
     }
 
@@ -50,7 +50,7 @@ public class Quest {
             return Info.Stages[currentStage];
         }
         else {
-            Debug.Log("No next questStage for quest: " + Info.Id + " stage: " + currentStage + "");
+            Logger.LogWarning("Quest", "No next questStage for quest: " + Info.Id + " stage: " + currentStage + "");
             return null;
         }
     }
@@ -60,7 +60,7 @@ public class Quest {
             stageStates[index].State = questStageState.State;
         }
         else {
-            Debug.LogError("Stepindex out of range for quest: " + Info.Id + " stage: " + currentStage + "");
+            Logger.LogError("Quest", "Stepindex out of range for quest: " + Info.Id + " stage: " + currentStage + "");
         }
     }
 

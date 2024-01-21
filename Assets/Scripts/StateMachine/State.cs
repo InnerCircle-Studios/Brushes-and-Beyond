@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System;
 
+[Serializable]
 public abstract class State
 {
     public State(string name, StateMachine stateMachine)

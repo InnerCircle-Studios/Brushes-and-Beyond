@@ -1,5 +1,8 @@
+using System;
+
 using UnityEngine;
 
+[Serializable]
 public class PlayerStateMachine : StateMachine {
     public PlayerStateMachine(Actor actor) : base(actor) {
         EventBus.StartListening<Vector2>(EventBusEvents.EventName.MOVEMENT_KEYS, OnMoveEvent);
@@ -129,7 +132,6 @@ public class PlayerStateMachine : StateMachine {
 
         _lastAttackTime = _currentTime;
     }
-
 
 
 

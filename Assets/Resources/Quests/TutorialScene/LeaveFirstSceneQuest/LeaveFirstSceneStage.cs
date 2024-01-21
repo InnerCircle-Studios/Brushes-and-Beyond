@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-//TODO start from inky's quest, enemy kill count? || paint bucket count?
 
 public class LeaveFirstSceneStage : QuestStage {
     private int paintCounter = 0;
@@ -55,7 +54,4 @@ public class LeaveFirstSceneStage : QuestStage {
             PaintCounter = paintCounter;
         }
     }
-
-
-
 }

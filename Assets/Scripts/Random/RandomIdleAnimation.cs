@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class RandomIdleAnimation : MonoBehaviour {
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private float timer;
 
     private void Start() {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         timer = 5f; // Set initial timer to 5 seconds
     }
 
@@ -32,10 +35,11 @@ public class RandomIdleAnimation : MonoBehaviour {
                 break;
             case 2:
                 animator.Play("SideIdle");
+                spriteRenderer.flipX = false;
                 break;
             case 3:
                 animator.Play("SideIdle");
-                animator.transform.localScale = new Vector3(-1, 1, 1); // Flip character for other side
+                spriteRenderer.flipX = true;
                 break;
         }
     }
