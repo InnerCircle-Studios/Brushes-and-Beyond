@@ -13,14 +13,15 @@ public class PaintBucket : MonoBehaviour, ISaveable {
     [SerializeField] private int healAmount = 5;
 
     private void Start() {
-        if (hideByDefault) {
-            OnHideObject(bucketSet);
-        }
+
     }
 
     private void OnEnable() {
         InteractionEvents.OnShowObject += OnShowObject;
         InteractionEvents.OnHideObject += OnHideObject;
+        if (hideByDefault) {
+            OnHideObject(bucketSet);
+        }
     }
 
     private void OnDisable() {
