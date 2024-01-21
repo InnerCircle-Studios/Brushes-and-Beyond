@@ -41,7 +41,7 @@ public class MeetTheTownStage : QuestStage {
                     new(baker, "Cupcakes, bread… maybe a cake... ", DialogueActorMood.NEUTRAL),
                     new(baker, "Oh hi! Sorry, we're still closed. ", DialogueActorMood.HAPPY),
                     new(player, "Closed in the middle of the day? What happend?", DialogueActorMood.NEUTRAL),
-                    new(baker, "I'm assuming you are new arround here? The creator of our world blessed us with water, but it was stolen! So we have been preparing for when it finally reappears!", DialogueActorMood.HAPPY),
+                    new(baker, "I'm assuming you are new around here? The creator of our world blessed us with water, but it was stolen! So we have been preparing for when it finally reappears!", DialogueActorMood.HAPPY),
                     new(baker, "If that day will ever come…", DialogueActorMood.SAD),
                     new(player, "I'm sorry to hear that. I hope you get water soon.", DialogueActorMood.SAD),
                     new(baker, "Thank you, I hope so too. ", DialogueActorMood.NEUTRAL),

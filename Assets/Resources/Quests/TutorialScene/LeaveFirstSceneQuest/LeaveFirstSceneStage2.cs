@@ -24,7 +24,7 @@ public class LeaveFirstSceneStage2 : QuestStage {
             { "Blockade 3", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetPlayer(), "So if I fill in these paintings they dissapear?", DialogueActorMood.NEUTRAL),
                     new(GameManager.Instance.GetPlayer(), "I wonder why that happens", DialogueActorMood.NEUTRAL),
-                    new(GameManager.Instance.GetPlayer(), "*sensually strokes painting with brush*", DialogueActorMood.NEUTRAL)
+                    new(GameManager.Instance.GetPlayer(), "Lets do this Brushy!", DialogueActorMood.HAPPY)
                 }, new List<DialogueAction>(){
                     new(99,vanishevent ,true)
                 })
