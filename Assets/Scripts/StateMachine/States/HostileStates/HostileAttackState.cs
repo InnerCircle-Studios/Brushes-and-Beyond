@@ -21,10 +21,14 @@ public class HostileAttackState : State
     {
         _HostileStateMachine.CheckPlayerInAttackRange();
         CheckSwitchStates();
+        if(!_canAttack && _attackAnimationDone) {
+            GetStateMachine().GetActor().GetAnimator().Play(_HostileStateMachine._Colour + "Idle");
+        }
         if (_canAttack)
         {
             
             Attack();
+            GetStateMachine().GetActor().StartCoroutine(WaitforAttackAnimation());
             GetStateMachine().GetActor().StartCoroutine(WaitForAttackcooldown());
         }
         
@@ -51,6 +55,13 @@ public class HostileAttackState : State
         _canAttack = true;
     }
 
+    private IEnumerator WaitforAttackAnimation() 
+    {
+        _attackAnimationDone = false;
+        yield return new WaitForSeconds(0.85f);
+        _attackAnimationDone = true;
+    }
+
     private void Attack()
     {  
 
@@ -74,8 +85,8 @@ public class HostileAttackState : State
         }
     }
 
-
-    private float _attackCooldown = 1f;
+    private bool _attackAnimationDone = false;
+    private float _attackCooldown = 3f;
     private bool _canAttack = true;
     private HostileStateMachine _HostileStateMachine;
 }
