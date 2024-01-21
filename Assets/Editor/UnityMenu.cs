@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using UnityEngine;
 using System.IO;
+using System;
 
 public class UnityMenu {
     [MenuItem("Tools/Open Savedata folder")]
@@ -34,6 +35,32 @@ public class UnityMenu {
                 FileName = "xdg-open",
                 Arguments = folderPath
             });
+        }
+    }
+
+    [MenuItem("Tools/Clear Savedata folder")]
+    private static void ClearSaveData() {
+        DeleteSaveFiles(Application.persistentDataPath);
+    }
+
+    private static void DeleteSaveFiles(string directoryPath) {
+        try {
+            if (Directory.Exists(directoryPath)) {
+                string[] wdfFiles = Directory.GetFiles(directoryPath, "*.wdf");
+
+                foreach (string filePath in wdfFiles) {
+                    File.Delete(filePath);
+                    Logger.Log("EditorTools", $"Deleted: {filePath}");
+                }
+
+                Logger.Log("EditorTools", "Deletion complete.");
+            }
+            else {
+                Logger.LogError("EditorTools", $"Directory not found: {directoryPath}");
+            }
+        }
+        catch (Exception ex) {
+            Logger.LogError("EditorTools", $"An error occurred: {ex.Message}");
         }
     }
 }
