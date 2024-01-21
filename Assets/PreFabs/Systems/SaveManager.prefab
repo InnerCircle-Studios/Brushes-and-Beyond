@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14d9a8324e62f14c83249fb44f49a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEncryption: 0
+  useEncryption: 1
   togglePresistance: 1
   initializeDataIfNoneFound: 0
   saveOnApplicationQuit: 0
