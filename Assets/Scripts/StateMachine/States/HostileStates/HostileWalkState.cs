@@ -34,6 +34,8 @@ public class HostileWalkState : State {
     private void MoveToTarget() {
         _distanceToPlayer = Vector2.Distance(GetStateMachine().GetActor().transform.position, _HostileStateMachine._Hostile.GetPlayer().transform.position);
 
+        _move = _HostileStateMachine.GetActor().GetRigidBody().transform.position;
+
         if (_distanceToPlayer > _HostileStateMachine._attackRange) {
 
             _move = Vector2.MoveTowards(GetStateMachine().GetActor().transform.position, _HostileStateMachine._Hostile.GetPlayer().transform.position, _moveSpeed * Time.deltaTime);
