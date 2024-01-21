@@ -11,8 +11,10 @@ public class FirstMazeQuest : QuestStage {
     WindowManager wm;
 
     private void OnEnable() {
-
         wm = GameManager.Instance.GetWindowManager();
+        wm.ShowQuestMenu();
+        wm.SetQuestName("Painting");
+        wm.SetQuestObjectives($"* Explore and collect the buckets : {paintCounter}/3");
         InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 
