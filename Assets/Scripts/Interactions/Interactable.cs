@@ -103,20 +103,20 @@ public class Interactable : MonoBehaviour, ISaveable {
     }
 
     public void LoadData(GameData data) {
-        if (data.ObjectData.InteractionData.ContainsKey(gameObject.name)) {
-            SerializableDict<string, DialogueSet> newData = data.ObjectData.InteractionData[gameObject.name];
-            // newData.TryGetValue("QuestDialogueSet", out questDialogueSet);
-            newData.TryGetValue("DialogueSet", out dialogueSet);
-        }
-        data.ObjectData.Toggles.TryGetValue(gameObject.name, out hasBeenTriggered);
+        // if (data.ObjectData.InteractionData.ContainsKey(gameObject.name)) {
+        //     SerializableDict<string, DialogueSet> newData = data.ObjectData.InteractionData[gameObject.name];
+        //     // newData.TryGetValue("QuestDialogueSet", out questDialogueSet);
+        //     newData.TryGetValue("DialogueSet", out dialogueSet);
+        // }
+        // data.ObjectData.Toggles.TryGetValue(gameObject.name, out hasBeenTriggered);
     }
 
     public void SaveData(GameData data) {
-        if (gameObject != null && this != null) {
-            data.ObjectData.InteractionData[gameObject.name] = new(){
-            // { "QuestDialogueSet", questDialogueSet },
-            { "DialogueSet", dialogueSet }};
-        }
-        data.ObjectData.Toggles[gameObject.name] = hasBeenTriggered;
+        // if (gameObject != null && this != null) {
+        //     data.ObjectData.InteractionData[gameObject.name] = new(){
+        //     // { "QuestDialogueSet", questDialogueSet },
+        //     { "DialogueSet", dialogueSet }};
+        // }
+        // data.ObjectData.Toggles[gameObject.name] = hasBeenTriggered;
     }
 }
