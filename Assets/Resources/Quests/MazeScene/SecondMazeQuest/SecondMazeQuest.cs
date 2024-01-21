@@ -14,7 +14,7 @@ public class SecondMazeQuest : QuestStage {
         wm = GameManager.Instance.GetWindowManager();
         wm.ShowQuestMenu();
         wm.SetQuestName("Painting");
-        wm.SetQuestObjectives($"* Explore and collect the buckets : {paintCounter}/3");
+        wm.SetQuestObjectives($"* Explore and collect the buckets");
         InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 

@@ -14,7 +14,7 @@ public class BossMazeQuest : QuestStage {
         wm = GameManager.Instance.GetWindowManager();
         wm.ShowQuestMenu();
         wm.SetQuestName("Painting");
-        wm.SetQuestObjectives($"* Kill Inky's minions and collect the buckets : {paintCounter}/3");
+        wm.SetQuestObjectives($"* Kill Inky's minions and collect the buckets");
         InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 
@@ -28,7 +28,7 @@ public class BossMazeQuest : QuestStage {
 
     private void OnPaintBucketActivated(int amount) {
         paintCounter++;
-        wm.SetQuestObjectives($"* Explore and collect the buckets : {paintCounter}/3");
+        wm.SetQuestObjectives($"* Go get that ink man!");
         CheckCompleted();
     }
 
