@@ -7,7 +7,7 @@ public class FileDataManager {
     private string dataDir = "";
     private string fileName = "";
     private bool useEncryption = false;
-    private readonly string encryptionKey = "Blood_For_The_Blood_God";
+    private readonly string encryptionKey = "666*Blood_For_The_Blood_God*666";
 
     public FileDataManager(string dataDir, string fileName, bool useEncryption) {
         this.dataDir = dataDir;

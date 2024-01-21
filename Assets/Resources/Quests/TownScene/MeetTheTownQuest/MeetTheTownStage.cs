@@ -33,7 +33,7 @@ public class MeetTheTownStage : QuestStage {
         EventWrapper villagerTalkEvent = new();
         villagerTalkEvent.AddListener(() => { talkedToVillager = true; AfterVillagerTalk(); });
         EventWrapper blacksmithTalkEvent = new();
-        blacksmithTalkEvent.AddListener(() => { talkedToBlacksmith = true; CheckCompleted(); });
+        blacksmithTalkEvent.AddListener(() => { talkedToBlacksmith = true; InteractionEvents.ShowObject("MTTQs2"); CheckCompleted(); });
 
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {

@@ -20,7 +20,7 @@ public class MeetTheTownStage2 : QuestStage {
         wm.SetQuestName("Explore the town");
         wm.SetQuestObjectives($"* Find the hidden paintbuckets");
         SetupInitialDialogue();
-
+        InteractionEvents.OnPaintBucketActivated += OnPaintBucketActivated;
     }
 
     private void SetupInitialDialogue() {
@@ -44,22 +44,22 @@ public class MeetTheTownStage2 : QuestStage {
                     new(blacksmith,
                     "\"In the square, where people walk and talk,\n" +
                     "A statue that looks like you, stands without a balk.", DialogueActorMood.NEUTRAL),
-                    new(blacksmith, 
+                    new(blacksmith,
                     "Behind this figure, silent and tall,\n"+
                     "The first bucket awaits your call.", DialogueActorMood.NEUTRAL),
-                    new(blacksmith, 
+                    new(blacksmith,
                     "Climb to the top of the village, where the air smells sweet,\n"+
                     "Where the bakery makes bread and treats to eat.\n"
                     , DialogueActorMood.NEUTRAL),
-                    new(blacksmith, 
+                    new(blacksmith,
                     "Hidden not far, just around its back,\n"+
                     "The second bucket is on this track.\n"
                     , DialogueActorMood.NEUTRAL),
-                    new(blacksmith, 
+                    new(blacksmith,
                     "Lastly, find a place where mushrooms grow in a ring,\n"+
                     "Around a special tree, where children play and sing.\n"
                     , DialogueActorMood.NEUTRAL),
-                    new(blacksmith, 
+                    new(blacksmith,
                     "There, a child holds the final prize in their glee,\n"+
                     "The last bucket, for you to see.\"\n"
                     , DialogueActorMood.NEUTRAL),
@@ -69,11 +69,22 @@ public class MeetTheTownStage2 : QuestStage {
     }
 
     private void OnDisable() {
-
+        InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
     }
 
     private void Start() {
 
+    }
+
+
+    private void SetPaintBucketCollectionUI() {
+        wm.SetQuestName("Explore the town");
+        wm.SetQuestObjectives($"* Find the hidden paintbuckets : {bucketsFound}/3");
+    }
+    private void OnPaintBucketActivated(int amount) {
+        bucketsFound++;
+        SetPaintBucketCollectionUI();
+        CheckCompleted();
     }
 
 
