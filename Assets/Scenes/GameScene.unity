@@ -28622,7 +28622,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9a4496470e97fce4180c8eb4ffc92277, type: 2}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
-      value: Huh where am i?... This looks so familiar
+      value: Huh where am I?... This looks so familiar
       objectReference: {fileID: 0}
     - target: {fileID: 3299437118231039276, guid: f2cc9138d2ffddf35bb1fe6efd5f61c7, type: 3}
       propertyPath: dialogueSet.dialogueList.Array.data[1].Dialogue
