@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: 85dd199e7e124f343ae0224406698d79, type: 2}
-  _Player: {fileID: 0}
+  _Player: {fileID: 7294651035059365438, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
   _paintTubeProjectile:
   - {fileID: 8231413812314156323, guid: c92425a53514c364cae354019d1ca7d0, type: 3}
   _colour: 0
