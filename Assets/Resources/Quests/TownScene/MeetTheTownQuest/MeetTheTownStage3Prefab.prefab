@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7293814800278488771
+--- !u!1 &1482402444529194023
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1953060298826500872}
-  - component: {fileID: 6578868901327205340}
+  - component: {fileID: 6921666238648859272}
+  - component: {fileID: 906199450120757401}
   m_Layer: 0
-  m_Name: SaveManager
+  m_Name: MeetTheTownStage3Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1953060298826500872
+--- !u!4 &6921666238648859272
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293814800278488771}
+  m_GameObject: {fileID: 1482402444529194023}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6578868901327205340
+--- !u!114 &906199450120757401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293814800278488771}
+  m_GameObject: {fileID: 1482402444529194023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a14d9a8324e62f14c83249fb44f49a5c, type: 3}
+  m_Script: {fileID: 11500000, guid: c9124bd55ef1ed548aab8d948a629ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEncryption: 0
-  togglePresistance: 1
-  initializeDataIfNoneFound: 0
-  saveOnApplicationQuit: 0
+  blacksmith: {fileID: 11400000, guid: d501e0b63a5f6a549bc09d94b0367613, type: 2}
+  brushy: {fileID: 11400000, guid: bd10e2ecd35efb74494be8176e4be701, type: 2}

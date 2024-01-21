@@ -70,10 +70,16 @@ public class MeetTheTownStage2 : QuestStage {
 
     private void OnDisable() {
         InteractionEvents.OnPaintBucketActivated -= OnPaintBucketActivated;
+        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
+            { "Baker", null},
+            { "Villager", null},
+        });
     }
 
     private void Start() {
-
+        if (bucketsFound > 0) {
+            SetPaintBucketCollectionUI();
+        }
     }
 
 

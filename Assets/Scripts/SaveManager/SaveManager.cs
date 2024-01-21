@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour {
     [Header("Saving config")]
-    [SerializeField] private string filename = "brushes";
+    // [SerializeField] private string filename = "brushes";
     [SerializeField] private bool useEncryption = false;
     [SerializeField] private bool togglePresistance = true;
     [SerializeField] private bool initializeDataIfNoneFound = false;
@@ -31,6 +31,10 @@ public class SaveManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(this);
+        string filename = "brushes";
+        #if UNITY_EDITOR
+            filename += "-debug";
+        #endif
         dataManager = new FileDataManager(Application.persistentDataPath, filename + ".WDF", useEncryption);
     }
 
