@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Objects_Trees_New" tilewidth="300" tileheight="300" tilecount="38" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Objects_Trees_New" tilewidth="300" tileheight="300" tilecount="20" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="27" height="27" source="../../Art/Trees and Bushes/Assets/ChoppedTree 1.png"/>
@@ -52,40 +52,40 @@
  <tile id="6">
   <image width="80" height="90" source="../../Art/Trees and Bushes/Assets/Tree 1.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="26.25" y="82.9556">
-    <polygon points="0,0 6.55,-9.39252 26.2,-9.70561 32.75,-2.03505 30.4717,1.40888 21.0739,2.9743 17.5141,6.88785 12.5304,7.04439 10.1098,4.07009"/>
+   <object id="1" x="30.25" y="84.375">
+    <polygon points="0,0 5.75,-7.5 23,-7.75 28.75,-1.625 26.75,1.125 18.5,2.375 15.375,5.5 11,5.625 8.875,3.25"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="7">
   <image width="80" height="90" source="../../Art/Trees and Bushes/Assets/Tree 1-Light.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="29.886" y="83.6458">
-    <polygon points="0,0 -0.136013,-3.42708 6.25661,-9.95486 24.4824,-10.7708 30.739,-3.10069 28.9708,0.326389 21.082,2.61111 16.5936,6.85417 12.9213,6.52778"/>
+   <object id="1" x="30.25" y="84.875">
+    <polygon points="0,0 -0.125,-2.625 5.75,-7.625 22.5,-8.25 28.25,-2.375 26.625,0.25 19.375,2 15.25,5.25 11.875,5"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="8">
   <image width="86" height="97" source="../../Art/Trees and Bushes/Assets/Tree 2.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="27.5" y="89.8348">
-    <polygon points="0,0 5.91196,-10.6172 25.6185,-11.4598 32.375,-2.86496 30.4043,1.01116 20.9734,3.03348 17.7359,7.41518 10.5571,4.04464"/>
+   <object id="1" x="31.125" y="91.75">
+    <polygon points="0,0 5.25,-7.875 22.75,-8.5 28.75,-2.125 27,0.75 18.625,2.25 15.75,5.5 9.375,3"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="9">
   <image width="79" height="90" source="../../Art/Trees and Bushes/Assets/Tree 3.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="22.5" y="81.875">
-    <polygon points="0,0 6.27195,-9.19471 28.139,-9.375 34.75,-2.52404 22.7146,4.14663 17.9683,9.375 15.4256,9.01442"/>
+   <object id="1" x="25.75" y="83.5">
+    <polygon points="0,0 4.625,-6.375 20.75,-6.5 25.625,-1.75 16.75,2.875 13.25,6.5 11.375,6.25"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="10">
   <image width="79" height="90" source="../../Art/Trees and Bushes/Assets/Tree 3-Light.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="26.375" y="82.3037">
-    <polygon points="0,0 6.31944,-9.05374 29.3287,-8.90771 35,-3.06659 26.7361,1.89836 20.0926,2.19042 17.338,6.57126 12.6389,5.84112"/>
+   <object id="1" x="26.125" y="84.25">
+    <polygon points="0,0 4.875,-7.75 20,-7.375 24.875,-2.625 19.75,1 15.5,1.875 13.375,5.625 9.75,5"/>
    </object>
   </objectgroup>
  </tile>
@@ -114,10 +114,10 @@
   </objectgroup>
  </tile>
  <tile id="14">
-  <image width="90" height="115" source="../../Art/Trees and Bushes/Assets/Tree 5 Vines.png"/>
+  <image width="70" height="90" source="../../Art/Trees and Bushes/Assets/Tree 5 Vines.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="33.0909" y="92.0201">
-    <polygon points="0,0 1.65708,-6.92925 23.6134,-10.7624 24.5455,2.21147 16.7779,6.19209 5.90334,5.45495"/>
+   <object id="1" x="25.0909" y="73.7273">
+    <polygon points="0,0 1.45455,-4.27273 20.7273,-6.63636 21.5455,1.36364 14.7273,3.81818 5.18182,3.36364"/>
    </object>
   </objectgroup>
  </tile>
@@ -149,7 +149,7 @@
   <image width="300" height="300" source="../../Art/Trees and Bushes/Assets/Tree.6.2.png"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="95.5" y="282.5">
-    <polygon points="0,3.5 -2.5,-25 106,-26.5 102.5,-2.5 57.5,12.5"/>
+    <polygon points="0,0 -2.5,-25 106,-26.5 102.5,-2.5 57.5,12.5"/>
    </object>
   </objectgroup>
  </tile>
@@ -160,121 +160,7 @@
   <image width="150" height="150" source="../../Art/Trees and Bushes/Assets/Tree.6.PNG"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="50.5" y="141">
-    <polygon points="0,0 0,-7.75 20,-15.5 45.5,-12.25 52,1.18182 24.6818,7.20455"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="20">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Mushroom 1.png"/>
- </tile>
- <tile id="21">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Mushroom 2.png"/>
- </tile>
- <tile id="22">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Mushroom 3.png"/>
- </tile>
- <tile id="23">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Mushroom 4.png"/>
- </tile>
- <tile id="24">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Mushroom 5.png"/>
- </tile>
- <tile id="25">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 1.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="11.75" y="69.5">
-    <polygon points="0,0 0.25,10.75 3,12.5 4,18.75 11.25,24.25 59.25,24.75 63,23.25 67.5,18.5 68.5,12.25 72.5,9.75 72.25,1 69.75,-2 -0.5,-3.5"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="26">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 2.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="17.5" y="70">
-    <polygon points="0,0 0.25,7 5.25,16.75 52.25,17.25 59.25,10.5 60,1.75 59.75,-9.25 0.5,-8.5"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="27">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 3.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="25.25" y="70.25">
-    <polygon points="0,0 -0.5,10.25 8.75,20.25 43.25,20.5 44.75,9.25 48,4 47.75,1"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="28">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 4.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="22.25" y="72">
-    <polygon points="0,0 -0.5,7.25 3.75,17.75 11.5,22 40.25,22.75 49.75,18.5 52,9.25 53,-2 -1.75,-3"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="29">
-  <image width="26" height="25" source="../../Art/Trees and Bushes/Assets/BushAaron1.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="7" y="21.5455">
-    <polygon points="0,0 12.6364,1 16.5455,-5 -3.72727,-5.54545"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="30">
-  <image width="100" height="100" source="../../Art/Trees and Bushes/Assets/Bush 6.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="23" y="74.5">
-    <polygon points="0,0 0,5 -5.25,10.75 -5.5,14.25 4,21.25 55.25,22 60,16.75 58,11.5 57.5,1.75"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="31">
-  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV1.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="3.96875" y="12.875">
-    <polygon points="0,0 9.9375,-0.03125 11,-3.8125 -1.5625,-3.8125"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="32">
-  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV2.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="1.03125" y="9.6875">
-    <polygon points="0,0 1.9375,3.25 5.03125,4.1875 12.6875,4.25 14.0313,0.28125"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="33">
-  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV3.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="2.96875" y="13">
-    <polygon points="0,0 7.03125,0 12.0938,-4.28125 -2,-4.28125"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="34">
-  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16StoneV4.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="6.0625" y="13">
-    <polygon points="0,0 7.8125,0 9.9375,-2.125 9.875,-4 -3,-4.25"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="35">
-  <image width="16" height="16" source="../../Art/Trees and Bushes/Assets/16x16Mushrooms.png"/>
- </tile>
- <tile id="36">
-  <image width="26" height="25" source="../../Art/Trees and Bushes/Assets/BushAaron2.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="3.125" y="16.125">
-    <polygon points="0,0 4.125,5.25 16.375,6 18.375,-0.75"/>
-   </object>
-  </objectgroup>
- </tile>
- <tile id="37">
-  <image width="26" height="25" source="../../Art/Trees and Bushes/Assets/BushAaron3.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="4.125" y="15.125">
-    <polygon points="0,0 1.75,5.5 15.125,5.625 19.25,0.125"/>
+    <polygon points="0,0 0,-7.75 20,-15.5 45.5,-12.25 50,-3 24.5,5.75"/>
    </object>
   </objectgroup>
  </tile>
