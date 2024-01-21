@@ -53,6 +53,5 @@ public class StartMenu : MonoBehaviour, ISaveable {
     }
 
     public void SaveData(GameData data) {
-        throw new System.NotImplementedException();
     }
 }

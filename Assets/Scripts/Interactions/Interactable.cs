@@ -108,7 +108,7 @@ public class Interactable : MonoBehaviour, ISaveable {
             // newData.TryGetValue("QuestDialogueSet", out questDialogueSet);
             newData.TryGetValue("DialogueSet", out dialogueSet);
         }
-
+        data.ObjectData.Toggles.TryGetValue(gameObject.name, out hasBeenTriggered);
     }
 
     public void SaveData(GameData data) {
@@ -117,5 +117,6 @@ public class Interactable : MonoBehaviour, ISaveable {
             // { "QuestDialogueSet", questDialogueSet },
             { "DialogueSet", dialogueSet }};
         }
+        data.ObjectData.Toggles[gameObject.name] = hasBeenTriggered;
     }
 }
