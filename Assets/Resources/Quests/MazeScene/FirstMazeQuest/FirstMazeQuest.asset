@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cde18375fbbe54186ae2c38467a37f, type: 3}
+  m_Name: FirstMazeQuest
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: FirstMazeQuest
+  DisplayName: Explore
+  PlayerStoryLevel: 0
+  RequiredQuests: []
+  Stages:
+  - {fileID: 185403386522036513, guid: 80cdd6ff30692d946b54e3f04bd89468, type: 3}
+  - {fileID: 5076806941683424525, guid: 41702d115af4c1d44b1756a2824f46f0, type: 3}
+  RewardItem: {fileID: 0}
