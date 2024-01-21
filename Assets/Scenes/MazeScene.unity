@@ -674,6 +674,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 2525773630997749968, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
+      propertyPath: m_Name
+      value: Savepoint - InteractionPoint Maze3
+      objectReference: {fileID: 0}
     - target: {fileID: 2732097102060390916, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
       propertyPath: m_Name
       value: Savepoint 3
@@ -1165,6 +1169,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 1606967668048013632, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Name
+      value: Blockade - InteractionPoint Mazeborder3
+      objectReference: {fileID: 0}
     - target: {fileID: 5013427859226640575, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
       value: 172.7
@@ -2133,6 +2141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 1606967668048013632, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Name
+      value: Blockade - InteractionPoint MazeBorder4
+      objectReference: {fileID: 0}
     - target: {fileID: 5013427859226640575, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
       value: 279.05
@@ -3076,6 +3088,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 2525773630997749968, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
+      propertyPath: m_Name
+      value: Savepoint - InteractionPoint Maze1
+      objectReference: {fileID: 0}
     - target: {fileID: 2732097102060390916, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
       propertyPath: m_Name
       value: Savepoint 1
@@ -4060,6 +4076,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 1606967668048013632, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Name
+      value: Blockade - InteractionPoint MazeBorder1
+      objectReference: {fileID: 0}
     - target: {fileID: 5013427859226640575, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
       value: 104.76
@@ -4247,6 +4267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 1606967668048013632, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Name
+      value: Blockade - InteractionPoint mazeBorder2
+      objectReference: {fileID: 0}
     - target: {fileID: 5013427859226640575, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128.77
@@ -5669,6 +5693,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456829416}
     m_Modifications:
+    - target: {fileID: 2525773630997749968, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
+      propertyPath: m_Name
+      value: Savepoint - InteractionPoint Maze2
+      objectReference: {fileID: 0}
     - target: {fileID: 2732097102060390916, guid: a9ba7e3770b166640a57ede474d8599d, type: 3}
       propertyPath: m_Name
       value: Savepoint 2
