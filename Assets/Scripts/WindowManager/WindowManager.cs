@@ -117,10 +117,15 @@ public class WindowManager : MonoBehaviour, ISaveable {
     }
 
     public void LoadData(GameData data) {
-        questBox.LoadData(data);
+        if (questBox != null) {
+            questBox.LoadData(data);
+
+        }
     }
 
     public void SaveData(GameData data) {
-        data.UIData = questBox.SaveData();
+        if (questBox != null) {
+            data.UIData = questBox.SaveData();
+        }
     }
 }
