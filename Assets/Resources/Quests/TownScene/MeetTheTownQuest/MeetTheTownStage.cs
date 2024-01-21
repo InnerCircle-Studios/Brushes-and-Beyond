@@ -9,6 +9,11 @@ public class MeetTheTownStage : QuestStage {
     [SerializeField] CharacterAttributes villager;
     [SerializeField] CharacterAttributes blacksmith;
 
+    private bool talkedToBaker = false;
+    private bool talkedToVillager = false;
+    private bool talkedToBlacksmith = false;
+
+
     WindowManager wm;
 
     private void OnEnable() {
@@ -16,12 +21,21 @@ public class MeetTheTownStage : QuestStage {
         wm.ShowQuestMenu();
         wm.SetQuestName("Explore the town");
         wm.SetQuestObjectives($"* Talk to the villagers");
-        LoadInitialDialogue();
+        SetupInitialDialogue();
 
     }
 
-    private void LoadInitialDialogue() {
+    private void SetupInitialDialogue() {
         Actor player = GameManager.Instance.GetPlayer();
+
+        EventWrapper bakerTalkEvent = new();
+        bakerTalkEvent.AddListener(() => { talkedToBaker = true; AfterBakerTalk(); });
+        EventWrapper villagerTalkEvent = new();
+        villagerTalkEvent.AddListener(() => { talkedToVillager = true; AfterVillagerTalk(); });
+        EventWrapper blacksmithTalkEvent = new();
+        blacksmithTalkEvent.AddListener(() => { talkedToBlacksmith = true; InteractionEvents.ShowObject("MTTQs2"); CheckCompleted(); });
+
+
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
             { "Baker", new(new List<DialogueEntry>() {
                     new(baker, "Cupcakes, bread… maybe a cake... ", DialogueActorMood.NEUTRAL),
@@ -35,7 +49,9 @@ public class MeetTheTownStage : QuestStage {
                     new(baker, "Actually, the blacksmith was asking people about going into the maze to look for the water.", DialogueActorMood.NEUTRAL),
                     new(baker, "We used to go in there a lot but someone broke to bridge!", DialogueActorMood.SAD),
                     new(baker, "Maybe you can help him fix it?", DialogueActorMood.NEUTRAL),
-                }, new List<DialogueAction>(){})
+                }, new List<DialogueAction>(){
+                    new(99, bakerTalkEvent ,true),
+                })
             },
             { "Villager", new(new List<DialogueEntry>() {
                     new(villager, "...", DialogueActorMood.SAD),
@@ -47,11 +63,44 @@ public class MeetTheTownStage : QuestStage {
                     new(villager, "I'm sorry, I'm just a bit down. My daughter recently dissapeared.", DialogueActorMood.SAD),
                     new(villager, "She said she was going to find a bucket and never returned...", DialogueActorMood.SAD),
                     new(villager, "Anyways... Sorry for bothering you. I hope you have a nice stay in our town.", DialogueActorMood.NEUTRAL),
-                }, new List<DialogueAction>(){})
+                }, new List<DialogueAction>(){
+                    new(99, villagerTalkEvent ,true),
+                })
             },
             { "Blacksmith", new(new List<DialogueEntry>() {
-                    new(blacksmith, "This spot looks unfinished...", DialogueActorMood.NEUTRAL),
-                }, new List<DialogueAction>(){})
+                    new(blacksmith, "Oh hi! Are you the new guy that just got into town? My neighbour across town mentioned you.", DialogueActorMood.NEUTRAL),
+                    new(player, "That's me! I am Vin, nice to meet you!", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "I'm the blacksmith of this town, I make all the tools and weapons for the villagers.", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "But right now without the water I can't do anything!", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "I was thinking of going into the maze to look for the water, but the bridge is broken.", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "I need to find a way to fix it but have no idea how!", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "The only clue I have is this note I found on the ground right after the water dissapeared.", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "It reads: "+
+                    "\"In the square, where people walk and talk,\n" +
+                    "A statue that looks like you, stands without a balk.", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, 
+                    "Behind this figure, silent and tall,\n"+
+                    "The first bucket awaits your call.", DialogueActorMood.NEUTRAL),
+                    new(blacksmith, 
+                    "Climb to the top of the village, where the air smells sweet,\n"+
+                    "Where the bakery makes bread and treats to eat.\n"
+                    , DialogueActorMood.NEUTRAL),
+                    new(blacksmith, 
+                    "Hidden not far, just around its back,\n"+
+                    "The second bucket is on this track.\n"
+                    , DialogueActorMood.NEUTRAL),
+                    new(blacksmith, 
+                    "Lastly, find a place where mushrooms grow in a ring,\n"+
+                    "Around a special tree, where children play and sing.\n"
+                    , DialogueActorMood.NEUTRAL),
+                    new(blacksmith, 
+                    "There, a child holds the final prize in their glee,\n"+
+                    "The last bucket, for you to see.\"\n"
+                    , DialogueActorMood.NEUTRAL),
+                    new(blacksmith, "I have no idea what it means, but I'm sure it's the key to fixing the bridge!", DialogueActorMood.NEUTRAL),
+                }, new List<DialogueAction>(){
+                    new(99, blacksmithTalkEvent ,true),
+                })
             }
         });
     }
@@ -61,36 +110,69 @@ public class MeetTheTownStage : QuestStage {
     }
 
     private void Start() {
-
+        if (talkedToBaker) {
+            AfterBakerTalk();
+        }
+        if (talkedToVillager) {
+            AfterVillagerTalk();
+        }
     }
 
+    private void AfterBakerTalk() {
+        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
+            { "Baker", new(new List<DialogueEntry>() {
+                    new(baker, "Cupcakes, bread… maybe a cake... ", DialogueActorMood.NEUTRAL),
+                }, new List<DialogueAction>(){
+                })
+            }
+        });
+        CheckCompleted();
+    }
 
+    private void AfterVillagerTalk() {
+        QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
+            { "Villager", new(new List<DialogueEntry>() {
+                    new(villager, "...", DialogueActorMood.SAD),
+                }, new List<DialogueAction>(){
+                })
+            }
+        });
+        CheckCompleted();
+    }
 
 
     private void CheckCompleted() {
         UpdateState();
-        if (true) {
+        if (talkedToBlacksmith) {
             FinishStage();
         }
     }
 
     private void UpdateState() {
-        string data = JsonUtility.ToJson(new StupidJSONWrapper());
+        string data = JsonUtility.ToJson(new StupidJSONWrapper(talkedToBaker, talkedToVillager, talkedToBlacksmith));
         ChangeState(data);
     }
 
     protected override void SetQuestStageState(string state) {
         StupidJSONWrapper data = JsonUtility.FromJson<StupidJSONWrapper>(state);
+        talkedToBaker = data.TalkedToBaker;
+        talkedToVillager = data.TalkedToVillager;
+        talkedToBlacksmith = data.TalkedToBlacksmith;
         UpdateState();
     }
 
     [Serializable]
     public class StupidJSONWrapper {
-        public int PaintCounter;
-        public StupidJSONWrapper() { }
-        public StupidJSONWrapper(int paintCounter) {
-            PaintCounter = paintCounter;
+        public bool TalkedToBaker;
+        public bool TalkedToVillager;
+        public bool TalkedToBlacksmith;
+
+        public StupidJSONWrapper(bool talkedToBaker, bool talkedToVillager, bool talkedToBlacksmith) {
+            TalkedToBaker = talkedToBaker;
+            TalkedToVillager = talkedToVillager;
+            TalkedToBlacksmith = talkedToBlacksmith;
         }
+
     }
 
 
