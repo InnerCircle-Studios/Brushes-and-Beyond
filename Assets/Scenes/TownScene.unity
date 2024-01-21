@@ -1583,6 +1583,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
+      value: 
+      objectReference: {fileID: 11400000, guid: d501e0b63a5f6a549bc09d94b0367613, type: 2}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
+      value: Rock and Stone!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609656451}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogueSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433050297463592156, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6497213965764968795, guid: 768b5d5f5c20adc449e22895de59897e, type: 3}
       propertyPath: m_Name
       value: Blacksmith
@@ -1645,6 +1685,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
+      value: 
+      objectReference: {fileID: 11400000, guid: 0289e07b47d121b47a961e4a6c0a76b2, type: 2}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
+      value: You look funny!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609656451}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogueSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266496742506256977, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6366670652762705878, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
       propertyPath: m_Name
       value: Villager
@@ -1662,6 +1742,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 570556393}
     m_Modifications:
+    - target: {fileID: 569789377737281899, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72016144
+      objectReference: {fileID: 0}
+    - target: {fileID: 569789377737281899, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.20241928
+      objectReference: {fileID: 0}
     - target: {fileID: 1639746611300807921, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.81
@@ -1701,6 +1789,46 @@ PrefabInstance:
     - target: {fileID: 1639746611300807921, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Actor
+      value: 
+      objectReference: {fileID: 11400000, guid: 0289e07b47d121b47a961e4a6c0a76b2, type: 2}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: dialogueSet.dialogueList.Array.data[0].Dialogue
+      value: Hi Stranger!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609656451}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogueSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754436434183096424, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
+      propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6816042637901536751, guid: c15abde3976732b44be5ef7e09138e07, type: 3}
       propertyPath: m_Name

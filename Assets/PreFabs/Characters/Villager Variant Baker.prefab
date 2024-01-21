@@ -61,8 +61,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1630146688, guid: dad69e7e90fb38e48b1fcfcddb9ac58b, type: 3}
     - target: {fileID: 3060038263683434353, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5044296
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060038263683434353, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5044296
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060038263683434353, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5044296
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060038263683434353, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0845
+      value: -0.0899
       objectReference: {fileID: 0}
     - target: {fileID: 3653980627727117807, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
       propertyPath: attributes
@@ -71,6 +83,10 @@ PrefabInstance:
     - target: {fileID: 6366670652762705878, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
       propertyPath: m_Name
       value: Villager Variant Baker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989260121838197518, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8257982597337871121, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
       propertyPath: m_Controller
