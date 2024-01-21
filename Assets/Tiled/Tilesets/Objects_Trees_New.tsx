@@ -52,40 +52,40 @@
  <tile id="6">
   <image width="80" height="90" source="../../Art/Trees and Bushes/Assets/Tree 1.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="30.25" y="84.375">
-    <polygon points="0,0 5.75,-7.5 23,-7.75 28.75,-1.625 26.75,1.125 18.5,2.375 15.375,5.5 11,5.625 8.875,3.25"/>
+   <object id="1" x="26.25" y="82.9556">
+    <polygon points="0,0 6.55,-9.39252 26.2,-9.70561 32.75,-2.03505 30.4717,1.40888 21.0739,2.9743 17.5141,6.88785 12.5304,7.04439 10.1098,4.07009"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="7">
   <image width="80" height="90" source="../../Art/Trees and Bushes/Assets/Tree 1-Light.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="30.25" y="84.875">
-    <polygon points="0,0 -0.125,-2.625 5.75,-7.625 22.5,-8.25 28.25,-2.375 26.625,0.25 19.375,2 15.25,5.25 11.875,5"/>
+   <object id="1" x="29.886" y="83.6458">
+    <polygon points="0,0 -0.136013,-3.42708 6.25661,-9.95486 24.4824,-10.7708 30.739,-3.10069 28.9708,0.326389 21.082,2.61111 16.5936,6.85417 12.9213,6.52778"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="8">
   <image width="86" height="97" source="../../Art/Trees and Bushes/Assets/Tree 2.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="31.125" y="91.75">
-    <polygon points="0,0 5.25,-7.875 22.75,-8.5 28.75,-2.125 27,0.75 18.625,2.25 15.75,5.5 9.375,3"/>
+   <object id="1" x="27.5" y="89.8348">
+    <polygon points="0,0 5.91196,-10.6172 25.6185,-11.4598 32.375,-2.86496 30.4043,1.01116 20.9734,3.03348 17.7359,7.41518 10.5571,4.04464"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="9">
   <image width="79" height="90" source="../../Art/Trees and Bushes/Assets/Tree 3.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="25.75" y="83.5">
-    <polygon points="0,0 4.625,-6.375 20.75,-6.5 25.625,-1.75 16.75,2.875 13.25,6.5 11.375,6.25"/>
+   <object id="1" x="22.5" y="81.875">
+    <polygon points="0,0 6.27195,-9.19471 28.139,-9.375 34.75,-2.52404 22.7146,4.14663 17.9683,9.375 15.4256,9.01442"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="10">
   <image width="79" height="90" source="../../Art/Trees and Bushes/Assets/Tree 3-Light.png"/>
   <objectgroup draworder="index" id="2">
-   <object id="1" x="27.375" y="84.5">
-    <polygon points="0,0 4.875,-7.75 22.625,-7.625 27,-2.625 20.625,1.625 15.5,1.875 13.375,5.625 9.75,5"/>
+   <object id="1" x="26.375" y="82.3037">
+    <polygon points="0,0 6.31944,-9.05374 29.3287,-8.90771 35,-3.06659 26.7361,1.89836 20.0926,2.19042 17.338,6.57126 12.6389,5.84112"/>
    </object>
   </objectgroup>
  </tile>
