@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &175720201410809485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.165236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -33.012802
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156311618895144648, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947933788702119546, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 83284033, guid: e97d5a0c1c21e82429d05d45ef41494b, type: 3}
+    - target: {fileID: 3653980627727117807, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 11400000, guid: d501e0b63a5f6a549bc09d94b0367613, type: 2}
+    - target: {fileID: 6366670652762705878, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_Name
+      value: Blacksmith Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257982597337871121, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c8d07b28df4adce439ae85a21130f95f, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6112228cbc10f4d43844479826ee8656, type: 3}
