@@ -2552,21 +2552,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
-    - target: {fileID: 8586629878960332249, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
-      propertyPath: field of view
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8586629878960332249, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
-      propertyPath: far clip plane
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8586629878960332249, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8586629878960332249, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
-      propertyPath: orthographic size
-      value: 10
+    - target: {fileID: 8966890173532618880, guid: d856c60d7e1a7a34e8aecf27121c644a, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

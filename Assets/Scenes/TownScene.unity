@@ -494,6 +494,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1717837683}
     m_Modifications:
+    - target: {fileID: 1606967668048013632, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Name
+      value: Blockade - InteractionPoint Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312466829315709210, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 5013427859226640575, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.05
@@ -562,6 +586,10 @@ PrefabInstance:
       propertyPath: OnEventTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1609656451}
+    - target: {fileID: 7588779025368663397, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8659150528446440685, guid: e8b9f0b40afc1da40b3dfe0e58c75739, type: 3}
       propertyPath: blockadeName
       value: TownBridgeBlockade

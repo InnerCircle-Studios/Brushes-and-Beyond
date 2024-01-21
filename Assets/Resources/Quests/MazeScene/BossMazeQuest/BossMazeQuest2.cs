@@ -21,7 +21,7 @@ public class BossMazeQuest2 : QuestStage {
         vanishevent.AddListener(() => InteractionEvents.HideObject(blockadeName));
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
-            { "Blockade 4", new(new List<DialogueEntry>() {
+            { "Blockade 4 maze", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetPlayer(), "We're so close", DialogueActorMood.HAPPY),
                     new(GameManager.Instance.GetPlayer(), "Lets go get him!", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){

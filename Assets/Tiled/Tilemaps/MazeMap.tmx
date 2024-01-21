@@ -3075,7 +3075,7 @@
   <object id="2214" gid="5919" x="3618.67" y="567.667" width="80" height="90"/>
   <object id="2215" gid="5919" x="3774" y="289" width="80" height="90"/>
   <object id="2217" gid="5918" x="3764" y="339" width="80" height="90"/>
-  <object id="2218" gid="5919" x="3828" y="511.667"/>
+  <object id="2218" gid="5919" x="3828" y="511.667" width="80" height="90"/>
   <object id="2219" gid="5921" x="3788.33" y="436.333" width="79" height="90"/>
   <object id="2220" gid="5919" x="3726" y="481" width="80" height="90"/>
   <object id="2221" gid="5918" x="3636" y="371" width="80" height="90"/>

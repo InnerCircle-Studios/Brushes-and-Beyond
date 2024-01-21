@@ -21,7 +21,7 @@ public class ThirdMazeQuest2 : QuestStage {
         vanishevent.AddListener(() => InteractionEvents.HideObject(blockadeName));
 
         QuestEvents.ChangeDialogue(new Dictionary<string, DialogueSet>() {
-            { "Blockade 3", new(new List<DialogueEntry>() {
+            { "Blockade 3 maze", new(new List<DialogueEntry>() {
                     new(GameManager.Instance.GetPlayer(), "This is the last one!", DialogueActorMood.SCARED),
                     new(GameManager.Instance.GetPlayer(), "Lets go get my paint back.", DialogueActorMood.HAPPY),
                 }, new List<DialogueAction>(){
