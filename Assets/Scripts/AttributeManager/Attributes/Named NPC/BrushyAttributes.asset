@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: BrushyAttributes
   m_EditorClassIdentifier: 
   CharData:
-    DialogueSprite: {fileID: 21300000, guid: 1556e14677fb34341bd44c98a612c838, type: 3}
+    Emotions:
+      DialogueSprite: {fileID: 21300000, guid: 1556e14677fb34341bd44c98a612c838, type: 3}
+      HappySprite: {fileID: 21300000, guid: 69773a93b24b564419f4fba748bb708d, type: 3}
+      NeutralSprite: {fileID: 21300000, guid: f1cb6c4a3ab58b343ade4e14fc300155, type: 3}
+      SadSprite: {fileID: 21300000, guid: 759752c0e3ae1cf4d984b4df3dfce92e, type: 3}
+      AngrySprite: {fileID: 0}
+      ConfusedSprite: {fileID: 21300000, guid: aad0c13ddc625f74990da86d37db4d79, type: 3}
+      ScaredSprite: {fileID: 21300000, guid: 1dd22289e22c9164ab0b1677417549b2, type: 3}
     Type: 3
     Name: Brushy
     Level: 0

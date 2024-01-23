@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: BlacksmithAttributes
   m_EditorClassIdentifier: 
   CharData:
-    DialogueSprite: {fileID: 83284033, guid: e97d5a0c1c21e82429d05d45ef41494b, type: 3}
+    Emotions:
+      DialogueSprite: {fileID: 21300000, guid: f986d55b178cb5846a181a4d9bea80f8, type: 3}
+      HappySprite: {fileID: 21300000, guid: a2c4b094959a5f743bed43ce69141351, type: 3}
+      NeutralSprite: {fileID: 21300000, guid: 3c81586a2921f354a891e5fcf43bc061, type: 3}
+      SadSprite: {fileID: 21300000, guid: 135fd6b22050c3246a1b6698847f5065, type: 3}
+      AngrySprite: {fileID: 0}
+      ConfusedSprite: {fileID: 21300000, guid: aba34cf9d627cc8439afe2514f4edefb, type: 3}
+      ScaredSprite: {fileID: 0}
     Type: 3
     Name: Blacksmith
     Level: 0

@@ -18,7 +18,7 @@ public class CharacterAttributes : ScriptableObject {
 [Serializable]
 public class CharacterData {
     [Header("General")]
-    [SerializeField] public Sprite DialogueSprite;
+    [SerializeField] public EmotionsContainer Emotions;
     [SerializeField] public ActorType Type;
     [SerializeField] public string Name;
     [SerializeField] public int Level;
@@ -49,7 +49,48 @@ public class CharacterData {
         }
         return newCharacterData;
     }
+    public Sprite GetSprite(DialogueActorMood mood) {
+        return Emotions.GetSprite(mood);
+    }
 }
+
+[Serializable]
+public class EmotionsContainer {
+    [SerializeField] public Sprite DialogueSprite;
+
+    [SerializeField] public Sprite HappySprite;
+    [SerializeField] public Sprite NeutralSprite;
+    [SerializeField] public Sprite SadSprite;
+    [SerializeField] public Sprite AngrySprite;
+    [SerializeField] public Sprite ConfusedSprite;
+    [SerializeField] public Sprite ScaredSprite;
+
+
+    public Sprite GetSprite(DialogueActorMood mood) {
+        if (mood == DialogueActorMood.HAPPY && HappySprite != null) {
+            return HappySprite;
+        }
+        else if (mood == DialogueActorMood.NEUTRAL && NeutralSprite != null) {
+            return NeutralSprite;
+        }
+        else if (mood == DialogueActorMood.SAD && SadSprite != null) {
+            return SadSprite;
+        }
+        else if (mood == DialogueActorMood.ANGRY && AngrySprite != null) {
+            return AngrySprite;
+        }
+        else if (mood == DialogueActorMood.CONFUSED && ConfusedSprite != null) {
+            return ConfusedSprite;
+        }
+        else if (mood == DialogueActorMood.SCARED && ScaredSprite != null) {
+            return ScaredSprite;
+        }
+        else {
+            return DialogueSprite;
+        }
+    }
+}
+
 
 public enum ActorType {
     PLAYER,

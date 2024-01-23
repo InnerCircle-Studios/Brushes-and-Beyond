@@ -36,22 +36,22 @@ public class DialogueBox : MonoBehaviour {
         message = box.message;
     }
 
-    public void LoadActor(Actor actor) {
+    public void LoadActor(Actor actor, DialogueActorMood mood) {
         CharacterData attribs = actor.GetAttrubuteManager().GetAttributes();
-        avatar.sprite = attribs.DialogueSprite;
+        avatar.sprite = attribs.GetSprite(mood);
         avatarName.SetText(attribs.Name);
         HandleCharacters(attribs);
     }
 
-    public void LoadActor(CharacterAttributes actor) {
+    public void LoadActor(CharacterAttributes actor, DialogueActorMood mood) {
         CharacterData attribs = actor.CharData;
-        avatar.sprite = attribs.DialogueSprite;
+        avatar.sprite = attribs.GetSprite(mood);
         avatarName.SetText(attribs.Name);
         HandleCharacters(attribs);
     }
 
-    public void LoadActor(CharacterData actor) {
-        avatar.sprite = actor.DialogueSprite;
+    public void LoadActor(CharacterData actor, DialogueActorMood mood) {
+        avatar.sprite = actor.GetSprite(mood);
         avatarName.SetText(actor.Name);
         HandleCharacters(actor);
     }

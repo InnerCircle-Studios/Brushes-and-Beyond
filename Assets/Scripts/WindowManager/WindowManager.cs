@@ -26,17 +26,9 @@ public class WindowManager : MonoBehaviour, ISaveable {
         ShowDialogueBox();
         dialogueBox.LoadBox(box);
     }
-    public void InitDialogueBox(Actor actor) {
-        ShowDialogueBox();
-        dialogueBox.LoadActor(actor);
-    }
-    public void InitDialogueBox(CharacterData actor) {
-        ShowDialogueBox();
-        dialogueBox.LoadActor(actor);
-    }
     public void InitDialogueBox(DialogueEntry diagEntry) {
         ShowDialogueBox();
-        dialogueBox.LoadActor(diagEntry.Actor);
+        dialogueBox.LoadActor(diagEntry.Actor, diagEntry.ActorMood);
         UpdateDialogueBox(diagEntry.Dialogue);
     }
 
