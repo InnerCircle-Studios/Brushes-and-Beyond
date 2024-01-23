@@ -64,8 +64,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void QuitGame() {
-
-         #if UNITY_WEBGL
+        #if UNITY_WEBGL
             Logger.Log("QuitGame Conditional","WebGL build detected, redirecting to itch.io page");
             SaveManager.Instance.NewGame();
             SaveManager.Instance.SaveGame();
@@ -74,6 +73,17 @@ public class GameManager : MonoBehaviour {
             Logger.Log("QuitGame Conditional","Default build detected, quitting game");
             Application.Quit();
         #endif
+        // if (Application.platform == RuntimePlatform.WebGLPlayer) {
+        //     Logger.Log("QuitGame Conditional", "WebGL build detected, redirecting to itch.io page");
+        //     SaveManager.Instance.NewGame();
+        //     SaveManager.Instance.SaveGame();
+        //     Application.OpenURL("https://innercircles.itch.io/brushes-and-beyond");
+        // }
+        // else {
+        //     Logger.Log("QuitGame Conditional", "Default build detected, quitting game");
+        //     Application.Quit();
+        // }
+        
     }
 
 }
