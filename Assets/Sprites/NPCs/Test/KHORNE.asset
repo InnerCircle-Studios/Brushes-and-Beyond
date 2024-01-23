@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: KHORNE
   m_EditorClassIdentifier: 
   CharData:
-    DialogueSprite: {fileID: 21300000, guid: a4405b397e570b749bcd7e8021b0b6a1, type: 3}
+    Emotions:
+      DialogueSprite: {fileID: 21300000, guid: a4405b397e570b749bcd7e8021b0b6a1, type: 3}
+      HappySprite: {fileID: 0}
+      NeutralSprite: {fileID: 0}
+      SadSprite: {fileID: 0}
+      AngrySprite: {fileID: 0}
+      ConfusedSprite: {fileID: 0}
+      ScaredSprite: {fileID: 0}
     Type: 4
     Name: Khorne
     Level: 0
