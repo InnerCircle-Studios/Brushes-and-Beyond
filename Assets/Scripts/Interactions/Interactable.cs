@@ -59,7 +59,6 @@ public class Interactable : MonoBehaviour, ISaveable {
 
     public void ActivateIndicator() {
         if (!hasBeenTriggered) {
-            activationKey.enabled = true;
             if (questDialogueSet != null) {
                 gameManager.GetDialogueManager().SetActiveDialogue(questDialogueSet);
             }
@@ -69,7 +68,9 @@ public class Interactable : MonoBehaviour, ISaveable {
             if (autoTrigger) {
                 hasBeenTriggered = true;
                 OnEventTrigger.Invoke();
+                return;
             }
+            activationKey.enabled = true;
         }
     }
 
