@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("GameScene");
     }
 
-    public void LoadFromLastSave(){
+    public void LoadFromLastSave() {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -64,7 +64,16 @@ public class GameManager : MonoBehaviour {
     }
 
     public void QuitGame() {
-        Application.Quit();
+
+         #if UNITY_WEBGL
+            Logger.Log("QuitGame Conditional","WebGL build detected, redirecting to itch.io page");
+            SaveManager.Instance.NewGame();
+            SaveManager.Instance.SaveGame();
+            Application.OpenURL("https://innercircles.itch.io/brushes-and-beyond");
+        #else
+            Logger.Log("QuitGame Conditional","Default build detected, quitting game");
+            Application.Quit();
+        #endif
     }
 
 }
