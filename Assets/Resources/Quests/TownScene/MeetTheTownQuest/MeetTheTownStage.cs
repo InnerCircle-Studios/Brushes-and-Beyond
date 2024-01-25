@@ -47,7 +47,7 @@ public class MeetTheTownStage : QuestStage {
                     new(baker, "Thank you, I hope so too. ", DialogueActorMood.NEUTRAL),
 
                     new(baker, "Actually, the blacksmith was asking people about going into the maze to look for the water.", DialogueActorMood.NEUTRAL),
-                    new(baker, "We used to go in there a lot but someone broke to bridge!", DialogueActorMood.SAD),
+                    new(baker, "We used to go in there a lot but someone broke the bridge!", DialogueActorMood.SAD),
                     new(baker, "Maybe you can help him fix it?", DialogueActorMood.NEUTRAL),
                 }, new List<DialogueAction>(){
                     new(99, bakerTalkEvent ,true),
