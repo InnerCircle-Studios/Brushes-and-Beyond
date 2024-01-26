@@ -37,7 +37,6 @@ public class StartMenu : MonoBehaviour, ISaveable {
     }
 
     public void QuitGame() {
-        DisableButtons();
 
         #if UNITY_WEBGL
             Logger.Log("QuitGame Conditional","WebGL build detected, redirecting to itch.io page");
@@ -46,6 +45,8 @@ public class StartMenu : MonoBehaviour, ISaveable {
             Application.OpenURL("https://innercircles.itch.io/brushes-and-beyond");
         #else
             Logger.Log("QuitGame Conditional","Default build detected, quitting game");
+            DisableButtons();
+
             Application.Quit();
         #endif
         // if(Application.platform == RuntimePlatform.WebGLPlayer) {
