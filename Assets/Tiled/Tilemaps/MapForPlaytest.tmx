@@ -1563,10 +1563,6 @@
   <object id="3346" gid="7210" x="1109" y="1491" width="26" height="25"/>
   <object id="3347" gid="7214" x="1050" y="1493" width="16" height="16"/>
   <object id="3442" gid="131" x="572.333" y="856" width="14" height="30"/>
-  <object id="3219" gid="7187" x="326.667" y="1598.33" width="80" height="90"/>
-  <object id="3220" gid="7188" x="712" y="1597" width="80" height="90"/>
-  <object id="3221" gid="7188" x="700" y="1518.5" width="80" height="90"/>
-  <object id="3222" gid="7187" x="628" y="1597" width="80" height="90"/>
  </objectgroup>
  <objectgroup id="5" name="Objects">
   <properties>
@@ -1679,7 +1675,7 @@
   <object id="3163" gid="7220" x="998.833" y="1665.33" width="80" height="90"/>
   <object id="3164" gid="7221" x="998.83" y="1615.33" width="86" height="97"/>
   <object id="3205" gid="7188" x="840.667" y="867.667" width="80" height="90"/>
-  <object id="3206" gid="7188" x="920.667" y="871.667" width="80" height="90"/>
+  <object id="3206" gid="7188" x="928" y="864" width="80" height="90"/>
   <object id="3215" gid="7187" x="683.667" y="1104" width="80" height="90"/>
   <object id="3218" gid="7187" x="256" y="1109.17" width="80" height="90"/>
   <object id="3223" gid="7188" x="534.416" y="743.166" width="80" height="90"/>
@@ -1759,6 +1755,10 @@
   <object id="3428" gid="7220" x="835.667" y="1381.33" width="80" height="90"/>
   <object id="3435" gid="7194" x="902.667" y="717" width="75" height="88.6667"/>
   <object id="3440" gid="7192" x="267.833" y="673.833" width="65.3333" height="63.3333"/>
+  <object id="3219" gid="7187" x="326.667" y="1598.33" width="80" height="90"/>
+  <object id="3220" gid="7188" x="712" y="1597" width="80" height="90"/>
+  <object id="3221" gid="7188" x="700" y="1518.5" width="80" height="90"/>
+  <object id="3222" gid="7187" x="628" y="1597" width="80" height="90"/>
  </objectgroup>
  <layer id="48" name="Edge" width="200" height="200">
   <data encoding="csv">
