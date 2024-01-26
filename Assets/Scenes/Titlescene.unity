@@ -3323,9 +3323,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 350886247}
     m_Modifications:
+    - target: {fileID: 718033988652298309, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718033988652298309, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718033988652298309, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762651534840373220, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762651534840373220, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909538321367015147, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5445735719870365149, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
       propertyPath: m_Name
       value: UI - Settings Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445735719870365149, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937855223962295040, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937855223962295040, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163597540236892483, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
       propertyPath: m_Pivot.x
@@ -3407,9 +3443,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8441517449988023318, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441517449988023318, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441517449988023318, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8560345061313651160, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
       propertyPath: m_text
       value: Space
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700498246228077947, guid: 30c502c4ab2bfda4fa5e8fa30d68caef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
